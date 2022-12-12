@@ -29,17 +29,19 @@
     ">2% and not dead"
   ],
   "homepage": "https://github.com/Maggi64/esmdash#readme",
-    "devDependencies": {
-        "typescript": "4.9.4",
-        "@typescript-eslint/eslint-plugin": "5.43.0",
-        "@typescript-eslint/parser": "5.43.0",
-        "eslint": "8.27.0",
-        "eslint-import-resolver-typescript": "3.5.2",
-        "eslint-plugin-compat": "4.0.2",
-        "eslint-plugin-deprecate": "0.7.0",
-        "eslint-plugin-import": "2.26.0",
-        "eslint-plugin-sonarjs": "0.16.0",
-        "eslint-plugin-unicorn": "44.0.2",
-        "vitest": "0.25.7"
-    }
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.43.0",
+    "@typescript-eslint/parser": "5.43.0",
+    "@vitest/ui": "0.25.7",
+    "eslint": "8.27.0",
+    "eslint-import-resolver-typescript": "3.5.2",
+    "eslint-plugin-compat": "4.0.2",
+    "eslint-plugin-deprecate": "0.7.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-sonarjs": "0.16.0",
+    "eslint-plugin-unicorn": "44.0.2",
+    "typedoc": "0.23.22",
+    "typescript": "4.9.4",
+    "vitest": "0.25.7"
+  }
 }
