@@ -1,0 +1,45 @@
+{
+  "name": "esmdash",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A lodash rewrite for ESM/Typescript/ES2020",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "engines": {
+    "node": ">=18.x.x",
+    "npm": ">=8.x.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maggi64/esmdash.git"
+  },
+  "keywords": [
+    "lodash",
+    "utility",
+    "helper"
+  ],
+  "author": "Maggi64",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Maggi64/esmdash/issues"
+  },
+  "browserslist": [
+    ">2% and not dead"
+  ],
+  "homepage": "https://github.com/Maggi64/esmdash#readme",
+    "devDependencies": {
+        "typescript": "4.9.4",
+        "@typescript-eslint/eslint-plugin": "5.43.0",
+        "@typescript-eslint/parser": "5.43.0",
+        "eslint": "8.27.0",
+        "eslint-import-resolver-typescript": "3.5.2",
+        "eslint-plugin-compat": "4.0.2",
+        "eslint-plugin-deprecate": "0.7.0",
+        "eslint-plugin-import": "2.26.0",
+        "eslint-plugin-sonarjs": "0.16.0",
+        "eslint-plugin-unicorn": "44.0.2",
+        "vitest": "0.25.7"
+    }
+}
