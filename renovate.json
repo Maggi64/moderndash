@@ -10,5 +10,13 @@
     "before 3am on Monday"
   ],
   "separateMajorMinor": false,
+  "packageRules": [
+    {
+      "matchPaths": ["package.json"],
+      "matchPackagePatterns": ["*"],
+      "groupName": "ModernDash Dependencies",
+      "groupSlug": "moderndash-repo"
+    }
+  ],
   "ignoreDeps": ["node", "npm"]
 }
