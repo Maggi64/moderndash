@@ -18,7 +18,9 @@ Consult [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lo
 - fromPairs
 - initial
 
-Functions are not considered trivial if they include reduce methods. This is because reduce methods are hard to read.
+Functions are not considered trivial if they:
+ - include reduce methods
+ - include multiple nested function calls
 
 ## Might be added later (open for discussion)
 - dropRightWhile shorthands
