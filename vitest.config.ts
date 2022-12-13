@@ -11,9 +11,9 @@ export default defineConfig({
         /* for example, use global to avoid globals imports (describe, test, expect): */
         // globals: true,
     },
-    // resolve: {
-    //     alias: {
-    //         '@array': fileURLToPath(new URL('src/array', import.meta.url))
-    //     }
-    // }
+    resolve: {
+        alias: {
+            '@array': fileURLToPath(new URL('src/array', import.meta.url))
+        }
+    }
 });

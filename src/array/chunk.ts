@@ -1,4 +1,4 @@
-export function chunk(array: unknown[], chunkSize = 1) {
+export function chunk<T>(array: T[], chunkSize = 1) {
     const sizeInteger = Math.trunc(chunkSize);
     if (array.length === 0 || sizeInteger < 1) {
         return [];

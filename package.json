@@ -1,5 +1,5 @@
 {
-  "name": "esmdash",
+  "name": "moderndash",
   "version": "0.0.1",
   "type": "module",
   "description": "A lodash rewrite for ESM/Typescript/ES2020",
@@ -18,7 +18,8 @@
   "keywords": [
     "lodash",
     "utility",
-    "helper"
+    "helper",
+    "underscore"
   ],
   "author": "Maggi64",
   "license": "MIT",

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/esmdash.iml" filepath="$PROJECT_DIR$/.idea/esmdash.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/moderndash.iml" filepath="$PROJECT_DIR$/.idea/moderndash.iml" />
     </modules>
   </component>
 </project>
