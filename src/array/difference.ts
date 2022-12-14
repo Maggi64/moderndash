@@ -1,7 +1,5 @@
-export function difference<T>(array: T[], array2: T[]) {
-    return differenceBase(array, array2);
-}
+import { differenceBy } from '@array/differenceBy';
 
-export function differenceBase<T>(array: T[], array2: T[], iteratee = (value: T) => value) {
-    return array.filter(a => !array2.map(v => iteratee(v)).includes(iteratee(a)));
+export function difference<T>(array: T[], array2: T[]) {
+    return differenceBy(array, array2);
 }

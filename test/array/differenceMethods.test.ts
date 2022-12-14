@@ -44,5 +44,7 @@ test('differenceBy', () => {
 });
 
 test('differenceWith', () => {
-    expect(differenceWith([{ x: 1 }], [{ x: 2 }, { x: 1 }], (a, b) => a.x === b.x)).toEqual([{ x: 2 }]);
+    it('should return match based on input function', () => {
+        expect(differenceWith([{ x: 1 }], [{ x: 2 }, { x: 1 }], (a, b) => a.x === b.x)).toEqual([{ x: 2 }]);
+    });
 });

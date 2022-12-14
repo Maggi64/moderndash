@@ -17,6 +17,9 @@ Consult [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lo
 - flattenDepth
 - fromPairs
 - initial
+- join
+- last
+- lastIndexOf
 
 Functions are not considered trivial if they:
  - include reduce methods
