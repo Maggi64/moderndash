@@ -1,10 +1,11 @@
-import { expect, it, test } from 'vitest';
+import { test, it, expect } from 'vitest';
 
+import { dropRightWhile } from '@array/dropRightWhile';
 import { dropWhile } from '@array/dropWhile';
 
-test('dropWhile', () => {
-    const array = [1, 2, 3, 4, 5, 6];
+const array = [1, 2, 3, 4, 5, 6];
 
+test('dropWhile', () => {
     it('removes elements from the start of the array until the predicate returns false', () => {
         expect(dropWhile(array, x => x % 2 === 0)).toEqual([3, 4, 5, 6]);
     });
@@ -19,5 +20,11 @@ test('dropWhile', () => {
 
     it('returns an empty array if the input array is empty', () => {
         expect(dropWhile([], () => true)).toEqual([]);
+    });
+});
+
+test('dropRightWhile', () => {
+    it('should drop elements while `predicate` returns truthy', () => {
+        expect(dropRightWhile(array, n => n > 2)).toEqual([1, 2]);
     });
 });
