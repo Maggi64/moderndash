@@ -1,13 +1,13 @@
-import { test, it, expect } from 'vitest';
+import { it, expect, describe } from 'vitest';
 
 import { dropRightWhile } from '@array/dropRightWhile';
 import { dropWhile } from '@array/dropWhile';
 
-const array = [1, 2, 3, 4, 5, 6];
+const array = [2, 4, 5, 6];
 
-test('dropWhile', () => {
+describe('dropWhile', () => {
     it('removes elements from the start of the array until the predicate returns false', () => {
-        expect(dropWhile(array, x => x % 2 === 0)).toEqual([3, 4, 5, 6]);
+        expect(dropWhile(array, x => x % 2 === 0)).toEqual([5, 6]);
     });
 
     it('returns an empty array if the predicate always returns true', () => {
@@ -15,7 +15,7 @@ test('dropWhile', () => {
     });
 
     it('returns the original array if the predicate always returns false', () => {
-        expect(dropWhile(array, () => false)).toEqual([1, 2, 3, 4, 5, 6]);
+        expect(dropWhile(array, () => false)).toEqual(array);
     });
 
     it('returns an empty array if the input array is empty', () => {
@@ -23,8 +23,8 @@ test('dropWhile', () => {
     });
 });
 
-test('dropRightWhile', () => {
+describe('dropRightWhile', () => {
     it('should drop elements while `predicate` returns truthy', () => {
-        expect(dropRightWhile(array, n => n > 2)).toEqual([1, 2]);
+        expect(dropRightWhile(array, n => n > 4)).toEqual([2, 4]);
     });
 });

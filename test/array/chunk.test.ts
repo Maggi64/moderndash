@@ -1,8 +1,8 @@
-import { expect, it, test } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { chunk } from '@array/chunk.js';
 
-test('Chunk', () => {
+describe('Chunk', () => {
     const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     it('should chunk an array', () => {
@@ -14,6 +14,6 @@ test('Chunk', () => {
     });
 
     it('should coerce `size` to an integer', () => {
-        expect(chunk(array, array.length / 4)).toEqual([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]);
+        expect(chunk(array, array.length / 4)).toEqual([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]);
     });
 });

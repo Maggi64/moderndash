@@ -1,10 +1,10 @@
-import { expect, it, test } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { difference } from '@array/difference';
 import { differenceBy } from '@array/differenceBy';
 import { differenceWith } from '@array/differenceWith';
 
-test('Basic difference function', () => {
+describe('Basic difference function', () => {
     [difference, differenceBy, differenceWith].forEach(methode => {
         it(`${methode.name} should return the difference of two arrays`, () => {
             expect(methode([2, 1], [2, 3])).toEqual([1]);
@@ -19,7 +19,7 @@ test('Basic difference function', () => {
             const actual = array.map(value => methode(array, [value]));
             expect(actual).toEqual([[], []]);
 
-            expect(methode([-0, 1], [1])).toEqual([0]);
+            expect(methode([-0, 1], [0])).toEqual([1]);
         });
 
         it(`${methode.name} should match 'NaN'`, () => {
@@ -37,14 +37,14 @@ test('Basic difference function', () => {
     });
 });
 
-test('differenceBy', () => {
+describe('differenceBy', () => {
     it('should return match based on input function', () => {
         expect(differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor)).toEqual([1.2]);
     });
 });
 
-test('differenceWith', () => {
+describe('differenceWith', () => {
     it('should return match based on input function', () => {
-        expect(differenceWith([{ x: 1 }], [{ x: 2 }, { x: 1 }], (a, b) => a.x === b.x)).toEqual([{ x: 2 }]);
+        expect(differenceWith([{ x: 1 }, { x: 2 }], [{ x: 1 }], (a, b) => a.x === b.x)).toEqual([{ x: 2 }]);
     });
 });
