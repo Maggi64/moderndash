@@ -1,5 +1,4 @@
 /// <reference types="vitest" />
-
 // Configure Vitest (https://vitest.dev/config/)
 
 import { fileURLToPath, URL } from 'url';
@@ -13,7 +12,8 @@ export default defineConfig({
     },
     resolve: {
         alias: {
-            '@array': fileURLToPath(new URL('src/array', import.meta.url))
+            '@array': fileURLToPath(new URL('src/array', import.meta.url)),
+            '@lang': fileURLToPath(new URL('src/lang', import.meta.url))
         }
     }
 });

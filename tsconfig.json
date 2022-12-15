@@ -100,6 +100,7 @@
     "skipLibCheck": true,
     "paths": {
       "@array/*": ["src/array/*"],
+      "@lang/*": ["src/lang/*"],
     }
   },
   "include": ["src/**/*"]
