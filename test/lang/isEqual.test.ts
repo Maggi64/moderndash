@@ -61,10 +61,20 @@ describe('isEqual', () => {
         expect(isEqual([1, 2, 3], [1, 2])).toBe(false);
     });
 
+    // eslint-disable-next-line unicorn/consistent-function-scoping
+    const testFunction = () => { return 1 };
     test('functions', () => {
-        // eslint-disable-next-line unicorn/consistent-function-scoping
-        const testFunction = () => { return 1 };
         expect(isEqual(() => { return 1 }, () => { return 2 })).toBe(false);
         expect(isEqual(testFunction, testFunction)).toBe(true);
+    });
+
+    test('objects with functions', () => {
+        expect(isEqual({ a: () => { return 1 } }, { a: () => { return 1 } })).toBe(false);
+        expect(isEqual({ a: testFunction }, { a: testFunction })).toBe(true);
+    });
+
+    test('regExp', () => {
+        expect(isEqual(/a/, /a/)).toBe(true);
+        expect(isEqual(/a/, /b/)).toBe(false);
     });
 });

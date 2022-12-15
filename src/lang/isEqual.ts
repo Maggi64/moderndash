@@ -13,6 +13,10 @@ export function isEqual(value1: unknown, value2: unknown): boolean {
         return true;
     }
 
+    if (value1 instanceof RegExp && value2 instanceof RegExp) {
+        return value1.toString() === value2.toString();
+    }
+
     if (isObject(value1) && isObject(value2)) {
         return isSameObject(value1, value2);
     }
