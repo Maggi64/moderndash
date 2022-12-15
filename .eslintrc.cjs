@@ -1,3 +1,5 @@
+const tsConfigs = ['./tsconfig.json', './tsconfig.eslint.json'];
+
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
     root: true,
@@ -31,14 +33,15 @@ module.exports = {
     settings: {
         "import/resolver": {
             typescript: {
-                alwaysTryTypes: true
+                alwaysTryTypes: true,
+                project: tsConfigs,
             },
         }
     },
     parserOptions: {
         sourceType: "module",
         ecmaVersion: "latest",
-        project: './tsconfig.json'
+        project: tsConfigs,
     },
     rules: {
         "array-bracket-spacing": ["error", "never"],
@@ -46,7 +49,7 @@ module.exports = {
         "arrow-spacing": "error",
         "block-spacing": "error",
         "camelcase": ["error", { "properties": "always" }],
-        "complexity": ["error", 15],
+        "complexity": ["error", 10],
         "default-case-last": "error",
         "eqeqeq": ["error", "always"],
         "import/default": 2,
@@ -67,7 +70,6 @@ module.exports = {
         "linebreak-style": ["error", "unix"],
         "max-depth": ["error", 4],
         "max-lines": ["error", { "max": 250, "skipComments": true, "skipBlankLines": true }],
-        "max-lines-per-function": ["error", { "max": 40, "skipComments": true, "skipBlankLines": true }],
         "max-params": ["error", 6],
         "new-cap": ["error", { "capIsNewExceptions": ["Router"] }],
         "no-await-in-loop": "error",
@@ -102,6 +104,7 @@ module.exports = {
         "spaced-comment": ["error", "always", { "markers": ["/"] }],
         "template-curly-spacing": "error",
         "unicorn/filename-case": ["error", { "cases": { "camelCase": true, "pascalCase": true } }],
+        "unicorn/no-null": 0,
         "unicorn/no-array-for-each": 0,
         "unicorn/no-array-reduce": 0,
         "unicorn/no-await-expression-member": 0,
