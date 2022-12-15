@@ -5,7 +5,9 @@
   "description": "A lodash rewrite for ESM/Typescript/ES2020",
   "main": "index.js",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "test-ui": "vitest --ui",
+    "playground": "tsc & node playground"
   },
   "engines": {
     "node": ">=18.x.x",
