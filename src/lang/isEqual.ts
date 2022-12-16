@@ -2,15 +2,7 @@ export function isEqual(value1: unknown, value2: unknown): boolean {
     if (value1 === value2) return true;
 
     if (Array.isArray(value1) && Array.isArray(value2)) {
-        // check if the arrays have the same length
-        if (value1.length !== value2.length) return false;
-
-        // check if the values of each element in the arrays are equal
-        for (const [i, element] of value1.entries()) {
-            if (!isEqual(element, value2[i])) return false;
-        }
-
-        return true;
+        return isSameArray(value1, value2);
     }
 
     if (value1 instanceof RegExp && value2 instanceof RegExp) {
@@ -40,5 +32,17 @@ function isSameObject(value1: object, value2: object) {
     }
 
     // the objects are deeply equal
+    return true;
+}
+
+function isSameArray(value1: unknown[], value2: unknown[]) {
+    // check if the arrays have the same length
+    if (value1.length !== value2.length) return false;
+
+    // check if the values of each element in the arrays are equal
+    for (const [i, element] of value1.entries()) {
+        if (!isEqual(element, value2[i])) return false;
+    }
+
     return true;
 }

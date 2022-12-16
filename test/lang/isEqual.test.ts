@@ -74,7 +74,7 @@ describe('isEqual', () => {
     });
 
     test('regExp', () => {
-        expect(isEqual(/a/, /a/)).toBe(true);
-        expect(isEqual(/a/, /b/)).toBe(false);
+        expect(isEqual(/a(.*)/, /a(.*)/)).toBe(true);
+        expect(isEqual(/a/, /b.*/)).toBe(false);
     });
 });
