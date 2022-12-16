@@ -24,7 +24,7 @@ module.exports = {
         "sonarjs",
         "unicorn",
     ],
-    ignorePatterns: ["**/build/**", "**/node_modules/**"],
+    ignorePatterns: ["**/dist/**", "**/node_modules/**"],
     env: {
         browser: true,
         es2021: true,

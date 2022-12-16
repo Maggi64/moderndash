@@ -1,13 +1,13 @@
 {
   "name": "moderndash",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "type": "module",
   "description": "A lodash rewrite for ESM/Typescript/ES2020",
-  "main": "index.js",
   "scripts": {
+    "build": "ctix create ----startAt src --overwrite --noBackup & tsc & tsc-alias",
     "test": "vitest",
     "test-ui": "vitest --ui",
-    "playground": "tsc & node playground"
+    "playground": "npm run build & node playground"
   },
   "engines": {
     "node": ">=18.x.x",
@@ -31,6 +31,10 @@
   "browserslist": [
     ">2% and not dead"
   ],
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/"
+  },
   "homepage": "https://github.com/Maggi64/esmdash#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.46.1",
@@ -43,8 +47,10 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-sonarjs": "0.17.0",
     "eslint-plugin-unicorn": "45.0.2",
+    "tsc-alias": "1.8.2",
     "typedoc": "0.23.22",
     "typescript": "4.9.4",
-    "vitest": "0.25.8"
+    "vitest": "0.25.8",
+    "ctix": "1.8.0"
   }
 }
