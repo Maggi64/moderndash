@@ -13,7 +13,8 @@ export default defineConfig({
     resolve: {
         alias: {
             '@array': fileURLToPath(new URL('src/array', import.meta.url)),
-            '@lang': fileURLToPath(new URL('src/lang', import.meta.url))
+            '@lang': fileURLToPath(new URL('src/lang', import.meta.url)),
+            '@function': fileURLToPath(new URL('src/function', import.meta.url))
         }
     }
 });

@@ -12,7 +12,8 @@
 
     /* Language and Environment */
     "target": "es2020",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+    "lib": ["ESNext", "DOM"],                             /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+    "types": [],
     // "jsx": "preserve",                                /* Specify what JSX code is generated. */
     // "experimentalDecorators": true,                   /* Enable experimental support for TC39 stage 2 draft decorators. */
     // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
@@ -31,7 +32,6 @@
     "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
-    // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
     // "moduleSuffixes": [],                             /* List of file name suffixes to search when resolving a module. */
     // "resolveJsonModule": true,                        /* Enable importing .json files. */
@@ -101,6 +101,7 @@
     "paths": {
       "@array/*": ["src/array/*"],
       "@lang/*": ["src/lang/*"],
+      "@function/*": ["src/function/*"],
     }
   },
   "include": ["src/**/*"]
