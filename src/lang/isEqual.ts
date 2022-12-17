@@ -28,6 +28,7 @@ function isSameObject(value1: object, value2: object) {
 
     // check if the values of each key in the objects are equal
     for (const key of keys1) {
+        // @ts-ignore
         if (!isEqual(value1[key], value2[key])) return false;
     }
 

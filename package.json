@@ -4,7 +4,7 @@
   "type": "module",
   "description": "A lodash rewrite for ESM/Typescript/ES2020",
   "scripts": {
-    "build": "ctix create ----startAt src --overwrite --noBackup & tsc & tsc-alias",
+    "build": "ctix create ----startAt src --overwrite --noBackup & tsup",
     "test": "vitest",
     "test-ui": "vitest --ui",
     "playground": "npm run build & node playground"
@@ -31,10 +31,8 @@
   "browserslist": [
     ">2% and not dead"
   ],
+  "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
-  "exports": {
-    ".": "./dist/"
-  },
   "homepage": "https://github.com/Maggi64/esmdash#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.46.1",
@@ -47,10 +45,10 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-sonarjs": "0.17.0",
     "eslint-plugin-unicorn": "45.0.2",
-    "tsc-alias": "1.8.2",
     "typedoc": "0.23.22",
     "typescript": "4.9.4",
     "vitest": "0.25.8",
+    "tsup": "6.5.0",
     "ctix": "1.8.0"
   }
 }
