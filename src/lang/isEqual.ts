@@ -16,11 +16,15 @@ export function isEqual(value1: unknown, value2: unknown): boolean {
     return false;
 }
 
-function isObject(value: unknown): value is object {
-    return value !== null && typeof value === 'object';
+type KeyValueObject = Record<string, unknown>;
+function isObject(value: unknown): value is KeyValueObject {
+    return typeof value === 'object'
+        && value !== null
+        && !Array.isArray(value)
+        && Object.prototype.toString.call(value) === '[object Object]';
 }
 
-function isSameObject(value1: object, value2: object) {
+function isSameObject(value1: KeyValueObject, value2: KeyValueObject) {
     // check if the objects have the same keys
     const keys1 = Object.keys(value1);
     const keys2 = Object.keys(value2);
@@ -28,7 +32,6 @@ function isSameObject(value1: object, value2: object) {
 
     // check if the values of each key in the objects are equal
     for (const key of keys1) {
-        // @ts-ignore
         if (!isEqual(value1[key], value2[key])) return false;
     }
 
