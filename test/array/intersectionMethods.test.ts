@@ -19,7 +19,7 @@ describe('intersectionBy', () => {
         const arr1 = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }];
         const arr2 = [{ id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }];
 
-        const result = intersectionBy(arr1, arr2, value => value.id);
+        const result = intersectionBy(value => value.id, arr1, arr2);
         expect(result).toEqual([{ id: 3 }, { id: 4 }, { id: 5 }]);
     });
 });
@@ -30,7 +30,7 @@ describe('intersectionWith', () => {
         const arr1 = [1, 2, 3, 4, 5];
         const arr2 = [3, 4, 5, 6, 7];
 
-        const result = intersectionWith(arr1, arr2, (a, b) => a % 2 === 0 && a === b);
+        const result = intersectionWith((a, b) => a % 2 === 0 && a === b, arr1, arr2);
         expect(result).toEqual([4]);
     });
 });

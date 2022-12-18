@@ -1,3 +1,7 @@
-export function differenceBy<T>(array: T[], array2: T[], iteratee = (value: T) => value) {
-    return array.filter(a => !array2.map(v => iteratee(v)).includes(iteratee(a)));
+import type { MinimumTwoArrays } from '@array/types';
+
+import { differenceWith } from '@array/differenceWith';
+
+export function differenceBy<T>(iteratee: (value: T) => unknown, ...arrays: MinimumTwoArrays<T>): T[] {
+    return differenceWith((a, b) => iteratee(a) === iteratee(b), ...arrays);
 }

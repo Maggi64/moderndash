@@ -1,6 +1,7 @@
 import { it, expect, describe } from 'vitest';
 
 import { union } from '@array/union';
+import { unionWith } from '@array/unionWith';
 
 describe('union', () => {
     const array1 = [1, 2, 3];
@@ -20,5 +21,18 @@ describe('union', () => {
     it('should return the original array if only one array is provided', () => {
         const result = union(array1);
         expect(result).toEqual(array1);
+    });
+});
+
+
+describe('unionWith', () => {
+    it('returns a new array containing the unique values from the input arrays', () => {
+        const result = unionWith((a, b) => a === b, [1, 2, 3], [2, 3, 4], [3, 4, 5]);
+        expect(result).toEqual([1, 2, 3, 4, 5]);
+    });
+
+    it('uses the comparator function to determine uniqueness', () => {
+        const result = unionWith((a, b) => a.id === b.id, [{ id: 1 }, { id: 2 }], [{ id: 2 }, { id: 3 }]);
+        expect(result).toEqual([{ id: 1 }, { id: 2 }, { id: 3 }]);
     });
 });

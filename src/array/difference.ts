@@ -1,5 +1,7 @@
-import { differenceBy } from '@array/differenceBy';
+import type { MinimumTwoArrays } from '@array/types';
 
-export function difference<T>(array: T[], array2: T[]) {
-    return differenceBy(array, array2);
+import { differenceWith } from '@array/differenceWith';
+
+export function difference<T>(...arrays: MinimumTwoArrays<T>): T[] {
+    return differenceWith((a, b) => a === b, ...arrays);
 }

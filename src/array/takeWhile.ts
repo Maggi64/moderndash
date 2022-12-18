@@ -1,9 +1,9 @@
-export function takeWhile<T>(array: T[], predicate: (elem: T) => boolean): T[] {
+export function takeWhile<T>(predicate: (elem: T) => boolean, array: T[]): T[] {
     const result: T[] = [];
 
-    for (const elem of array) {
-        if (predicate(elem)) {
-            result.push(elem);
+    for (const element of array) {
+        if (predicate(element)) {
+            result.push(element);
         } else {
             break;
         }

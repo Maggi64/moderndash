@@ -1,13 +1,13 @@
-export function intersectionWith<T>(arr1: T[], arr2: T[], comparator: (a: T, b: T) => boolean): T[] {
-    const intersections = new Set<T>();
-    for (const item1 of arr1) {
-        for (const item2 of arr2) {
-            if (comparator(item1, item2)) {
-                intersections.add(item1);
-                break;
-            }
-        }
-    }
+export function intersectionWith<T>(comparator: (a: T, b: T) => boolean, ...arrays: T[][]): T[] {
+    const intersection: T[] = [];
 
-    return [...intersections];
+    const [firstArray, ...restArrays] = arrays;
+
+    firstArray.forEach(element => {
+        if (restArrays.every(array => array.some(item => comparator(item, element)))) {
+            intersection.push(element);
+        }
+    });
+
+    return intersection;
 }
