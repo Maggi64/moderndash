@@ -3,6 +3,7 @@
 ## Removed Functions because of trivial native alternatives
 Look at [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) for native replacements.
 
+### Array Functions
 - compact
 - concat
 - differenceBy property shorthand
@@ -30,13 +31,15 @@ Look at [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lo
 - takeRight
 - without
 
+### Collection Functions
+- 
+
 Functions are not considered trivial if they:
  - include reduce methods
  - include multiple nested function calls
 
 ## TODO
-- Fix Zipfunction Types
-- Look at unzip
+- More unzip tests
 
 ## Might be added later (open for discussion)
 - pull functions (pull, pullAll, pullAllBy, pullAllWith, pullAt)
@@ -44,3 +47,4 @@ Functions are not considered trivial if they:
 - sorted functions (sortedIndex, sortedIndexBy, sortedIndexOf, sortedLastIndex, sortedLastIndexBy, sortedLastIndexOf, sortedUniq, sortedUniqBy)
   - if performance is better than native alternatives (testing needed)
 - xor functions (xor, xorBy, xorWith)
+- zipObject, zipObjectDeep

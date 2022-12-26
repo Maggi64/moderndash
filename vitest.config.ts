@@ -15,6 +15,10 @@ export default defineConfig({
             '@array': fileURLToPath(new URL('src/array', import.meta.url)),
             '@lang': fileURLToPath(new URL('src/lang', import.meta.url)),
             '@function': fileURLToPath(new URL('src/function', import.meta.url)),
+            '@collection': fileURLToPath(new URL('src/collection', import.meta.url)),
+            '@object': fileURLToPath(new URL('src/object', import.meta.url)),
+            '@string': fileURLToPath(new URL('src/string', import.meta.url)),
+            '@number': fileURLToPath(new URL('src/number', import.meta.url)),
             '@helpers': fileURLToPath(new URL('src/helpers', import.meta.url))
         }
     }
