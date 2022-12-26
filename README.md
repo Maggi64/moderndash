@@ -57,3 +57,6 @@ Functions are not considered trivial if they:
 - zipObject, zipObjectDeep
 - forEachRight
 - findLast
+
+## Continue at
+ - invokeMap
