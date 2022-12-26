@@ -14,7 +14,8 @@ export default defineConfig({
         alias: {
             '@array': fileURLToPath(new URL('src/array', import.meta.url)),
             '@lang': fileURLToPath(new URL('src/lang', import.meta.url)),
-            '@function': fileURLToPath(new URL('src/function', import.meta.url))
+            '@function': fileURLToPath(new URL('src/function', import.meta.url)),
+            '@helpers': fileURLToPath(new URL('src/helpers', import.meta.url))
         }
     }
 });

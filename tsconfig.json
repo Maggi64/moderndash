@@ -102,6 +102,7 @@
       "@array/*": ["src/array/*"],
       "@lang/*": ["src/lang/*"],
       "@function/*": ["src/function/*"],
+      "@helpers/*": ["src/helpers/*"]
     }
   },
   "include": ["src/**/*"]
