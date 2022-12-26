@@ -1,4 +1,4 @@
-import type { IterateeFunction, MinimumTwoArrays, PropertyShorthand } from '@array/types';
+import type { IterateeFunction, MinimumTwoArrays, PropertyShorthand } from '../types';
 
 import { unionWith } from '@array/unionWith';
 import { getIterateFunction } from '@helpers/shortHands';

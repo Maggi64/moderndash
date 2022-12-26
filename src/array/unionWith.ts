@@ -1,4 +1,4 @@
-import type { MinimumTwoArrays } from '@array/types';
+import type { MinimumTwoArrays } from '../types';
 
 export function unionWith<T>(comparator: (a: T, b: T) => boolean, ...arrays: MinimumTwoArrays<T>): T[] {
     return arrays.reduce<T[]>((acc, current) => {

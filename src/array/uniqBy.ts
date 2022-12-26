@@ -1,4 +1,4 @@
-import type { IterateeFunction, PropertyShorthand } from '@array/types';
+import type { IterateeFunction, PropertyShorthand } from '../types';
 
 import { uniqWith } from '@array/uniqWith';
 import { getIterateFunction } from '@helpers/shortHands';

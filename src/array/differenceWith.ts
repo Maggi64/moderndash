@@ -1,4 +1,4 @@
-import type { MinimumTwoArrays } from '@array/types';
+import type { MinimumTwoArrays } from '../types';
 
 export function differenceWith<T>(comparator: (a: T, b: T) => boolean, ...arrays: MinimumTwoArrays<T>): T[] {
     const difference: T[] = [];

@@ -1,4 +1,4 @@
-import type { MinimumTwoArrays } from '@array/types';
+import type { MinimumTwoArrays } from '../types';
 
 import { intersectionWith } from '@array/intersectionWith';
 import { isEqual } from '@lang/isEqual';
