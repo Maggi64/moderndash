@@ -1,4 +1,4 @@
-export function once<T extends (...args: unknown[]) => unknown>(fn: T): T {
+export function once<T extends (...args: Parameters<T>) => unknown>(fn: T): T {
     let called = false;
     let result: ReturnType<T>;
 
