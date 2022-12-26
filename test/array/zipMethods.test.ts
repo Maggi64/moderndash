@@ -38,7 +38,10 @@ describe('zipWith function', () => {
         const array2 = [1, 2, 3];
         const array3 = [true, false, true];
         // Todo fix type error
-        const result = zipWith((a, b, c) => a + b + c, array1, array2, array3);
+
+        const iteratee = (a: string, b: number, c: boolean) => a + b.toString() + c.toString();
+        //
+        const result = zipWith(iteratee, array1, array2, array3);
 
         expect(result).toEqual(['a1true', 'b2false', 'c3true']);
     });
