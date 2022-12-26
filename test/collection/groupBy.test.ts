@@ -9,4 +9,22 @@ describe('groupBy', () => {
         const result = groupBy(even, array);
         expect(result).toEqual({ 'true': [2, 4, 6, 8, 10], 'false': [1, 3, 5, 7, 9] });
     });
+
+    test('should group an array by a property', () => {
+        const array = [
+            { name: 'Alice', age: 30 },
+            { name: 'Bob', age: 35 },
+            { name: 'Charlie', age: 30 },
+            { name: 'Dave', age: 40 },
+            { name: 'Eve', age: 35 }
+        ];
+
+        const result = groupBy(element => element.age, array);
+
+        expect(result).toEqual({
+            30: [{ name: 'Alice', age: 30 }, { name: 'Charlie', age: 30 }],
+            35: [{ name: 'Bob', age: 35 }, { name: 'Eve', age: 35 }],
+            40: [{ name: 'Dave', age: 40 }],
+        });
+    });
 });
