@@ -32,7 +32,12 @@ Look at [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lo
 - without
 
 ### Collection Functions
-- 
+- each/forEach
+- every
+- filter
+- find
+- flatMap
+- includes
 
 Functions are not considered trivial if they:
  - include reduce methods
@@ -40,6 +45,8 @@ Functions are not considered trivial if they:
 
 ## TODO
 - More unzip tests
+- Check if flatmapdeep, flatmapDepth is included in native flatmap
+- GroupBy Property Shorthand
 
 ## Might be added later (open for discussion)
 - pull functions (pull, pullAll, pullAllBy, pullAllWith, pullAt)
@@ -48,3 +55,5 @@ Functions are not considered trivial if they:
   - if performance is better than native alternatives (testing needed)
 - xor functions (xor, xorBy, xorWith)
 - zipObject, zipObjectDeep
+- forEachRight
+- findLast
