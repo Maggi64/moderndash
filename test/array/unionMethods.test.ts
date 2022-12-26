@@ -1,7 +1,9 @@
 import { it, expect, describe } from 'vitest';
 
 import { union } from '@array/union';
+import { unionBy } from '@array/unionBy';
 import { unionWith } from '@array/unionWith';
+
 
 describe('union', () => {
     const array1 = [1, 2, 3];
@@ -34,5 +36,16 @@ describe('unionWith', () => {
     it('uses the comparator function to determine uniqueness', () => {
         const result = unionWith((a, b) => a.id === b.id, [{ id: 1 }, { id: 2 }], [{ id: 2 }, { id: 3 }]);
         expect(result).toEqual([{ id: 1 }, { id: 2 }, { id: 3 }]);
+    });
+});
+
+describe('unionBy', () => {
+    it('should return the union of the arrays, using the iteratee to determine uniqueness', () => {
+        const objects = [{ x: 1 }, { x: 2 }, { x: 3 }];
+        const moreObjects = [{ x: 2 }, { x: 3 }, { x: 4 }];
+        expect(unionBy(o => o.x, objects, moreObjects)).toEqual([{ x: 1 }, { x: 2 }, { x: 3 }, { x: 4 }]);
+
+        // The `property` iteratee shorthand.
+        expect(unionBy('x', objects, moreObjects)).toEqual([{ x: 1 }, { x: 2 }, { x: 3 }, { x: 4 }]);
     });
 });
