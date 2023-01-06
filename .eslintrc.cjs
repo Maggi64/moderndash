@@ -120,6 +120,7 @@ module.exports = {
         "unicorn/prefer-ternary": ["error", "only-single-line"],
         "unicorn/prevent-abbreviations": 0,
         "unicorn/prefer-top-level-await": 0,
+        "unicorn/switch-case-braces": ["error", "avoid"],
         "@typescript-eslint/brace-style": ["error", "1tbs", { "allowSingleLine": true }],
         "@typescript-eslint/comma-dangle":  ["error", "never"],
         "@typescript-eslint/naming-convention": ["error", { "selector": "typeLike", "format": ["PascalCase"] }],
