@@ -108,5 +108,5 @@
       "@helpers/*": ["src/helpers/*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["./**/*.ts", "./**/*.js"]
 }

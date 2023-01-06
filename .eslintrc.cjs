@@ -1,4 +1,4 @@
-const tsConfigs = ['./tsconfig.json', './tsconfig.eslint.json'];
+const tsConfigs = ['./tsconfig.json'];
 
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
