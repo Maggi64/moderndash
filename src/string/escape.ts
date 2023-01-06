@@ -1,4 +1,4 @@
-export function escapeToHTML(str: string): string {
+export function escape(str: string): string {
     const escapeChars: Record<string, string> = {
         '&': '&amp;',
         '<': '&lt;',
