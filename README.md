@@ -39,6 +39,13 @@ Look at [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lo
 - flatMap
 - includes
 
+### String Functions
+- lowerCase
+- trim
+- trimEnd
+- trimStart
+-
+
 Functions are not considered trivial if they:
  - include reduce methods
  - include multiple nested function calls
@@ -57,6 +64,7 @@ Functions are not considered trivial if they:
 - zipObject, zipObjectDeep
 - forEachRight
 - findLast
+- lowerFirst
 
 ## Continue at
  - invokeMap
