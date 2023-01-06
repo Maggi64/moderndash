@@ -44,7 +44,9 @@ Look at [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lo
 - trim
 - trimEnd
 - trimStart
--
+- pad
+- padEnd
+- padStart
 
 Functions are not considered trivial if they:
  - include reduce methods
