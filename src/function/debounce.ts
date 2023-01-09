@@ -1,3 +1,5 @@
+
+// TODO this is a port from lodash, it probably can be improved and shortened
 export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
     fn: T, wait = 0, options: { leading?: boolean, maxWait?: number, trailing?: boolean } = {}
 ): (this: ThisParameterType<T>, ...args: Parameters<T>) => ReturnType<T> {
