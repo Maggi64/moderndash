@@ -1,7 +1,6 @@
-export function debounce<T extends (...args: unknown[]) => unknown>(
-    func: T, wait = 0, options: { leading?: boolean, maxWait?: number, trailing?: boolean } = {}):
-    T & { cancel: () => void, flush: () => ReturnType<T>
-} {
+export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
+    fn: T, wait = 0, options: { leading?: boolean, maxWait?: number, trailing?: boolean } = {}
+): (this: ThisParameterType<T>, ...args: Parameters<T>) => ReturnType<T> {
     let lastArgs: Parameters<T> | undefined;
     let lastThis: ThisParameterType<T> | undefined;
     let result: ReturnType<T>;
@@ -19,7 +18,7 @@ export function debounce<T extends (...args: unknown[]) => unknown>(
 
         lastArgs = lastThis = undefined;
         lastInvokeTime = time;
-        result = func.apply(thisArg, args) as ReturnType<T>;
+        result = fn.apply(thisArg, args);
         return result;
     }
 
@@ -43,14 +42,16 @@ export function debounce<T extends (...args: unknown[]) => unknown>(
     }
 
     function shouldInvoke(time: number) {
-        const timeSinceLastCall = time - lastCallTime,
-            timeSinceLastInvoke = time - lastInvokeTime;
+        if (lastCallTime === undefined)
+            return true;
+
+        const timeSinceLastCall = time - lastCallTime;
+        const timeSinceLastInvoke = time - lastInvokeTime;
 
         // Either this is the first call, activity has stopped and we're at the
         // trailing edge, the system time has gone backwards and we're treating
         // it as the trailing edge, or we've hit the `maxWait` limit.
-        return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
-            (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
+        return timeSinceLastCall >= wait || timeSinceLastCall < 0 || (maxing && timeSinceLastInvoke >= maxWait);
     }
 
     function timerExpired() {
@@ -65,7 +66,7 @@ export function debounce<T extends (...args: unknown[]) => unknown>(
     function trailingEdge(time: number) {
         timerId = undefined;
 
-        // Only invoke if we have `lastArgs` which means `func` has been
+        // Only invoke if we have `lastArgs` which means `fn` has been
         // debounced at least once.
         if (trailing && lastArgs) {
             return invokeFunc(time);
@@ -86,9 +87,9 @@ export function debounce<T extends (...args: unknown[]) => unknown>(
         return timerId === undefined ? result : trailingEdge(Date.now());
     }
 
-    function debounced(this: ThisParameterType<T>, ...args: Parameters<T>) {
-        const time = Date.now(),
-            isInvoking = shouldInvoke(time);
+    function debounced(this: ThisParameterType<T>, ...args: Parameters<T>): ReturnType<T> {
+        const time = Date.now();
+        const isInvoking = shouldInvoke(time);
 
         lastArgs = args;
         // TODO Fix this assignment
@@ -112,6 +113,7 @@ export function debounce<T extends (...args: unknown[]) => unknown>(
         }
         return result;
     }
+
     debounced.cancel = cancel;
     debounced.flush = flush;
     return debounced;

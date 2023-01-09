@@ -1,24 +1,27 @@
-import { test, describe, expect } from 'vitest';
+import { test, describe, expect, vi, afterEach } from 'vitest';
 
 import { once } from '@function/once';
 
 describe('once', () => {
-    test('only calls the function once', () => {
-        let counter = 0;
-        const fn = () => ++counter;
-        const onceFn = once(fn);
+    const testFn = vi.fn((x: number) => x * 2);
 
-        onceFn();
-        expect(counter).toBe(1);
-        onceFn();
-        expect(counter).toBe(1);
-        onceFn();
-        expect(counter).toBe(1);
+    afterEach(() => {
+        testFn.mockClear();
+    });
+
+    test('only calls the function once', () => {
+        const onceFn = once(testFn);
+
+        onceFn(1);
+        expect(testFn).toHaveBeenCalledTimes(1);
+        onceFn(1);
+        expect(testFn).toHaveBeenCalledTimes(1);
+        onceFn(1);
+        expect(testFn).toHaveBeenCalledTimes(1);
     });
 
     test('preserves the return value of the function', () => {
-        const fn = (x: number) => x * 2;
-        const onceFn = once(fn);
+        const onceFn = once(testFn);
 
         expect(onceFn(2)).toBe(4);
         expect(onceFn(3)).toBe(4);

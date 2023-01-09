@@ -1,44 +1,47 @@
-import { describe, expect, test, vi } from 'vitest';
+import { afterEach, beforeAll, describe, expect, test, vi } from 'vitest';
 
 import { debounce } from '@function/debounce';
 
-
 describe('debounce', () => {
-    test('only calls the function once', () => {
+    const testFn = vi.fn((x: number) => x * 2);
+
+    beforeAll(() => {
         vi.useFakeTimers();
+    });
 
-        const callback = vi.fn();
-        const debounced = debounce(callback, 100);
+    afterEach(() => {
+        testFn.mockClear();
+    });
 
-        debounced();
-        debounced();
-        debounced();
+    test('only calls the function once', () => {
+        const debounced = debounce(testFn, 100);
 
-        expect(callback).not.toHaveBeenCalled();
+        debounced(1);
+        debounced(1);
+        debounced(1);
+
+        expect(testFn).not.toHaveBeenCalled();
 
         vi.advanceTimersByTime(99);
-        expect(callback).not.toHaveBeenCalled();
+        expect(testFn).not.toHaveBeenCalled();
 
         vi.advanceTimersByTime(1);
-        expect(callback).toHaveBeenCalledTimes(1);
+        expect(testFn).toHaveBeenCalledTimes(1);
     });
 
     test('calls the function again after the wait period', () => {
-        vi.useFakeTimers();
+        const debounced = debounce(testFn, 100);
 
-        const callback = vi.fn();
-        const debounced = debounce(callback, 100);
-
-        debounced();
+        debounced(1);
         vi.advanceTimersByTime(50);
-        debounced();
+        debounced(1);
         vi.advanceTimersByTime(50);
-        debounced();
+        debounced(1);
 
         vi.advanceTimersByTime(50);
-        expect(callback).not.toHaveBeenCalled();
+        expect(testFn).not.toHaveBeenCalled();
 
         vi.advanceTimersByTime(50);
-        expect(callback).toHaveBeenCalledTimes(1);
+        expect(testFn).toHaveBeenCalledTimes(1);
     });
 });
