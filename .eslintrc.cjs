@@ -22,7 +22,7 @@ module.exports = {
         "deprecate",
         "import",
         "sonarjs",
-        "unicorn",
+        "unicorn"
     ],
     ignorePatterns: ["**/dist/**", "**/node_modules/**"],
     env: {
