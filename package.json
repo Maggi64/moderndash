@@ -7,6 +7,7 @@
     "build": "ctix create ----startAt src --overwrite --noBackup & tsup",
     "test": "vitest",
     "test-ui": "vitest --ui",
+    "build:docs": "typedoc ./src/index.ts --json ./docs.json --excludeNotDocumented",
     "playground": "npm run build & node playground"
   },
   "engines": {

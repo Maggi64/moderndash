@@ -1,5 +1,5 @@
 
-// TODO this is a port from lodash, it probably can be improved and shortened
+// TODO this is a port from lodash, it probably can be improved and shortened, also fix TS errors
 export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
     fn: T, wait = 0, options: { leading?: boolean, maxWait?: number, trailing?: boolean } = {}
 ): (this: ThisParameterType<T>, ...args: Parameters<T>) => ReturnType<T> {
@@ -20,6 +20,7 @@ export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
 
         lastArgs = lastThis = undefined;
         lastInvokeTime = time;
+        // @ts-ignore
         result = fn.apply(thisArg, args);
         return result;
     }
@@ -34,6 +35,7 @@ export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
     }
 
     function remainingWait(time: number) {
+        // @ts-ignore
         const timeSinceLastCall = time - lastCallTime;
         const timeSinceLastInvoke = time - lastInvokeTime;
         const timeWaiting = wait - timeSinceLastCall;

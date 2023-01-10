@@ -3,6 +3,18 @@ import type { MinimumTwoArrays } from '../types';
 import { differenceWith } from '@array/differenceWith';
 import { isEqual } from '@lang/isEqual';
 
+/**
+ * Creates an array of `array` values not included in the other given arrays. The order and references of result values are determined by the first array.
+ *
+ * **Note:** Unlike `pullAll`, this method returns a new array.
+ *
+ * @param arrays - First array is inspected, others are excluded.
+ * @returns Returns the new array of filtered values.
+ * @example
+ * difference([2, 1], [2, 3])
+ * // =\> [1]
+ */
+
 export function difference<T>(...arrays: MinimumTwoArrays<T>): T[] {
     return differenceWith(isEqual, ...arrays);
 }
