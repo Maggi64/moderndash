@@ -1,7 +1,7 @@
-export function shuffle<InputType>(array: InputType[]): InputType[] {
+export function shuffle<TInput>(array: TInput[]): TInput[] {
     const shuffledArray = [...array];
     let currentIndex = shuffledArray.length;
-    let temporaryValue: InputType;
+    let temporaryValue: TInput;
     let randomIndex: number;
 
     // While there remain elements to shuffle...

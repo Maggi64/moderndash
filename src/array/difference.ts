@@ -8,6 +8,7 @@ import { isEqual } from '@lang/isEqual';
  *
  * **Note:** Unlike `pullAll`, this method returns a new array.
  *
+ * @category Array
  * @param arrays - First array is inspected, others are excluded.
  * @returns Returns the new array of filtered values.
  * @example

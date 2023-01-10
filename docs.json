@@ -58,7 +58,7 @@
 					"typeParameter": [
 						{
 							"id": 3,
-							"name": "InputType",
+							"name": "TInput",
 							"kind": 131072,
 							"kindString": "Type parameter",
 							"flags": {}
@@ -103,7 +103,7 @@
 								"elementType": {
 									"type": "reference",
 									"id": 3,
-									"name": "InputType"
+									"name": "TInput"
 								}
 							}
 						}
@@ -115,7 +115,7 @@
 							"elementType": {
 								"type": "reference",
 								"id": 3,
-								"name": "InputType"
+								"name": "TInput"
 							}
 						}
 					}

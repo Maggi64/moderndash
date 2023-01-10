@@ -1,18 +1,19 @@
 /**
  * Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
  *
+ * @category Array
  * @returns Returns the new array of chunks.
  * @param chunkSize - The array to process.
  * @param array - The length of each chunk
  * @example
- * chunk(['a', 'b', 'c', 'd'], 2)
- * // =\> [['a', 'b'], ['c', 'd']]
+ * chunk(2, ['a', 'b', 'c', 'd'])
+ * // => [['a', 'b'], ['c', 'd']]
  *
- * chunk(['a', 'b', 'c', 'd'], 3)
- * // =\> [['a', 'b', 'c'], ['d']]
+ * chunk(3, ['a', 'b', 'c', 'd'])
+ * // => [['a', 'b', 'c'], ['d']]
  */
 
-export function chunk<InputType>(chunkSize: number, array: InputType[]): InputType[][] {
+export function chunk<TInput>(chunkSize: number, array: TInput[]): TInput[][] {
     const sizeInteger = Math.trunc(chunkSize);
     if (array.length === 0 || sizeInteger < 1) {
         return [];
