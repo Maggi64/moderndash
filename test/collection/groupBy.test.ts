@@ -24,7 +24,12 @@ describe('groupBy', () => {
         expect(result).toEqual({
             30: [{ name: 'Alice', age: 30 }, { name: 'Charlie', age: 30 }],
             35: [{ name: 'Bob', age: 35 }, { name: 'Eve', age: 35 }],
-            40: [{ name: 'Dave', age: 40 }],
+            40: [{ name: 'Dave', age: 40 }]
         });
+    });
+
+    test('should work with an object for `collection`', function () {
+        const actual = groupBy(Math.floor, { 'a': 6.1, 'b': 4.2, 'c': 6.3 } );
+        expect(actual).toEqual({ '4': [4.2], '6': [6.1, 6.3] });
     });
 });

@@ -5,4 +5,5 @@ export type PropertyShorthand<T> = keyof T;
 
 export type RecordKey = string | number | symbol;
 
+export type Collection<T> = T[] | Record<RecordKey, T>;
 export type NoUnion<T, U = T> = T extends U ? [U] extends [T] ? T : never : never;

@@ -1,6 +1,7 @@
 import { describe, test, expect } from 'vitest';
 
 import { countBy } from '@collection/countBy';
+import { sample } from '@array/sample';
 
 describe('countBy function', () => {
     test('countBy', () => {

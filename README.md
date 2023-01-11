@@ -67,6 +67,7 @@ Functions are not considered trivial if they:
 - forEachRight
 - findLast
 - lowerFirst
+- keyBy
 
 ## Continue at
  - invokeMap

@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { sampleSize } from '@collection/sampleSize';
+import { sampleSize } from '@array/sampleSize';
 
 describe('sampleSize', () => {
     test('should return an array of the specified size', () => {

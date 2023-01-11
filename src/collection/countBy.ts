@@ -1,15 +1,16 @@
-import type { RecordKey } from '../types';
+import type { Collection, RecordKey } from '../types';
+
+import { getValuesFromCollection } from '@helpers/collections';
 
 /**
  * Creates an object composed of keys generated from the results of running
  * each element of `collection` thru `iteratee`. The corresponding value of
- * each key is the number of times the key was returned by `iteratee`. The
- * iteratee is invoked with one argument: (value).
+ * each key is the number of times the key was returned by `iteratee`.
  *
  * @category Collection
- * @param iteratee The iteratee to transform keys.
- * @param array The collection to iterate over.
- * @returns {Object} Returns the composed aggregate object.
+ * @param iteratee - The iteratee to transform keys.
+ * @param collection - The array or object to iterate over.
+ * @returns Returns the composed aggregate object.
  * @example
  * const users = [
  *   { 'user': 'barney', 'active': true },
@@ -21,9 +22,10 @@ import type { RecordKey } from '../types';
  * // => { 'true': 2, 'false': 1 }
  */
 
-export function countBy<TInput, TKey extends RecordKey>(iteratee: (value: TInput) => TKey, array: TInput[]): Record<TKey, number> {
+export function countBy<TInput, TKey extends RecordKey>(iteratee: (value: TInput) => TKey, collection: Collection<TInput>): Record<TKey, number> {
     const result = {} as Record<TKey, number>;
-    for (const value of array) {
+    const values = getValuesFromCollection(collection);
+    for (const value of values) {
         const key = iteratee(value);
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         if (result[key] === undefined) {

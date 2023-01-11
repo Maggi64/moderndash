@@ -1,6 +1,6 @@
 import { test, describe, expect } from 'vitest';
 
-import { shuffle } from '@collection/shuffle';
+import { shuffle } from '@array/shuffle';
 
 describe('shuffle', () => {
     test('should shuffle the elements of the array', () => {

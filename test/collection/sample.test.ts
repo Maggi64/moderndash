@@ -1,17 +1,17 @@
 import { test, describe, expect } from 'vitest';
 
-import { sample } from '@collection/sample';
+import { sample } from '@array/sample';
 
 describe('sample', () => {
-    test('should return a random element from the array', () => {
-        const colors = ['red', 'green', 'blue'];
-        const randomColor = sample(colors);
-        expect(colors).toContain(randomColor);
+    test('sample function returns a random value from an array', () => {
+        const collection = [1, 2, 3, 4, 5];
+        const result = sample(collection);
+        expect(collection).toContain(result);
     });
 
-    test('should return undefined if the array is empty', () => {
-        // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
-        const result = sample([]);
+    test('sample function returns undefined for an empty collection', () => {
+        const collection = [] as unknown[];
+        const result = sample(collection);
         expect(result).toBeUndefined();
     });
 });
