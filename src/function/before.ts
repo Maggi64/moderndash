@@ -1,10 +1,26 @@
-export function before<T extends (...args: Parameters<T>) => ReturnType<T>>(n: number, fn: T) {
+/**
+ * Creates a function that invokes `func`, with the `this` binding and arguments
+ * of the created function, while it's called less than `n` times. Subsequent
+ * calls to the created function return the result of the last `func` invocation.
+ *
+ * @category Function
+ * @param n - The number of calls at which `func` is no longer invoked.
+ * @param func - The function to restrict.
+ * @returns Returns the new restricted function.
+ * @example
+ * const caution = () => alert("Caution!");
+ *
+ * // Display alert only after it has been called 5 times
+ * before(5, caution)
+ */
+
+export function before<TFunc extends (...args: Parameters<TFunc>) => ReturnType<TFunc>>(n: number, func: TFunc) {
     let count = 0;
-    let result: ReturnType<T>;
-    return (...args: Parameters<T>): ReturnType<T> => {
+    let result: ReturnType<TFunc>;
+    return (...args: Parameters<TFunc>): ReturnType<TFunc> => {
         if (count < n) {
             count += 1;
-            result = fn(...args);
+            result = func(...args);
         }
         return result;
     };
