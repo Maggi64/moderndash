@@ -1,3 +1,5 @@
+import type { RecordKey } from '../types';
+
 export function isEqual(value1: unknown, value2: unknown): boolean {
     if (value1 === value2) return true;
 
@@ -16,7 +18,7 @@ export function isEqual(value1: unknown, value2: unknown): boolean {
     return false;
 }
 
-type KeyValueObject = Record<string, unknown>;
+type KeyValueObject = Record<RecordKey, unknown>;
 function isObject(value: unknown): value is KeyValueObject {
     return typeof value === 'object'
         && value !== null
