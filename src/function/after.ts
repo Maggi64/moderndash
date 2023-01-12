@@ -6,11 +6,10 @@
  * @param func The function to restrict.
  * @returns Returns the new restricted function.
  * @example
- * const saves = ['profile', 'settings']
- * const done = after(saves.length, () => console.log('done saving!'))
+ * const caution = () => alert("Caution!");
  *
- * forEach(saves, type => asyncSave({ 'type': type, 'complete': done }))
- * // => Logs 'done saving!' after the two async saves have completed.
+ * // Display alert only after it has been called 5 times
+ * after(5, caution)
  */
 
 export function after<TFunc extends (...args: Parameters<TFunc>) => ReturnType<TFunc>>(n: number, func: TFunc) {

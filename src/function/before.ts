@@ -10,18 +10,18 @@
  * @example
  * const caution = () => alert("Caution!");
  *
- * // Display alert only after it has been called 5 times
- * before(5, caution)
+ * // Only call caution two times
+ * before(2, caution)
  */
 
-export function before<TFunc extends (...args: Parameters<TFunc>) => ReturnType<TFunc>>(n: number, func: TFunc) {
+export function before<TFunc extends (...args: Parameters<TFunc>) => ReturnType<TFunc>>(n: number, func: TFunc): TFunc {
     let count = 0;
     let result: ReturnType<TFunc>;
-    return (...args: Parameters<TFunc>): ReturnType<TFunc> => {
+    return ((...args: Parameters<TFunc>): ReturnType<TFunc> => {
         if (count < n) {
             count += 1;
             result = func(...args);
         }
         return result;
-    };
+    }) as TFunc;
 }

@@ -12,17 +12,8 @@
  * initialize()
  * // => `createApplication` is invoked once
  */
+import { before } from '@function/before';
 
 export function once<TFunc extends (...args: Parameters<TFunc>) => ReturnType<TFunc>>(func: TFunc): TFunc {
-    let called = false;
-    let result: ReturnType<TFunc>;
-
-    return function (this: ThisParameterType<TFunc>, ...args: Parameters<TFunc>): ReturnType<TFunc> {
-        if (!called) {
-            called = true;
-            result = func.apply(this, args);
-        }
-
-        return result;
-    } as TFunc;
+    return before(1, func);
 }
