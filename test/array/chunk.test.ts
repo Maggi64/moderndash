@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { chunk } from '@array/chunk.js';
+import { chunk } from '@array/chunk';
 
 describe('Chunk', () => {
     const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

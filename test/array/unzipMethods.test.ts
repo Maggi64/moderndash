@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 
-import { unzipWith } from '../../src/array/unzipWith';
+import { unzipWith } from '@array/unzipWith';
 
 describe('unzipWith', () => {
     test('should unzip an arrays with a function', () => {
