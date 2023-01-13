@@ -1,7 +1,8 @@
 # ModernDash
+
 A Typescript-First utility library inspired by [Lodash](https://lodash.com/).
-Optimized for modern browsers.
-**This library is still in development and is not ready for production use.**
+Optimized for modern browsers.  
+**This library is still in development and is not ready for production use.**  
 
 ✅ ESM
 ✅ Tree-shakable
