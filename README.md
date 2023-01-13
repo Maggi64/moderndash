@@ -1,13 +1,18 @@
-# ModernDash
+![ModernDash Logo](/website/assets/moderndash-logo.svg)
 
-A Typescript-First utility library inspired by [Lodash](https://lodash.com/).
-Optimized for modern browsers.  
-**This library is still in development and is not ready for production use.**  
+<p align=center>
+  A Typescript-First utility library inspired by Lodash.
+  Optimized for modern browsers.
+</p>
+<p align=center>
+  ✅ ESM
+  ✅ Tree-shakable
+  ✅ Typescript Strict Mode (no any types)
+  ✅ Zero dependencies
+</p>
 
-✅ ESM
-✅ Tree-shakable
-✅ Typescript Strict Mode (no any types)
-✅ Zero dependencies
+> **Warning**
+> This library is still in development and is not ready for production use.
 
 -------
 
