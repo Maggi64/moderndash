@@ -1,4 +1,4 @@
-const tsConfigs = ['./package/tsconfig.json'];
+const tsConfigs = ['./package/tsconfig.json', "./website/tsconfig.json"]
 
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
@@ -14,7 +14,8 @@ module.exports = {
         "plugin:import/warnings",
         "plugin:import/typescript",
         "plugin:sonarjs/recommended",
-        "plugin:unicorn/recommended"
+        "plugin:unicorn/recommended",
+        "plugin:svelte/recommended"
     ],
     plugins: [
         '@typescript-eslint',
@@ -22,9 +23,18 @@ module.exports = {
         "deprecate",
         "import",
         "sonarjs",
-        "unicorn"
+        "unicorn",
     ],
-    ignorePatterns: ["**/dist/**", "**/node_modules/**"],
+    ignorePatterns: ["**/build/**", "**/node_modules/**", "**/.svelte-kit/**", "**/dist/**"],
+    overrides: [
+        {
+            files: ["*.svelte"],
+            parser: "svelte-eslint-parser",
+            parserOptions: {
+                parser: "@typescript-eslint/parser",
+            },
+        }
+    ],
     env: {
         browser: true,
         es2022: true,
@@ -142,6 +152,28 @@ module.exports = {
         "@typescript-eslint/no-redundant-type-constituents": "warn",
         "@typescript-eslint/no-confusing-void-expression": ["warn", { ignoreArrowShorthand: true }],
         "@typescript-eslint/prefer-enum-initializers": "warn",
-        "@typescript-eslint/comma-spacing": "warn"
+        "@typescript-eslint/comma-spacing": "warn",
+        "svelte/require-optimized-style-attribute": "error",
+        "svelte/html-closing-bracket-spacing": ["error", {
+            "startTag": "never",
+            "endTag": "never",
+            "selfClosingTag": "never"
+        }],
+        "svelte/html-quotes": "error",
+        "svelte/html-self-closing": "error",
+        "svelte/indent": ["error", {
+            "indent": 4,
+            "switchCase": 2,
+        }],
+        "svelte/mustache-spacing": "error",
+        "svelte/no-extra-reactive-curlies": "error",
+        "svelte/no-spaces-around-equal-signs-in-attribute": "error",
+        "svelte/prefer-class-directive": "error",
+        "svelte/prefer-style-directive": "error",
+        "svelte/shorthand-attribute": "error",
+        "svelte/shorthand-directive": "error",
+        "svelte/no-at-html-tags": 0,
+        "svelte/valid-prop-names-in-kit-pages": 2,
+        "svelte/require-store-reactive-access": 2,
     },
 };
