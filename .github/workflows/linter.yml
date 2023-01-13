@@ -1,0 +1,40 @@
+name: "Code Checks"
+on:
+  pull_request :
+    paths :
+      - '**.js'
+      - '**.ts'
+      - '**.svelte'
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    name: ESLint
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name : Use Node.js 18.x
+        uses : actions/setup-node@v3
+        with :
+          node-version : 18.x
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Auto-fix ESLint errors
+        run: npm run lint:fix || true
+
+      - name: Commit auto-fixed ESLint errors
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+            commit_message: 🔧 Auto-fix ESLint errors
+
+      # only run if all files already auto fixed
+      - name : Run eslint on changed files
+        uses : Maggi64/eslint-plus-action@master
+        with :
+          extensions: .js,.ts,.svelte

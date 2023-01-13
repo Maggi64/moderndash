@@ -1,0 +1,19 @@
+name: "Legacy Image Format Check"
+on:
+  pull_request :
+    paths :
+      - '**.webp'
+      - '**.jpg'
+      - '**.jpeg'
+      - '**.gif'
+      - '**.png'
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    name: Check image filetypes
+    steps:
+      - uses: batista/lint-filenames@v1
+        name: Only allow webp & newer image formats
+        with:
+          path: './'
+          pattern: '.*\\.(?!jpg|jpg|png|gif)'

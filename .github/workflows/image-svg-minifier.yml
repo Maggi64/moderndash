@@ -1,0 +1,19 @@
+name: SVG Minifier
+on:
+  pull_request:
+    paths :
+      - "**.svg"
+  push:
+    paths :
+      - "**.svg"
+  workflow_dispatch:
+
+jobs:
+  svgs:
+    name: SVGs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ericcornelissen/svgo-action@v3
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
