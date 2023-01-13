@@ -6,7 +6,7 @@ Optimized for modern browsers.
 
 ✅ ESM
 ✅ Tree-shakable
-✅ Typescript Strict Mode (no implicit any)
+✅ Typescript Strict Mode (no any types)
 ✅ Zero dependencies
 
 -------

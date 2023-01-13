@@ -1,5 +1,3 @@
-const tsConfigs = ['./package/tsconfig.json', "./website/tsconfig.json"]
-
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
     root: true,
@@ -44,14 +42,15 @@ module.exports = {
         "import/resolver": {
             typescript: {
                 alwaysTryTypes: true,
-                project: tsConfigs,
+                project: './*/tsconfig.json',
             },
         }
     },
     parserOptions: {
         sourceType: "module",
         ecmaVersion: "latest",
-        project: tsConfigs,
+        project: './*/tsconfig.json',
+        extraFileExtensions: [".svelte"]
     },
     rules: {
         "array-bracket-spacing": ["error", "never"],
