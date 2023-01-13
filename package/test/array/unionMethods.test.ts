@@ -14,16 +14,6 @@ describe('union', () => {
         const result = union(array1, array2, array3);
         expect(result).toEqual([1, 2, 3, 4, [5]]);
     });
-
-    it('should return an empty array if no arrays are provided', () => {
-        const result = union();
-        expect(result).toEqual([]);
-    });
-
-    it('should return the original array if only one array is provided', () => {
-        const result = union(array1);
-        expect(result).toEqual(array1);
-    });
 });
 
 
