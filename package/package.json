@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Maggi64/esmdash.git"
+    "url": "git+https://github.com/Maggi64/moderndash.git"
   },
   "keywords": [
     "lodash",
@@ -23,15 +23,16 @@
   "author": "Maggi64",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Maggi64/esmdash/issues"
+    "url": "https://github.com/Maggi64/moderndash/issues"
   },
   "browserslist": [
     ">2% and not dead"
   ],
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
-  "homepage": "https://github.com/Maggi64/esmdash#readme",
+  "homepage": "https://github.com/Maggi64/moderndash#readme",
   "devDependencies": {
+    "@vitest/coverage-c8": "0.27.1",
     "@vitest/ui": "0.27.1",
     "vitest": "0.27.1",
     "tsup": "6.5.0",
