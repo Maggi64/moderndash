@@ -23,7 +23,7 @@ module.exports = {
         "sonarjs",
         "unicorn",
     ],
-    ignorePatterns: ["**/build/**", "**/node_modules/**", "**/.svelte-kit/**", "**/dist/**"],
+    ignorePatterns: ["**/build/**", "**/node_modules/**", "**/.svelte-kit/**", "**/dist/**", "**/*.config.*"],
     overrides: [
         {
             files: ["*.svelte"],
