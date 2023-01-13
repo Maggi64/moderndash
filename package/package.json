@@ -9,10 +9,6 @@
     "test-ui": "vitest --ui",
     "playground": "npm run build & node playground"
   },
-  "engines": {
-    "node": ">=18.x.x",
-    "npm": ">=8.x.x"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Maggi64/esmdash.git"
@@ -37,7 +33,6 @@
   "homepage": "https://github.com/Maggi64/esmdash#readme",
   "devDependencies": {
     "@vitest/ui": "0.27.1",
-    "typedoc": "0.23.24",
     "vitest": "0.27.1",
     "tsup": "6.5.0",
     "ctix": "1.8.1"
