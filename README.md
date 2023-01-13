@@ -11,10 +11,10 @@
   ✅ Zero dependencies
 </p>
 
+-------
+
 > **Warning**
 > This library is still in development and is not ready for production use.
-
--------
 
 ## Documentation
 The documentation is WIP.
