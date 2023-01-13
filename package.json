@@ -1,55 +1,24 @@
 {
-  "name": "moderndash",
-  "version": "0.0.5",
-  "type": "module",
-  "description": "A lodash rewrite for ESM/Typescript/ES2020",
-  "scripts": {
-    "build": "ctix create ----startAt src --overwrite --noBackup & tsup",
-    "test": "vitest",
-    "test-ui": "vitest --ui",
-    "build:docs": "typedoc ./src/index.ts --json ./docs.json --excludeNotDocumented",
-    "playground": "npm run build & node playground"
-  },
-  "engines": {
-    "node": ">=18.x.x",
-    "npm": ">=8.x.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Maggi64/esmdash.git"
-  },
-  "keywords": [
-    "lodash",
-    "utility",
-    "helper",
-    "underscore"
-  ],
-  "author": "Maggi64",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Maggi64/esmdash/issues"
-  },
-  "browserslist": [
-    ">2% and not dead"
-  ],
-  "types": "./dist/index.d.ts",
-  "main": "./dist/index.js",
-  "homepage": "https://github.com/Maggi64/esmdash#readme",
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "5.48.1",
-    "@typescript-eslint/parser": "5.48.1",
-    "@vitest/ui": "0.27.1",
-    "eslint": "8.31.0",
-    "eslint-import-resolver-typescript": "3.5.3",
-    "eslint-plugin-compat": "4.0.2",
-    "eslint-plugin-deprecate": "0.7.0",
-    "eslint-plugin-import": "2.27.4",
-    "eslint-plugin-sonarjs": "0.18.0",
-    "eslint-plugin-unicorn": "45.0.2",
-    "typedoc": "0.23.24",
-    "typescript": "4.9.4",
-    "vitest": "0.27.1",
-    "tsup": "6.5.0",
-    "ctix": "1.8.1"
-  }
+    "name": "moderndash-monorepo",
+    "version": "1.0.0",
+    "workspaces": [
+        "benchmark",
+        "website",
+        "package"
+    ],
+    "scripts": {
+        "build:docs-json": "typedoc ./src/index.ts --json ./docs.json --excludeNotDocumented"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "5.48.1",
+        "@typescript-eslint/parser": "5.48.1",
+        "eslint": "8.31.0",
+        "eslint-import-resolver-typescript": "3.5.3",
+        "eslint-plugin-compat": "4.0.2",
+        "eslint-plugin-deprecate": "0.7.0",
+        "eslint-plugin-import": "2.27.4",
+        "eslint-plugin-sonarjs": "0.18.0",
+        "eslint-plugin-unicorn": "45.0.2",
+        "typescript": "4.9.4"
+    }
 }

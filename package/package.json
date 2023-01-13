@@ -1,0 +1,45 @@
+{
+  "name": "moderndash",
+  "version": "0.0.5",
+  "type": "module",
+  "description": "A lodash inspired utility framework for ESM/Typescript/ES2020",
+  "scripts": {
+    "build": "ctix create ----startAt src --overwrite --noBackup & tsup",
+    "test": "vitest",
+    "test-ui": "vitest --ui",
+    "playground": "npm run build & node playground"
+  },
+  "engines": {
+    "node": ">=18.x.x",
+    "npm": ">=8.x.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maggi64/esmdash.git"
+  },
+  "keywords": [
+    "lodash",
+    "utility",
+    "helper",
+    "underscore",
+    "esm"
+  ],
+  "author": "Maggi64",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Maggi64/esmdash/issues"
+  },
+  "browserslist": [
+    ">2% and not dead"
+  ],
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "homepage": "https://github.com/Maggi64/esmdash#readme",
+  "devDependencies": {
+    "@vitest/ui": "0.27.1",
+    "typedoc": "0.23.24",
+    "vitest": "0.27.1",
+    "tsup": "6.5.0",
+    "ctix": "1.8.1"
+  }
+}

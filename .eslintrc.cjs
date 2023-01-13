@@ -1,4 +1,4 @@
-const tsConfigs = ['./tsconfig.json'];
+const tsConfigs = ['./package/tsconfig.json'];
 
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
@@ -27,7 +27,7 @@ module.exports = {
     ignorePatterns: ["**/dist/**", "**/node_modules/**"],
     env: {
         browser: true,
-        es2021: true,
+        es2022: true,
         node: true
     },
     settings: {
