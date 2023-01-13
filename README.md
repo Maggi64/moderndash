@@ -1,4 +1,6 @@
 # ModernDash
+A Typescript-First utility library inspired by [Lodash](https://lodash.com/).
+**This library is still in development and is not ready for production use.**
 
 ## Removed Functions because of trivial native alternatives
 Look at [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) for native replacements.
