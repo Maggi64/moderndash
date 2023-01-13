@@ -18,7 +18,7 @@ type Cache = Map<string | symbol, unknown>;
  * @param resolver - The function to resolve the cache key.
  * @returns  Returns the new memoized function.
  * @example
- * const object = { 'a': 1, 'b': 2 }
+ * const object = \{ 'a': 1, 'b': 2 \}
  *
  * const values = memoize(values)
  * values(object)
