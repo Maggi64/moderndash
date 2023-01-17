@@ -17,7 +17,7 @@
 					"fileName": "function/after.ts",
 					"line": 15,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/function/after.ts#L15"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/function/after.ts#L15"
 				}
 			],
 			"signatures": [
@@ -99,7 +99,7 @@
 											"fileName": "function/after.ts",
 											"line": 15,
 											"character": 36,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/function/after.ts#L15"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/function/after.ts#L15"
 										}
 									],
 									"signatures": [
@@ -214,7 +214,7 @@
 									"fileName": "function/after.ts",
 									"line": 17,
 									"character": 11,
-									"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/function/after.ts#L17"
+									"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/function/after.ts#L17"
 								}
 							],
 							"signatures": [
@@ -288,7 +288,7 @@
 					"fileName": "function/before.ts",
 					"line": 17,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/function/before.ts#L17"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/function/before.ts#L17"
 				}
 			],
 			"signatures": [
@@ -378,7 +378,7 @@
 											"fileName": "function/before.ts",
 											"line": 17,
 											"character": 37,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/function/before.ts#L17"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/function/before.ts#L17"
 										}
 									],
 									"signatures": [
@@ -499,7 +499,7 @@
 					"fileName": "array/chunk.ts",
 					"line": 16,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/chunk.ts#L16"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/chunk.ts#L16"
 				}
 			],
 			"signatures": [
@@ -615,7 +615,7 @@
 					"fileName": "collection/countBy.ts",
 					"line": 25,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/collection/countBy.ts#L25"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/collection/countBy.ts#L25"
 				}
 			],
 			"signatures": [
@@ -725,7 +725,7 @@
 											"fileName": "collection/countBy.ts",
 											"line": 25,
 											"character": 66,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/collection/countBy.ts#L25"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/collection/countBy.ts#L25"
 										}
 									],
 									"signatures": [
@@ -817,7 +817,7 @@
 					"fileName": "array/difference.ts",
 					"line": 19,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/difference.ts#L19"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/difference.ts#L19"
 				}
 			],
 			"signatures": [
@@ -932,7 +932,7 @@
 					"fileName": "array/differenceBy.ts",
 					"line": 27,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/differenceBy.ts#L27"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/differenceBy.ts#L27"
 				}
 			],
 			"signatures": [
@@ -1111,7 +1111,7 @@
 					"fileName": "array/differenceWith.ts",
 					"line": 20,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/differenceWith.ts#L20"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/differenceWith.ts#L20"
 				}
 			],
 			"signatures": [
@@ -1226,7 +1226,7 @@
 											"fileName": "array/differenceWith.ts",
 											"line": 20,
 											"character": 46,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/differenceWith.ts#L20"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/differenceWith.ts#L20"
 										}
 									],
 									"signatures": [
@@ -1322,7 +1322,7 @@
 					"fileName": "array/dropRightWhile.ts",
 					"line": 22,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/dropRightWhile.ts#L22"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/dropRightWhile.ts#L22"
 				}
 			],
 			"signatures": [
@@ -1421,7 +1421,7 @@
 											"fileName": "array/dropRightWhile.ts",
 											"line": 22,
 											"character": 45,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/dropRightWhile.ts#L22"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/dropRightWhile.ts#L22"
 										}
 									],
 									"signatures": [
@@ -1500,7 +1500,7 @@
 					"fileName": "array/dropWhile.ts",
 					"line": 21,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/dropWhile.ts#L21"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/dropWhile.ts#L21"
 				}
 			],
 			"signatures": [
@@ -1599,7 +1599,7 @@
 											"fileName": "array/dropWhile.ts",
 											"line": 21,
 											"character": 40,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/dropWhile.ts#L21"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/dropWhile.ts#L21"
 										}
 									],
 									"signatures": [
@@ -1678,7 +1678,7 @@
 					"fileName": "collection/groupBy.ts",
 					"line": 23,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/collection/groupBy.ts#L23"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/collection/groupBy.ts#L23"
 				}
 			],
 			"signatures": [
@@ -1788,7 +1788,7 @@
 											"fileName": "collection/groupBy.ts",
 											"line": 23,
 											"character": 58,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/collection/groupBy.ts#L23"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/collection/groupBy.ts#L23"
 										}
 									],
 									"signatures": [
@@ -1884,7 +1884,7 @@
 					"fileName": "array/intersection.ts",
 					"line": 18,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/intersection.ts#L18"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/intersection.ts#L18"
 				}
 			],
 			"signatures": [
@@ -1983,7 +1983,7 @@
 					"fileName": "array/intersectionBy.ts",
 					"line": 23,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/intersectionBy.ts#L23"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/intersectionBy.ts#L23"
 				}
 			],
 			"signatures": [
@@ -2146,7 +2146,7 @@
 					"fileName": "array/intersectionWith.ts",
 					"line": 21,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/intersectionWith.ts#L21"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/intersectionWith.ts#L21"
 				}
 			],
 			"signatures": [
@@ -2245,7 +2245,7 @@
 											"fileName": "array/intersectionWith.ts",
 											"line": 21,
 											"character": 48,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/intersectionWith.ts#L21"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/intersectionWith.ts#L21"
 										}
 									],
 									"signatures": [
@@ -2341,7 +2341,7 @@
 					"fileName": "function/memoize.ts",
 					"line": 43,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/function/memoize.ts#L43"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/function/memoize.ts#L43"
 				}
 			],
 			"signatures": [
@@ -2487,7 +2487,7 @@
 											"fileName": "function/memoize.ts",
 											"line": 43,
 											"character": 38,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/function/memoize.ts#L43"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/function/memoize.ts#L43"
 										}
 									],
 									"signatures": [
@@ -2588,7 +2588,7 @@
 											"fileName": "function/memoize.ts",
 											"line": 44,
 											"character": 28,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/function/memoize.ts#L44"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/function/memoize.ts#L44"
 										}
 									],
 									"signatures": [
@@ -2670,7 +2670,7 @@
 													"fileName": "function/memoize.ts",
 													"line": 45,
 													"character": 13,
-													"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/function/memoize.ts#L45"
+													"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/function/memoize.ts#L45"
 												}
 											],
 											"type": {
@@ -2692,7 +2692,7 @@
 											"fileName": "function/memoize.ts",
 											"line": 45,
 											"character": 11,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/function/memoize.ts#L45"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/function/memoize.ts#L45"
 										}
 									]
 								}
@@ -2713,7 +2713,7 @@
 					"fileName": "object/pick.ts",
 					"line": 16,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/object/pick.ts#L16"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/object/pick.ts#L16"
 				}
 			],
 			"signatures": [
@@ -2869,7 +2869,7 @@
 					"fileName": "array/sample.ts",
 					"line": 12,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/sample.ts#L12"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/sample.ts#L12"
 				}
 			],
 			"signatures": [
@@ -2977,7 +2977,7 @@
 					"fileName": "array/sampleSize.ts",
 					"line": 19,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/sampleSize.ts#L19"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/sampleSize.ts#L19"
 				}
 			],
 			"signatures": [
@@ -3114,7 +3114,7 @@
 					"fileName": "array/shuffle.ts",
 					"line": 14,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/shuffle.ts#L14"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/shuffle.ts#L14"
 				}
 			],
 			"signatures": [
@@ -3217,7 +3217,7 @@
 					"fileName": "array/takeRightWhile.ts",
 					"line": 21,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/takeRightWhile.ts#L21"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/takeRightWhile.ts#L21"
 				}
 			],
 			"signatures": [
@@ -3316,7 +3316,7 @@
 											"fileName": "array/takeRightWhile.ts",
 											"line": 21,
 											"character": 45,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/takeRightWhile.ts#L21"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/takeRightWhile.ts#L21"
 										}
 									],
 									"signatures": [
@@ -3395,7 +3395,7 @@
 					"fileName": "array/takeWhile.ts",
 					"line": 21,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/takeWhile.ts#L21"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/takeWhile.ts#L21"
 				}
 			],
 			"signatures": [
@@ -3494,7 +3494,7 @@
 											"fileName": "array/takeWhile.ts",
 											"line": 21,
 											"character": 40,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/takeWhile.ts#L21"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/takeWhile.ts#L21"
 										}
 									],
 									"signatures": [
@@ -3573,7 +3573,7 @@
 					"fileName": "array/union.ts",
 					"line": 14,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/union.ts#L14"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/union.ts#L14"
 				}
 			],
 			"signatures": [
@@ -3672,7 +3672,7 @@
 					"fileName": "array/unionBy.ts",
 					"line": 23,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/unionBy.ts#L23"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/unionBy.ts#L23"
 				}
 			],
 			"signatures": [
@@ -3835,7 +3835,7 @@
 					"fileName": "array/unionWith.ts",
 					"line": 21,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/unionWith.ts#L21"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/unionWith.ts#L21"
 				}
 			],
 			"signatures": [
@@ -3934,7 +3934,7 @@
 											"fileName": "array/unionWith.ts",
 											"line": 21,
 											"character": 46,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/unionWith.ts#L21"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/unionWith.ts#L21"
 										}
 									],
 									"signatures": [
@@ -4030,7 +4030,7 @@
 					"fileName": "array/uniq.ts",
 					"line": 16,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/uniq.ts#L16"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/uniq.ts#L16"
 				}
 			],
 			"signatures": [
@@ -4124,7 +4124,7 @@
 					"fileName": "array/uniqBy.ts",
 					"line": 21,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/uniqBy.ts#L21"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/uniqBy.ts#L21"
 				}
 			],
 			"signatures": [
@@ -4282,7 +4282,7 @@
 					"fileName": "array/uniqWith.ts",
 					"line": 16,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/uniqWith.ts#L16"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/uniqWith.ts#L16"
 				}
 			],
 			"signatures": [
@@ -4381,7 +4381,7 @@
 											"fileName": "array/uniqWith.ts",
 											"line": 16,
 											"character": 45,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/uniqWith.ts#L16"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/uniqWith.ts#L16"
 										}
 									],
 									"signatures": [
@@ -4472,7 +4472,7 @@
 					"fileName": "array/unzip.ts",
 					"line": 18,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/unzip.ts#L18"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/unzip.ts#L18"
 				}
 			],
 			"signatures": [
@@ -4581,7 +4581,7 @@
 					"fileName": "array/unzipWith.ts",
 					"line": 18,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/unzipWith.ts#L18"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/unzipWith.ts#L18"
 				}
 			],
 			"signatures": [
@@ -4686,7 +4686,7 @@
 											"fileName": "array/unzipWith.ts",
 											"line": 18,
 											"character": 71,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/unzipWith.ts#L18"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/unzipWith.ts#L18"
 										}
 									],
 									"signatures": [
@@ -4768,7 +4768,7 @@
 					"fileName": "array/zip.ts",
 					"line": 15,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/zip.ts#L15"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/zip.ts#L15"
 				}
 			],
 			"signatures": [
@@ -4870,7 +4870,7 @@
 					"fileName": "array/zipWith.ts",
 					"line": 20,
 					"character": 16,
-					"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/zipWith.ts#L20"
+					"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/zipWith.ts#L20"
 				}
 			],
 			"signatures": [
@@ -4975,7 +4975,7 @@
 											"fileName": "array/zipWith.ts",
 											"line": 20,
 											"character": 70,
-											"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/array/zipWith.ts#L20"
+											"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/array/zipWith.ts#L20"
 										}
 									],
 									"signatures": [
@@ -5146,7 +5146,7 @@
 			"fileName": "index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/Maggi64/esmdash/blob/28c2864/package/src/index.ts#L1"
+			"url": "https://github.com/Maggi64/esmdash/blob/022c116/package/src/index.ts#L1"
 		}
 	]
 }

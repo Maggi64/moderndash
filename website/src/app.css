@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h2, h3 {
+  @apply text-xl font-semibold tracking-tight text-slate-900;
+}

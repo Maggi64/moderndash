@@ -62,7 +62,7 @@ module.exports = {
         "default-case-last": "error",
         "eqeqeq": ["error", "always"],
         "import/default": 2,
-        "import/extensions": 2,
+        "import/extensions": ["error", "ignorePackages", { "json": "always", "svg": "always" }],
         "import/no-commonjs": 2,
         "import/no-self-import": 2,
         "import/no-named-as-default": 0,
