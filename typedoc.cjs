@@ -4,6 +4,6 @@
 module.exports = {
     entryPoints: ["./package/src/index.ts"],
     tsconfig: "./package/tsconfig.json",
-    json: "./docs.json",
+    json: "./website/src/assets/extractedTypes.json",
     excludeNotDocumented: true
 }
