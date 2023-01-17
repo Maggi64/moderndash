@@ -1,4 +1,4 @@
-![ModernDash Logo](/website/assets/moderndash-logo.svg)
+![ModernDash Logo](/website/src/assets/moderndash-logo.svg)
 
 <p align=center>
   A Typescript-First utility library inspired by Lodash.
