@@ -10,13 +10,13 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@fortawesome/fontawesome-common-types": "6.2.0",
-		"@fortawesome/free-brands-svg-icons": "6.2.0",
-		"@fortawesome/free-regular-svg-icons": "6.2.0",
-		"@fortawesome/free-solid-svg-icons": "6.2.0",
+		"@fortawesome/fontawesome-common-types": "6.2.1",
+		"@fortawesome/free-brands-svg-icons": "6.2.1",
+		"@fortawesome/free-regular-svg-icons": "6.2.1",
+		"@fortawesome/free-solid-svg-icons": "6.2.1",
 		"svelte-fa": "3.0.3",
 		"@sveltejs/adapter-static": "1.0.4",
-		"@sveltejs/kit": "1.0.12",
+		"@sveltejs/kit": "1.1.1",
 		"@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
 		"svelte": "3.55.1",
 		"svelte-check": "3.0.2",
