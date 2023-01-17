@@ -1,13 +1,14 @@
 {
   "name": "moderndash",
-  "version": "0.0.5",
+  "version": "0.0.9",
   "type": "module",
   "description": "A lodash inspired utility framework for ESM/Typescript/ES2020",
   "scripts": {
     "build": "ctix create ----startAt src --overwrite --noBackup & tsup",
+    "prepublishOnly": "npm run build && @powershell cp '../README.md' './README.md' && @powershell cp '../LICENSE' './LICENSE'",
+    "postpublish": "@powershell rm './README.md' && @powershell rm './LICENSE'",
     "test": "vitest",
-    "test-ui": "vitest --ui",
-    "playground": "npm run build & node playground"
+    "test-ui": "vitest --ui"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,10 @@
   ],
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "homepage": "https://github.com/Maggi64/moderndash#readme",
   "devDependencies": {
     "@vitest/coverage-c8": "0.27.1",

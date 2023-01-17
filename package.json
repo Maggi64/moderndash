@@ -1,6 +1,7 @@
 {
     "name": "moderndash-monorepo",
     "version": "1.0.0",
+    "private": true,
     "workspaces": [
         "benchmark",
         "website",
