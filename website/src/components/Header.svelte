@@ -1,5 +1,8 @@
 <script lang="ts">
     import logo from '$assets/moderndashLogo.svg';
+    import Fa from "svelte-fa";
+
+    import { faGithub } from "@fortawesome/free-brands-svg-icons";
 </script>
 
 <header class="sticky top-0 z-50 flex items-center justify-between px-3 py-2 border-b shadow-lg bg-white/90 backdrop-blur-sm border-slate-400/40">
@@ -19,8 +22,8 @@
     </form>
 
     <div class="items-center justify-end flex-grow hidden basis-0 md:flex">
-        <a href="https://spinalcms.com/" class="px-4 py-2 text-sm font-semibold rounded bg-slate-900 text-slate-50 transition ease-in-out delay-75 hover:scale-105 duration-200">
-            Go to homepage
+        <a href="https://github.com/Maggi64/moderndash" target="_blank" rel="noreferrer" class="px-4 py-2 flex items-center font-semibold rounded bg-slate-900 text-slate-50 hover:bg-slate-800">
+            <Fa icon={faGithub} size="1.5x"/> <span class="ml-2">Github</span>
         </a>
     </div>
 </header>
