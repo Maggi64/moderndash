@@ -1,4 +1,4 @@
-import type { RecordKey, Collection } from '../types';
+import type { RecordKey, ArrayOrRecord } from '../types';
 
 import { getValuesFromCollection } from '@helpers/collections';
 
@@ -11,16 +11,15 @@ import { getValuesFromCollection } from '@helpers/collections';
  * key.
  *
  * @category Collection
- * @param collection The array or object to iterate over.
- * @param iteratee The iteratee to transform keys.
+ * @param collection - The array or object to iterate over.
+ * @param iteratee - The iteratee to transform keys.
  * @returns Returns the composed aggregate object.
  * @example
- *
- * groupBy(Math.floor, [6.1, 4.2, 6.3])
+ * groupBy([6.1, 4.2, 6.3], Math.floor)
  * // => { '4': [4.2], '6': [6.1, 6.3] }
  */
 
-export function groupBy<T, U extends RecordKey>(iteratee: (value: T) => U, collection: Collection<T>): Record<U, T[]> {
+export function groupBy<T, U extends RecordKey>(collection: ArrayOrRecord<T>, iteratee: (value: T) => U): Record<U, T[]> {
     const result = {} as Record<U, T[]>;
     const values = getValuesFromCollection(collection);
     for (const value of values) {

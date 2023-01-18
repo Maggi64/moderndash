@@ -1,5 +1,5 @@
-import type { Collection } from '../types';
+import type { ArrayOrRecord } from '../types';
 
-export function getValuesFromCollection<T>(collection: Collection<T>): T[] {
+export function getValuesFromCollection<T>(collection: ArrayOrRecord<T>): T[] {
     return Array.isArray(collection) ? collection : Object.values(collection);
 }

@@ -1,4 +1,4 @@
-import type { Collection, RecordKey } from '../types';
+import type { ArrayOrRecord, RecordKey } from '../types';
 
 import { getValuesFromCollection } from '@helpers/collections';
 
@@ -9,7 +9,7 @@ import { getValuesFromCollection } from '@helpers/collections';
  *
  * @category Collection
  * @param iteratee - The iteratee to transform keys.
- * @param collection - The array or object to iterate over.
+ * @param collection - The array or record to iterate over.
  * @returns Returns the composed aggregate object.
  * @example
  * const users = [
@@ -18,11 +18,11 @@ import { getValuesFromCollection } from '@helpers/collections';
  *   { 'user': 'fred', 'active': false }
  * ]
  *
- * countBy(value => value.active, users);
+ * countBy(users, value => value.active);
  * // => { 'true': 2, 'false': 1 }
  */
 
-export function countBy<TInput, TKey extends RecordKey>(iteratee: (value: TInput) => TKey, collection: Collection<TInput>): Record<TKey, number> {
+export function countBy<TInput, TKey extends RecordKey>(collection: ArrayOrRecord<TInput>, iteratee: (value: TInput) => TKey): Record<TKey, number> {
     const result = {} as Record<TKey, number>;
     const values = getValuesFromCollection(collection);
     for (const value of values) {
