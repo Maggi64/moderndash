@@ -1,6 +1,6 @@
 {
   "name": "moderndash",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "type": "module",
   "description": "A lodash inspired utility framework for ESM/Typescript/ES2020",
   "scripts": {
@@ -30,7 +30,12 @@
     ">2% and not dead"
   ],
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "files": [
     "dist",
     "src"
