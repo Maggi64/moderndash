@@ -6,7 +6,7 @@ describe('groupBy', () => {
     test('groups elements by evenness', () => {
         const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         const even = (value: number) => (value % 2 === 0).toString();
-        const result = groupBy(even, array);
+        const result = groupBy(array, even);
         expect(result).toEqual({ 'true': [2, 4, 6, 8, 10], 'false': [1, 3, 5, 7, 9] });
     });
 
@@ -19,7 +19,7 @@ describe('groupBy', () => {
             { name: 'Eve', age: 35 }
         ];
 
-        const result = groupBy(element => element.age, array);
+        const result = groupBy(array, element => element.age);
 
         expect(result).toEqual({
             30: [{ name: 'Alice', age: 30 }, { name: 'Charlie', age: 30 }],
@@ -29,7 +29,7 @@ describe('groupBy', () => {
     });
 
     test('should work with an object for `collection`', function () {
-        const actual = groupBy(Math.floor, { 'a': 6.1, 'b': 4.2, 'c': 6.3 } );
+        const actual = groupBy({ 'a': 6.1, 'b': 4.2, 'c': 6.3 }, Math.floor);
         expect(actual).toEqual({ '4': [4.2], '6': [6.1, 6.3] });
     });
 });
