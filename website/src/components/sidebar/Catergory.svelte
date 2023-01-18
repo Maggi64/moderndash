@@ -1,20 +1,29 @@
 <script lang="ts">
+    import Fa from "svelte-fa";
+    import { faChevronDown, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
     export let title: string;
     export let entries: string[];
+
+    let isOpen = true;
 </script>
 
 <li>
-    <h3 class="font-semibold tracking-tight text-slate-900">
+    <h3 class="font-semibold tracking-tight text-slate-900 capitalize flex items-center cursor-pointer text-lg" on:click={() => isOpen = !isOpen}>
+        <span class="mr-2">
+            <Fa icon={isOpen ? faChevronDown : faChevronRight}/>
+        </span>
         {title}
     </h3>
-
-    <ul class="pl-3 mt-3 space-y-2">
-        {#each entries as entry}
-            <li>
-                <a href="/docs/{entry}" class="text-slate-900 hover:text-slate-800">
-                    {entry}
-                </a>
-            </li>
-        {/each}
-    </ul>
+    {#if isOpen}
+        <ul class="pl-8 mt-3 space-y-2">
+            {#each entries as entry}
+                <li>
+                    <a href="/docs/{entry}" class="text-slate-900 hover:text-slate-800">
+                        {entry}
+                    </a>
+                </li>
+            {/each}
+        </ul>
+    {/if}
 </li>

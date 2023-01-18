@@ -1,0 +1,7 @@
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "entryPoints": ["./package/src/index.ts"],
+    "json": "./website/src/assets/extractedTypes.json",
+    "tsconfig": "./package/tsconfig.json",
+    "excludeNotDocumented": true
+  }

@@ -1,21 +1,9 @@
 <script lang="ts">
     import { docDataStore } from "../../docDataStore.js";
     import Catergory from "./Catergory.svelte";
+    import { groupBy } from "moderndash";
     
-    type ParsedCategory = {
-        title: string,
-        entries: string[]
-    }
-
-    const parsedCategories: ParsedCategory[] = [];
-
-    // Maps the raw data from the docDataStore to a more usable format
-    for(const rawCategory of $docDataStore.groups[0].categories) {
-        parsedCategories.push({
-            title: rawCategory.title,
-            entries: rawCategory.children.map(entryID => $docDataStore.children.find(child => child.id === entryID)?.name || "Not Found")
-        });
-    }
+    $: categoryGroups = groupBy($docDataStore.functions, func => func.source?.path || "Unknown")
 </script>
 
 <div class="fixed top-[3.5rem] h-screen shadow-xl px-4 left-0 hidden peer-checked:block lg:relative lg:top-0 lg:h-auto lg:px-0 lg:block lg:flex-none lg:shadow-none">
@@ -23,9 +11,10 @@
 
     <nav class="sticky top-[4.5rem] w-64 text-base lg:text-sm">
         <ul class="-ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto py-7 pl-0.5 space-y-8">
-            {#each parsedCategories as category}
-                <Catergory title={category.title} entries={category.entries}/>
+            {#each Object.entries(categoryGroups).sort() as [title, functions]}
+                <Catergory {title} entries={functions.map(func => func.name)}/>
             {/each}
         </ul>
     </nav>
 </div>
+
