@@ -7,3 +7,4 @@ export type RecordKey = string | number | symbol;
 
 export type ArrayOrRecord<T> = T[] | Record<RecordKey, T>;
 export type NoUnion<T, U = T> = T extends U ? [U] extends [T] ? T : never : never; 
+export type GenericFunction = (...args: never[]) => never;

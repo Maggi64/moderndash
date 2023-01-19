@@ -1,6 +1,6 @@
 {
   "name": "moderndash",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "type": "module",
   "description": "A lodash inspired utility framework for ESM/Typescript/ES2020",
   "scripts": {

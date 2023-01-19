@@ -1,3 +1,5 @@
+import type { GenericFunction } from '../types.js';
+
 /**
  * The opposite of `before`. This method creates a function that invokes `func` once it's called `n` or more times.
  *
@@ -12,7 +14,7 @@
  * after(5, caution)
  */
 
-export function after<TFunc extends (...args: Parameters<TFunc>) => ReturnType<TFunc>>(n: number, func: TFunc) {
+export function after<TFunc extends GenericFunction>(n: number, func: TFunc) {
     let count = 1;
     return (...args: Parameters<TFunc>): ReturnType<TFunc> | undefined => {
         if (count >= n) {

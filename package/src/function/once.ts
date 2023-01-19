@@ -1,3 +1,7 @@
+import type { GenericFunction } from 'src/types.js';
+
+import { before } from '@function/before';
+
 /**
  * Creates a function that is restricted to invoking `func` once. Repeat calls
  * to the function return the value of the first invocation. The `func` is
@@ -12,8 +16,7 @@
  * initialize()
  * // => `createApplication` is invoked once
  */
-import { before } from '@function/before';
 
-export function once<TFunc extends (...args: Parameters<TFunc>) => ReturnType<TFunc>>(func: TFunc): TFunc {
+export function once<TFunc extends GenericFunction>(func: TFunc): TFunc {
     return before(1, func);
 }
