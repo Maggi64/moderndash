@@ -1,6 +1,6 @@
 {
 	"name": "documentation-website",
-	"version": "0.0.1",
+	"version": "0.2.0",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -25,7 +25,8 @@
 		"vite": "4.0.4",
 		"snarkdown": "2.0.0",
 		"@tailwindcss/typography": "0.5.9",
-		"moderndash": "../package"
+		"moderndash": "../package",
+		"@stackblitz/sdk": "1.8.1"
 	},
 	"type": "module"
 }

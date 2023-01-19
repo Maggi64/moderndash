@@ -1,6 +1,9 @@
 <script lang="ts">
-    import Fa from "svelte-fa";
-    import { faChevronDown, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+    import {
+        faChevronDown,
+        faChevronRight
+    } from '@fortawesome/free-solid-svg-icons';
+    import Fa from 'svelte-fa';
 
     export let title: string;
     export let entries: string[];
@@ -9,7 +12,10 @@
 </script>
 
 <li>
-    <h3 class="font-semibold tracking-tight text-slate-900 capitalize flex items-center cursor-pointer text-lg" on:click={() => isOpen = !isOpen}>
+    <h3
+        class="font-semibold tracking-tight text-slate-900 capitalize flex items-center cursor-pointer text-lg"
+        on:click={() => (isOpen = !isOpen)}
+    >
         <span class="mr-2">
             <Fa icon={isOpen ? faChevronDown : faChevronRight}/>
         </span>
@@ -19,7 +25,10 @@
         <ul class="pl-8 mt-3 space-y-2">
             {#each entries as entry}
                 <li>
-                    <a href="/docs/{entry}" class="text-slate-900 hover:text-slate-800">
+                    <a
+                        href="/docs/{entry}"
+                        class="text-slate-900 hover:text-slate-800"
+                    >
                         {entry}
                     </a>
                 </li>

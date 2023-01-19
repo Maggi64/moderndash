@@ -1,0 +1,36 @@
+{
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": false,
+    "**/.hg": false,
+    "**/CVS": false,
+    ".idea": false,
+    ".vscode": false,
+    "**/node_modules": false,
+    "**/.svelte-kit": false,
+    ".github": false,
+    "LICENSE": false,
+    ".npmrc": false
+  },
+  "eslint.format.enable": true,
+  "eslint.validate": [
+      "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte"
+  ],
+  "eslint.probe": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "html",
+      "markdown",
+      "svelte"
+  ],
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "[svelte]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+}

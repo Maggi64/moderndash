@@ -1,7 +1,8 @@
 <script lang="ts">
-    import { page } from '$app/stores';
     import Signature from '../../../components/docs/Signature.svelte';
-    import { docDataStore } from '../../../docDataStore.js';   
+    import { docDataStore } from '../../../docDataStore.js';
+
+    import { page } from '$app/stores';
 
     console.log($docDataStore);
 
@@ -12,10 +13,8 @@
 <div class="prose max-w-none">
     {#if methodDoc}
         <h2>{methodDoc.name}</h2>
-        <Signature signature={methodDoc.signatures[0]} />
+        <Signature signature={methodDoc.signatures[0]}/>
     {:else}
         <h2>Method not found</h2>
     {/if}
 </div>
-
-
