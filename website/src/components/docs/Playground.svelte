@@ -77,4 +77,4 @@
     }
 </script>
 
-<div bind:this={embedElement}/>
+<div bind:this={embedElement} class="bg-gray-300 rounded-md overflow-hidden shadow-xl"/>
