@@ -3,6 +3,7 @@
         faChevronDown,
         faChevronRight
     } from '@fortawesome/free-solid-svg-icons';
+    import { capitalize } from 'moderndash';
     import Fa from 'svelte-fa';
 
     export let title: string;
@@ -13,13 +14,13 @@
 
 <li>
     <h3
-        class="font-semibold tracking-tight text-slate-900 capitalize flex items-center cursor-pointer text-lg"
+        class="font-semibold tracking-tight text-slate-900 flex items-center cursor-pointer text-lg"
         on:click={() => (isOpen = !isOpen)}
     >
         <span class="mr-2">
             <Fa icon={isOpen ? faChevronDown : faChevronRight}/>
         </span>
-        {title}
+        {capitalize(title)}
     </h3>
     {#if isOpen}
         <ul class="pl-8 mt-3 space-y-2">

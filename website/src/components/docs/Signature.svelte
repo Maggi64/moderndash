@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { SignatureParser } from 'typedoc-json-parser';
 
+    import { capitalize } from 'moderndash';
     import snarkdown from 'snarkdown';
 
     import Playground from './Playground.svelte';
@@ -18,7 +19,7 @@
 
 {#each signature.comment.blockTags as tag}
     <div>
-        <h3 class="capitalize">{tag.name}</h3>
+        <h3>{capitalize(tag.name)}</h3>
 
         {#if tag.name === 'example'}
             <Playground code={generateCode(tag.text)}/>
