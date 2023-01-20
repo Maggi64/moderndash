@@ -11,13 +11,13 @@ import { isEqualWith } from '@lang/isEqualWith';
  * determined by the first array. The iteratee is invoked with one argument:
  * (value).
  *
+ * @example
+ * intersectionBy(Math.floor, [2.1, 1.2], [2.3, 3.4])
+ * // => [2.1]
  * @category Array
  * @param iteratee - The iteratee invoked per element. Or property shorthand.
  * @param arrays - The arrays to inspect.
  * @returns Returns the new array of intersecting values.
- * @example
- * intersectionBy(Math.floor, [2.1, 1.2], [2.3, 3.4])
- * // => [2.1]
  */
 
 export function intersectionBy<TInput>(iteratee: IterateeFunction<TInput> | PropertyShorthand<TInput>, ...arrays: MinimumTwoArrays<TInput>): TInput[] {
