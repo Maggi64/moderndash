@@ -1,14 +1,42 @@
-export function isEmpty(value: unknown): boolean {
+/**
+ * Checks if `value` is an empty object, collection, map, or set.
+ *
+ * Objects are considered empty if they have no own enumerable string keyed
+ * properties.
+ *
+ * Array-like values such as `arguments` objects, arrays, buffers, strings, or
+ * Similarly, maps and sets are considered empty if they have a `size` of `0`.
+ *
+ * @category Lang
+ * @param value - The value to check.
+ * @returns Returns `true` if `value` is empty, else `false`.
+ * @example
+ * isEmpty(null)
+ * // => true
+ *
+ * isEmpty({})
+ * // => true
+ *
+ * isEmpty("")
+ * // => true
+ *
+ * isEmpty([1, 2, 3])
+ * // => false
+ *
+ * isEmpty('abc')
+ * // => false
+ *
+ * isEmpty({ 'a': 1 })
+ * // => false
+ */
+
+export function isEmpty(value: string | object | null | undefined): boolean {
     if (value === null || value === undefined) {
         return true;
     }
 
     if (typeof value === 'string' || Array.isArray(value)) {
         return value.length === 0;
-    }
-
-    if (typeof value === 'number') {
-        return false;
     }
 
     if (value instanceof Map || value instanceof Set) {

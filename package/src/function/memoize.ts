@@ -1,5 +1,6 @@
+import type{ GenericFunction } from 'src/types.js';
+
 const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
-type Cache = Map<string | symbol, unknown>;
 
 /**
  * Creates a function that memoizes the result of `func`. If `resolver` is
@@ -16,6 +17,8 @@ type Cache = Map<string | symbol, unknown>;
  * @category Function
  * @param func - The function to have its output memoized.
  * @param resolver - The function to resolve the cache key.
+ * @typeParam TFunc - The input function type
+ * @typeParam Cache - The cache map type
  * @returns  Returns the new memoized function.
  * @example
  * const object = \{ 'a': 1, 'b': 2 \}
@@ -40,10 +43,11 @@ type Cache = Map<string | symbol, unknown>;
  * memoize.Cache = WeakMap
  */
 
-export function memoize<TFunc extends (...args: Parameters<TFunc>) => ReturnType<TFunc>>(
+export function memoize<TFunc extends GenericFunction<TFunc>, Cache extends Map<string | symbol, ReturnType<TFunc>>>(
     func: TFunc, resolver: ((...args: Parameters<TFunc>) => string | symbol) = defaultResolver
 ): TFunc & { cache: Cache } {
-    const cache: Cache = new Map();
+
+    const cache = new Map() as Cache;
     const memoizedFunc = (...args: Parameters<TFunc>): ReturnType<TFunc> => {
         const key = resolver(...args);
         if (cache.has(key)) {

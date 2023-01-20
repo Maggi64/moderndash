@@ -1,8 +1,5 @@
-import type { GenericFunction } from '../types.js';
-
 /**
- * Creates a function that invokes `func`, with the `this` binding and arguments
- * of the created function, while it's called less than `n` times. Subsequent
+ * Creates a function that invokes `func`, while it's called less than `n` times. Subsequent
  * calls to the created function return the result of the last `func` invocation.
  *
  * @category Function
@@ -10,13 +7,18 @@ import type { GenericFunction } from '../types.js';
  * @param func - The function to restrict.
  * @returns Returns the new restricted function.
  * @example
- * const caution = () => alert("Caution!");
+ * const caution = () => console.log("Caution!");
  *
  * // Only call caution two times
- * before(2, caution)
+ * const reducedCaution = before(2, caution)
+ *
+ * reducedCaution()
+ * reducedCaution()
+ * reducedCaution()
+ * // => `caution` is invoked twice
  */
 
-export function before<TFunc extends GenericFunction>(n: number, func: TFunc): TFunc {
+export function before<TFunc extends (...args: Parameters<TFunc>) => ReturnType<TFunc>>(n: number, func: TFunc): TFunc {
     let count = 0;
     let result: ReturnType<TFunc>;
     return ((...args: Parameters<TFunc>): ReturnType<TFunc> => {

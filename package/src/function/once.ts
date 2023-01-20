@@ -11,12 +11,12 @@ import { before } from '@function/before';
  * @param func - The function to restrict.
  * @returns Returns the new restricted function.
  * @example
- * const initialize = once(createApplication)
+ * const initialize = once(() => console.log('initialize'))
  * initialize()
  * initialize()
  * // => `createApplication` is invoked once
  */
 
-export function once<TFunc extends GenericFunction>(func: TFunc): TFunc {
+export function once<TFunc extends GenericFunction<TFunc>>(func: TFunc): TFunc {
     return before(1, func);
 }

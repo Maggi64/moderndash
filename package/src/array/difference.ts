@@ -13,9 +13,9 @@ import { isEqual } from '@lang/isEqual';
  * @returns Returns the new array of filtered values.
  * @example
  * difference([2, 1], [2, 3])
- * // =\> [1]
+ * // => [1]
  */
 
-export function difference<T>(...arrays: MinimumTwoArrays<T>): T[] {
+export function difference<TInput>(...arrays: MinimumTwoArrays<TInput>): TInput[] {
     return differenceWith(isEqual, ...arrays);
 }

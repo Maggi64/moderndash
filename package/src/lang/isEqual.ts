@@ -1,5 +1,31 @@
 import type { RecordKey } from '../types';
 
+
+/**
+ * Performs a deep comparison between two values to determine if they are
+ * equivalent.
+ *
+ * **Note:** This method supports comparing arrays, array buffers, booleans,
+ * date objects, error objects, maps, numbers, `Object` objects, regexes,
+ * sets, strings, symbols, and typed arrays. `Object` objects are compared
+ * by their own, not inherited, enumerable properties. Functions and DOM
+ * nodes are compared by strict equality, i.e. `===`.
+ *
+ * @category Lang
+ * @param value1 - The value to compare.
+ * @param value2 - The other value to compare.
+ * @returns Returns `true` if the values are equivalent, else `false`.
+ * @example
+ * var object = { 'a': 1 };
+ * var other = { 'a': 1 };
+ *
+ * _.isEqual(object, other);
+ * // => true
+ *
+ * object === other;
+ * // => false
+ */
+
 export function isEqual(value1: unknown, value2: unknown): boolean {
     if (value1 === value2) return true;
 

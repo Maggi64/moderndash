@@ -8,13 +8,17 @@ import type { GenericFunction } from '../types.js';
  * @param func The function to restrict.
  * @returns Returns the new restricted function.
  * @example
- * const caution = () => alert("Caution!");
+ * const caution = () => console.log("Caution!");
  *
- * // Display alert only after it has been called 5 times
- * after(5, caution)
+ * const afterFN = after(2, caution);
+ *
+ * afterFN()
+ * afterFN()
+ * afterFN()
+ * // => `caution` is invoked after called twice
  */
 
-export function after<TFunc extends GenericFunction>(n: number, func: TFunc) {
+export function after<TFunc extends GenericFunction<TFunc>>(n: number, func: TFunc) {
     let count = 1;
     return (...args: Parameters<TFunc>): ReturnType<TFunc> | undefined => {
         if (count >= n) {

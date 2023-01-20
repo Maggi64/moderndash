@@ -1,8 +1,10 @@
+import type { GenericFunction } from 'src/types.js';
+
 import { debounce } from '@function/debounce';
 
-export function throttle<T extends (...args: Parameters<T>) => ReturnType<T>>(
-    func: T, wait = 0, options: { leading?: boolean, trailing?: boolean } = {}
-): (this: ThisParameterType<T>, ...args: Parameters<T>) => ReturnType<T> {
+export function throttle<TFunc extends GenericFunction<TFunc>>(
+    func: TFunc, wait = 0, options: { leading?: boolean, trailing?: boolean } = {}
+): (this: ThisParameterType<TFunc>, ...args: Parameters<TFunc>) => ReturnType<TFunc> {
     return debounce(func, wait, {
         leading: options.leading ?? true,
         maxWait: wait,
