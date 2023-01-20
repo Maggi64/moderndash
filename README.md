@@ -18,6 +18,7 @@
 
 ## Documentation
 The documentation is WIP.
+[Documentation](https://moderndash-production.up.railway.app/)
 
 ## Removed Functions because of trivial native alternatives
 Look at [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) for native replacements.
