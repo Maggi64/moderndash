@@ -4,7 +4,7 @@ on:
     branches:
       - master
     paths:
-      - 'package/**.*'
+      - 'package/**'
   workflow_dispatch:
 
 jobs:
