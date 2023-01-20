@@ -10,4 +10,4 @@ package
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-extractedTypes.json
+website/src/assets/extractedTypes.json
