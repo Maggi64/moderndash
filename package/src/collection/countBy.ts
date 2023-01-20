@@ -7,10 +7,6 @@ import { getValuesFromCollection } from '@helpers/collections';
  * each element of `collection` thru `iteratee`. The corresponding value of
  * each key is the number of times the key was returned by `iteratee`.
  *
- * @category Collection
- * @param iteratee - The iteratee to transform keys.
- * @param collection - The array or record to iterate over.
- * @returns Returns the composed aggregate object.
  * @example
  * const users = [
  *   { 'user': 'barney', 'active': true },
@@ -20,6 +16,10 @@ import { getValuesFromCollection } from '@helpers/collections';
  *
  * countBy(users, value => value.active);
  * // => { 'true': 2, 'false': 1 }
+ * @category Collection
+ * @param iteratee - The iteratee to transform keys.
+ * @param collection - The array or record to iterate over.
+ * @returns Returns the composed aggregate object.
  */
 
 export function countBy<TInput, TKey extends RecordKey>(collection: ArrayOrRecord<TInput>, iteratee: (value: TInput) => TKey): Record<TKey, number> {
