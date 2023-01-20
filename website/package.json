@@ -27,7 +27,7 @@
 		"vite": "4.0.4",
 		"snarkdown": "2.0.0",
 		"@tailwindcss/typography": "0.5.9",
-		"moderndash": "0.0.11",
+		"moderndash": "../package",
 		"@stackblitz/sdk": "1.8.1"
 	},
 	"type": "module"
