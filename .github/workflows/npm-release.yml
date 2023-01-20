@@ -2,7 +2,7 @@ name: "NPM Release"
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'package/**'
   workflow_dispatch:
