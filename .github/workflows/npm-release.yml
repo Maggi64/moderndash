@@ -17,8 +17,11 @@ jobs:
       - uses: actions/checkout@v3
       - shell: bash
         run: |
-          cp './README.md' './package/README.md'
-          cp './LICENSE' './package/LICENSE'
+          npm ci
+          cd package
+          npm run build
+          cp '../README.md' './README.md'
+          cp '../LICENSE' './LICENSE'
       - uses: mikeal/merge-release@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
