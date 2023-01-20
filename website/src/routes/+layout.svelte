@@ -4,6 +4,8 @@
     import Header from '$components/Header.svelte';
     import Sidebar from '$components/sidebar/Sidebar.svelte';
     import SidebarBtn from '$components/sidebar/SideBarBtn.svelte';
+
+    export const prerender = true;
 </script>
 
 <Header/>
