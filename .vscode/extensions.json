@@ -3,6 +3,6 @@
         "dbaeumer.vscode-eslint",
         "svelte.svelte-vscode",
         "bradlc.vscode-tailwindcss",
-        "eamodio.toggle-excluded-files"
+        "adrianwilczynski.toggle-hidden"
     ]
 }

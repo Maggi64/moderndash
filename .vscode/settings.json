@@ -1,16 +1,16 @@
 {
   "files.exclude": {
-    "**/.git": false,
-    "**/.svn": false,
-    "**/.hg": false,
-    "**/CVS": false,
-    ".idea": false,
-    ".vscode": false,
-    "**/node_modules": false,
-    "**/.svelte-kit": false,
-    ".github": false,
-    "LICENSE": false,
-    ".npmrc": false
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    ".idea": true,
+    ".vscode": true,
+    "**/node_modules": true,
+    "**/.svelte-kit": true,
+    ".github": true,
+    "LICENSE": true,
+    ".npmrc": true
   },
   "eslint.format.enable": true,
   "eslint.validate": [
