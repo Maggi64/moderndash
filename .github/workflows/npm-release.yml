@@ -1,0 +1,14 @@
+name: "NPM Release"
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'package/**.*'
+
+- uses: mikeal/merge-release@master
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+    DEPLOY_DIR: package
+    SRC_PACKAGE_DIR: package
