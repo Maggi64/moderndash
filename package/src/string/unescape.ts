@@ -1,4 +1,16 @@
-export function unescapeHTML(html: string): string {
+/**
+ * Converts the HTML entities `&amp;`, `&lt;`, `&gt;`, `&quot;` and `&#39;`
+ * in a string to their corresponding characters.
+ *
+ * @example
+ * unescape('fred, barney, &amp; pebbles')
+ * // => 'fred, barney, & pebbles'
+ * @category String
+ * @param str - The string to unescape.
+ * @returns Returns the unescaped string.
+ */
+
+export function unescape(str: string): string {
     const entityMap: Record<string, string> = {
         '&amp;': '&',
         '&lt;': '<',
@@ -6,5 +18,5 @@ export function unescapeHTML(html: string): string {
         '&quot;': '"',
         '&#39;': '\''
     };
-    return html.replace(/&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34);/g, (entity: string) => entityMap[entity] || entity);
+    return str.replace(/&(?:amp|lt|gt|quot|#(0+)?39);/g, (entity: string) => entityMap[entity] || entity);
 }

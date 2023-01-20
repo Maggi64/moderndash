@@ -5,7 +5,7 @@
  * @category Array
  * @param array - The array to inspect.
  * @param comparator - The comparator invoked per element.
- * @returns {Array} Returns the new duplicate free array.
+ * @returns Returns the new duplicate free array.
  * @example
  * const objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 2 }]
  *

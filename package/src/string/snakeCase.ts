@@ -1,5 +1,22 @@
 import { splitWords } from '@helpers/stringModifiers';
 
+/**
+ * Converts a string to snake_case.
+ *
+ * @example
+ * snakeCase('Foo Bar')
+ * // => 'foo_bar'
+ * snakeCase('fooBar')
+ * // => 'foo_bar'
+ * snakeCase('--FOO-BAR--')
+ * // => 'foo_bar'
+ * snakeCase('foo2bar')
+ * // => 'foo_2_bar'
+ * @category String
+ * @param str - The string to convert.
+ * @returns Returns the snake cased string.
+ */
+
 export function snakeCase(str: string): string {
     const words = splitWords(str);
     let snakeCase = '';

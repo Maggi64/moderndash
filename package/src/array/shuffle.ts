@@ -5,7 +5,7 @@
  * @since 0.1.0
  * @category Array
  * @param array - The array or object to shuffle.
- * @returns {Array} Returns the new shuffled array.
+ * @returns Returns the new shuffled array.
  * @example
  * shuffle([1, 2, 3, 4])
  * // => [4, 1, 3, 2]
