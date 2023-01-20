@@ -10,13 +10,13 @@ import { getValuesFromCollection } from '@helpers/collections';
  * value of each key is an array of elements responsible for generating the
  * key.
  *
+ * @example
+ * groupBy([6.1, 4.2, 6.3], Math.floor)
+ * // => { '4': [4.2], '6': [6.1, 6.3] }
  * @category Collection
  * @param collection - The array or object to iterate over.
  * @param iteratee - The iteratee to transform keys.
  * @returns Returns the composed aggregate object.
- * @example
- * groupBy([6.1, 4.2, 6.3], Math.floor)
- * // => { '4': [4.2], '6': [6.1, 6.3] }
  */
 
 export function groupBy<T, U extends RecordKey>(collection: ArrayOrRecord<T>, iteratee: (value: T) => U): Record<U, T[]> {
