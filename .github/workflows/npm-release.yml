@@ -12,6 +12,7 @@ jobs:
     name: NPM Release
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: mikeal/merge-release@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
