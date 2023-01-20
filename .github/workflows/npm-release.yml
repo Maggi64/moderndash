@@ -5,6 +5,7 @@ on:
       - master
     paths:
       - 'package/**.*'
+  workflow_dispatch:
 
 jobs:
   npm:
