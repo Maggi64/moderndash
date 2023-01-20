@@ -78,21 +78,29 @@ describe('isEqual', () => {
         expect(isEqual(/a(.*)/, /a(.*)/)).toBe(true);
         expect(isEqual(/a/, /b.*/)).toBe(false);
     });
+
+    test('deepEquals with Error objects', () => {
+        const error1 = new Error('test error');
+        let error2 = new Error('test error');
+        expect(error1).toEqual(error2);
+        error2 = new Error('different error');
+        expect(error1).not.toEqual(error2);
+    });
 });
 
 
 describe('isEqualWith', () => {
     test('should return true if the customizer function returns equal values for both inputs', () => {
-        expect(isEqualWith(Math.floor, 1.3, 1.8)).toBe(true);
+        expect(isEqualWith(1.3, 1.8, Math.floor)).toBe(true);
     });
 
     test('should return false if the customizer function returns different values for both inputs', () => {
         const customizer = (value: number) => value * 2;
-        expect(isEqualWith(customizer, 2, 5)).toBe(false);
+        expect(isEqualWith(2, 5, customizer)).toBe(false);
     });
 
     test('should work with objects as input', () => {
         const customizer = (value: { a: number, b: number }) => value.a + value.b;
-        expect(isEqualWith(customizer, { a: 2, b: 3 }, { a: 1, b: 4 })).toBe(true);
+        expect(isEqualWith({ a: 2, b: 3 }, { a: 1, b: 4 }, customizer)).toBe(true);
     });
 });

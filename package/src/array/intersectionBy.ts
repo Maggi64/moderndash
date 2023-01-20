@@ -22,5 +22,5 @@ import { isEqualWith } from '@lang/isEqualWith';
 
 export function intersectionBy<TInput>(iteratee: IterateeFunction<TInput> | PropertyShorthand<TInput>, ...arrays: MinimumTwoArrays<TInput>): TInput[] {
     const iterateeFunction = getIterateFunction(iteratee);
-    return intersectionWith((a, b) => isEqualWith(iterateeFunction, a, b), ...arrays);
+    return intersectionWith((a, b) => isEqualWith(a, b, iterateeFunction), ...arrays);
 }

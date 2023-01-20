@@ -1,11 +1,12 @@
+import type { GenericFunction } from 'src/types.js';
 
 // TODO this is a port from lodash, it probably can be improved and shortened, also fix TS errors
-export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
-    fn: T, wait = 0, options: { leading?: boolean, maxWait?: number, trailing?: boolean } = {}
-): (this: ThisParameterType<T>, ...args: Parameters<T>) => ReturnType<T> {
-    let lastArgs: Parameters<T> | undefined;
-    let lastThis: ThisParameterType<T> | undefined;
-    let result: ReturnType<T>;
+export function debounce<TFunc extends GenericFunction<TFunc>>(
+    fn: TFunc, wait = 0, options: { leading?: boolean, maxWait?: number, trailing?: boolean } = {}
+): (this: ThisParameterType<TFunc>, ...args: Parameters<TFunc>) => ReturnType<TFunc> {
+    let lastArgs: Parameters<TFunc> | undefined;
+    let lastThis: ThisParameterType<TFunc> | undefined;
+    let result: ReturnType<TFunc>;
     let timerId: ReturnType<typeof setTimeout> | undefined;
     let lastCallTime: number | undefined;
     let lastInvokeTime = 0;
@@ -15,12 +16,12 @@ export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
     const maxWait = options.maxWait ?? 0;
 
     function invokeFunc(time: number) {
-        const args: Parameters<T> | undefined = lastArgs;
-        const thisArg: ThisParameterType<T> | undefined = lastThis;
+        const args: Parameters<TFunc> | undefined = lastArgs;
+        const thisArg: ThisParameterType<TFunc> | undefined = lastThis;
 
         lastArgs = lastThis = undefined;
         lastInvokeTime = time;
-        // @ts-ignore
+        // @ts-expect-error
         result = fn.apply(thisArg, args);
         return result;
     }
@@ -35,7 +36,7 @@ export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
     }
 
     function remainingWait(time: number) {
-        // @ts-ignore
+        // @ts-expect-error
         const timeSinceLastCall = time - lastCallTime;
         const timeSinceLastInvoke = time - lastInvokeTime;
         const timeWaiting = wait - timeSinceLastCall;
@@ -91,7 +92,7 @@ export function debounce<T extends (...args: Parameters<T>) => ReturnType<T>>(
         return timerId === undefined ? result : trailingEdge(Date.now());
     }
 
-    function debounced(this: ThisParameterType<T>, ...args: Parameters<T>): ReturnType<T> {
+    function debounced(this: ThisParameterType<TFunc>, ...args: Parameters<TFunc>): ReturnType<TFunc> {
         const time = Date.now();
         const isInvoking = shouldInvoke(time);
 

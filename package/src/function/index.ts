@@ -4,3 +4,4 @@ export * from './debounce';
 export * from './memoize';
 export * from './once';
 export * from './throttle';
+export * from './times';

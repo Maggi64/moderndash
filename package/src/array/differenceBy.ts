@@ -26,5 +26,5 @@ import { isEqualWith } from '@lang/isEqualWith';
 
 export function differenceBy<T>(iteratee: IterateeFunction<T> | PropertyShorthand<T>, ...arrays: MinimumTwoArrays<T>): T[] {
     const iterateeFunction = getIterateFunction(iteratee);
-    return differenceWith((a, b) => isEqualWith(iterateeFunction, a, b), ...arrays);
+    return differenceWith((a, b) => isEqualWith(a, b, iterateeFunction), ...arrays);
 }
