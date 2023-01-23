@@ -42,9 +42,9 @@
   ],
   "homepage": "https://moderndash.io",
   "devDependencies": {
-    "@vitest/coverage-c8": "0.27.1",
-    "@vitest/ui": "0.27.1",
-    "vitest": "0.27.1",
+    "@vitest/coverage-c8": "0.28.1",
+    "@vitest/ui": "0.28.1",
+    "vitest": "0.28.1",
     "tsup": "6.5.0",
     "ctix": "1.8.1"
   }
