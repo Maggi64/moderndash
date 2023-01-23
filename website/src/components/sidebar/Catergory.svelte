@@ -26,10 +26,7 @@
         <ul class="pl-8 mt-3 space-y-2">
             {#each entries as entry}
                 <li>
-                    <a
-                        href="/docs/{entry}"
-                        class="text-slate-900 hover:text-slate-800"
-                    >
+                    <a href="/docs/{entry}" class="text-slate-900 hover:text-slate-800">
                         {entry}
                     </a>
                 </li>

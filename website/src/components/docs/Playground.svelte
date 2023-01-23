@@ -9,9 +9,7 @@
     let embedElement: HTMLElement | undefined;
     let stackblitzProject: VM | undefined;
 
-    onMount(() => {
-        void createEmbed();
-    });
+    onMount(createEmbed);
 
     onDestroy(() => {
         if (stackblitzProject && embedElement)
@@ -20,7 +18,6 @@
 
     async function createEmbed() {
         if (!embedElement || stackblitzProject) return;
-
         // targetElement gets replaced with the embed
         const targetElement = document.createElement('div');
         embedElement.append(targetElement);
@@ -77,4 +74,4 @@
     }
 </script>
 
-<div bind:this={embedElement} class="bg-gray-300 rounded-md overflow-hidden shadow-xl"/>
+<div bind:this={embedElement} class="bg-gray-900 rounded-md overflow-hidden shadow-xl"/>
