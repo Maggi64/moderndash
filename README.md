@@ -12,11 +12,11 @@
   ✅ Hoverable Docs
 </p>
 
-<h2 align=center>
+<h3 align=center>
   <a href="https://moderndash.io" target="_blank">
        📓 Documentation
   </a>
-</h2>
+</h3>
 
 ---
 
