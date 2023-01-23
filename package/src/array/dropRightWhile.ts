@@ -14,7 +14,7 @@
  *   { 'user': 'pebbles', 'active': true }
  * ]
  *
- * dropRightWhile(({ active }) => active, users)
+ * dropRightWhile(users, { active }) => active)
  * // => objects for ['barney']
  */
 
