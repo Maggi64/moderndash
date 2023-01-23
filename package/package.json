@@ -1,7 +1,8 @@
 {
   "name": "moderndash",
   "type": "module",
-  "description": "A lodash inspired utility framework for ESM/Typescript/ES2020",
+  "description": "A lodash inspired utility framework for ESM/Typescript/ESNext",
+  "sideEffects": false,
   "scripts": {
     "build": "ctix create ----startAt src --overwrite --noBackup & tsup",
     "prepublishOnly": "npm run build && @powershell cp '../README.md' './README.md' && @powershell cp '../LICENSE' './LICENSE'",
@@ -18,7 +19,8 @@
     "utility",
     "helper",
     "underscore",
-    "esm"
+    "esm",
+    "typescript"
   ],
   "author": "Maggi64",
   "license": "MIT",
@@ -36,8 +38,7 @@
     }
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "homepage": "https://moderndash.io",
   "devDependencies": {
