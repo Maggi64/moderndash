@@ -6,18 +6,18 @@ import { takeWhile } from '@array/takeWhile';
 describe('takeWhile', () => {
     const numbers = [2, 4, 5, 6, 7, 8, 9, 10];
     it('should return the elements from the input array until the predicate returns false', () => {
-        const evenNumbers = takeWhile((n) => n % 2 === 0, numbers);
+        const evenNumbers = takeWhile(numbers, (n) => n % 2 === 0);
         expect(evenNumbers).toEqual([2, 4]);
     });
 
     it('should return an empty array if the predicate always returns false', () => {
-        const evenNumbers = takeWhile((n) => n > 10, numbers);
+        const evenNumbers = takeWhile(numbers, (n) => n > 10);
         expect(evenNumbers).toEqual([]);
     });
 
     it('should deal with different types', () => {
         const mixed = [1, 2, 3, '4', 5, '6', 7, '8', 9, '10', [], {}, undefined];
-        const evenNumbers = takeWhile((n) => typeof n === 'number', mixed);
+        const evenNumbers = takeWhile(mixed, (n) => typeof n === 'number');
         expect(evenNumbers).toEqual([1, 2, 3]);
     });
 });

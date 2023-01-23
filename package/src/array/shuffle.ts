@@ -2,13 +2,12 @@
  * Creates an array of shuffled values, using a version of the
  * [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher-Yates_shuffle).
  *
- * @since 0.1.0
- * @category Array
- * @param array - The array or object to shuffle.
- * @returns Returns the new shuffled array.
  * @example
  * shuffle([1, 2, 3, 4])
  * // => [4, 1, 3, 2]
+ * @category Array
+ * @param array - The array or object to shuffle.
+ * @returns Returns the new shuffled array.
  */
 
 export function shuffle<TInput>(array: TInput[]): TInput[] {

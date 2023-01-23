@@ -19,7 +19,7 @@ import type { RecordKey } from '../types';
  * var object = { 'a': 1 };
  * var other = { 'a': 1 };
  *
- * _.isEqual(object, other);
+ * isEqual(object, other);
  * // => true
  *
  * object === other;
@@ -68,7 +68,6 @@ function isSameObject(value1: KeyValueObject, value2: KeyValueObject) {
 }
 
 function isSameArray(value1: unknown[], value2: unknown[]) {
-    // check if the arrays have the same length
     if (value1.length !== value2.length) return false;
 
     // check if the values of each element in the arrays are equal

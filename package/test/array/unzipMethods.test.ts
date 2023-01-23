@@ -7,7 +7,7 @@ describe('unzipWith', () => {
         const array: [number, string, boolean?][] = [[1, 'a', true], [2, 'b', false], [3, 'c']];
         const iteratee = (x: number, y: string, z?: boolean) => x.toString() + y + (z ? '!' : '');
 
-        const result = unzipWith(iteratee, array);
+        const result = unzipWith(array, iteratee);
         expect(result).toEqual(['1a!', '2b', '3c']);
     });
 });

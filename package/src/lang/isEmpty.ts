@@ -7,9 +7,6 @@
  * Array-like values such as `arguments` objects, arrays, buffers, strings, or
  * Similarly, maps and sets are considered empty if they have a `size` of `0`.
  *
- * @category Lang
- * @param value - The value to check.
- * @returns Returns `true` if `value` is empty, else `false`.
  * @example
  * isEmpty(null)
  * // => true
@@ -28,6 +25,9 @@
  *
  * isEmpty({ 'a': 1 })
  * // => false
+ * @category Lang
+ * @param value - The value to check.
+ * @returns Returns `true` if given vlaue is empty, else `false`.
  */
 
 export function isEmpty(value: string | object | null | undefined): boolean {

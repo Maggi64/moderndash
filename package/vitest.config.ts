@@ -21,7 +21,8 @@ export default defineConfig({
             '@collection': getPath('src/collection'),
             '@string': getPath('src/string'),
             '@number': getPath('src/number'),
-            '@helpers': getPath('src/helpers')
+            '@helpers': getPath('src/helpers'),
+            '@promise': getPath('src/promise')
         }
     }
 });

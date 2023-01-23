@@ -18,8 +18,8 @@ import { getIterateFunction } from '@helpers/shortHands';
  * // => [2.1, 1.2]
  */
 
-export function uniqBy<T>(iteratee: IterateeFunction<T> | PropertyShorthand<T>, array: T[]): T[] {
+export function uniqBy<T>( array: T[], iteratee: IterateeFunction<T> | PropertyShorthand<T>): T[] {
     const iterateeFunction = getIterateFunction(iteratee);
 
-    return uniqWith((a, b) => iterateeFunction(a) === iterateeFunction(b), array);
+    return uniqWith(array, (a, b) => iterateeFunction(a) === iterateeFunction(b));
 }

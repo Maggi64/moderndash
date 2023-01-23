@@ -19,7 +19,7 @@
  */
 
 
-export function dropRightWhile<T>(predicate: (value: T) => boolean, array: T[]) {
+export function dropRightWhile<T>(array: T[], predicate: (value: T) => boolean) {
     let i = array.length;
     while (i > 0 && predicate(array[i - 1])) {
         i--;

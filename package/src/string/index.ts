@@ -7,5 +7,5 @@ export * from './kebabCase';
 export * from './pascalCase';
 export * from './snakeCase';
 export * from './startCase';
-export * from './stripSpecialChars';
+export * from './stripSpecial';
 export * from './unescape';

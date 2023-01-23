@@ -18,7 +18,7 @@
  * // => objects for ['barney', 'fred']
  */
 
-export function takeWhile<T>(predicate: (elem: T) => boolean, array: T[]): T[] {
+export function takeWhile<T>(array: T[], predicate: (elem: T) => boolean): T[] {
     const result: T[] = [];
 
     for (const element of array) {

@@ -22,6 +22,7 @@ export function zipWith<Args extends unknown[], TOutput>(combineFunc: (...args: 
     const zipped: TOutput[] = [];
     for (let i = 0; i < len; i++) {
         // Typescript needs the Args hint, or it infers any[]
+        // TODO find a way to avoid the cast
         zipped[i] = combineFunc(...arrays.map(a => a[i]) as Args);
     }
     return zipped;

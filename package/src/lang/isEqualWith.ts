@@ -7,10 +7,6 @@ import { isEqual } from '@lang/isEqual';
  * six arguments: (objValue, othValue [, index|key, object, other, stack]).
  *
  * @category Lang
- * @param value1 - The value to compare.
- * @param value2 - The other value to compare.
- * @param customizer - The function to customize comparisons.
- * @returns Returns `true` if the values are equivalent, else `false`.
  * @example
  * function isGreeting(value) {
  *   return /^h(?:i|ello)$/.test(value);
@@ -27,6 +23,10 @@ import { isEqual } from '@lang/isEqual';
  *
  * isEqualWith(array, other, customizer);
  * // => true
+ * @param a - The value to compare.
+ * @param b - The other value to compare.
+ * @param customizer - The function to customize comparisons.
+ * @returns Returns `true` if the values are equivalent, else `false`.
 */
 
 export function isEqualWith<T>(a: T, b: T, customizer: (value: T) => unknown): boolean {

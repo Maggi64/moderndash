@@ -5,11 +5,11 @@ import { splitWords } from '@helpers/stringModifiers';
  * Converts a string to PascalCase.
  *
  * @example
- * kebabCase('Foo Bar')
+ * pascalCase('Foo Bar')
  * // => 'FooBar'
- * kebabCase('fooBar')
+ * pascalCase('fooBar')
  * // => 'FooBar'
- * kebabCase('__FOO_BAR__')
+ * pascalCase('__FOO_BAR__')
  * // => 'FooBar'
  * @category String
  * @param str - The string to convert.

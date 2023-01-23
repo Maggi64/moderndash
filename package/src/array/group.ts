@@ -1,7 +1,4 @@
-import type { RecordKey, ArrayOrRecord } from '../types';
-
-import { getValuesFromCollection } from '@helpers/collections';
-
+import type { RecordKey } from '../types';
 
 /**
  * Creates an object composed of keys generated from the results of running
@@ -11,18 +8,20 @@ import { getValuesFromCollection } from '@helpers/collections';
  * key.
  *
  * @example
- * groupBy([6.1, 4.2, 6.3], Math.floor)
+ * group([6.1, 4.2, 6.3], Math.floor)
  * // => { '4': [4.2], '6': [6.1, 6.3] }
- * @category Collection
+ *
+ * group([6.1, 4.2, 6.3], value => value > 5)
+ * // => { 'false': [4.2], 'true': [6.1, 6.3] }
+ * @category Array
  * @param collection - The array or object to iterate over.
  * @param iteratee - The iteratee to transform keys.
  * @returns Returns the composed aggregate object.
  */
 
-export function groupBy<T, U extends RecordKey>(collection: ArrayOrRecord<T>, iteratee: (value: T) => U): Record<U, T[]> {
+export function group<T, U extends RecordKey>(array: T[], iteratee: (value: T) => U): Record<U, T[]> {
     const result = {} as Record<U, T[]>;
-    const values = getValuesFromCollection(collection);
-    for (const value of values) {
+    for (const value of array) {
         const key = iteratee(value);
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         result[key] = result[key] ?? [];

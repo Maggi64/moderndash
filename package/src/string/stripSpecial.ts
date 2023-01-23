@@ -11,7 +11,7 @@ import { deburr } from '@string/deburr';
  * @returns Returns the string with special characters removed.
 */
 
-export function stripSpecialChars(str: string): string {
+export function stripSpecial(str: string): string {
     str = deburr(str);
     return str.replace(/[^\s\w]/gi, '');
 }

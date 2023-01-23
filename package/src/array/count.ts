@@ -1,6 +1,4 @@
-import type { ArrayOrRecord, RecordKey } from '../types';
-
-import { getValuesFromCollection } from '@helpers/collections';
+import type { RecordKey } from '../types';
 
 /**
  * Creates an object composed of keys generated from the results of running
@@ -14,18 +12,17 @@ import { getValuesFromCollection } from '@helpers/collections';
  *   { 'user': 'fred', 'active': false }
  * ]
  *
- * countBy(users, value => value.active);
+ * count(users, value => value.active);
  * // => { 'true': 2, 'false': 1 }
- * @category Collection
+ * @category Array
  * @param iteratee - The iteratee to transform keys.
  * @param collection - The array or record to iterate over.
  * @returns Returns the composed aggregate object.
  */
 
-export function countBy<TInput, TKey extends RecordKey>(collection: ArrayOrRecord<TInput>, iteratee: (value: TInput) => TKey): Record<TKey, number> {
+export function count<TInput, TKey extends RecordKey>(array: TInput[], iteratee: (value: TInput) => TKey): Record<TKey, number> {
     const result = {} as Record<TKey, number>;
-    const values = getValuesFromCollection(collection);
-    for (const value of values) {
+    for (const value of array) {
         const key = iteratee(value);
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         if (result[key] === undefined) {

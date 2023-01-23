@@ -12,8 +12,8 @@
  * @returns Returns the new object.
  */
 
-export function pick<T, K extends keyof T>(object: T, keys: K[]): Pick<T, K> {
-    const result = {} as Pick<T, K>;
+export function pick<TInput, Key extends keyof TInput>(object: TInput, keys: Key[]): Pick<TInput, Key> {
+    const result = {} as Pick<TInput, Key>;
     for (const key of keys) {
         result[key] = object[key];
     }

@@ -1,6 +1,8 @@
 /**
- * Invokes the iteratee `n` times, returning an array of the results of
- * each invocation. The function is invoked with one argument: (index).
+ * Invokes a function `n` times, returning an array of the results of
+ * each invocation.
+ *
+ * The function is invoked with one argument: `index`
  *
  * @example
  * times(3, index => console.log("Run", index)))
@@ -11,12 +13,12 @@
  * // => [0, 0, 0, 0]
  * @category Function
  * @param n - The number of times to invoke `func`.
- * @param iteratee - The function invoked per iteration.
- * @returns Returns the array of results.
+ * @param func - The function invoked per iteration.
+ * @returns Returns an array of results.
  */
 
-export function times<T>(n: number, func: (index: number) => T): T[] {
-    const result: T[] = [];
+export function times<TInput>(n: number, func: (index: number) => TInput): TInput[] {
+    const result: TInput[] = [];
     for (let i = 0; i < n; i++) {
         result.push(func(i));
     }

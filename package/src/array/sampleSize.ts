@@ -16,7 +16,7 @@ import { sample } from '@array/sample';
  * // => [2, 3, 1]
  */
 
-export function sampleSize<TInput>(size: number, array: TInput[]): TInput[] {
+export function sampleSize<TInput>(array: TInput[], size: number): TInput[] {
     const sampleArray: TInput[] = [];
 
     if (array.length === 0 || size <= 0) {

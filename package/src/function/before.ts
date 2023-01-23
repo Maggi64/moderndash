@@ -1,3 +1,5 @@
+import type { GenericFunction } from 'src/types.js';
+
 /**
  * Creates a function that invokes `func`, while it's called less than `n` times. Subsequent
  * calls to the created function return the result of the last `func` invocation.
@@ -18,7 +20,7 @@
  * // => `caution` is invoked twice
  */
 
-export function before<TFunc extends (...args: Parameters<TFunc>) => ReturnType<TFunc>>(n: number, func: TFunc): TFunc {
+export function before<TFunc extends GenericFunction<TFunc>>(n: number, func: TFunc): TFunc {
     let count = 0;
     let result: ReturnType<TFunc>;
     return ((...args: Parameters<TFunc>): ReturnType<TFunc> => {

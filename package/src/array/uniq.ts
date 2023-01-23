@@ -14,5 +14,5 @@ import { isEqual } from '@lang/isEqual';
  */
 
 export function uniq<TInput>(array: TInput[]): TInput[] {
-    return uniqWith(isEqual, array);
+    return uniqWith(array, isEqual);
 }

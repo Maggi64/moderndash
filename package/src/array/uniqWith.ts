@@ -13,7 +13,7 @@
  * // => [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
  */
 
-export function uniqWith<TInput>(comparator: (a: TInput, b: TInput) => boolean, array: TInput[]): TInput[] {
+export function uniqWith<TInput>(array: TInput[], comparator: (a: TInput, b: TInput) => boolean): TInput[] {
     return array.filter((value, index, self) => {
         return self.findIndex(otherValue => comparator(value, otherValue)) === index;
     });
