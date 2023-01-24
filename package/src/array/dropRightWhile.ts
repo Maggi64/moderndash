@@ -3,11 +3,6 @@
  * Elements are dropped until `predicate` returns falsey. The predicate is
  * invoked with three arguments: (value, index, array).
  *
- * @category Array
- * @param predicate - The function invoked per iteration.
- * @param array - The array to query.
- * @returns Returns the slice of `array`.
- * @example
  * const users = [
  *   { 'user': 'barney',  'active': false },
  *   { 'user': 'fred',    'active': true },
@@ -16,6 +11,11 @@
  *
  * dropRightWhile(users, { active }) => active)
  * // => objects for ['barney']
+ * @category Array
+ * @param predicate - The function invoked per iteration.
+ * @param array - The array to query.
+ * @returns Returns the slice of `array`.
+ * @example
  */
 
 

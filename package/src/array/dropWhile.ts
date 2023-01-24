@@ -3,10 +3,6 @@
  * Elements are dropped until `predicate` returns falsey. The predicate is
  * invoked with three arguments: (value, index, array).
  *
- * @category Array
- * @param predicate - The function invoked per iteration.
- * @param array - The array to query.
- * @returns Returns the slice of `array`.
  * @example
  * const users = [
  *   { 'user': 'barney',  'active': true },
@@ -14,8 +10,12 @@
  *   { 'user': 'pebbles', 'active': false }
  * ]
  *
- * dropWhile(({ active }) => active, users)
+ * dropWhile(users, ({ active }) => active)
  * // => objects for ['pebbles']
+ * @category Array
+ * @param predicate - The function invoked per iteration.
+ * @param array - The array to query.
+ * @returns Returns the slice of `array`.
  */
 
 export function dropWhile<T>(array: T[], predicate: (value: T) => boolean): T[] {
