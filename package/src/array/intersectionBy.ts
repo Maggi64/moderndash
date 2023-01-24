@@ -2,7 +2,7 @@ import type { IterateeFunction, MinimumTwoArrays, PropertyShorthand } from '../t
 
 import { intersectionWith } from '@array/intersectionWith';
 import { getIterateFunction } from '@helpers/shortHands';
-import { isEqualWith } from '@validate/isEqualWith';
+import { isEqual } from '@validate/isEqual.js';
 
 /**
  * This method is like `intersection` except that it accepts `iteratee`
@@ -21,6 +21,6 @@ import { isEqualWith } from '@validate/isEqualWith';
  */
 
 export function intersectionBy<TInput>(iteratee: IterateeFunction<TInput> | PropertyShorthand<TInput>, ...arrays: MinimumTwoArrays<TInput>): TInput[] {
-    const iterateeFunction = getIterateFunction(iteratee);
-    return intersectionWith((a, b) => isEqualWith(a, b, iterateeFunction), ...arrays);
+    const iterateeFn = getIterateFunction(iteratee);
+    return intersectionWith((a, b) => isEqual(iterateeFn(a), iterateeFn(b)), ...arrays);
 }

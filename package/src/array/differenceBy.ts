@@ -2,7 +2,7 @@ import type { IterateeFunction, MinimumTwoArrays, PropertyShorthand } from '../t
 
 import { differenceWith } from '@array/differenceWith';
 import { getIterateFunction } from '@helpers/shortHands';
-import { isEqualWith } from '@validate/isEqualWith';
+import { isEqual } from '@validate/isEqual.js';
 
 /**
  * This method is like `difference` except that it accepts `iteratee` which
@@ -25,6 +25,6 @@ import { isEqualWith } from '@validate/isEqualWith';
  */
 
 export function differenceBy<T>(iteratee: IterateeFunction<T> | PropertyShorthand<T>, ...arrays: MinimumTwoArrays<T>): T[] {
-    const iterateeFunction = getIterateFunction(iteratee);
-    return differenceWith((a, b) => isEqualWith(a, b, iterateeFunction), ...arrays);
+    const iterateeFn = getIterateFunction(iteratee);
+    return differenceWith((a, b) => isEqual(iterateeFn(a), iterateeFn(b)), ...arrays);
 }
