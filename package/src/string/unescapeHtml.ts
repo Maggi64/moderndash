@@ -10,7 +10,7 @@
  * @returns Returns the unescaped string.
  */
 
-export function unescape(str: string): string {
+export function unescapeHtml(str: string): string {
     const entityMap: Record<string, string> = {
         '&amp;': '&',
         '&lt;': '<',

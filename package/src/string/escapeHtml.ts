@@ -9,7 +9,7 @@
  * @returns Returns the escaped string.
  */
 
-export function escape(str: string): string {
+export function escapeHtml(str: string): string {
     const escapeChars: Record<string, string> = {
         '&': '&amp;',
         '<': '&lt;',
