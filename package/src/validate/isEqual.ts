@@ -11,10 +11,6 @@ import type { RecordKey } from '../types';
  * by their own, not inherited, enumerable properties. Functions and DOM
  * nodes are compared by strict equality, i.e. `===`.
  *
- * @category Lang
- * @param value1 - The value to compare.
- * @param value2 - The other value to compare.
- * @returns Returns `true` if the values are equivalent, else `false`.
  * @example
  * var object = { 'a': 1 };
  * var other = { 'a': 1 };
@@ -24,6 +20,10 @@ import type { RecordKey } from '../types';
  *
  * object === other;
  * // => false
+ * @category Validate
+ * @param value1 - The value to compare.
+ * @param value2 - The other value to compare.
+ * @returns Returns `true` if the values are equivalent, else `false`.
  */
 
 export function isEqual(value1: unknown, value2: unknown): boolean {
