@@ -11,10 +11,10 @@
   ✅ Typescript Strict Mode (no any)
 </div>
 
-<p align=center>
+<div align=center>
   ✅ Zero dependencies
   ✅ Hoverable Docs
-</p>
+</div>
 
 <h3 align=center>
   <a href="https://moderndash.io" target="_blank">
