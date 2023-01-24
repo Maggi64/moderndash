@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - 'package/**'
+      - 'package/src/**'
       - 'README.md'
       - 'LICENSE'
   workflow_dispatch:
