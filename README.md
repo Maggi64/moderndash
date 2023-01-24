@@ -9,9 +9,6 @@
   ✅ ESM
   ✅ Tree-shakable
   ✅ Typescript Strict Mode (no any)
-</div>
-
-<div align=center>
   ✅ Zero dependencies
   ✅ Hoverable Docs
 </div>
