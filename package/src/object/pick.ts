@@ -8,13 +8,13 @@
  * // => { 'a': 1, 'c': 3 }
  * @category Object
  * @param object - The source object.
- * @param keys - The property paths to pick.
+ * @param keysToPick - The property paths to pick.
  * @returns Returns the new object.
  */
 
-export function pick<TInput, Key extends keyof TInput>(object: TInput, keys: Key[]): Pick<TInput, Key> {
+export function pick<TInput, Key extends keyof TInput>(object: TInput, keysToPick: Key[]): Pick<TInput, Key> {
     const result = {} as Pick<TInput, Key>;
-    for (const key of keys) {
+    for (const key of keysToPick) {
         result[key] = object[key];
     }
     return result;
