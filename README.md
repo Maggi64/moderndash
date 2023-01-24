@@ -4,10 +4,14 @@
   A Typescript-First utility library inspired by Lodash.
   Optimized for modern browsers, typescript & developer experience.
 </p>
-<p align=center>
+
+<div align=center>
   ✅ ESM
   ✅ Tree-shakable
-  ✅ Typescript Strict Mode (no any types)
+  ✅ Typescript Strict Mode (no any)
+</div>
+
+<p align=center>
   ✅ Zero dependencies
   ✅ Hoverable Docs
 </p>
