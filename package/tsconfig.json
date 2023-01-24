@@ -100,13 +100,13 @@
     "skipLibCheck": true,
     "paths": {
       "@array/*": ["src/array/*"],
-      "@lang/*": ["src/lang/*"],
       "@function/*": ["src/function/*"],
       "@object/*": ["src/object/*"],
       "@string/*": ["src/string/*"],
       "@collection/*": ["src/collection/*"],
       "@helpers/*": ["src/helpers/*"],
       "@promise/*": ["src/promise/*"],
+      "@validate/*": ["src/validate/*"]
     }
   },
   "include": ["./**/*.ts", "./**/*.js"]

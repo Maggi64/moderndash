@@ -2,7 +2,7 @@ import type { IterateeFunction, MinimumTwoArrays, PropertyShorthand } from '../t
 
 import { differenceWith } from '@array/differenceWith';
 import { getIterateFunction } from '@helpers/shortHands';
-import { isEqualWith } from '@lang/isEqualWith';
+import { isEqualWith } from '@validate/isEqualWith';
 
 /**
  * This method is like `difference` except that it accepts `iteratee` which

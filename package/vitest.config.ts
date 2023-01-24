@@ -15,14 +15,14 @@ export default defineConfig({
     resolve: {
         alias: {
             '@array': getPath('src/array'),
-            '@lang': getPath('src/lang'),
             '@object': getPath('src/object'),
             '@function': getPath('src/function'),
             '@collection': getPath('src/collection'),
             '@string': getPath('src/string'),
             '@number': getPath('src/number'),
             '@helpers': getPath('src/helpers'),
-            '@promise': getPath('src/promise')
+            '@promise': getPath('src/promise'),
+            '@validate': getPath('src/validate')
         }
     }
 });

@@ -1,7 +1,7 @@
 import type { MinimumTwoArrays } from '../types';
 
 import { intersectionWith } from '@array/intersectionWith';
-import { isEqual } from '@lang/isEqual';
+import { isEqual } from '@validate/isEqual';
 
 /**
  * Creates an array of unique values that are included in all given arrays.

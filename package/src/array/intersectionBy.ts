@@ -2,7 +2,7 @@ import type { IterateeFunction, MinimumTwoArrays, PropertyShorthand } from '../t
 
 import { intersectionWith } from '@array/intersectionWith';
 import { getIterateFunction } from '@helpers/shortHands';
-import { isEqualWith } from '@lang/isEqualWith';
+import { isEqualWith } from '@validate/isEqualWith';
 
 /**
  * This method is like `intersection` except that it accepts `iteratee`

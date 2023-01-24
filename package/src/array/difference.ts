@@ -1,7 +1,7 @@
 import type { MinimumTwoArrays } from '../types';
 
 import { differenceWith } from '@array/differenceWith';
-import { isEqual } from '@lang/isEqual';
+import { isEqual } from '@validate/isEqual';
 
 /**
  * Creates an array of `array` values not included in the other given arrays. The order and references of result values are determined by the first array.

@@ -1,5 +1,5 @@
 import { uniqWith } from '@array/uniqWith';
-import { isEqual } from '@lang/isEqual';
+import { isEqual } from '@validate/isEqual';
 
 /**
  * Creates a duplicate-free version of an array, in which only the first occurrence of each element is kept.

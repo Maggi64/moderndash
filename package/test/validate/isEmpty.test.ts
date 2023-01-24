@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { isEmpty } from '@lang/isEmpty.js';
+import { isEmpty } from '@validate/isEmpty.js';
 
 
 describe('isEmpty', () => {

@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
 
-import { isEqual } from '@lang/isEqual';
-import { isEqualWith } from '@lang/isEqualWith';
+import { isEqual } from '@validate/isEqual';
+import { isEqualWith } from '@validate/isEqualWith';
 
 describe('isEqual', () => {
     test('numbers', () => {

@@ -1,4 +1,4 @@
-import { isEqual } from '@lang/isEqual';
+import { isEqual } from '@validate/isEqual';
 
 /**
  * This method is like `_.isEqual` except that it accepts `customizer` which
