@@ -1,4 +1,4 @@
-import type { GenericFunction } from 'src/types.js';
+import type { GenericFunction } from '@helpers/types.js';
 
 import { debounce } from '@function/debounce';
 

@@ -1,4 +1,4 @@
-import type { IterateeFunction, PropertyShorthand } from '../types';
+import type { IterateeFunction, PropertyShorthand } from './types';
 
 import { isObjectKey } from '@helpers/typeofChecks';
 

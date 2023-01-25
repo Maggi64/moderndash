@@ -1,4 +1,4 @@
-import type { IterateeFunction } from 'src/types.js';
+import type { IterateeFunction } from '@helpers/types.js';
 
 import { isEqual } from '@validate/isEqual';
 

@@ -1,4 +1,4 @@
-import type { MinimumTwoArrays } from '../types';
+import type { MinimumTwoArrays } from '@helpers/types';
 
 /**
  * This method is like `intersection` except that it accepts `comparator`

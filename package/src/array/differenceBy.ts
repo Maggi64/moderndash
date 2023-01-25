@@ -1,4 +1,4 @@
-import type { IterateeFunction, MinimumTwoArrays, PropertyShorthand } from '../types';
+import type { IterateeFunction, MinimumTwoArrays, PropertyShorthand } from '@helpers/types';
 
 import { differenceWith } from '@array/differenceWith';
 import { getIterateFunction } from '@helpers/shortHands';

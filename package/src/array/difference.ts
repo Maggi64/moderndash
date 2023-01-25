@@ -1,4 +1,4 @@
-import type { MinimumTwoArrays } from '../types';
+import type { MinimumTwoArrays } from '@helpers/types';
 
 import { differenceWith } from '@array/differenceWith';
 import { isEqual } from '@validate/isEqual';

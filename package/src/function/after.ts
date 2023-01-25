@@ -1,4 +1,4 @@
-import type { GenericFunction } from '../types.js';
+import type { GenericFunction } from '@helpers/types.js';
 
 /**
  * The opposite of `before`. This method creates a function that invokes `func` once it's called `n` or more times.

@@ -106,7 +106,8 @@
       "@collection/*": ["src/collection/*"],
       "@helpers/*": ["src/helpers/*"],
       "@promise/*": ["src/promise/*"],
-      "@validate/*": ["src/validate/*"]
+      "@validate/*": ["src/validate/*"],
+      "@type/*": ["src/type/*"],
     }
   },
   "include": ["./**/*.ts", "./**/*.js"]

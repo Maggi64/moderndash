@@ -22,7 +22,8 @@ export default defineConfig({
             '@number': getPath('src/number'),
             '@helpers': getPath('src/helpers'),
             '@promise': getPath('src/promise'),
-            '@validate': getPath('src/validate')
+            '@validate': getPath('src/validate'),
+            '@type': getPath('src/type')
         }
     }
 });

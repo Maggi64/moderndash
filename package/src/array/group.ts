@@ -1,4 +1,4 @@
-import type { RecordKey } from '../types';
+import type { RecordKey } from '@helpers/types';
 
 /**
  * Creates an object composed of keys generated from the results of running

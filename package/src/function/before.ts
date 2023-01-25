@@ -1,4 +1,4 @@
-import type { GenericFunction } from 'src/types.js';
+import type { GenericFunction } from '@helpers/types.js';
 
 /**
  * Creates a function that invokes `func`, while it's called less than `n` times. Subsequent

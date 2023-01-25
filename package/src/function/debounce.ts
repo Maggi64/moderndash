@@ -1,4 +1,4 @@
-import type { GenericFunction } from 'src/types.js';
+import type { GenericFunction } from '@helpers/types.js';
 
 // TODO this is a port from lodash, it probably can be improved and shortened, also fix TS errors
 export function debounce<TFunc extends GenericFunction<TFunc>>(

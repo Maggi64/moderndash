@@ -1,4 +1,4 @@
-import type { RecordKey } from '../types';
+import type { RecordKey } from '@helpers/types';
 
 
 /**
