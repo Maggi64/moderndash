@@ -107,7 +107,7 @@
       "@helpers/*": ["src/helpers/*"],
       "@promise/*": ["src/promise/*"],
       "@validate/*": ["src/validate/*"],
-      "@type/*": ["src/type/*"],
+      "@type/*": ["src/type/*"]
     }
   },
   "include": ["./**/*.ts", "./**/*.js"]
