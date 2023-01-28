@@ -1,4 +1,4 @@
 export * from './Float';
-export * from './Integer';
+export * from './Int';
 export * from './Negative';
 export * from './Positive';
