@@ -59,7 +59,8 @@
         'editor.lineNumbers': 'off',
         'editor.parameterHints.enabled': true,
         'editor.inlayHints.enabled': 'on',
-        'typescript.inlayHints.parameterNames.enabled': 'all'
+        'typescript.inlayHints.parameterNames.enabled': 'all',
+        'editor.parameterHints': { 'enabled': true, 'cycle': true }
     };
 
     $: void updateCode(code);
