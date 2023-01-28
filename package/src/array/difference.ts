@@ -1,21 +1,44 @@
 import type { MinimumTwoArrays } from '@helpers/types';
 
-import { differenceWith } from '@array/differenceWith';
 import { isEqual } from '@validate/isEqual';
 
 /**
- * Creates an array of `array` values not included in the other given arrays. The order and references of result values are determined by the first array.
+ * Creates an array values not included in the other given arrays.
+ * The order and references of result values are determined by the first array.
  *
- * **Note:** Unlike `pullAll`, this method returns a new array.
- *
- * @category Array
- * @param arrays - First array is inspected, others are excluded.
- * @returns Returns the new array of filtered values.
  * @example
  * difference([2, 1], [2, 3])
  * // => [1]
+ *
+ * // ---- Custom compare function ----
+ * intersection((a, b) => Math.floor(a) === Math.floor(b), [1.2, 3.1], [1.3, 2.4])
+ * // => [3.1]
+ *
+ * // ---- Only compare by id ----
+ * const arr1 = [{ id: 1, name: 'Yeet' }, { id: 3, name: 'John' }];
+ * const arr2 = [{ id: 3, 'Carl' }, { id: 4, name: 'Max' }];
+ *
+ * difference((a, b) => a.id === b.id, arr1, arr2)
+ * // => [{ id: 1, name: 'Yeet' }]
+ * @category Array
+ * @param arrays - First array is inspected, others are excluded.
+ * @returns Returns the new array of filtered values.
  */
 
-export function difference<TInput>(...arrays: MinimumTwoArrays<TInput>): TInput[] {
-    return differenceWith(isEqual, ...arrays);
+export function difference<TArr>(...arrays: MinimumTwoArrays<TArr>): TArr[];
+export function difference<TArr>(arrayOrCompFn: (a: TArr, b: TArr) => boolean, ...arrays: MinimumTwoArrays<TArr>): TArr[];
+export function difference<TArr>(arrayOrCompFn: TArr[] | ((a: TArr, b: TArr) => boolean), ...arrays: MinimumTwoArrays<TArr>): TArr[] {
+    const withCompareFn = typeof arrayOrCompFn === 'function';
+    const compareFN = withCompareFn ? arrayOrCompFn as (a: TArr, b: TArr) => boolean : isEqual;
+
+    const [firstArray, ...restArrays] = withCompareFn ? arrays : [arrayOrCompFn, ...arrays];
+    const difference: TArr[] = [];
+
+    firstArray.forEach(element => {
+        if (!restArrays.some(array => array.some(item => compareFN(item, element)))) {
+            difference.push(element);
+        }
+    });
+
+    return difference;
 }
