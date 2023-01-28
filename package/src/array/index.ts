@@ -6,7 +6,6 @@ export * from './dropWhile';
 export * from './group';
 export * from './intersection';
 export * from './sample';
-export * from './sampleSize';
 export * from './shuffle';
 export * from './sort';
 export * from './takeRightWhile';
