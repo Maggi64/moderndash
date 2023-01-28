@@ -65,13 +65,15 @@
 
     $: void updateCode(code);
 
-    function updateCode(code: string) {
+    async function updateCode(code: string) {
         if (!stackblitzProject) return;
 
-        return stackblitzProject.applyFsDiff({
+        await stackblitzProject.applyFsDiff({
             create: { 'index.ts': code },
             destroy: []
         });
+
+        await stackblitzProject.editor.openFile('index.ts');
     }
 </script>
 
