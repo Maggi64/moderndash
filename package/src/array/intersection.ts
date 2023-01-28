@@ -19,7 +19,7 @@ import { isEqual } from '@validate/isEqual';
  *
  * // ---- Only compare by id ----
  * const arr1 = [{ id: 1, name: 'Yeet' }, { id: 3, name: 'John' }];
- * const arr2 = [{ id: 3, 'Carl' }, { id: 4, name: 'Max' }];
+ * const arr2 = [{ id: 3, name: 'Carl' }, { id: 4, name: 'Max' }];
  *
  * intersection((a, b) => a.id === b.id, arr1, arr2)
  * // => [{ id: 3, name: 'John' }]

@@ -13,12 +13,12 @@ import { isEqual } from '@validate/isEqual';
  * // => [1]
  *
  * // ---- Custom compare function ----
- * intersection((a, b) => Math.floor(a) === Math.floor(b), [1.2, 3.1], [1.3, 2.4])
+ * difference((a, b) => Math.floor(a) === Math.floor(b), [1.2, 3.1], [1.3, 2.4])
  * // => [3.1]
  *
  * // ---- Only compare by id ----
  * const arr1 = [{ id: 1, name: 'Yeet' }, { id: 3, name: 'John' }];
- * const arr2 = [{ id: 3, 'Carl' }, { id: 4, name: 'Max' }];
+ * const arr2 = [{ id: 3, name: 'Carl' }, { id: 4, name: 'Max' }];
  *
  * difference((a, b) => a.id === b.id, arr1, arr2)
  * // => [{ id: 1, name: 'Yeet' }]
