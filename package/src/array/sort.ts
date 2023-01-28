@@ -1,6 +1,6 @@
 
 /**
- * Sorts the array in ascending or descending order.
+ * Creates a new sorted array in ascending or descending order.
  * An iteratee function is optional to sort the array based on a specific property.
  *
  * @example
