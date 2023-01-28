@@ -1,12 +1,10 @@
-import type { IterateeFunction } from '@helpers/types.js';
-
 import { isEqual } from '@validate/isEqual';
 
 /**
  * Creates a duplicate-free version of an array, in which only the first occurrence of each element is kept.
  * The order of result values is determined by the order they occur in the array.
  *
- * An iteratee function is optional, to specify the value to be compared.
+ * An compare function is optinal to specify how the array is compared.
  *
  * @example
  * unique([2, 1, 2])
@@ -17,7 +15,7 @@ import { isEqual } from '@validate/isEqual';
  *      { id: 1, name: 'c' }
  * ]
  *
- * unique(users, value => value.id)
+ * unique(users, (a, b) => a.id === b.id)
  * // => [{ id: 1, name: 'a' }]
  *
  *
@@ -27,10 +25,7 @@ import { isEqual } from '@validate/isEqual';
  * @returns Returns the new duplicate free array.
  */
 
-export function unique<TInput>(array: TInput[], iteratee?: IterateeFunction<TInput>): TInput[] {
-    const compareFn = (a: TInput, b: TInput) =>
-        isEqual(iteratee ? iteratee(a) : a, iteratee ? iteratee(b) : b);
-
+export function unique<TInput>(array: TInput[], compareFn = (a: TInput, b: TInput) => isEqual(a, b)): TInput[] {
     return array.filter((value, index, self) => {
         return self.findIndex(otherValue => compareFn(value, otherValue)) === index;
     });
