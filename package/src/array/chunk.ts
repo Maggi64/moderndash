@@ -6,14 +6,14 @@
  * @param chunkSize - The array to process.
  * @param array - The length of each chunk
  * @example
- * chunk(2, ['a', 'b', 'c', 'd'])
+ * chunk(['a', 'b', 'c', 'd'], 2)
  * // => [['a', 'b'], ['c', 'd']]
  *
- * chunk(3, ['a', 'b', 'c', 'd'])
+ * chunk(['a', 'b', 'c', 'd'], 3)
  * // => [['a', 'b', 'c'], ['d']]
  */
 
-export function chunk<TInput>(chunkSize: number, array: TInput[]): TInput[][] {
+export function chunk<TInput>(array: TInput[], chunkSize: number): TInput[][] {
     const sizeInteger = Math.trunc(chunkSize);
     if (array.length === 0 || sizeInteger < 1) {
         return [];
