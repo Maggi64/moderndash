@@ -6,6 +6,8 @@ import { isEqual } from '@validate/isEqual';
  * Creates an array values not included in the other given arrays.
  * The order and references of result values are determined by the first array.
  *
+ * An compare function is optinal to specify how the elements of the arrays are compared.
+ * Default compare function is {@link isEqual}.
  * @example
  * difference([2, 1], [2, 3])
  * // => [1]
