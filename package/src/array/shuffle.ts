@@ -10,10 +10,10 @@
  * @returns Returns the new shuffled array.
  */
 
-export function shuffle<TInput>(array: TInput[]): TInput[] {
+export function shuffle<TArr>(array: TArr[]): TArr[] {
     const shuffledArray = [...array];
     let currentIndex = shuffledArray.length;
-    let temporaryValue: TInput;
+    let temporaryValue: TArr;
     let randomIndex: number;
 
     // While there remain elements to shuffle...

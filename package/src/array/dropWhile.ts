@@ -17,7 +17,7 @@
  * @returns Returns the slice of `array`.
  */
 
-export function dropWhile<T>(array: T[], predicate: (value: T) => boolean): T[] {
+export function dropWhile<TArr>(array: TArr[], predicate: (value: TArr) => boolean): TArr[] {
     const index = array.findIndex(x => !predicate(x));
     return array.slice(index === -1 ? array.length : index);
 }

@@ -1,11 +1,7 @@
 /**
- * Creates a slice of `array` with elements taken from the end. Elements are
- * taken until `predicate` returns falsey. The predicate is invoked with
- * three arguments: (value, index, array).
+ * Creates a slice of `array` with elements taken from the end.  
+ * Elements are taken until `predicate` returns falsey.
  *
- * @category Array
- * @param predicate - The function invoked per iteration.
- * @param array - The array to query.
  * @returns Returns the slice of `array`.
  * @example
  * const users = [
@@ -16,10 +12,13 @@
  *
  * takeRightWhile(({ active }) => active, users)
  * // => objects for ['fred', 'pebbles']
+ * @category Array
+ * @param predicate - The function invoked per iteration.
+ * @param array - The array to query.
  */
 
-export function takeRightWhile<T>(predicate: (elem: T) => boolean, array: T[]): T[] {
-    const result: T[] = [];
+export function takeRightWhile<TArr>(predicate: (elem: TArr) => boolean, array: TArr[]): TArr[] {
+    const result: TArr[] = [];
 
     for (let i = array.length - 1; i >= 0; i--) {
         if (predicate(array[i])) {

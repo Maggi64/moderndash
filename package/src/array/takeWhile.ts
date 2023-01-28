@@ -1,12 +1,7 @@
 /**
- * Creates a slice of `array` with elements taken from the beginning. Elements
- * are taken until `predicate` returns falsey. The predicate is invoked with
- * three arguments: (value, index, array).
+ * Creates a slice of `array` with elements taken from the beginning.  
+ * Elements are taken until `predicate` returns falsey.
  *
- * @category Array
- * @param predicate The function invoked per iteration.
- * @param array The array to query.
- * @returns Returns the slice of `array`.
  * @example
  * const users = [
  *   { 'user': 'barney',  'active': true },
@@ -16,10 +11,14 @@
  *
  * takeWhile(users, ({ active }) => active)
  * // => objects for ['barney', 'fred']
+ * @category Array
+ * @param predicate The function invoked per iteration.
+ * @param array The array to query.
+ * @returns Returns the slice of `array`.
  */
 
-export function takeWhile<T>(array: T[], predicate: (elem: T) => boolean): T[] {
-    const result: T[] = [];
+export function takeWhile<TArr>(array: TArr[], predicate: (elem: TArr) => boolean): TArr[] {
+    const result: TArr[] = [];
 
     for (const element of array) {
         if (predicate(element)) {

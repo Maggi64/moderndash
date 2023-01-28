@@ -2,6 +2,7 @@
  * Creates a slice of `array` excluding elements dropped from the end.  
  * Elements are dropped until `predicate` returns falsey.
  *
+ * @example
  * const users = [
  *   { 'user': 'barney',  'active': false },
  *   { 'user': 'fred',    'active': true },
@@ -14,11 +15,9 @@
  * @param predicate - The function invoked per iteration.
  * @param array - The array to query.
  * @returns Returns the slice of `array`.
- * @example
  */
 
-
-export function dropRightWhile<T>(array: T[], predicate: (value: T) => boolean) {
+export function dropRightWhile<TArr>(array: TArr[], predicate: (value: TArr) => boolean) {
     let i = array.length;
     while (i > 0 && predicate(array[i - 1])) {
         i--;
