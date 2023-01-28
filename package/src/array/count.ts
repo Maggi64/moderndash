@@ -1,9 +1,9 @@
 import type { RecordKey } from '@helpers/types';
 
 /**
- * Creates an object composed of keys generated from the results of running
- * each element of `collection` thru `iteratee`. The corresponding value of
- * each key is the number of times the key was returned by `iteratee`.
+ * Creates an object composed of keys generated from the results of running  
+ * each element of `collection` thru `iteratee`.  
+ * The corresponding value of each key is the number of times the key was returned by `iteratee`.
  *
  * @example
  * const users = [

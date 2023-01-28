@@ -26,7 +26,6 @@
       "svelte"
   ],
   "files.eol": "\n",
-  "files.trimTrailingWhitespace": true,
   "[svelte]": {
       "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },

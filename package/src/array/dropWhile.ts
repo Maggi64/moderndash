@@ -1,7 +1,6 @@
 /**
- * Creates a slice of `array` excluding elements dropped from the beginning.
- * Elements are dropped until `predicate` returns falsey. The predicate is
- * invoked with three arguments: (value, index, array).
+ * Creates a slice of `array` excluding elements dropped from the beginning.  
+ * Elements are dropped until `predicate` returns falsey.
  *
  * @example
  * const users = [

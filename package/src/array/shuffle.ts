@@ -1,5 +1,5 @@
 /**
- * Creates an array of shuffled values, using a version of the
+ * Creates a new array of shuffled values, using a version of the
  * [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher-Yates_shuffle).
  *
  * @example

@@ -1,7 +1,6 @@
 /**
- * Creates a slice of `array` excluding elements dropped from the end.
- * Elements are dropped until `predicate` returns falsey. The predicate is
- * invoked with three arguments: (value, index, array).
+ * Creates a slice of `array` excluding elements dropped from the end.  
+ * Elements are dropped until `predicate` returns falsey.
  *
  * const users = [
  *   { 'user': 'barney',  'active': false },

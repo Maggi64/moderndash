@@ -14,7 +14,7 @@
  *   { 'user': 'pebbles', 'active': false }
  * ]
  *
- * takeWhile(({ active }) => active, users)
+ * takeWhile(users, ({ active }) => active)
  * // => objects for ['barney', 'fred']
  */
 
