@@ -5,7 +5,7 @@ import type { Integer } from '@type/Integer';
  * You can't pass a `bigint` as they are already guaranteed to be integers.
  * Use-case: Validating and documenting parameters.
  * @example
- * function setPercentage<T extends number>(length: Float<T>) {};
+ * function setPercentage<T extends number>(x: Float<T>) {};
  *
  * setPercentage(1.1); // OK
  * setPercentage(1); // Error
