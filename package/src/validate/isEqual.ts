@@ -21,24 +21,28 @@ import type { RecordKey } from '@helpers/types';
  * object === other;
  * // => false
  * @category Validate
- * @param value1 - The value to compare.
- * @param value2 - The other value to compare.
+ * @param a - The value to compare.
+ * @param b - The other value to compare.
  * @returns Returns `true` if the values are equivalent, else `false`.
  */
 
-export function isEqual(value1: unknown, value2: unknown): boolean {
-    if (value1 === value2) return true;
+export function isEqual(a: unknown, b: unknown): boolean {
+    if (Object.is(a, b)) return true;
 
-    if (Array.isArray(value1) && Array.isArray(value2)) {
-        return isSameArray(value1, value2);
+    if (a instanceof Date && b instanceof Date) {
+        return a.getTime() === b.getTime();
     }
 
-    if (value1 instanceof RegExp && value2 instanceof RegExp) {
-        return value1.toString() === value2.toString();
+    if (Array.isArray(a) && Array.isArray(b)) {
+        return isSameArray(a, b);
     }
 
-    if (isObject(value1) && isObject(value2)) {
-        return isSameObject(value1, value2);
+    if (a instanceof RegExp && b instanceof RegExp) {
+        return a.toString() === b.toString();
+    }
+
+    if (isObject(a) && isObject(b)) {
+        return isSameObject(a, b);
     }
 
     return false;
