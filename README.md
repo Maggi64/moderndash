@@ -11,6 +11,7 @@
   ✅ Typescript Strict Mode (no any)
   ✅ Zero dependencies
   ✅ Hoverable Docs
+  ✅ TS Decorators
 </div>
 
 <h3 align=center>

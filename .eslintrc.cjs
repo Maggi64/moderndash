@@ -152,6 +152,7 @@ module.exports = {
         "@typescript-eslint/no-confusing-void-expression": ["warn", { ignoreArrowShorthand: true }],
         "@typescript-eslint/prefer-enum-initializers": "warn",
         "@typescript-eslint/comma-spacing": "warn",
+        "@typescript-eslint/no-non-null-assertion": 0,
         "svelte/require-optimized-style-attribute": "error",
         "svelte/html-closing-bracket-spacing": ["error", {
             "startTag": "never",
