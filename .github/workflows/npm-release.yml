@@ -15,10 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - shell: bash
+      - name: Test & Build
+        shell: bash
         run: |
           npm ci
           cd package
+          npx vitest run
           npm run build
           cp '../README.md' './README.md'
           cp '../LICENSE' './LICENSE'
