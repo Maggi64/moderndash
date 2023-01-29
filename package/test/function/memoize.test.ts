@@ -10,7 +10,7 @@ describe('memoize', () => {
     });
 
 
-    test('should memoize a function', () => {
+    test('memoize a function', () => {
         const memoizedFunc = memoize(testFn);
 
         expect(memoizedFunc(1, 2)).to.equal(3);
@@ -18,7 +18,7 @@ describe('memoize', () => {
         expect(testFn).toHaveBeenCalledOnce();
     });
 
-    test('should return different results for different arguments', () => {
+    test('return different results for different arguments', () => {
         const memoizedFunc = memoize(testFn);
 
         expect(memoizedFunc(1, 2)).to.equal(3);
@@ -26,7 +26,7 @@ describe('memoize', () => {
         expect(testFn).toHaveBeenCalledTimes(2);
     });
 
-    test('should expose a cache property', () => {
+    test('expose a cache property', () => {
         const memoizedFunc = memoize(testFn);
         expect(memoizedFunc.cache).to.be.an.instanceof(Map);
     });

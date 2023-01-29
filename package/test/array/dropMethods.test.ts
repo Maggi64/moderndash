@@ -24,7 +24,7 @@ describe('dropWhile', () => {
 });
 
 describe('dropRightWhile', () => {
-    it('should drop elements while `predicate` returns truthy', () => {
+    it('drop elements while `predicate` returns truthy', () => {
         expect(dropRightWhile(array, n => n > 4)).toEqual([2, 4]);
     });
 });

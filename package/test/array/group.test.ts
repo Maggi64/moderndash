@@ -10,7 +10,7 @@ describe('groupBy', () => {
         expect(result).toEqual({ 'true': [2, 4, 6, 8, 10], 'false': [1, 3, 5, 7, 9] });
     });
 
-    test('should group an array by a property', () => {
+    test('group an array by a property', () => {
         const array = [
             { name: 'Alice', age: 30 },
             { name: 'Bob', age: 35 },
