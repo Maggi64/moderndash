@@ -34,7 +34,3 @@ npm install moderndash
 ## Why is X lodash function not included?
 Please check [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) for native replacements.
 If you still think a function is missing please open an issue.
-
-
-## Thank you
-- [type-fest](https://github.com/sindresorhus/type-fest) for the numeric types
