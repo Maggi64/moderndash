@@ -5,7 +5,7 @@ import { sleep } from '@promise/sleep.js';
 describe('sleep', () => {
     test('resolve after the specified time', async () => {
         const startTime = Date.now();
-        await sleep(500);
-        expect(Date.now() - startTime).toBeGreaterThanOrEqual(500);
+        await sleep(100);
+        expect(Date.now() - startTime).toBeGreaterThanOrEqual(100);
     });
 });
