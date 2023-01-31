@@ -11,6 +11,9 @@ import { splitWords } from '@helpers/stringModifiers';
  * // => 'FooBar'
  * pascalCase('__FOO_BAR__')
  * // => 'FooBar'
+ * pascalCase('Héllo World')
+ * // => 'HelloWorld'
+ * 
  * @category String
  * @param str - The string to convert.
  * @returns Returns the pascal cased string.

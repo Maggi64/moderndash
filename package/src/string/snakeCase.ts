@@ -12,6 +12,8 @@ import { splitWords } from '@helpers/stringModifiers';
  * // => 'foo_bar'
  * snakeCase('foo2bar')
  * // => 'foo_2_bar'
+ * snakeCase('Héllo World')
+ * // => 'hello_world'
  * @category String
  * @param str - The string to convert.
  * @returns Returns the snake cased string.

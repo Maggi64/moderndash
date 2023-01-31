@@ -10,6 +10,9 @@ import { splitWords } from '@helpers/stringModifiers';
  * // => 'foo-bar'
  * kebabCase('__FOO_BAR__')
  * // => 'foo-bar'
+ * kebabCase('Héllo World')
+ * // => 'hello-world'
+ * 
  * @category String
  * @param str - The string to convert.
  * @returns Returns the kebab cased string.
