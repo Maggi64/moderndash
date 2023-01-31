@@ -10,7 +10,6 @@
  *
  * sample([1, 2, 3, 4], 2)
  * // => [3, 1]
- * @category Array
  * @param array - The array to sample.
  * @returns Returns the random element.
  */

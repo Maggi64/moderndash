@@ -19,7 +19,6 @@ import { isEqual } from '@validate/isEqual';
  * // => [{ id: 1, name: 'a' }]
  *
  *
- * @category Array
  * @param array - The array to inspect.
  * @param iteratee - The iteratee invoked per element.
  * @returns Returns the new duplicate free array.

@@ -14,7 +14,6 @@ import type { RecordKey } from '@helpers/types';
  *
  * count(users, value => value.active);
  * // => { 'true': 2, 'false': 1 }
- * @category Array
  * @param iteratee - The iteratee to transform keys.
  * @param collection - The array or record to iterate over.
  * @returns Returns the composed aggregate object.

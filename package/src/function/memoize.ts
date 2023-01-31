@@ -34,7 +34,6 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  *
  * // Replace `memoize.Cache`.
  * memoize.Cache = WeakMap
- * @category Function
  * @param func - The function to have its output memoized.
  * @param resolver - The function to resolve the cache key.
  * @returns  Returns the new memoized function.

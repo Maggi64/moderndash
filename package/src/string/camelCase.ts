@@ -10,7 +10,6 @@ import { splitWords } from '@helpers/stringModifiers';
  * // => 'fooBar'
  * camelCase('__FOO_BAR__')
  * // => 'fooBar'
- * @category String
  * @param str - The string to convert.
  * @returns Returns the camel cased string.
  */

@@ -4,7 +4,6 @@ import type { GenericFunction } from '@helpers/types.js';
  * Creates a function that invokes `func`, while it's called less than `n` times. Subsequent
  * calls to the created function return the result of the last `func` invocation.
  *
- * @category Function
  * @param n - The number of calls at which `func` is no longer invoked.
  * @param func - The function to restrict.
  * @returns Returns the new restricted function.

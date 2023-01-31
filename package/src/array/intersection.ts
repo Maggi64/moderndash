@@ -22,7 +22,6 @@ import { isEqual } from '@validate/isEqual';
  *
  * intersection((a, b) => a.id === b.id, arr1, arr2)
  * // => [{ id: 3, name: 'John' }]
- * @category Array
  * @param arrays - The arrays to inspect.
  * @returns Returns the new array of intersecting values.
  */

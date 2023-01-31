@@ -11,7 +11,6 @@
  *
  * takeWhile(users, ({ active }) => active)
  * // => objects for ['barney', 'fred']
- * @category Array
  * @param predicate The function invoked per iteration.
  * @param array The array to query.
  * @returns Returns the slice of `array`.

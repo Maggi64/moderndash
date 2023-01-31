@@ -11,7 +11,6 @@
  * // => [0.123, 0.456, 0.789]
  * times(4, () => 0)
  * // => [0, 0, 0, 0]
- * @category Function
  * @param n - The number of times to invoke `func`.
  * @param func - The function invoked per iteration.
  * @returns Returns an array of results.

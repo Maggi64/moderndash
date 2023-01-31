@@ -1,7 +1,6 @@
 /**
  * Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements.
  *
- * @category Array
  * @returns Returns the new array of chunks.
  * @param chunkSize - The array to process.
  * @param array - The length of each chunk

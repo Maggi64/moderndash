@@ -11,7 +11,6 @@
  *
  * dropWhile(users, ({ active }) => active)
  * // => objects for ['pebbles']
- * @category Array
  * @param predicate - The function invoked per iteration.
  * @param array - The array to query.
  * @returns Returns the slice of `array`.

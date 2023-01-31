@@ -14,7 +14,6 @@ import { splitWords } from '@helpers/stringModifiers';
  * pascalCase('Héllo World')
  * // => 'HelloWorld'
  * 
- * @category String
  * @param str - The string to convert.
  * @returns Returns the pascal cased string.
  */

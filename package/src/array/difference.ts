@@ -22,7 +22,6 @@ import { isEqual } from '@validate/isEqual';
  *
  * difference((a, b) => a.id === b.id, arr1, arr2)
  * // => [{ id: 1, name: 'Yeet' }]
- * @category Array
  * @param arrays - First array is inspected, others are excluded.
  * @returns Returns the new array of filtered values.
  */

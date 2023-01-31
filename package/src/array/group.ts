@@ -13,7 +13,6 @@ import type { RecordKey } from '@helpers/types';
  *
  * group([6.1, 4.2, 6.3], value => value > 5)
  * // => { 'false': [4.2], 'true': [6.1, 6.3] }
- * @category Array
  * @param collection - The array or object to iterate over.
  * @param iteratee - The iteratee to transform keys.
  * @returns Returns the composed aggregate object.

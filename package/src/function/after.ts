@@ -11,7 +11,6 @@ import type { GenericFunction } from '@helpers/types.js';
  * afterFN()
  * afterFN()
  * // => `caution` is invoked after called twice
- * @category Function
  * @param n The number of calls before `func` is invoked.
  * @param func The function to restrict.
  * @returns Returns the new restricted function.

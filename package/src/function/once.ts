@@ -12,7 +12,6 @@ import { before } from '@function/before';
  * initialize()
  * // => `createApplication` is invoked once
  *
- * @category Function
  * @param func - The function to restrict.
  * @returns Returns the new restricted function.
  */

@@ -4,7 +4,6 @@
  * @example
  * escape('fred, barney, & pebbles')
  * // => 'fred, barney, &amp; pebbles'
- * @category String
  * @param str - The string to escape.
  * @returns Returns the escaped string.
  */

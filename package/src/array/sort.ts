@@ -9,7 +9,6 @@
  *
  * sort([{ a: 1 }, { a: 2 }, { a: 3 }], 'asc', item => item.a)
  * // => [{ a: 1 }, { a: 2 }, { a: 3 }]
- * @category Array
  * @param array - The array to sort.
  * @param order - The order in which to sort the array.
  * @param iteratee - The iteratee function to sort the array based on a specific property.

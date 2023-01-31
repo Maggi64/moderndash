@@ -25,7 +25,6 @@
  *
  * isEmpty({ 'a': 1 })
  * // => false
- * @category Validate
  * @param value - The value to check.
  * @returns Returns `true` if given vlaue is empty, else `false`.
  */

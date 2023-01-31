@@ -12,7 +12,6 @@ import { splitWords } from '@helpers/stringModifiers';
  * // => 'Foo Bar'
  * startCase('HélloWorld')
  * // => 'Hello World'
- * @category String
  * @param str - The string to convert.
  * @returns Returns the start cased string.
  */

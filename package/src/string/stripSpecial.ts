@@ -6,7 +6,6 @@ import { deburr } from '@string/deburr';
  * @example
  * stripSpecial('Héllo! World #$%&*!')
  * // => 'Hello World'
- * @category String
  * @param str - The string to remove special characters from.
  * @returns Returns the string with special characters removed.
 */
