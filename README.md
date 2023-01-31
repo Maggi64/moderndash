@@ -2,7 +2,7 @@
 
 <p align=center>
   A Typescript-First utility library inspired by Lodash.
-  Optimized for modern browsers, typescript & developer experience.
+  Optimized for modern browsers & developer experience.
 </p>
 
 <div align=center>
