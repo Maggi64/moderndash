@@ -21,9 +21,9 @@
         ">2% and not dead"
     ],
     "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "5.49.0",
-        "@typescript-eslint/parser": "5.49.0",
-        "eslint": "8.32.0",
+        "@typescript-eslint/eslint-plugin": "5.50.0",
+        "@typescript-eslint/parser": "5.50.0",
+        "eslint": "8.33.0",
         "eslint-import-resolver-typescript": "3.5.3",
         "eslint-plugin-compat": "4.0.2",
         "eslint-plugin-deprecate": "0.7.0",
