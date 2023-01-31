@@ -3,7 +3,7 @@
  * in a string to their corresponding characters.
  *
  * @example
- * unescape('fred, barney, &amp; pebbles')
+ * unescapeHtml('fred, barney, &amp; pebbles')
  * // => 'fred, barney, & pebbles'
  * @category String
  * @param str - The string to unescape.
