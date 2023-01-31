@@ -97,7 +97,7 @@ export class Queue {
         this.queue = [];
     }
 
-    /** Pauses the execution of the functions in the queue */
+    /** Pauses the execution of the queue */
     pause() {
         this.paused = true;
     }
@@ -108,7 +108,7 @@ export class Queue {
         this.run();
     }
 
-    /** Returns the queue */
+    /** Return the tasks added to the queue */
     getQueue() {
         return this.queue.map((queueElement) => queueElement.asyncFn);
     }
