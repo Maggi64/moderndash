@@ -8,6 +8,11 @@ import { isPlainObject } from '@validate/isPlainObject.js';
  * TODO: Add support for array paths.
  * 
  * @alpha
+ * @example
+ * const obj = { a: { b: 2 } };
+ * set(obj, 'a.c', 1);
+ * // => { a: { b: 2, c: 1 } }
+ * 
  * @param obj - The object to modify.
  * @param path - The path of the property to set.
  * @param value - The value to set.
