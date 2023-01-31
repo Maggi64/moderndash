@@ -1,3 +1,5 @@
+import type { PlainObject } from '@helpers/types.js';
+
 /**
  * Creates an object composed of the picked `object` properties.
  *
@@ -12,7 +14,7 @@
  * @returns Returns the new object.
  */
 
-export function pick<TInput, Key extends keyof TInput>(object: TInput, keysToPick: Key[]): Pick<TInput, Key> {
+export function pick<TInput extends PlainObject, Key extends keyof TInput>(object: TInput, keysToPick: Key[]): Pick<TInput, Key> {
     const result = {} as Pick<TInput, Key>;
     for (const key of keysToPick) {
         result[key] = object[key];

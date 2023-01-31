@@ -1,4 +1,4 @@
-import type { GenericObject } from '@helpers/types.js';
+import type { PlainObject } from '@helpers/types.js';
 
 /**
  * Checks if the value is a plain object.
@@ -15,6 +15,6 @@ import type { GenericObject } from '@helpers/types.js';
  * @returns Boolean indicating if the value is a plain object
  */
 
-export function isPlainObject(value: unknown): value is GenericObject {
+export function isPlainObject(value: unknown): value is PlainObject {
     return value?.constructor === Object;
 }

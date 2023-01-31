@@ -1,4 +1,4 @@
-import type { GenericObject } from '@helpers/types';
+import type { PlainObject } from '@helpers/types';
 
 import { isPlainObject } from './isPlainObject.js';
 
@@ -49,7 +49,7 @@ export function isEqual(a: unknown, b: unknown): boolean {
     return false;
 }
 
-function isSameObject(a: GenericObject, b: GenericObject) {
+function isSameObject(a: PlainObject, b: PlainObject) {
     // check if the objects have the same keys
     const keys1 = Object.keys(a);
     const keys2 = Object.keys(b);
