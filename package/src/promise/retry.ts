@@ -13,12 +13,13 @@ import { sleep } from '@promise/sleep.js';
  * // ---- Advanced example ----
  * const fetchSite = async (url: string) => {
  *    const response = await fetch(url);
- *    response.ok || throw new Error('Failed to fetch');
+ *    if(!response.ok)
+ *        throw new Error('Failed to fetch');
  * }
  * 
  * const logger = (error: unknown, retry?: number) => console.log("Retrying", retry, error);
  * 
- * await retry(() => fetchSite('https://example.com'), { maxRetries: 3, backoff: retries => retries * 1000, onRetry: logger }));
+ * await retry(() => fetchSite('https://example.com'), { maxRetries: 3, backoff: retries => retries * 1000, onRetry: logger });
  * // => Will retry 3 times with a 1 second delay between each retry. Will log the error and retry number.
  * 
  * @param func The function to retry.
