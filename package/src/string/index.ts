@@ -1,6 +1,5 @@
 export * from './camelCase';
 export * from './capitalize';
-export * from './dashCase';
 export * from './deburr';
 export * from './escapeHtml';
 export * from './escapeRegExp';
