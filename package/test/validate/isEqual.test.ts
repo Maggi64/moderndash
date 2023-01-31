@@ -33,6 +33,11 @@ describe('isEqual', () => {
         expect(isEqual({ a: 1 }, { a: 2 })).toBe(false);
     });
 
+    test('dates', () => {
+        expect(isEqual(new Date(1), new Date(1))).toBe(true);
+        expect(isEqual(new Date(1), new Date(2))).toBe(false);
+    });
+
     test('arrays', () => {
         expect(isEqual([1, 2, 3], [1, 2, 3])).toBe(true);
         expect(isEqual([1, 2, 3], [1, 2, 4])).toBe(false);
