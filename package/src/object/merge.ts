@@ -7,7 +7,7 @@ import { isPlainObject } from '@validate/isPlainObject.js';
  * 
  * @example
  * // ---- Nested objects are merged ----
- * merge({ a: 1 }, { b: 2 }, { c: 3 })) 
+ * merge({ a: 1 }, { b: 2 }, { c: 3 }) 
  * // => { a: 1, b: 2, c: 3 }
  * 
  * merge({ a: { b: 1 } }, { a: { c: 2 } })
