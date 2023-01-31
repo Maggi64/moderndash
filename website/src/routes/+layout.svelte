@@ -1,10 +1,14 @@
 <script lang="ts">
     import '../app.css';
-
+    import icon from '$assets/moderndashIcon.svg';
     import Header from '$components/Header.svelte';
     import Sidebar from '$components/sidebar/Sidebar.svelte';
     import SidebarBtn from '$components/sidebar/SideBarBtn.svelte';
 </script>
+
+<svelte:head>
+    <link rel="icon" type="image/svg" href={icon}/>
+</svelte:head>
 
 <Header/>
 <main class="relative flex justify-center mx-auto max-w-8xl sm:px-2 lg:px-8 xl:px-12">

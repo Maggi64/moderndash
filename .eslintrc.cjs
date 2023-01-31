@@ -66,7 +66,7 @@ module.exports = {
         "import/no-commonjs": 2,
         "import/no-self-import": 2,
         "import/no-named-as-default": 0,
-        "import/no-unresolved": 2,
+        "import/no-unresolved": ["error", { "ignore": ["^\\$"] }],
         "import/no-useless-path-segments": 2,
         "import/order": [
             "warn", {
