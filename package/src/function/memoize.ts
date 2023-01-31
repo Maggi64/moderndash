@@ -3,10 +3,9 @@ import type{ GenericFunction } from '@helpers/types.js';
 const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
 
 /**
- * Creates a function that memoizes the result of `func`. If `resolver` is
- * provided, it determines the cache key for storing the result based on the
- * arguments provided to the memoized function. By default, all arguments
- * provided to the memoized function are used as the map cache key.
+ * Creates a function that memoizes the result of `func`.
+ * If `resolver` is provided, it determines the cache key for storing the result based on the arguments provided to the memoized function.  
+ * By default, all arguments provided to the memoized function are used as the map cache key.
  *
  * The cache is exposed as the `cache` property on the memoized
  * function. Its creation may be customized by replacing the `memoize.Cache`
@@ -15,7 +14,7 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  * method interface of `clear`, `delete`, `get`, `has`, and `set`.
  *
  * @example
- * const object = \{ 'a': 1, 'b': 2 \}
+ * const object = { 'a': 1, 'b': 2 }
  *
  * const values = memoize(values)
  * values(object)
