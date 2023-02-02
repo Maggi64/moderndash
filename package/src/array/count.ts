@@ -1,34 +1,38 @@
-import type { RecordKey } from '@helpers/types';
+import type { ObjectKey } from '@type/ObjectKey';
 
 /**
- * Creates an object composed of keys generated from the results of running  
- * each element of `collection` thru `iteratee`.  
- * The corresponding value of each key is the number of times the key was returned by `iteratee`.
+ * Creates an object with counts of occurrences of items in the array.
+ *
  *
  * @example
  * const users = [
- *   { 'user': 'barney', 'active': true },
- *   { 'user': 'betty', 'active': true },
- *   { 'user': 'fred', 'active': false }
+ *   { 'user': 'barney', 'active': true, age: 36 },
+ *   { 'user': 'betty', 'active': false. age: 36 },
+ *   { 'user': 'fred', 'active': true, age: 40 }
  * ]
  *
  * count(users, value => value.active);
  * // => { 'true': 2, 'false': 1 }
- * @param iteratee - The iteratee to transform keys.
- * @param collection - The array or record to iterate over.
+ * 
+ * count(users, value => value.age);
+ * // => { '36': 2, '40': 1 }
+ * 
+ * @param criteria - The criteria to count by.
+ * @param array - The array or record to iterate over.
  * @returns Returns the composed aggregate object.
  */
 
-export function count<TInput, TKey extends RecordKey>(array: TInput[], iteratee: (value: TInput) => TKey): Record<TKey, number> {
+export function count<TInput, TKey extends ObjectKey>(array: TInput[], criteria: (value: TInput) => TKey | boolean): Record<TKey, number> {
     const result = {} as Record<TKey, number>;
     for (const value of array) {
-        const key = iteratee(value);
+        let key = criteria(value);
+        if (typeof key === 'boolean')
+            key = key.toString() as TKey;
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-        if (result[key] === undefined) {
+        if (result[key] === undefined)
             result[key] = 1;
-        } else {
+        else
             result[key] += 1;
-        }
     }
     return result;
 }

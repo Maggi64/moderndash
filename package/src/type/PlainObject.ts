@@ -1,4 +1,4 @@
-import type { RecordKey } from '@helpers/types.js';
+import type { ObjectKey } from './ObjectKey.js';
 
 /**
  * The type of a plain object.
@@ -13,4 +13,4 @@ import type { RecordKey } from '@helpers/types.js';
  * // => Type 'number[]' is not assignable to type 'PlainObject'.
  */
 
-export type PlainObject = Record<RecordKey, unknown>;
+export type PlainObject = Record<ObjectKey, unknown>;

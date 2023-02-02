@@ -1,4 +1,4 @@
-import type { RecordKey } from '@helpers/types';
+import type { ObjectKey } from '@type/ObjectKey';
 
 /**
  * Creates an object composed of keys generated from the results of running
@@ -18,7 +18,7 @@ import type { RecordKey } from '@helpers/types';
  * @returns Returns the composed aggregate object.
  */
 
-export function group<T, U extends RecordKey>(array: T[], iteratee: (value: T) => U): Record<U, T[]> {
+export function group<T, U extends ObjectKey>(array: T[], iteratee: (value: T) => U): Record<U, T[]> {
     const result = {} as Record<U, T[]>;
     for (const value of array) {
         const key = iteratee(value);
