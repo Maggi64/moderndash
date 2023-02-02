@@ -9,7 +9,7 @@
  *   { 'user': 'pebbles', 'active': true }
  * ]
  *
- * dropRightWhile(users, { active }) => active)
+ * dropRightWhile(users, ({ active }) => active)
  * // => objects for ['barney']
  * @param predicate - The function invoked per iteration.
  * @param array - The array to query.
