@@ -1,6 +1,6 @@
 import { describe, test, expect, vi, afterEach } from 'vitest';
 
-import { decTimes, times } from '@function/times.js';
+import { times } from '@function/times.js';
 
 describe('times', () => {
     const testFN = vi.fn((index: number) => index);
