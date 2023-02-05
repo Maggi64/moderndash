@@ -3,12 +3,30 @@ import type { GenericFunction } from '@helpers/types.js';
 type Tail<T extends unknown[]> = T extends [infer _Head, ...infer Tail] ? Tail : never;
 
 /**
- * 
+ * Transforms a function that takes a function as first argument into a decorator function.
  * 
  * @example
- * const caution = () => console.log("Caution!");
+ * function log(func: Function, message: string) {
+ *   return function (...args: unknown[]) {
+ *     console.log(message);
+ *     return func(...args);
+ *   };
+ * }
  * 
- * @param func
+ * const logger = toDecorator(log);
+ * 
+ * class TestClass {
+ *   @logger("Hello world!")
+ *   testMethod() {
+ *     return 1;  
+ *   }
+ * }
+ *  
+ * const instance = new TestClass();
+ * instance.testMethod(); 
+ * // => Log "Hello World" and return 1
+ * 
+ * @param func - The function to transform.
  * @returns A decorator function that can be used to decorate a method.
  */
 
