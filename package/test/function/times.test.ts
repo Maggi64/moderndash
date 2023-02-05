@@ -1,6 +1,6 @@
 import { describe, test, expect, vi, afterEach } from 'vitest';
 
-import { times } from '@function/times.js';
+import { decTimes, times } from '@function/times.js';
 
 describe('times', () => {
     const testFN = vi.fn((index: number) => index);
@@ -10,17 +10,17 @@ describe('times', () => {
     });
 
     test('call the provided function the correct number of times', () => {
-        times(5, testFN);
+        times(testFN, 5);
         expect(testFN).toHaveBeenCalledTimes(5);
     });
 
     test('pass the correct index to the provided function', () => {
-        const result = times(5, testFN);
+        const result = times(testFN, 5);
         expect(result).toEqual([0, 1, 2, 3, 4]);
     });
 
     test('handle a negative value for the first argument', () => {
-        const result = times(-1, testFN);
+        const result = times(testFN, -1);
         expect(result).toEqual([]);
     });
 });

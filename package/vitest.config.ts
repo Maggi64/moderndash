@@ -8,10 +8,6 @@ import { defineConfig } from 'vite';
 const getPath = (path: string) => fileURLToPath(new URL(path, import.meta.url));
 
 export default defineConfig({
-    test: {
-        /* for example, use global to avoid globals imports (describe, test, expect): */
-        // globals: true,
-    },
     resolve: {
         alias: {
             '@array': getPath('src/array'),
@@ -23,7 +19,8 @@ export default defineConfig({
             '@helpers': getPath('src/helpers'),
             '@promise': getPath('src/promise'),
             '@validate': getPath('src/validate'),
-            '@type': getPath('src/type')
+            '@type': getPath('src/type'),
+            '@decorator': getPath('src/decorator')
         }
     }
 });

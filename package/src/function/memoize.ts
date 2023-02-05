@@ -42,18 +42,19 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
 export function memoize<TFunc extends GenericFunction<TFunc>, Cache extends Map<string | symbol, ReturnType<TFunc>>>(
     func: TFunc, resolver: ((...args: Parameters<TFunc>) => string | symbol) = defaultResolver
 ): TFunc & { cache: Cache } {
-
     const cache = new Map() as Cache;
-    const memoizedFunc = (...args: Parameters<TFunc>): ReturnType<TFunc> => {
+
+    const memoizedFunc = function (this: ThisParameterType<TFunc>, ...args: Parameters<TFunc>): ReturnType<TFunc> {
         const key = resolver(...args);
         if (cache.has(key)) {
             // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
             return cache.get(key) as ReturnType<TFunc>;
         }
-        const result = func(...args);
+        const result = func.apply(this, args);
         cache.set(key, result);
         return result;
     };
+    
     memoizedFunc.cache = cache;
     return memoizedFunc as TFunc & { cache: Cache };
 }

@@ -1,5 +1,3 @@
-import type { ObjectKey } from './ObjectKey.js';
-
 /**
  * The type of a plain object.
  * 
@@ -13,4 +11,4 @@ import type { ObjectKey } from './ObjectKey.js';
  * // => Type 'number[]' is not assignable to type 'PlainObject'.
  */
 
-export type PlainObject = Record<ObjectKey, unknown>;
+export type PlainObject = Record<PropertyKey, unknown>;
