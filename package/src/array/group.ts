@@ -1,5 +1,3 @@
-import type { ObjectKey } from '@type/ObjectKey';
-
 /**
  * Creates an object with grouped items in the array.
  * The critiria provides the key to group by.
@@ -15,7 +13,7 @@ import type { ObjectKey } from '@type/ObjectKey';
  * @returns An object with grouped items.
  */
 
-export function group<TArr, TKey extends ObjectKey>(array: TArr[], criteria: (value: TArr) => TKey | boolean): Record<TKey, TArr[]> {
+export function group<TArr, TKey extends PropertyKey>(array: TArr[], criteria: (value: TArr) => TKey | boolean): Record<TKey, TArr[]> {
     const result = {} as Record<TKey, TArr[]>;
     for (const value of array) {
         let key = criteria(value);

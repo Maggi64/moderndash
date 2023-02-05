@@ -1,5 +1,3 @@
-import type { ObjectKey } from '@type/ObjectKey';
-
 /**
  * Creates an object with counts of occurrences of items in the array.
  *
@@ -22,7 +20,7 @@ import type { ObjectKey } from '@type/ObjectKey';
  * @returns Returns the composed aggregate object.
  */
 
-export function count<TInput, TKey extends ObjectKey>(array: TInput[], criteria: (value: TInput) => TKey | boolean): Record<TKey, number> {
+export function count<TInput, TKey extends PropertyKey>(array: TInput[], criteria: (value: TInput) => TKey | boolean): Record<TKey, number> {
     const result = {} as Record<TKey, number>;
     for (const value of array) {
         let key = criteria(value);
