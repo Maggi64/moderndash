@@ -13,7 +13,7 @@ import { toDecorator } from '@function/toDecorator.js';
  * const addCount = () => ++count;
  *
  * // Allow addCount to be invoked twice.
- * const limitAddCount = maxCalls(2, addCount)
+ * const limitAddCount = maxCalls(addCount, 2)
  *
  * limitAddCount() // => 1
  * limitAddCount() // => 2
@@ -27,7 +27,7 @@ import { toDecorator } from '@function/toDecorator.js';
 export function maxCalls<TFunc extends GenericFunction<TFunc>>(func: TFunc, n: number): TFunc {
     let count = 0;
     let result: ReturnType<TFunc>;
-    return function (this: ThisParameterType<TFunc>, ...args: Parameters<TFunc>): ReturnType<TFunc> {
+    return function (this: unknown, ...args: Parameters<TFunc>): ReturnType<TFunc> {
         if (count < n) {
             count += 1;
             result = func.apply(this, args);
@@ -58,5 +58,7 @@ export function maxCalls<TFunc extends GenericFunction<TFunc>>(func: TFunc, n: n
  * instance.testMethod(); // => 2
  * instance.testMethod(); // => 2
  * 
+ * @param n - The number of calls before the cached result is returned.
  */
+
 export const decMaxCalls = toDecorator(maxCalls);

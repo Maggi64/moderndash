@@ -44,7 +44,7 @@ export function memoize<TFunc extends GenericFunction<TFunc>, Cache extends Map<
 ): TFunc & { cache: Cache } {
     const cache = new Map() as Cache;
 
-    const memoizedFunc = function (this: ThisParameterType<TFunc>, ...args: Parameters<TFunc>): ReturnType<TFunc> {
+    const memoizedFunc = function (this: unknown, ...args: Parameters<TFunc>): ReturnType<TFunc> {
         const key = resolver(...args);
         if (cache.has(key)) {
             // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style

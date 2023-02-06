@@ -22,7 +22,7 @@ import { toDecorator } from '@function/toDecorator.js';
 
 export function minCalls<TFunc extends GenericFunction<TFunc>>(func: TFunc, n: number) {
     let count = 1;
-    return function (this: ThisParameterType<TFunc>, ...args: Parameters<TFunc>): ReturnType<TFunc> | undefined {
+    return function (this: unknown, ...args: Parameters<TFunc>): ReturnType<TFunc> | undefined {
         if (count > n) {
             return func.apply(this, args);
         }
@@ -48,7 +48,7 @@ export function minCalls<TFunc extends GenericFunction<TFunc>>(func: TFunc, n: n
  * instance.testMethod(); // => undefined
  * instance.testMethod(); // => 1
  *
- * @param runAfter The number of calls before the decorated function is invoked.
+ * @param n The number of calls before the decorated function is invoked.
  */
 
 export const decMinCalls = toDecorator(minCalls);
