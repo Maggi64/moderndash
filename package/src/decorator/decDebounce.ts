@@ -9,6 +9,7 @@ import { debounce } from '@function/debounce.js';
  * *Requires TypeScript >=5.0 or `experimentalDecorators` flag enabled.*
  * 
  * @example
+ * ```typescript	
  * class TestClass {
  *   @decDebounce(1000)
  *   testMethod(str: string) {
@@ -20,8 +21,10 @@ import { debounce } from '@function/debounce.js';
  * instance.testMethod("Hello");
  * instance.testMethod("World");
  * // => Only the second invocation of `debouncedSayHello` is executed, after a delay of 1000ms.
- * 
+ * ```
  * @param wait - Milliseconds to wait before invoking the decorated function after the last invocation.
  */
 
-export const decDebounce = toDecorator(debounce);
+export function decDebounce(wait: number) {
+    return toDecorator(debounce)(wait);
+}

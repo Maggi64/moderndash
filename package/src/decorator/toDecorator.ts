@@ -6,6 +6,7 @@ type Tail<T extends unknown[]> = T extends [infer _Head, ...infer Tail] ? Tail :
  * Transforms a function that takes a function as first argument into a decorator function.
  * 
  * @example
+ * ```typescript
  * function log(func: Function, message: string) {
  *   return function (...args: unknown[]) {
  *     console.log(message);
@@ -25,7 +26,7 @@ type Tail<T extends unknown[]> = T extends [infer _Head, ...infer Tail] ? Tail :
  * const instance = new TestClass();
  * instance.testMethod(); 
  * // => Log "Hello World" and return 1
- * 
+ * ```
  * @param func - The function to transform.
  * @returns A decorator function that can be used to decorate a method.
  */

@@ -2,11 +2,11 @@
     import { capitalize } from 'moderndash';
     import snarkdown from 'snarkdown';
 
-    import Playground from '$components/docs/Playground.svelte';
 
     import { docDataStore } from '../../../utils/docDataStore.js';
 
     import { page } from '$app/stores';
+    import Playground from '$components/docs/Playground.svelte';
 
     console.log($docDataStore);
 
@@ -19,7 +19,7 @@
     // Removes markdown code block syntax and adds imports
     function generateCode(codetext: string | undefined) {
         if (!codetext || !signature) return '';
-        const code = codetext.replace('```ts\n', '').replace('```', '');
+        const code = codetext.replace(/```(ts|typescript)\n/, '').replace('```', '');
         return `import { ${signature.name} } from 'moderndash';\n\n${code}`;
     }
 </script>

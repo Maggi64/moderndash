@@ -14,6 +14,7 @@ import { memoize } from '@function/memoize.js';
  * *Requires TypeScript >=5.0 or `experimentalDecorators` flag enabled.*
  * 
  * @example
+ * ```typescript
  * class TestClass {
  *   @decMemoize({ ttl: 1000 })
  *   testMethod(a: number, b: number) {
@@ -26,11 +27,12 @@ import { memoize } from '@function/memoize.js';
  * 
  * // After 1 second:
  * instance.testMethod(1, 2); // => 3 (cache miss)
- * 
- * 
+ * ```
  * @param options - The options object.
  * @param options.resolver - A function that determines the cache key for storing the result based on the arguments provided.
  * @param options.ttl - The time to live for the cache in milliseconds.
  */
 
-export const decMemoize = toDecorator(memoize);
+export function decMemoize(options: Parameters<typeof memoize>[1] = {}) {
+    return toDecorator(memoize)(options);
+}

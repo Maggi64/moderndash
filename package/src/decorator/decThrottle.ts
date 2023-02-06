@@ -9,6 +9,7 @@ import { throttle } from '@function/throttle.js';
  * *Requires TypeScript >=5.0 or `experimentalDecorators` flag enabled.*
  * 
  * @example
+ * ```typescript
  * class TestClass {
  *   @decThrottle(1000)
  *   testMethod() {
@@ -19,8 +20,10 @@ import { throttle } from '@function/throttle.js';
  * const instance = new TestClass();
  * instance.testMethod(); // => "Throttled!" is logged once per second.
  * instance.testMethod(); // nothing happens
- * 
+ * ```
  * @param wait - The number of milliseconds to wait between invocations.
  */
 
-export const decThrottle = toDecorator(throttle);
+export function decThrottle(wait: number) {
+    return toDecorator(throttle)(wait);
+}

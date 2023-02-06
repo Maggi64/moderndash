@@ -17,6 +17,7 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  * This function can be used as a decorator with {@link decMemoize}.
  * 
  * @example
+ * ```typescript
  * const object = { 'a': 1, 'b': 2 }
  *
  * const values = memoize(Object.values, { ttl: 1000 })
@@ -29,11 +30,12 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  * setTimeout(() => values(object), 1000)
  * // => [1, 2] (cache miss after 1 second)
  * 
- * // Replace `memoize.Cache`.
- * memoize.Cache = WeakMap
+ * // Replace `memoize.cache`.
+ * memoize.cache = new WeakMap()
  * 
  * // This is the default way to create cache keys.
  * const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
+ * ```
  * @param func - The function to have its output memoized.
  * @param options - The options object with optional `resolver` and `ttl` parameters.
  * @param options.resolver - A function that determines the cache key for storing the result based on the arguments provided.

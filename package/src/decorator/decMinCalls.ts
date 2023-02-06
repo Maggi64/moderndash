@@ -8,6 +8,7 @@ import { minCalls } from '@function/minCalls.js';
  * 
  * *Requires TypeScript >=5.0 or `experimentalDecorators` flag enabled.*
  * @example
+ * ```typescript
  * class TestClass {
  *   @decAfter(2)
  *   testMethod() {
@@ -18,8 +19,10 @@ import { minCalls } from '@function/minCalls.js';
  * instance.testMethod(); // => undefined
  * instance.testMethod(); // => undefined
  * instance.testMethod(); // => 1
- *
+ * ```
  * @param n The number of calls before the decorated function is invoked.
  */
 
-export const decMinCalls = toDecorator(minCalls);
+export function decMinCalls(n: number) {
+    return toDecorator(minCalls)(n);
+}
