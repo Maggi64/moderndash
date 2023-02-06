@@ -1,6 +1,7 @@
 import { describe, expect, test, vi } from 'vitest';
 
-import { decMaxCalls, maxCalls } from '@function/maxCalls';
+import { decMaxCalls } from '@decorator/decMaxCalls.js';
+import { maxCalls } from '@function/maxCalls';
 
 describe('maxCalls', () => {
     test('only calls 3 times', () => {

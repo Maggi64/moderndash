@@ -1,57 +1,63 @@
-import type{ GenericFunction } from '@helpers/types.js';
+import type { GenericFunction } from '@helpers/types.js';
 
 const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
 
 /**
- * Creates a function that memoizes the result of `func`.
- * If `resolver` is provided, it determines the cache key for storing the result based on the arguments provided to the memoized function.  
- * By default, all arguments provided to the memoized function are used as the map cache key.
+ * Creates a function that memoizes the result of `func`.  
+ * The cache key is either determined by the provided resolver or by the arguments used in the memoized function.
  *
- * The cache is exposed as the `cache` property on the memoized
- * function. Its creation may be customized by replacing the `memoize.Cache`
- * constructor with one whose instances implement the
- * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
- * method interface of `clear`, `delete`, `get`, `has`, and `set`.
+ * The cache is exposed as the `cache` property on the memoized function.  
+ * Its creation may be customized by replacing the `memoize.cache` value.  
+ * The new cache must implement `get` and `set` methods like the built-in `Map` constructors.
  *
+ * **Options:**
+ * - `resolver` A function that determines the cache key for storing the result based on the arguments provided.
+ * - `ttl` sets the time to live for the cache in milliseconds. After `ttl` milliseconds, the next call to the memoized function will result in a cache miss.
+ * 
+ * This function can be used as a decorator with {@link decMemoize}.
+ * 
  * @example
  * const object = { 'a': 1, 'b': 2 }
  *
- * const values = memoize(values)
+ * const values = memoize(Object.values, { ttl: 1000 })
  * values(object)
  * // => [1, 2]
  *
  * values(object)
  * // => [1, 2]
  *
- * object.a = 2
- * values(object)
- * // => [2, 2]
- *
- * // Modify the result cache.
- * values.cache.set(object, ['a', 'b'])
- * values(object)
- * // => ['a', 'b']
- *
+ * setTimeout(() => values(object), 1000)
+ * // => [1, 2] (cache miss after 1 second)
+ * 
  * // Replace `memoize.Cache`.
  * memoize.Cache = WeakMap
+ * 
+ * // This is the default way to create cache keys.
+ * const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  * @param func - The function to have its output memoized.
- * @param resolver - The function to resolve the cache key.
- * @returns  Returns the new memoized function.
+ * @param options - The options object with optional `resolver` and `ttl` parameters.
+ * @param options.resolver - A function that determines the cache key for storing the result based on the arguments provided.
+ * @param options.ttl - The time to live for the cache in milliseconds.
+ * @returns Returns the new memoized function.
  */
 
-export function memoize<TFunc extends GenericFunction<TFunc>, Cache extends Map<string | symbol, ReturnType<TFunc>>>(
-    func: TFunc, resolver: ((...args: Parameters<TFunc>) => string | symbol) = defaultResolver
+export function memoize<TFunc extends GenericFunction<TFunc>, Cache extends Map<string | symbol, [ReturnType<TFunc>, number]>>(
+    func: TFunc, options: { resolver?: (...args: Parameters<TFunc>) => string | symbol, ttl?: number } = {}
 ): TFunc & { cache: Cache } {
+    const resolver = options.resolver ?? defaultResolver;
+    const ttl = options.ttl;
     const cache = new Map() as Cache;
 
     const memoizedFunc = function (this: unknown, ...args: Parameters<TFunc>): ReturnType<TFunc> {
         const key = resolver(...args);
         if (cache.has(key)) {
-            // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
-            return cache.get(key) as ReturnType<TFunc>;
+            const [cacheResult, cacheTime] = cache.get(key)!;
+            if (ttl === undefined || (Date.now() - cacheTime < ttl)) {
+                return cacheResult;
+            }
         }
         const result = func.apply(this, args);
-        cache.set(key, result);
+        cache.set(key, [result, Date.now()]);
         return result;
     };
     

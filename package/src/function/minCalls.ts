@@ -1,7 +1,5 @@
 import type { GenericFunction } from '@helpers/types.js';
 
-import { toDecorator } from '@decorator/toDecorator.js';
-
 /**
  * Creates a function that invokes the given function once it's called more than `n` times.  
  * Returns undefined until the minimum call count is reached.
@@ -29,26 +27,3 @@ export function minCalls<TFunc extends GenericFunction<TFunc>>(func: TFunc, n: n
         count += 1;
     };
 }
-
-/** 
- * Only invokes the decorated function after it's called more than `n` times.
- * 
- * Look at {@link minCalls} for the non-decorator version.
- * 
- * *Requires TypeScript >=5.0 or `experimentalDecorators` flag enabled.*
- * @example
- * class TestClass {
- *   @decAfter(2)
- *   testMethod() {
- *     return 1;
- *   }
- * }
- * const instance = new TestClass();
- * instance.testMethod(); // => undefined
- * instance.testMethod(); // => undefined
- * instance.testMethod(); // => 1
- *
- * @param n The number of calls before the decorated function is invoked.
- */
-
-export const decMinCalls = toDecorator(minCalls);

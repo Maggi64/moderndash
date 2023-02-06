@@ -7,6 +7,6 @@ export type NoUnion<T, U = T> = T extends U ? [U] extends [T] ? T : never : neve
  * @typeParam TFunc - The input function type
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type GenericFunction<TFunc extends (...args: any) => any> = (...args: Parameters<TFunc>) => ReturnType<TFunc>;
+export type GenericFunction<TFunc extends (...args: any) => void> = (...args: Parameters<TFunc>) => ReturnType<TFunc>;
 
 export type PlainObject = Record<PropertyKey, unknown>;

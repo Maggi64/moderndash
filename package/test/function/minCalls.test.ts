@@ -1,6 +1,7 @@
 import { describe, test, vi, expect } from 'vitest';
 
-import { minCalls, decMinCalls } from '@function/minCalls';
+import { decMinCalls } from '@decorator/decMinCalls.js';
+import { minCalls } from '@function/minCalls';
 
 describe('after', () => {
     test('after function works correctly', () => {
