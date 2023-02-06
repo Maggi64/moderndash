@@ -18,7 +18,7 @@
       "groupSlug": "moderndash-repo"
     },
     {
-      "matchPaths": ["package.json"],
+      "matchPaths": ["website/package.json"],
       "matchPackagePatterns": ["*"],
       "groupName": "ModernDash Website Dependencies",
       "groupSlug": "moderndash-website"
