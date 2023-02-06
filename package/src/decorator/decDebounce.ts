@@ -9,7 +9,7 @@ import { debounce } from '@function/debounce.js';
  * *Requires TypeScript >=5.0 or `experimentalDecorators` flag enabled.*
  * 
  * @example
- * ```typescript	
+ * ```typescript
  * class TestClass {
  *   @decDebounce(1000)
  *   testMethod(str: string) {
