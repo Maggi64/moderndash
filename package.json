@@ -14,7 +14,7 @@
     "type": "module",
     "scripts": {
         "build:docs-json": "typedoc --options typedoc.json && typedoc-json-parser --json ./website/src/assets/extractedTypes.json --verbose",
-        "build:docs": "npm run build:docs-json && cd website && npm run build",
+        "build:docs": "npm run build --workspace=package && npm run build:docs-json && npm run build --workspace=website",
         "start:docs": "cd website && npm run start"
     },
     "browserslist": [
