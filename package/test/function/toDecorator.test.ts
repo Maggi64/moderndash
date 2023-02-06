@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { toDecorator } from '@decorator/toDecorator.js';
+import { toDecorator } from '@function/toDecorator.js';
 
 describe('toDecorator', () => {
     test('decorator', () => {
