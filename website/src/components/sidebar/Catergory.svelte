@@ -1,8 +1,5 @@
 <script lang="ts">
-    import {
-        faChevronDown,
-        faChevronRight
-    } from '@fortawesome/free-solid-svg-icons';
+    import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons';
     import { capitalize } from 'moderndash';
     import Fa from 'svelte-fa';
 
@@ -13,9 +10,8 @@
 </script>
 
 <li>
-    <h3
-        class="font-semibold tracking-tight text-slate-900 flex items-center cursor-pointer text-lg"
-        on:click={() => (isOpen = !isOpen)}
+    <h3 class="font-semibold tracking-tight text-slate-900 flex items-center cursor-pointer text-lg select-none"
+        on:click={() => (isOpen = !isOpen)} on:keypress={() => (isOpen = !isOpen)}
     >
         <span class="mr-2">
             <Fa icon={isOpen ? faChevronDown : faChevronRight}/>
