@@ -17,8 +17,12 @@
 <p></p>
 
 <div align=center>
-  <img alt="npm" src="https://img.shields.io/npm/dw/moderndash?label=Downloads">
-  <img alt="GitHub" src="https://img.shields.io/github/license/maggi64/moderndash">
+  <a href="https://www.npmjs.com/package/moderndash">
+    <img alt="npm" src="https://img.shields.io/npm/dw/moderndash?label=Downloads">
+  </a>
+  <a href="https://github.com/Maggi64/moderndash/blob/main/LICENSE">
+    <img alt="GitHub" src="https://img.shields.io/github/license/maggi64/moderndash">
+  </a>
 </div>
 
 <h3 align=center>
