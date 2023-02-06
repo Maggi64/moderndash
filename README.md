@@ -14,6 +14,12 @@
   ✅ TS Decorators
   ✅ ESNext
 </div>
+<p></p>
+
+<div align=center>
+  <img alt="npm" src="https://img.shields.io/npm/dw/moderndash?label=Downloads">
+  <img alt="GitHub" src="https://img.shields.io/github/license/maggi64/moderndash">
+</div>
 
 <h3 align=center>
   <a href="https://moderndash.io" target="_blank">
@@ -23,18 +29,19 @@
 
 ---
 
-> **Warning**
-> This library is still in beta.
-
 ## 🔖 Introduction
-I developed ModernDash as an modern lightweight alternative to Lodash and other utility libraries.  
-ModernDash provides powerful functions while encouraging you to use native JS where its appropriate.
+ModernDash is a modern and lightweight alternative to utility libraries like Lodash. It provides important functions while encouraging use of native JS where possible.
 
-Why would i need:
-- `ModernDash.isArray()` when there is `Array.isArray()`
-- `Lodash.compact(array)` when i could write `array.filter(Boolean)`
+ModernDash ignores trivial functions and focuses of the functions you actually need.
+```typescript
+// We don't need
+ModernDash.isArray(arr)
+Lodash.compact(arr)
 
-It ignores trivial functions and focuses of the functions you actually need.
+// When we these native replacements
+Array.isArray(arr)
+arr.filter(Boolean)
+```
 ## 💾 Installation
 
 ```bash
