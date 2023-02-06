@@ -3,9 +3,10 @@
 
     import { group } from 'moderndash';
 
-    import { docDataStore } from '../../utils/docDataStore.js';
-
     import Catergory from './Catergory.svelte';
+
+    import { docDataStore } from '$utils/docDataStore.js';
+
 
     let funcGroups: Record<string, TypeAliasParser[] | FunctionParser[]> = {};
 

@@ -3,10 +3,9 @@
     import snarkdown from 'snarkdown';
 
 
-    import { docDataStore } from '../../../utils/docDataStore.js';
-
     import { page } from '$app/stores';
     import Playground from '$components/docs/Playground.svelte';
+    import { docDataStore } from '$utils/docDataStore.js';
 
     console.log($docDataStore);
 
