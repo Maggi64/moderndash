@@ -4,4 +4,3 @@ export * from './memoize';
 export * from './minCalls';
 export * from './throttle';
 export * from './times';
-export * from './toDecorator';

@@ -1,6 +1,6 @@
 import type { GenericFunction } from '@helpers/types.js';
 
-import { toDecorator } from '@function/toDecorator.js';
+import { toDecorator } from '@decorator/toDecorator.js';
 
 /**
  * Creates a function that invokes the given function as long as it's called `<= n` times.

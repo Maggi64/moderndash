@@ -1,6 +1,6 @@
 import type { GenericFunction } from '@helpers/types.js';
 
-import { toDecorator } from '@function/toDecorator.js';
+import { toDecorator } from '@decorator/toDecorator.js';
 
 /**
  * Creates a function that invokes the given function once it's called more than `n` times.  
