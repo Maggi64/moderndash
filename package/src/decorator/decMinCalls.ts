@@ -10,7 +10,7 @@ import { minCalls } from '@function/minCalls.js';
  * @example
  * ```typescript
  * class TestClass {
- *   @decAfter(2)
+ *   @decMinCalls(2)
  *   testMethod() {
  *     return 1;
  *   }

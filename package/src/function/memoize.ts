@@ -31,7 +31,11 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  * // => [1, 2] (cache miss after 1 second)
  * 
  * // Replace `memoize.cache`.
- * memoize.cache = new WeakMap()
+ * values.cache = new WeakMap()
+ * 
+ * // Cached values are exposed as the `cache` property.
+ * values.cache.get(object)
+ * values.cache.set(object, ['a', 'b'])
  * 
  * // This is the default way to create cache keys.
  * const defaultResolver = (...args: unknown[]) => JSON.stringify(args);

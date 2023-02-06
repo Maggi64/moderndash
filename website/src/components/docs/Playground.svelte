@@ -2,6 +2,7 @@
     import type { VM } from '@stackblitz/sdk';
 
     import stackblitz from '@stackblitz/sdk';
+    import { sleep } from 'moderndash';
     import { onDestroy, onMount } from 'svelte';
 
     export let code: string;
@@ -34,7 +35,8 @@
                 files: {
                     'index.html': '',
                     'index.ts': code,
-                    '.vscode/settings.json': JSON.stringify(vscodeSettings)
+                    '.vscode/settings.json': JSON.stringify(vscodeSettings),
+                    'tsconfig.json': JSON.stringify(tsConfig)
                 },
                 settings: {
                     compile: {
@@ -52,6 +54,13 @@
                 height: 500
             }
         );
+        
+        // Hack to get the jsconfig to load correctly
+        await sleep(2000);
+        await stackblitzProject.applyFsDiff({
+            create: { 'tsconfig.json': JSON.stringify(tsConfig) },
+            destroy: []
+        });
     }
 
     const vscodeSettings = {
@@ -61,6 +70,15 @@
         'editor.inlayHints.enabled': 'on',
         'typescript.inlayHints.parameterNames.enabled': 'all',
         'editor.parameterHints': { 'enabled': true, 'cycle': true }
+    };
+
+    const tsConfig = {
+        'compilerOptions': {
+            'module': 'ESNext',
+            'lib': ['ESNext', 'DOM'],
+            'target': 'ESNext'
+        },
+        'exclude': ['node_modules']
     };
 
     $: void updateCode(code);

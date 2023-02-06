@@ -7,11 +7,11 @@ import type { GenericFunction } from '@helpers/types.js';
  * This function can be used as a decorator with {@link decMinCalls}.
  * @example
  * const caution = () => console.log("Caution!");
- * const minCalls = after(caution, 2);
+ * const limitedCaution = minCalls(caution, 2);
  *
- * minCalls()
- * minCalls()
- * minCalls()
+ * limitedCaution()
+ * limitedCaution()
+ * limitedCaution()
  * // => `caution` is invoked on the third call.
  * @param n The number of calls before the given function is invoked.
  * @param func The function to restrict.

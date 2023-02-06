@@ -5,7 +5,7 @@
  * @example
  * const users = [
  *   { 'user': 'barney', 'active': true, age: 36 },
- *   { 'user': 'betty', 'active': false. age: 36 },
+ *   { 'user': 'betty', 'active': false, age: 36 },
  *   { 'user': 'fred', 'active': true, age: 40 }
  * ]
  *

@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { FunctionParser, TypeAliasParser } from 'typedoc-json-parser';
 
-    import { groupBy } from 'moderndash';
+    import { group } from 'moderndash';
 
     import { docDataStore } from '../../utils/docDataStore.js';
 
@@ -10,7 +10,7 @@
     let funcGroups: Record<string, TypeAliasParser[] | FunctionParser[]> = {};
 
     $: {
-        funcGroups = groupBy($docDataStore.functions, func => func.source?.path ?? 'Unknown');
+        funcGroups = group($docDataStore.functions, func => func.source?.path ?? 'Unknown');
         funcGroups.type = $docDataStore.typeAliases;
     }
 </script>
