@@ -7,7 +7,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:@typescript-eslint/strict",
-        "plugin:compat/recommended",
+        //"plugin:compat/recommended", wait until fixed
         "plugin:import/errors",
         "plugin:import/warnings",
         "plugin:import/typescript",
@@ -17,7 +17,7 @@ module.exports = {
     ],
     plugins: [
         '@typescript-eslint',
-        "compat",
+        // "compat", wait until fixed
         "deprecate",
         "import",
         "sonarjs",
@@ -53,6 +53,7 @@ module.exports = {
         extraFileExtensions: [".svelte"]
     },
     rules: {
+        "no-constant-condition": 0,
         "array-bracket-spacing": ["error", "never"],
         "array-callback-return": "error",
         "arrow-spacing": "error",

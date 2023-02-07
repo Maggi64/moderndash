@@ -25,12 +25,12 @@
             let lines = code.split('\n');
             lines = lines.map((line, index) => {
                 if (index < lines.length - 1) {
-                    return "    " + line;
+                    return '    ' + line;
                 }
                 return line;
             });
             code = lines.join('\n');
-            code = `(async () => {\n${code})()`;
+            code = `(async () => {\n${code}})()`;
         }
         // ----
 
