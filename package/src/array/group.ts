@@ -1,6 +1,5 @@
 /**
  * Creates an object with grouped items in the array.
- * The critiria provides the key to group by.
  *
  * @example
  * group([6.1, 4.2, 6.3], Math.floor)

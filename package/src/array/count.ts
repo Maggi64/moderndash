@@ -1,7 +1,6 @@
 /**
  * Creates an object with counts of occurrences of items in the array.
  *
- *
  * @example
  * const users = [
  *   { 'user': 'barney', 'active': true, age: 36 },

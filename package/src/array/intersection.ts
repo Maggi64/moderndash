@@ -3,11 +3,9 @@ import type { MinimumTwoArrays } from '@type/MinimumTwoArrays.js';
 import { isEqual } from '@validate/isEqual';
 
 /**
- * Creates an array of unique values that are included in all given arrays.  
- * The order and references of result values are determined by the first array.
- *
- * An compare function is optinal to specify how the elements of the arrays are compared.  
- * Default compare function is {@link isEqual}.
+ * Create an array with unique values from all input arrays, with order based on the first array. 
+ * 
+ * Optionally, use a compare function for element comparison (default: {@link isEqual}).
  * @example
  * intersection([2, 1], [2, 3])
  * // => [2]
