@@ -15,7 +15,6 @@
 
     $: displayedName = methodDoc?.name ?? typeDoc?.name ?? classDoc?.name;
 
-    $: console.log(classDoc);
     // Removes markdown code block syntax and adds imports
     function generateCode(codetext: string | undefined) {
         if (!codetext || !signature) return '';
