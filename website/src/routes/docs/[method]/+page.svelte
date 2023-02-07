@@ -18,7 +18,22 @@
     // Removes markdown code block syntax and adds imports
     function generateCode(codetext: string | undefined) {
         if (!codetext || !signature) return '';
-        const code = codetext.replace(/```(ts|typescript)\n/, '').replace('```', '');
+        let code = codetext.replace(/```(ts|typescript)\n/, '').replace('```', '');
+        
+        // Deals with Top Level Await Bug in Stackblitz
+        if (code.includes('await')) {
+            let lines = code.split('\n');
+            lines = lines.map((line, index) => {
+                if (index < lines.length - 1) {
+                    return "    " + line;
+                }
+                return line;
+            });
+            code = lines.join('\n');
+            code = `(async () => {\n${code})()`;
+        }
+        // ----
+
         return `import { ${signature.name} } from 'moderndash';\n\n${code}`;
     }
 </script>
