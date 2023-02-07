@@ -1,4 +1,4 @@
-import type { PlainObject } from '@helpers/types.js';
+import type { PlainObject } from '@type/PlainObject.js';
 
 /**
  * Checks if the value is a plain object.

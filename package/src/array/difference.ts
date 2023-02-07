@@ -1,4 +1,4 @@
-import type { MinimumTwoArrays } from '@helpers/types';
+import type { MinimumTwoArrays } from '@type/MinimumTwoArrays.js';
 
 import { isEqual } from '@validate/isEqual';
 

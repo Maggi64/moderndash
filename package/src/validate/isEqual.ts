@@ -1,4 +1,4 @@
-import type { PlainObject } from '@helpers/types';
+import type { PlainObject } from '@type/PlainObject.js';
 
 import { isPlainObject } from './isPlainObject.js';
 

@@ -1,4 +1,4 @@
-import type { GenericFunction } from '@helpers/types.js';
+import type { GenericFunction } from '@type/GenericFunction.js';
 
 type Tail<T extends unknown[]> = T extends [infer _Head, ...infer Tail] ? Tail : never;
 
