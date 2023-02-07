@@ -1,29 +1,32 @@
 
 /**
- * Creates a new sorted array in ascending or descending order.  
- * An iteratee function is optional to sort the array based on a specific property.
- *
+ * Creates a new sorted array in ascending or descending order based on one or multiple sorting criteria.
  * @example
- * sort([1, 2, 3, 4], 'desc')
+ * sort([1, 2, 3, 4], { order: 'desc' })
  * // => [4, 3, 2, 1]
- *
- * sort([{ a: 1 }, { a: 2 }, { a: 3 }], 'asc', item => item.a)
+ * sort([{ a: 1 }, { a: 2 }, { a: 3 }], { order: 'asc', by: item => item.a })
  * // => [{ a: 1 }, { a: 2 }, { a: 3 }]
+ * 
+ * const array = [{ a: 2, b: 1 }, { a: 1, b: 2 }, { a: 1, b: 1 }];
+ * sort(array, { order: 'asc', by: item => item.a }, { order: 'desc', by: item => item.b })
+ * // => [{ a: 1, b: 2 }, { a: 1, b: 1 }, { a: 2, b: 1 }]
  * @param array - The array to sort.
- * @param order - The order in which to sort the array.
- * @param iteratee - The iteratee function to sort the array based on a specific property.
+ * @param orders - The sorting criteria, one or multiple objects with properties order (either 'asc' or 'desc') and by (iteratee function to sort based on a specific property).
+ * @param orders.order - The order to sort in, either 'asc' or 'desc'.
+ * @param orders.by - The iteratee function to sort based on a specific property.
  * @returns Returns the sorted array.
- */
-
-export function sort<TInput>(array: TInput[], order?: 'asc' | 'desc', iteratee?: (item: TInput) => number | bigint | Date | string): TInput[] {
+*/
+export function sort<TInput>(array: TInput[], ...orders: { order?: 'asc' | 'desc', by?: (item: TInput) => number | bigint | Date | string }[]): TInput[] {
     return [...array].sort((a, b) => {
-        const aValue = iteratee ? iteratee(a) : a;
-        const bValue = iteratee ? iteratee(b) : b;
-        if (aValue < bValue) {
-            return order === 'desc' ? 1 : -1;
-        }
-        if (aValue > bValue) {
-            return order === 'desc' ? -1 : 1;
+        for (const { order, by } of orders) {
+            const aValue = by ? by(a) : a;
+            const bValue = by ? by(b) : b;
+            if (aValue < bValue) {
+                return order === 'desc' ? 1 : -1; 
+            }
+            if (aValue > bValue) {
+                return order === 'desc' ? -1 : 1;
+            }
         }
         return 0;
     });
