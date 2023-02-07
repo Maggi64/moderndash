@@ -17,8 +17,11 @@
 <p></p>
 
 <div align=center>
+  <a href="https://bundlephobia.com/package/moderndash@0.11.1">
+    <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/moderndash@latest?color=Green">
+  </a>
   <a href="https://www.npmjs.com/package/moderndash">
-    <img alt="npm" src="https://img.shields.io/npm/dw/moderndash?label=Downloads">
+    <img alt="npm" src="https://img.shields.io/npm/dw/moderndash">
   </a>
   <a href="https://github.com/Maggi64/moderndash/blob/main/LICENSE">
     <img alt="GitHub" src="https://img.shields.io/github/license/maggi64/moderndash">
@@ -39,7 +42,7 @@ ModernDash is a modern and lightweight alternative to utility libraries like Lod
 ModernDash ignores trivial functions and focuses of the functions you actually need.
 ```typescript
 // We don't need
-ModernDash.isArray(arr)
+Lodash.isArray(arr)
 Lodash.compact(arr)
 
 // When we these native replacements
