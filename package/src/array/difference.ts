@@ -3,11 +3,9 @@ import type { MinimumTwoArrays } from '@type/MinimumTwoArrays.js';
 import { isEqual } from '@validate/isEqual';
 
 /**
- * Creates an array values not included in the other given arrays.  
- * The order and references of result values are determined by the first array.
- *
- * An compare function is optinal to specify how the elements of the arrays are compared.  
- * Default compare function is {@link isEqual}.
+ * Create a new array with values from the first array that are not present in the other arrays.
+ * 
+ * Optionally, use a compare function to determine the comparison of elements (default: {@link isEqual}).
  * @example
  * difference([2, 1], [2, 3])
  * // => [1]
