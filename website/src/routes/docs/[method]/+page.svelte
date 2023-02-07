@@ -2,19 +2,20 @@
     import { capitalize } from 'moderndash';
     import snarkdown from 'snarkdown';
 
-
     import { page } from '$app/stores';
     import Playground from '$components/docs/Playground.svelte';
     import { docDataStore } from '$utils/docDataStore.js';
 
-    console.log($docDataStore);
-
     $: methodName = $page.params.method;
     $: methodDoc = $docDataStore.functions.find(func => func.name === methodName);
     $: typeDoc = $docDataStore.typeAliases.find(type => type.name === methodName);
-    $: signature = methodDoc?.signatures[0] ?? typeDoc;
+    $: classDoc = $docDataStore.classes.find(type => type.name === methodName);
+    $: signature = methodDoc?.signatures[0] ?? typeDoc ?? classDoc;
     $: code = generateCode(signature?.comment.blockTags.find(tag => tag.name === 'example')?.text);
 
+    $: displayedName = methodDoc?.name ?? typeDoc?.name ?? classDoc?.name;
+
+    $: console.log(classDoc);
     // Removes markdown code block syntax and adds imports
     function generateCode(codetext: string | undefined) {
         if (!codetext || !signature) return '';
@@ -38,8 +39,8 @@
     }
 </script>
 
-{#if methodDoc ?? typeDoc}
-    <h2>{methodDoc?.name ?? typeDoc?.name}</h2>
+{#if displayedName}
+    <h2>{displayedName}</h2>
     {#if signature}
         {@html snarkdown(signature.comment.description ?? 'No description')}
 

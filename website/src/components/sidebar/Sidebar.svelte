@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { FunctionParser, TypeAliasParser } from 'typedoc-json-parser';
+    import type { ClassParser, FunctionParser, TypeAliasParser } from 'typedoc-json-parser';
 
     import { group } from 'moderndash';
 
@@ -7,12 +7,11 @@
 
     import { docDataStore } from '$utils/docDataStore.js';
 
-
-    let funcGroups: Record<string, TypeAliasParser[] | FunctionParser[]> = {};
+    let funcGroups: Record<string, (TypeAliasParser | FunctionParser | ClassParser)[]> = {};
 
     $: {
-        funcGroups = group($docDataStore.functions, func => func.source?.path ?? 'Unknown');
-        funcGroups.type = $docDataStore.typeAliases;
+        const libaryElements = [...$docDataStore.functions, ...$docDataStore.classes, ...$docDataStore.typeAliases];
+        funcGroups = group(libaryElements, elem => elem.source?.path ?? 'Unknown');
     }
 
     // Sorts the groups so that the top categories are at the top
