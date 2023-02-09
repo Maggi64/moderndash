@@ -4,10 +4,11 @@
     import { docDataStore } from '$utils/docDataStore.js';
     import { markdownParser } from '$utils/markdown.js';
 
-    $: methodName = $page.params.method;
-    $: methodDoc = $docDataStore.functions.find(func => func.name === methodName);
-    $: typeDoc = $docDataStore.typeAliases.find(type => type.name === methodName);
-    $: classDoc = $docDataStore.classes.find(type => type.name === methodName);
+    const compareName = (name: string) => name.toLowerCase() === $page.params.method.toLowerCase();
+
+    $: methodDoc = $docDataStore.functions.find(func => compareName(func.name));
+    $: typeDoc = $docDataStore.typeAliases.find(type => compareName(type.name));
+    $: classDoc = $docDataStore.classes.find(_class => compareName(_class.name));
     $: signature = methodDoc?.signatures[0] ?? typeDoc ?? classDoc;
     $: code = generateCode(signature?.comment.blockTags.find(tag => tag.name === 'example')?.text);
 
