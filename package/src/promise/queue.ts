@@ -5,12 +5,12 @@
  * If the queue is paused, the queue will not run any more async functions until it is resumed.
  * 
  * **Methods:**
- * - {@link Queue.add} - adds a async function or array of functions to the queue. Returns a promise that resolves when the added function(s) finish.
- * - {@link Queue.clear} - clears the queue.
- * - {@link Queue.pause} - pauses the queue.
- * - {@link Queue.resume} - resumes the queue. 
- * - {@link Queue.getQueue} - returns the queue.
- * - {@link Queue.isPaused} - returns whether the queue is paused.
+ * - `add` - adds a async function or array of functions to the queue. Returns a promise that resolves when the added function(s) finish.
+ * - `clear` - clears the queue.
+ * - `pause` - pauses the queue.
+ * - `resume` - resumes the queue. 
+ * - `getQueue` - returns the current queue.
+ * - `isPaused` - returns whether the queue is paused.
  * 
  * @example
  * // Create a queue that can run 3 tasks concurrently

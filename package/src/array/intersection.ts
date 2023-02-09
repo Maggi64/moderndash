@@ -11,7 +11,9 @@ import { isEqual } from '@validate/isEqual';
  * // => [2]
  *
  * // ---- Custom compare function ----
- * intersection((a, b) => Math.floor(a) === Math.floor(b), [1.2, 1.1], [1.3, 2.4])
+ * const compareFn = (a, b) => Math.floor(a) === Math.floor(b);
+ * 
+ * intersection(compareFn, [1.2, 1.1], [1.3, 2.4])
  * // => [1.2]
  *
  * // ---- Only compare by id ----
