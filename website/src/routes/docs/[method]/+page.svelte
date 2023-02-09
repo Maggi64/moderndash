@@ -1,6 +1,7 @@
 <script lang="ts">
     import { page } from '$app/stores';
     import Playground from '$components/docs/Playground.svelte';
+    import Meta from '$components/Meta.svelte';
     import { docDataStore } from '$utils/docDataStore.js';
     import { markdownParser } from '$utils/markdown.js';
 
@@ -8,6 +9,7 @@
     $: methodDoc = $docDataStore.functions.find(func => func.name.toLowerCase() === methodName.toLowerCase());
     $: typeDoc = $docDataStore.typeAliases.find(type => type.name.toLowerCase() === methodName.toLowerCase());
     $: classDoc = $docDataStore.classes.find(type => type.name.toLowerCase() === methodName.toLowerCase());
+
     $: signature = methodDoc?.signatures[0] ?? typeDoc ?? classDoc;
     $: code = generateCode(signature?.comment.blockTags.find(tag => tag.name === 'example')?.text);
 
@@ -35,6 +37,8 @@
         return `import { ${signature.name} } from 'moderndash';\n\n${code}`;
     }
 </script>
+
+<Meta title={displayedName} description={signature?.comment.description ?? undefined}/>
 
 {#if displayedName}
     <h2>{displayedName}</h2>

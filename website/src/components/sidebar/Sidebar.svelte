@@ -39,7 +39,7 @@
 
 </script>
 
-<div class="fixed top-[3.5rem] h-screen shadow-xl pl-6 left-0 bg-white lg:bg-slate-50 hidden peer-checked:block lg:relative lg:pl-2 lg:top-0 lg:h-auto lg:block lg:flex-none lg:shadow-none">
+<div class="fixed top-[3.5rem] h-screen shadow-xl pl-6 left-0 bg-slate-50 hidden border-r-2  peer-checked:block lg:relative lg:top-0 lg:h-auto lg:block lg:flex-none lg:shadow-none">
     <div class="absolute inset-y-0 right-0 w-full"/>
     <nav class="sticky top-[3.7rem] w-64 text-base lg:text-sm">
         <div class="h-[calc(100vh-3.7rem)] overflow-y-auto py-12 space-y-8">

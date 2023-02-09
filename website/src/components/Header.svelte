@@ -7,7 +7,7 @@
     import { searchStore } from '$utils/searchStore.js';
 </script>
 
-<header class="sticky top-0 z-50 border-b shadow-md px-3 py-2 bg-white/90 backdrop-blur-sm border-slate-400/40">
+<header class="sticky top-0 z-50 border-b px-3 py-2 bg-white/90 backdrop-blur-sm border-slate-400/40">
     <div class="flex items-center justify-between mx-auto max-w-screen-xl">
         <div class="flex items-center flex-grow basis-0">
             <a href="/" class="text-lg font-semibold tracking-tight w-12 lg:w-auto text-slate-900">
