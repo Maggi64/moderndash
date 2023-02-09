@@ -36,7 +36,7 @@
 
 ---
 
-## 🔖 Introduction
+## 📓 Introduction
 ModernDash is a modern and lightweight alternative to utility libraries like Lodash. It provides important functions while encouraging use of native JS where possible.
 
 ModernDash ignores trivial functions and focuses of the functions you actually need.

@@ -15,7 +15,7 @@
     <main class="relative flex justify-center">
         <SidebarBtn/>
         <Sidebar/>
-        <div class="px-3 w-full py-12 xl:pr-0 lg:pl-16">
+        <div class="px-3 w-full py-8 md:py-12 xl:pr-0 lg:pl-16">
             <slot/>
         </div>
     </main>

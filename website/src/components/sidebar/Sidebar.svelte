@@ -46,7 +46,7 @@
             
             <li class="text-lg font-semibold">
                 <a href="/" class="text-slate-900 hover:text-slate-800">
-                    🔖 Introduction
+                    📓 Introduction
                 </a>
             </li>
 
