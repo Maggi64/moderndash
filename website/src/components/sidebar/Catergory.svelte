@@ -22,7 +22,7 @@
         <div>
             {#each entries as entry}
                 <div class="ml-2 pl-6 border-l-2 border-gray-200 hover:border-cyan-300 py-[0.3rem]">
-                    <a href="/docs/{entry}" class="text-slate-900 hover:text-slate-800">
+                    <a href="/docs/{entry.toLowerCase()}" class="text-slate-900 hover:text-slate-800">
                         {entry}
                     </a>
                 </div>
