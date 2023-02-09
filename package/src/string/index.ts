@@ -6,6 +6,6 @@ export * from './escapeRegExp';
 export * from './kebabCase';
 export * from './pascalCase';
 export * from './snakeCase';
-export * from './startCase';
 export * from './stripSpecial';
+export * from './titleCase';
 export * from './unescapeHtml';

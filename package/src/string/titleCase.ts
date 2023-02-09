@@ -1,22 +1,22 @@
 import { splitWords } from '@helpers/stringModifiers';
 
 /**
- * Converts a string to Start Case.
+ * Converts a string to Title Case.
  *
  * @example
- * startCase('--foo-bar--')
+ * titleCase('--foo-bar--')
  * // => 'Foo Bar'
- * startCase('fooBar')
+ * titleCase('fooBar')
  * // => 'Foo Bar'
- * startCase('__FOO_BAR__')
+ * titleCase('__FOO_BAR__')
  * // => 'Foo Bar'
- * startCase('HélloWorld')
+ * titleCase('HélloWorld')
  * // => 'Hello World'
  * @param str - The string to convert.
- * @returns Returns the start cased string.
+ * @returns Returns the title cased string.
  */
 
-export function startCase(str: string): string {
+export function titleCase(str: string): string {
     const words = splitWords(str);
     let startCase = '';
     for (const word of words) {
