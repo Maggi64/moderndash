@@ -1,10 +1,8 @@
 <script lang="ts">
-    import { capitalize } from 'moderndash';
-    import snarkdown from 'snarkdown';
-
     import { page } from '$app/stores';
     import Playground from '$components/docs/Playground.svelte';
     import { docDataStore } from '$utils/docDataStore.js';
+    import { markdownParser } from '$utils/markdown.js';
 
     $: methodName = $page.params.method;
     $: methodDoc = $docDataStore.functions.find(func => func.name === methodName);
@@ -41,7 +39,7 @@
 {#if displayedName}
     <h2>{displayedName}</h2>
     {#if signature}
-        {@html snarkdown(signature.comment.description ?? 'No description')}
+        {@html markdownParser(signature.comment.description ?? 'No description')}
 
         <h3>Example</h3>
         <Playground {code}/>
