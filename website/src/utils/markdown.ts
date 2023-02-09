@@ -1,4 +1,3 @@
-import { Converter } from 'showdown';
+import { marked } from 'marked';
 
-const converter = new Converter();
-export const markdownParser = (text: string) => converter.makeHtml(text);
+export const markdownParser = (text: string) => marked.parse(text);
