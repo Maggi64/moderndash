@@ -13,7 +13,6 @@ export default defineConfig({
             '@array': getPath('src/array'),
             '@object': getPath('src/object'),
             '@function': getPath('src/function'),
-            '@collection': getPath('src/collection'),
             '@string': getPath('src/string'),
             '@number': getPath('src/number'),
             '@helpers': getPath('src/helpers'),

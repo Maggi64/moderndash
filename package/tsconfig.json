@@ -18,7 +18,6 @@
       "@function/*": ["src/function/*"],
       "@object/*": ["src/object/*"],
       "@string/*": ["src/string/*"],
-      "@collection/*": ["src/collection/*"],
       "@helpers/*": ["src/helpers/*"],
       "@promise/*": ["src/promise/*"],
       "@validate/*": ["src/validate/*"],
