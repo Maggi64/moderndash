@@ -10,18 +10,18 @@
 </script>
 
 <li>
-    <h3 class="font-semibold tracking-tight text-slate-900 flex items-center cursor-pointer text-lg select-none"
+    <div class="font-semibold mb-4 tracking-tight text-slate-900 flex items-center cursor-pointer text-lg select-none"
         on:click={() => (isOpen = !isOpen)} on:keypress={() => (isOpen = !isOpen)}
     >
-        <span class="mr-2">
+        <span class="mr-3">
             <Fa icon={isOpen ? faChevronDown : faChevronRight}/>
         </span>
         {capitalize(title)}
-    </h3>
+    </div>
     {#if isOpen}
-        <ul class="pl-8 mt-3 space-y-2">
+        <ul>
             {#each entries as entry}
-                <li>
+                <li class="ml-2 pl-6 border-l-2 border-gray-200 hover:border-cyan-300 py-[0.3rem]">
                     <a href="/docs/{entry}" class="text-slate-900 hover:text-slate-800">
                         {entry}
                     </a>

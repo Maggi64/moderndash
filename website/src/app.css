@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  @apply bg-gray-50;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    @apply text-2xl font-bold text-gray-900 mt-8 mb-6;
+    &:first-of-type {
+        @apply mt-0;
+    }
+}
+
+h3 {
+    @apply text-xl font-bold text-gray-900 mt-8 mb-4;
+}
+
+pre {
+    @apply bg-gray-100 p-4 rounded mt-4;
+}

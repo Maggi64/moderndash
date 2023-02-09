@@ -26,7 +26,6 @@
 		"tslib": "2.5.0",
 		"vite": "4.1.1",
 		"snarkdown": "2.0.0",
-		"@tailwindcss/typography": "0.5.9",
 		"moderndash": "../moderndash",
 		"@stackblitz/sdk": "1.8.2"
 	},

@@ -43,15 +43,6 @@
     {#if signature}
         {@html snarkdown(signature.comment.description ?? 'No description')}
 
-        {#each signature.comment.blockTags as tag}
-            {#if tag.name !== 'example'}
-                <div>
-                    <h3>{capitalize(tag.name)}</h3>
-                    {@html snarkdown(tag.text)}
-                </div>
-            {/if}
-        {/each}
-
         <h3>Example</h3>
         <Playground {code}/>
     {/if}
