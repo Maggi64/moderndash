@@ -36,6 +36,9 @@
 
         return `import { ${signature.name} } from 'moderndash';\n\n${code}`;
     }
+
+    $: parsedMarkdown = markdownParser(signature?.comment.description ?? 'No description').replace(/{@link ([^}]+)}/g, '<a href="/docs/$1">$1</a>');
+
 </script>
 
 <Meta title={displayedName} description={signature?.comment.description ?? undefined}/>
@@ -43,7 +46,7 @@
 {#if displayedName}
     <h2>{displayedName}</h2>
     {#if signature}
-        {@html markdownParser(signature.comment.description ?? 'No description')}
+        {@html parsedMarkdown}
 
         <h3>Example</h3>
         <Playground {code}/>

@@ -15,7 +15,7 @@
 <MetaTags
     title={fullTitle}
     {description}
-    canonical={`https://moderndash.io${$page.url.pathname}`}
+    canonical={`https://moderndash.io${$page.url.pathname.toLowerCase()}`}
     openGraph={{
         images: [
             {
