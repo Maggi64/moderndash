@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 html {
-  @apply bg-gray-50;
+  @apply bg-gray-50 text-gray-800;
   font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
-    @apply text-2xl font-bold text-slate-800 mt-8 mb-6;
+    @apply text-2xl font-bold text-slate-800 mt-8 mb-4;
     &:first-of-type {
         @apply mt-0;
     }
@@ -24,8 +24,21 @@ pre {
 
 code {
     font-family: Consolas, 'Courier New', monospace;
+    @apply text-gray-800 px-1 bg-gray-100 rounded font-bold
 }
 
 p {
-    @apply text-gray-700 mt-4;
+    @apply mt-4;
+}
+
+ul {
+    list-style: disc;
+    @apply mt-2 ml-8;
+}
+
+a {
+    @apply text-blue-800;
+    &:hover {
+        @apply text-blue-900;
+    }
 }

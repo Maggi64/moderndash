@@ -9,7 +9,7 @@
     let isOpen = true;
 </script>
 
-<li>
+<div>
     <div class="font-semibold mb-4 tracking-tight text-slate-900 flex items-center cursor-pointer text-lg select-none"
         on:click={() => (isOpen = !isOpen)} on:keypress={() => (isOpen = !isOpen)}
     >
@@ -19,14 +19,14 @@
         {capitalize(title)}
     </div>
     {#if isOpen}
-        <ul>
+        <div>
             {#each entries as entry}
-                <li class="ml-2 pl-6 border-l-2 border-gray-200 hover:border-cyan-300 py-[0.3rem]">
+                <div class="ml-2 pl-6 border-l-2 border-gray-200 hover:border-cyan-300 py-[0.3rem]">
                     <a href="/docs/{entry}" class="text-slate-900 hover:text-slate-800">
                         {entry}
                     </a>
-                </li>
+                </div>
             {/each}
-        </ul>
+        </div>
     {/if}
-</li>
+</div>
