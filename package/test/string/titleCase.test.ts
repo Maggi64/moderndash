@@ -2,7 +2,7 @@ import { expect, test, describe } from 'vitest';
 
 import { titleCase } from '@string/titleCase';
 
-describe('startCase', () => {
+describe('titleCase', () => {
     test('convert a string to start case', () => {
         expect(titleCase('hello world')).toBe('Hello World');
         expect(titleCase('HELLO WORLD')).toBe('Hello World');

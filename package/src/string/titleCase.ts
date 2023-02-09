@@ -18,9 +18,9 @@ import { splitWords } from '@helpers/stringModifiers';
 
 export function titleCase(str: string): string {
     const words = splitWords(str);
-    let startCase = '';
+    let titleCase = '';
     for (const word of words) {
-        startCase += word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() + ' ';
+        titleCase += word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() + ' ';
     }
-    return startCase.trimEnd();
+    return titleCase.trimEnd();
 }
