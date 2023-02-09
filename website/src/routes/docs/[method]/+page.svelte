@@ -5,9 +5,9 @@
     import { markdownParser } from '$utils/markdown.js';
 
     $: methodName = $page.params.method;
-    $: methodDoc = $docDataStore.functions.find(func => func.name === methodName);
-    $: typeDoc = $docDataStore.typeAliases.find(type => type.name === methodName);
-    $: classDoc = $docDataStore.classes.find(type => type.name === methodName);
+    $: methodDoc = $docDataStore.functions.find(func => func.name.toLowerCase() === methodName.toLowerCase());
+    $: typeDoc = $docDataStore.typeAliases.find(type => type.name.toLowerCase() === methodName.toLowerCase());
+    $: classDoc = $docDataStore.classes.find(type => type.name.toLowerCase() === methodName.toLowerCase());
     $: signature = methodDoc?.signatures[0] ?? typeDoc ?? classDoc;
     $: code = generateCode(signature?.comment.blockTags.find(tag => tag.name === 'example')?.text);
 
