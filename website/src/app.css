@@ -23,8 +23,8 @@ pre {
 }
 
 code {
-    font-family: Consolas, 'Courier New', monospace;
-    @apply text-gray-800 px-1 bg-gray-100 rounded font-bold
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+    @apply text-gray-900 px-1 bg-gray-100 rounded
 }
 
 p {
