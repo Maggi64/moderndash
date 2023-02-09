@@ -1,11 +1,7 @@
 import type { PlainObject } from '@type/PlainObject.js';
 
-import { isPlainObject } from '@validate/isPlainObject.js';
-
 /**
  * Sets the value at path of object. If a portion of path doesn’t exist, it’s created.
- * 
- * TODO: Add support for array paths.
  * 
  * @alpha
  * @example
@@ -20,18 +16,23 @@ import { isPlainObject } from '@validate/isPlainObject.js';
  */
 
 export function set(obj: PlainObject, path: string, value: unknown): PlainObject {
-    const pathParts = path.split('.');
-    const lastPathPart = pathParts.pop()!;
+    const pathParts = path.split(/[.[\]]/g).filter(x => Boolean(x.trim()));
 
-    let currentObj = obj;
-    for (const pathPart of pathParts) {
-        if (!isPlainObject(currentObj[pathPart])) {
-            currentObj[pathPart] = {};
+    let currentObj: Record<string | number, unknown> = obj;
+    for (let index = 0; index < pathParts.length; index++) {
+        const key = pathParts[index];
+
+        if (index === pathParts.length - 1) {
+            currentObj[key] = value;
+            break;
         }
-        currentObj = currentObj[pathPart] as PlainObject;
-    }
+        
+        const nextIsNumber = !Number.isNaN(Number.parseInt(pathParts[index + 1]));
+        if (currentObj[key] === undefined)
+            currentObj[key] = nextIsNumber ? [] : {};
 
-    currentObj[lastPathPart] = value;
+        currentObj = currentObj[key] as Record<string | number, unknown>;
+    }
 
     return obj;
 }
