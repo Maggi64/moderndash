@@ -24,7 +24,7 @@
         </div>
 
         <div class="flex items-center justify-end flex-grow basis-0">
-            <a href="https://github.com/Maggi64/moderndash" target="_blank" rel="noreferrer" class="px-2 md:px-3 py-2 flex items-center font-semibold rounded bg-slate-900 text-slate-50 hover:bg-slate-800">
+            <a href="https://github.com/Maggi64/moderndash" target="_blank" rel="noreferrer" class="px-2 md:px-3 py-2 flex items-center font-semibold rounded bg-slate-900 text-slate-50 hover:bg-gray-800 hover:text-white">
                 <Fa icon={faGithub} size="1.5x"/> <span class="ml-2 hidden md:block">Github</span>
             </a>
         </div>
