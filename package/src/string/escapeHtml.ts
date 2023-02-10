@@ -2,7 +2,7 @@
  * Converts the characters `&`, `<`, `>`, `"` and `'` in a string to their corresponding HTML entities.
  *
  * @example
- * escape('fred, barney, & pebbles')
+ * escapeHtml('fred, barney, & pebbles')
  * // => 'fred, barney, &amp; pebbles'
  * @param str - The string to escape.
  * @returns Returns the escaped string.
