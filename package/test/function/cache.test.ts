@@ -1,6 +1,6 @@
 import { test, describe, expect, vi, beforeEach } from 'vitest';
 
-import { decMemoize } from '@decorator/decMemonize.js';
+import { decMemoize } from '@decorator/decMemoize.js';
 import { memoize } from '@function/memoize';
 
 describe('memoize', () => {

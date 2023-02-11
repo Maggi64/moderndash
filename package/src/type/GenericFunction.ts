@@ -1,1 +1,1 @@
-export type GenericFunction<TFunc extends (...args: any) => void> = (...args: Parameters<TFunc>) => ReturnType<TFunc>; // eslint-disable-line @typescript-eslint/no-explicit-any
+export type GenericFunction<TFunc extends (...args: any) => any> = (...args: Parameters<TFunc>) => ReturnType<TFunc>; // eslint-disable-line @typescript-eslint/no-explicit-any

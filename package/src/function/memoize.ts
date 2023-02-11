@@ -3,12 +3,12 @@ import type { GenericFunction } from '@type/GenericFunction.js';
 const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
 
 /**
- * Creates a function that memoizes the result of `func`.  
- * The cache key is either determined by the provided resolver or by the arguments used in the memoized function.
+ * Creates a function that caches the result of `func`.
+ * 
+ * The cache key is either determined by the provided `resolver` or by the arguments used in the cached function.
  *
- * The cache is exposed as the `cache` property on the memoized function.  
- * Its creation may be customized by replacing the `memoize.cache` value.  
- * The new cache must implement `get` and `set` methods like the built-in `Map` constructors.
+ * The `cache` property is exposed on the cached function. It is an instance of `Map` and can be used to clear or inspect the cache.  
+ * The cache property can be replaced by a custom cache as long as it implements the `Map` interface.
  *
  * **Options:**
  * - `resolver` A function that determines the cache key for storing the result based on the arguments provided.
@@ -30,12 +30,10 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  * setTimeout(() => values(object), 1000)
  * // => [1, 2] (cache miss after 1 second)
  * 
- * // Replace `memoize.cache`.
- * values.cache = new WeakMap()
- * 
  * // Cached values are exposed as the `cache` property.
  * values.cache.get(object)
  * values.cache.set(object, ['a', 'b'])
+ * values.cache.clear()
  * 
  * // This is the default way to create cache keys.
  * const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
@@ -47,8 +45,8 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  * @returns Returns the new memoized function.
  */
 
-export function memoize<TFunc extends GenericFunction<TFunc>, Cache extends Map<string | symbol, [ReturnType<TFunc>, number]>>(
-    func: TFunc, options: { resolver?: (...args: Parameters<TFunc>) => string | symbol, ttl?: number } = {}
+export function memoize<TFunc extends GenericFunction<TFunc>, Cache extends Map<string, [ReturnType<TFunc>, number]>>(
+    func: TFunc, options: { resolver?: (...args: Parameters<TFunc>) => string, ttl?: number; } = {}
 ): TFunc & { cache: Cache } {
     const resolver = options.resolver ?? defaultResolver;
     const ttl = options.ttl;
@@ -66,7 +64,7 @@ export function memoize<TFunc extends GenericFunction<TFunc>, Cache extends Map<
         cache.set(key, [result, Date.now()]);
         return result;
     };
-    
+
     memoizedFunc.cache = cache;
     return memoizedFunc as TFunc & { cache: Cache };
-}
+} 
