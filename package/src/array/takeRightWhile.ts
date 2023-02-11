@@ -1,8 +1,7 @@
 /**
  * Creates a slice of `array` with elements taken from the end.  
  * Elements are taken until `predicate` returns falsey.
- *
- * @returns Returns the slice of `array`.
+ * 
  * @example
  * const users = [
  *   { 'user': 'barney',  'active': false },
@@ -14,6 +13,7 @@
  * // => objects for ['fred', 'pebbles']
  * @param predicate - The function invoked per iteration.
  * @param array - The array to query.
+ * @returns Returns the slice of `array`.
  */
 
 export function takeRightWhile<TArr>(predicate: (elem: TArr) => boolean, array: TArr[]): TArr[] {
