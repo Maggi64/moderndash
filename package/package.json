@@ -2,6 +2,10 @@
   "name": "moderndash",
   "type": "module",
   "description": "A lodash inspired utility framework for ESM/Typescript/ESNext",
+  "engines": {
+      "node": ">=19.x.x",
+      "npm": ">=8.x.x"
+  },
   "sideEffects": false,
   "scripts": {
     "build": "ctix create ----startAt src --overwrite --noBackup & tsup",

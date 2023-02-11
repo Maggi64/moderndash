@@ -7,10 +7,6 @@
         "website",
         "package"
     ],
-    "engines": {
-        "node": ">=18.x.x",
-        "npm": ">=8.x.x"
-    },
     "type": "module",
     "scripts": {
         "build:docs-json": "typedoc --options typedoc.json && typedoc-json-parser --json ./website/src/assets/extractedTypes.json --verbose",
