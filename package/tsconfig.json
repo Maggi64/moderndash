@@ -17,6 +17,7 @@
       "@array/*": ["src/array/*"],
       "@function/*": ["src/function/*"],
       "@object/*": ["src/object/*"],
+      "@number/*": ["src/number/*"],
       "@string/*": ["src/string/*"],
       "@helpers/*": ["src/helpers/*"],
       "@promise/*": ["src/promise/*"],
