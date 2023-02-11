@@ -1,6 +1,7 @@
 export * from './array';
 export * from './decorator';
 export * from './function';
+export * from './number';
 export * from './object';
 export * from './promise';
 export * from './string';
