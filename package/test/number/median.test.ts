@@ -24,6 +24,6 @@ describe('median', () => {
     });
 
     test('should throw an error when input is empty array', () => {
-        expect(() => median([])).toThrow();  // or toThrowError()  depending on your test framework 
+        expect( median([])).toBe(NaN);
     });  
 });

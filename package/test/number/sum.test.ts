@@ -1,0 +1,29 @@
+import { describe, expect, test } from 'vitest';
+
+import { sum } from '@number/sum.js';
+
+describe('sum', () => {
+    test('should calculate the sum of an array of numbers', () => {
+        expect(sum([1, 2, 3, 4, 5])).toEqual(15);
+    });
+
+    test('should return 0 when given an empty array', () => {
+        expect(sum([])).toEqual(0);
+    });
+
+    test('should return the value of a single-element array', () => {
+        expect(sum([42])).toEqual(42);
+    });
+
+    test('should handle negative numbers correctly', () => {
+        expect(sum([1, -2, 3])).toEqual(2);
+    });
+
+    test('should handle floating point numbers correctly', () => {
+        expect(sum([1.5, 2.5, 3.5])).toEqual(7.5);
+    }); 
+
+    test('is nan when input is an empty array', () => {
+        expect(sum([])).toBe(NaN);
+    });
+});
