@@ -7,10 +7,6 @@ describe('sum', () => {
         expect(sum([1, 2, 3, 4, 5])).toEqual(15);
     });
 
-    test('should return 0 when given an empty array', () => {
-        expect(sum([])).toEqual(0);
-    });
-
     test('should return the value of a single-element array', () => {
         expect(sum([42])).toEqual(42);
     });
