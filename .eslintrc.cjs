@@ -7,7 +7,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:@typescript-eslint/strict",
-        //"plugin:compat/recommended", wait until fixed
+        "plugin:compat/recommended",
         "plugin:import/errors",
         "plugin:import/warnings",
         "plugin:import/typescript",
@@ -17,7 +17,7 @@ module.exports = {
     ],
     plugins: [
         '@typescript-eslint',
-        // "compat", wait until fixed
+        "compat",
         "deprecate",
         "import",
         "sonarjs",
