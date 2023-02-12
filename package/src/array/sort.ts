@@ -1,14 +1,18 @@
 
 /**
  * Creates a new sorted array in ascending or descending order based on one or multiple sorting criteria.
+ * 
  * @example
  * sort([1, 2, 3, 4], { order: 'desc' })
  * // => [4, 3, 2, 1]
- * sort([{ a: 1 }, { a: 2 }, { a: 3 }], { order: 'asc', by: item => item.a })
- * // => [{ a: 1 }, { a: 2 }, { a: 3 }]
  * 
+ * // --- Sorting by multiple properties ---
  * const array = [{ a: 2, b: 1 }, { a: 1, b: 2 }, { a: 1, b: 1 }];
- * sort(array, { order: 'asc', by: item => item.a }, { order: 'desc', by: item => item.b })
+ * 
+ * sort(array,
+ *   { order: 'asc', by: item => item.a },
+ *   { order: 'desc', by: item => item.b }
+ * )
  * // => [{ a: 1, b: 2 }, { a: 1, b: 1 }, { a: 2, b: 1 }]
  * @param array - The array to sort.
  * @param orders - The sorting criteria, one or multiple objects with properties order (either 'asc' or 'desc') and by (iteratee function to sort based on a specific property).
