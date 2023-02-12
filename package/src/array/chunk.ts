@@ -7,12 +7,13 @@
  *
  * chunk(['a', 'b', 'c', 'd'], 3)
  * // => [['a', 'b', 'c'], ['d']]
+ * @param chunkSize The length of each chunk
+ * @param array The array to chunk.
+ * @template TElem The type of the array elements.
  * @returns Returns the new array of chunks.
- * @param chunkSize - The array to process.
- * @param array - The length of each chunk
  */
 
-export function chunk<TInput>(array: TInput[], chunkSize: number): TInput[][] {
+export function chunk<TElem>(array: TElem[], chunkSize: number): TElem[][] {
     const sizeInteger = Math.trunc(chunkSize);
     if (array.length === 0 || sizeInteger < 1) {
         return [];

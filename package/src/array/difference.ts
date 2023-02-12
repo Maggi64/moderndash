@@ -20,18 +20,19 @@ import { isEqual } from '@validate/isEqual';
  *
  * difference((a, b) => a.id === b.id, arr1, arr2)
  * // => [{ id: 1, name: 'Yeet' }]
- * @param arrays - First array is inspected, others are excluded.
+ * @param arrays First array is inspected, others are excluded.
+ * @template TElem The type of the array elements.
  * @returns Returns the new array of filtered values.
  */
 
-export function difference<TArr>(...arrays: MinimumTwoArrays<TArr>): TArr[];
-export function difference<TArr>(arrayOrCompFn: (a: TArr, b: TArr) => boolean, ...arrays: MinimumTwoArrays<TArr>): TArr[];
-export function difference<TArr>(arrayOrCompFn: TArr[] | ((a: TArr, b: TArr) => boolean), ...arrays: MinimumTwoArrays<TArr>): TArr[] {
+export function difference<TElem>(...arrays: MinimumTwoArrays<TElem>): TElem[];
+export function difference<TElem>(arrayOrCompFn: (a: TElem, b: TElem) => boolean, ...arrays: MinimumTwoArrays<TElem>): TElem[];
+export function difference<TElem>(arrayOrCompFn: TElem[] | ((a: TElem, b: TElem) => boolean), ...arrays: MinimumTwoArrays<TElem>): TElem[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
-    const compareFN = withCompareFn ? arrayOrCompFn as (a: TArr, b: TArr) => boolean : isEqual;
+    const compareFN = withCompareFn ? arrayOrCompFn as (a: TElem, b: TElem) => boolean : isEqual;
 
     const [firstArray, ...restArrays] = withCompareFn ? arrays : [arrayOrCompFn, ...arrays];
-    const difference: TArr[] = [];
+    const difference: TElem[] = [];
 
     firstArray.forEach(element => {
         if (!restArrays.some(array => array.some(item => compareFN(item, element)))) {

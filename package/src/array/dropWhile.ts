@@ -11,12 +11,13 @@
  *
  * dropWhile(users, ({ active }) => active)
  * // => objects for ['pebbles']
- * @param predicate - The function invoked per iteration.
- * @param array - The array to query.
+ * @param predicate The function invoked per iteration.
+ * @param array The array to query.
+ * @template TElem The type of the array elements.
  * @returns Returns the slice of `array`.
  */
 
-export function dropWhile<TArr>(array: TArr[], predicate: (value: TArr) => boolean): TArr[] {
+export function dropWhile<TElem>(array: TElem[], predicate: (value: TElem) => boolean): TElem[] {
     const index = array.findIndex(x => !predicate(x));
     return array.slice(index === -1 ? array.length : index);
 }

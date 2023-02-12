@@ -14,12 +14,13 @@
  * count(users, value => value.age);
  * // => { '36': 2, '40': 1 }
  * 
- * @param criteria - The criteria to count by.
- * @param array - The array or record to iterate over.
+ * @param criteria The criteria to count by.
+ * @param array The array or record to iterate over.
+ * @template TElem The type of the array elements.
  * @returns Returns the composed aggregate object.
  */
 
-export function count<TInput, TKey extends PropertyKey>(array: TInput[], criteria: (value: TInput) => TKey | boolean): Record<TKey, number> {
+export function count<TElem, TKey extends PropertyKey>(array: TElem[], criteria: (value: TElem) => TKey | boolean): Record<TKey, number> {
     const result = {} as Record<TKey, number>;
     for (const value of array) {
         let key = criteria(value);

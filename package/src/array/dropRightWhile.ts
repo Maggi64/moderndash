@@ -11,12 +11,13 @@
  *
  * dropRightWhile(users, ({ active }) => active)
  * // => objects for ['barney']
- * @param predicate - The function invoked per iteration.
- * @param array - The array to query.
+ * @param predicate The function invoked per iteration.
+ * @param array The array to query.
+ * @template TElem The type of the array elements.
  * @returns Returns the slice of `array`.
  */
 
-export function dropRightWhile<TArr>(array: TArr[], predicate: (value: TArr) => boolean) {
+export function dropRightWhile<TElem>(array: TElem[], predicate: (value: TElem) => boolean) {
     let i = array.length;
     while (i > 0 && predicate(array[i - 1])) {
         i--;
