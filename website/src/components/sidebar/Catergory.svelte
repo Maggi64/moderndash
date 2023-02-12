@@ -3,7 +3,7 @@
     import { capitalize } from 'moderndash';
     import Fa from 'svelte-fa';
 
-    export let title: string;
+    export let categoryName: string;
     export let entries: string[];
 
     let isOpen = true;
@@ -16,7 +16,7 @@
         <span class="mr-3">
             <Fa icon={isOpen ? faChevronDown : faChevronRight}/>
         </span>
-        {capitalize(title)}
+        {capitalize(categoryName)}
     </div>
     {#if isOpen}
         <div>

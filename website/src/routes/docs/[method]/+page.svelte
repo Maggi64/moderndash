@@ -1,56 +1,25 @@
 <script lang="ts">
-    import { page } from '$app/stores';
+    import type { PageServerData } from './$types.js';
+
     import Playground from '$components/docs/Playground.svelte';
     import Meta from '$components/Meta.svelte';
-    import { docDataStore } from '$utils/docDataStore.js';
-    import { markdownParser } from '$utils/markdown.js';
+    
+    export let data: PageServerData;
 
-    $: methodName = $page.params.method;
-    $: methodDoc = $docDataStore.functions.find(func => func.name.toLowerCase() === methodName.toLowerCase());
-    $: typeDoc = $docDataStore.typeAliases.find(type => type.name.toLowerCase() === methodName.toLowerCase());
-    $: classDoc = $docDataStore.classes.find(type => type.name.toLowerCase() === methodName.toLowerCase());
-
-    $: signature = methodDoc?.signatures[0] ?? typeDoc ?? classDoc;
-    $: code = generateCode(signature?.comment.blockTags.find(tag => tag.name === 'example')?.text);
-
-    $: displayedName = methodDoc?.name ?? typeDoc?.name ?? classDoc?.name;
-
-    // Removes markdown code block syntax and adds imports
-    function generateCode(codetext: string | undefined) {
-        if (!codetext || !signature) return '';
-        let code = codetext.replace(/```(ts|typescript)\n/, '').replace('```', '');
-        
-        // Deals with Top Level Await Bug in Stackblitz
-        if (code.includes('await')) {
-            let lines = code.split('\n');
-            lines = lines.map((line, index) => {
-                if (index < lines.length - 1) {
-                    return '    ' + line;
-                }
-                return line;
-            });
-            code = lines.join('\n');
-            code = `(async () => {\n${code}})()`;
-        }
-        // ----
-
-        return `import { ${signature.name} } from 'moderndash';\n\n${code}`;
-    }
-
-    $: parsedMarkdown = markdownParser(signature?.comment.description ?? 'No description').replace(/{@link ([^}]+)}/g, '<a href="/docs/$1">$1</a>');
-
+    $: name = data.name;
+    $: description = data.description;
+    $: code = data.code;
+    $: parsedMarkdown = data.parsedMarkdown;
 </script>
 
-<Meta title={displayedName} description={signature?.comment.description ?? undefined}/>
+<Meta title={name} {description}/>
 
-{#if displayedName}
-    <h2>{displayedName}</h2>
-    {#if signature}
-        {@html parsedMarkdown}
+{#if name}
+    <h2>{name}</h2>
+    {@html parsedMarkdown}
 
-        <h3>Example</h3>
-        <Playground {code}/>
-    {/if}
+    <h3>Example</h3>
+    <Playground {code}/>
 {:else}
     <h2>Method not found</h2>
 {/if}

@@ -1,42 +1,28 @@
 <script lang="ts">
-    import type { ClassParser, FunctionParser, TypeAliasParser } from 'typedoc-json-parser';
-
-    import { group } from 'moderndash';
+    import type { LayoutData } from '../../routes/$types.js';
 
     import Catergory from './Catergory.svelte';
 
-    import { docDataStore } from '$utils/docDataStore.js';
-    import { searchStore } from '$utils/searchStore.js';
+    import { goto } from '$app/navigation';
+    import { searchTerm } from '$utils/searchStore.js';
 
-    let funcGroups: Record<string, (TypeAliasParser | FunctionParser | ClassParser)[]> = {};
+    export let sidebarEntries: LayoutData['sidebarEntries'];
 
-    $: {
-        let libaryElements = [...$docDataStore.functions, ...$docDataStore.classes, ...$docDataStore.typeAliases];
+    $: filteredEntries = sidebarEntries.map(({ categoryName, entries }) => {
+        const matchingEntries = categoryName.includes($searchTerm) 
+            ? entries 
+            : entries.filter((methodName) => methodName.toLowerCase().includes($searchTerm));
+            
+        return {
+            categoryName,
+            entries: matchingEntries
+        };
+    }).filter(({ entries }) => entries.length > 0);
 
-        if ($searchStore)
-            libaryElements = libaryElements.filter(elem => matchesSearch(elem));
-
-        funcGroups = group(libaryElements, elem => elem.source?.path ?? 'Other');
+    $: if ($searchTerm.length > 1 && filteredEntries.length > 0) {
+        const newUrl = `/docs/${filteredEntries[0].entries[0]}`;
+        void goto(newUrl, { keepFocus: true });
     }
-
-    function matchesSearch(elem: TypeAliasParser | FunctionParser | ClassParser) {
-        return elem.name.toLowerCase().includes($searchStore.toLowerCase()) ||
-            elem.source?.path.toLowerCase().includes($searchStore.toLowerCase());
-    }
-
-    // Sorts the groups so that the top categories are at the top
-    const topCategories = ['array', 'object', 'string', 'number', 'promise', 'validate', 'function', 'decorator'];
-    $: sortedGroups = Object.entries(funcGroups).sort(([titleA], [titleB]) => {
-        const indexA = topCategories.indexOf(titleA);
-        const indexB = topCategories.indexOf(titleB);
-        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-        if (indexA === -1) return 1;
-        if (indexB === -1) return -1;
-        
-        return titleA.localeCompare(titleB);
-    });
-
-
 </script>
 
 <div class="fixed top-[3.5rem] h-screen shadow-xl pl-6 left-0 bg-slate-50 hidden border-r-2  peer-checked:block lg:relative lg:top-0 lg:h-auto lg:block lg:flex-none lg:shadow-none">
@@ -50,8 +36,8 @@
                 </a>
             </div>
 
-            {#each sortedGroups as [title, functions]}
-                <Catergory {title} entries={functions.map(func => func.name)}/>
+            {#each filteredEntries as { categoryName, entries }}
+                <Catergory {categoryName} {entries}/>
             {/each}
         </div>
     </nav>
