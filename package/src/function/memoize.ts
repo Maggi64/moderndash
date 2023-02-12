@@ -18,22 +18,23 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  * 
  * @example
  * ```typescript
- * const object = { 'a': 1, 'b': 2 }
+ * function fibonacci(n: number) {
+ *     if (n <= 1) return n;
+ *     return fibonacci(n - 1) + fibonacci(n - 2);
+ * }
  *
- * const values = memoize(Object.values, { ttl: 1000 })
- * values(object)
- * // => [1, 2]
+ * const memoizedFib = memoize(fibonacci, { ttl: 1000 })
+ * 
+ * memoizedFib(40) // => 102334155
  *
- * values(object)
- * // => [1, 2]
+ * memoizedFib(40) // => 102334155 (cache hit)
  *
- * setTimeout(() => values(object), 1000)
- * // => [1, 2] (cache miss after 1 second)
+ * setTimeout(() => memoizedFib(40), 1000) // => 102334155 (cache miss)
  * 
  * // Cached values are exposed as the `cache` property.
- * values.cache.get(object)
- * values.cache.set(object, ['a', 'b'])
- * values.cache.clear()
+ * memoizedFib.cache.get(40) // => [value, timestamp]
+ * memoizedFib.cache.set(40, [1234, Date.now()])
+ * memoizedFib.cache.clear()
  * 
  * // This is the default way to create cache keys.
  * const defaultResolver = (...args: unknown[]) => JSON.stringify(args)
@@ -42,6 +43,8 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  * @param options - The options object with optional `resolver` and `ttl` parameters.
  * @param options.resolver - A function that determines the cache key for storing the result based on the arguments provided.
  * @param options.ttl - The time to live for the cache in milliseconds.
+ * @template TFunc The type of the function to memoize.
+ * @template Cache The type of the cache storage.
  * @returns Returns the new memoized function.
  */
 
