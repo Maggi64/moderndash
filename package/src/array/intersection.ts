@@ -1,4 +1,4 @@
-import type { MinimumTwoArrays } from '@type/MinimumTwoArrays.js';
+import type { ArrayMinLength } from '@type/ArrayMinLength.js';
 
 import { isEqual } from '@validate/isEqual';
 
@@ -26,9 +26,9 @@ import { isEqual } from '@validate/isEqual';
  * @returns Returns the new array of intersecting values.
  */
 
-export function intersection<TArr>(...arrays: MinimumTwoArrays<TArr>): TArr[];
-export function intersection<TArr>(arrayOrCompFn: (a: TArr, b: TArr) => boolean, ...arrays: MinimumTwoArrays<TArr>): TArr[];
-export function intersection<TArr>(arrayOrCompFn: TArr[] | ((a: TArr, b: TArr) => boolean), ...arrays: MinimumTwoArrays<TArr>): TArr[] {
+export function intersection<TArr>(...arrays: ArrayMinLength<TArr[], 2>): TArr[];
+export function intersection<TArr>(arrayOrCompFn: (a: TArr, b: TArr) => boolean, ...arrays: ArrayMinLength<TArr[], 2>): TArr[];
+export function intersection<TArr>(arrayOrCompFn: TArr[] | ((a: TArr, b: TArr) => boolean), ...arrays: ArrayMinLength<TArr[], 2>): TArr[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
     const compareFN = withCompareFn ? arrayOrCompFn as (a: TArr, b: TArr) => boolean : isEqual;
 

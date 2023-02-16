@@ -1,4 +1,4 @@
-import type { MinimumTwoArrays } from '@type/MinimumTwoArrays.js';
+import type { ArrayMinLength } from '@type/ArrayMinLength.js';
 
 import { isEqual } from '@validate/isEqual';
 
@@ -25,9 +25,9 @@ import { isEqual } from '@validate/isEqual';
  * @returns Returns the new array of filtered values.
  */
 
-export function difference<TElem>(...arrays: MinimumTwoArrays<TElem>): TElem[];
-export function difference<TElem>(arrayOrCompFn: (a: TElem, b: TElem) => boolean, ...arrays: MinimumTwoArrays<TElem>): TElem[];
-export function difference<TElem>(arrayOrCompFn: TElem[] | ((a: TElem, b: TElem) => boolean), ...arrays: MinimumTwoArrays<TElem>): TElem[] {
+export function difference<TElem>(...arrays: ArrayMinLength<TElem[], 2>): TElem[];
+export function difference<TElem>(arrayOrCompFn: (a: TElem, b: TElem) => boolean, ...arrays: ArrayMinLength<TElem[], 2>): TElem[];
+export function difference<TElem>(arrayOrCompFn: TElem[] | ((a: TElem, b: TElem) => boolean), ...arrays: ArrayMinLength<TElem[], 2>): TElem[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
     const compareFN = withCompareFn ? arrayOrCompFn as (a: TElem, b: TElem) => boolean : isEqual;
 
