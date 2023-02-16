@@ -4,10 +4,12 @@
     import Meta from '$components/Meta.svelte';
     import { markdownParser } from '$utils/markdown.js';
 
-    // remove header section
-    const trimmedReadme = readme.split('---')[1];
+    // remove first markdown image from readme
+    const trimmedReadme = readme.replace(/!\[.*]\(.*\)/, '');
 </script>
 
 <Meta title="Home"/>
 
-{@html markdownParser(trimmedReadme)}
+<div id="readme">
+    {@html markdownParser(trimmedReadme)}
+</div>

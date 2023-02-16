@@ -5,7 +5,7 @@
   Optimized for modern browsers & developer experience.
 </p>
 
-<div align=center>
+<div align=center class="space-y">
   ✅ ESM
   ✅ Tree-shakable
   ✅ Typescript Strict Mode (no any)<br>
@@ -16,7 +16,7 @@
 </div>
 <p></p>
 
-<div align=center>
+<div align=center class="center">
   <a href="https://bundlephobia.com/package/moderndash@0.11.1">
     <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/moderndash@latest?color=Green">
   </a>
@@ -29,7 +29,7 @@
   </a>
 </div>
 
-<h3 align=center>
+<h3 align=center class="hide-on-website">
   <a href="https://moderndash.io" target="_blank">
        📓 Documentation
   </a>
