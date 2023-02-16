@@ -11,11 +11,11 @@ import type { GenericFunction } from '@type/GenericFunction.js';
  * 
  * @example
  * const sayHello = (name: string) => console.log(`Hello, ${name}!`);
- * const debouncedSayHello = debounce(sayHello, 1000);
+ * const debouncedSayHello = debounce(sayHello, 200);
  * 
  * debouncedSayHello("John");
  * debouncedSayHello("Jane");
- * // => Only the second invocation of `debouncedSayHello` is executed, after a delay of 1000ms.
+ * // => Only the second invocation of `debouncedSayHello` is executed, after a delay of 200ms.
  * @param func - The function to debounce.
  * @param wait - The number of milliseconds to wait before invoking `func`.
  * @returns A debounced version of `func` with `cancel` and `flush` methods.
