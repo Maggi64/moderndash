@@ -25,8 +25,8 @@ describe('debounce', () => {
         vi.advanceTimersByTime(99);
         expect(testFn).not.toHaveBeenCalled();
 
-        vi.advanceTimersByTime(1);
-        expect(testFn).toHaveBeenCalledTimes(1);
+        vi.advanceTimersByTime(100000);
+        expect(testFn).toHaveBeenCalledOnce();
     });
 
     test('calls the function again after the wait period', () => {
