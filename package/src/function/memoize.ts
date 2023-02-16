@@ -26,14 +26,12 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  * const memoizedFib = memoize(fibonacci, { ttl: 1000 })
  * 
  * memoizedFib(40) // => 102334155
- *
  * memoizedFib(40) // => 102334155 (cache hit)
- *
  * setTimeout(() => memoizedFib(40), 1000) // => 102334155 (cache miss)
  * 
  * // Cached values are exposed as the `cache` property.
- * memoizedFib.cache.get(40) // => [value, timestamp]
- * memoizedFib.cache.set(40, [1234, Date.now()])
+ * memoizedFib.cache.get("40") // => [value, timestamp]
+ * memoizedFib.cache.set("40", [1234, Date.now()])
  * memoizedFib.cache.clear()
  * 
  * // This is the default way to create cache keys.
