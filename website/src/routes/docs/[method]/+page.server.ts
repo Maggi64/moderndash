@@ -11,6 +11,7 @@ export const load: PageServerLoad = (({ params }) => {
     const classDoc = docData.classes.find(type => type.name.toLowerCase() === methodName.toLowerCase());
 
     const signature = methodDoc?.signatures[0] ?? typeDoc ?? classDoc;
+    const fileSource = methodDoc?.source ?? typeDoc?.source ?? classDoc?.source;
     const code = generateCode(signature?.comment.blockTags.find(tag => tag.name === 'example')?.text);
 
     // Removes markdown code block syntax and adds imports
@@ -41,6 +42,7 @@ export const load: PageServerLoad = (({ params }) => {
         name: methodDoc?.name ?? typeDoc?.name ?? classDoc?.name,
         description: signature?.comment.description ?? 'No description',
         code,
-        parsedMarkdown
+        parsedMarkdown,
+        path: fileSource && (fileSource.path + '/' + fileSource.file)
     };
 });

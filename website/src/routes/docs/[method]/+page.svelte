@@ -1,8 +1,9 @@
 <script lang="ts">
     import type { PageServerData } from './$types.js';
 
-    import Playground from '$components/docs/Playground.svelte';
+    import EditButton from '$components/EditButton.svelte';
     import Meta from '$components/Meta.svelte';
+    import Playground from '$components/Playground.svelte';
     
     export let data: PageServerData;
 
@@ -10,6 +11,7 @@
     $: description = data.description;
     $: code = data.code;
     $: parsedMarkdown = data.parsedMarkdown;
+    $: path = data.path;
 </script>
 
 <Meta title={name} {description}/>
@@ -20,6 +22,8 @@
 
     <h3>Example</h3>
     <Playground {code}/>
+
+    <EditButton href={`https://github.com/Maggi64/moderndash/edit/main/package/src/${path}`}/>
 {:else}
     <h2>Method not found</h2>
 {/if}
