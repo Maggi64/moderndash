@@ -15,7 +15,7 @@ import type { PlainObject } from '@type/PlainObject.js';
  * @returns The modified object.
  */
 
-export function set(obj: PlainObject, path: string, value: unknown): PlainObject {
+export function set<TObj extends PlainObject>(obj: TObj, path: string, value: unknown): TObj {
     const pathParts = path.split(/[.[\]]/g).filter(x => Boolean(x.trim()));
 
     let currentObj: Record<string | number, unknown> = obj;
