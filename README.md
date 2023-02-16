@@ -38,15 +38,15 @@
 ---
 
 ## 📓 Introduction
-ModernDash is a modern and lightweight alternative to utility libraries like Lodash. It provides important functions while encouraging use of native JS where possible.
+ModernDash is a modern and lightweight alternative to utility libraries like Lodash. It provides important functions while encouraging the use of native JS wherever possible.
 
-ModernDash ignores trivial functions and focuses of the functions you actually need.
+ModernDash ignores trivial functions and instead focuses on the functions that you actually need.
 ```typescript
 // We don't need
 Lodash.isArray(arr)
 Lodash.compact(arr)
 
-// When we these native replacements
+// When we have these native replacements
 Array.isArray(arr)
 arr.filter(Boolean)
 ```
@@ -57,5 +57,5 @@ npm install moderndash
 ```
 
 ## Why is X lodash function not included?
-Please check [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) for native replacements.  
-If you still think a function is missing open an issue.
+Please refer to [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) for native replacements.  
+If you still believe a function is missing, please open an issue.
