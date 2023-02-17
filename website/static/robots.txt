@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://moderndash.io/sitemap.xml
