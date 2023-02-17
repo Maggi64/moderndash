@@ -23,7 +23,9 @@
     <h3>Example</h3>
     <Playground {code}/>
 
-    <EditButton href={`https://github.com/Maggi64/moderndash/edit/main/package/src/${path}`}/>
+    {#if path}
+        <EditButton href={`https://github.com/Maggi64/moderndash/edit/main/package/src/${path}`}/>
+    {/if}
 {:else}
     <h2>Method not found</h2>
 {/if}
