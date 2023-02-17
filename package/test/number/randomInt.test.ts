@@ -14,7 +14,7 @@ describe('randomInt', () => {
 
     test('should return a different number each time', () => {
         const min = 1;
-        const max = 10;
+        const max = 10000000;
 
         expect(randomInt(min, max)).not.toEqual(randomInt(min, max));
     });

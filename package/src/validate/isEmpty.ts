@@ -1,12 +1,6 @@
 /**
  * Checks if `value` is an empty object, collection, map, or set.
  *
- * Objects are considered empty if they have no own enumerable string keyed
- * properties.
- *
- * Array-like values such as `arguments` objects, arrays, buffers, strings, or
- * Similarly, maps and sets are considered empty if they have a `size` of `0`.
- *
  * @example
  * isEmpty(null)
  * // => true
