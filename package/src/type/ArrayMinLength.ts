@@ -4,7 +4,7 @@
  * 
  * @example
  * let arr: ArrayMinLength<number, 3> = [1, 2, 3];
- * arr = [1, 2, 3, 4]; // Error
+ * arr = [1, 2]; // Error
  * 
  * @template TElem The type of the array elements.
  * @template TMinLength The minimum length of the array.
