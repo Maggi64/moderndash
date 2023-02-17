@@ -6,7 +6,8 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"start": "node ./build"
+		"start": "node ./build",
+		"postbuild": "npx svelte-sitemap --domain https://moderndash.io"
 	},
 	"dependencies": {
 		"typedoc-json-parser": "7.1.0"
@@ -18,6 +19,7 @@
 		"@fortawesome/free-regular-svg-icons": "6.3.0",
 		"@fortawesome/free-solid-svg-icons": "6.3.0",
 		"svelte-fa": "3.0.3",
+		"svelte-sitemap": "2.6.0",
 		"@sveltejs/adapter-static": "2.0.1",
 		"@sveltejs/kit": "1.5.5",
 		"@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
