@@ -1,4 +1,6 @@
-import { splitWords } from '@helpers/stringModifiers';
+import { splitWords } from '@string/splitWords';
+
+import { deburr } from './deburr.js';
 
 /**
  * Converts a string to kebab-case.
@@ -18,6 +20,7 @@ import { splitWords } from '@helpers/stringModifiers';
  */
 
 export function kebabCase(str: string): string {
+    str = deburr(str);
     const words = splitWords(str);
     let kebabCase = '';
     for (const word of words) {

@@ -1,4 +1,6 @@
-import { splitWords } from '@helpers/stringModifiers';
+import { splitWords } from '@string/splitWords';
+
+import { deburr } from './deburr.js';
 
 
 /**
@@ -19,6 +21,7 @@ import { splitWords } from '@helpers/stringModifiers';
  */
 
 export function pascalCase(str: string): string {
+    str = deburr(str);
     const words = splitWords(str);
     let pascalCase = '';
     for (const word of words) {

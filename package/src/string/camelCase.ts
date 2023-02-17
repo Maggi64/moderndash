@@ -1,4 +1,6 @@
-import { splitWords } from '@helpers/stringModifiers';
+import { splitWords } from '@string/splitWords';
+
+import { deburr } from './deburr.js';
 
 /**
  * Converts `string` to camelCase.
@@ -15,10 +17,11 @@ import { splitWords } from '@helpers/stringModifiers';
  */
 
 export function camelCase(str: string): string {
+    str = deburr(str);
     const words = splitWords(str);
 
     // Capitalize the first letter of each word
-    const camelCase = words.map((word, index) => {
+    const camelCase = words.map((word: string, index: number) => {
         if (index === 0) {
             return word.toLowerCase();
         }
