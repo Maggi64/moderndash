@@ -16,4 +16,12 @@ describe('Chunk', () => {
     it('coerce `size` to an integer', () => {
         expect(chunk(array, array.length / 4)).toEqual([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]);
     });
+
+    it('empty array on negative size', () => {
+        expect(chunk(array, -1)).toEqual([]);
+    });
+
+    it('empty array', () => {
+        expect(chunk([], 2)).toEqual([]);
+    });
 });

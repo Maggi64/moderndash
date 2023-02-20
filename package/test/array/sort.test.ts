@@ -21,11 +21,11 @@ describe('sort', () => {
             { name: 'Bob', age: 25 },
             { name: 'Eve', age: 35 }
         ];
-        const sortedUsers = sort(users, { order: 'asc', by: user => user.age });
+        const sortedUsers = sort(users, { order: 'desc', by: user => user.age });
         expect(sortedUsers).toEqual([
-            { name: 'Bob', age: 25 },
+            { name: 'Eve', age: 35 },
             { name: 'Alice', age: 30 },
-            { name: 'Eve', age: 35 }
+            { name: 'Bob', age: 25 }
         ]);
     });
 

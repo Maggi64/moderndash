@@ -87,4 +87,10 @@ describe('Queue', () => {
         await sleep(20);
         expect(callbackMock3).toHaveBeenCalledOnce();
     });
+
+    test('handle rejected promises', async () => {
+        const callbackMock4 = vi.fn(() => Promise.reject('rejected'));
+        await expect(queue.add(callbackMock4)).rejects.toBe('rejected');
+        expect(callbackMock4).toHaveBeenCalledOnce();
+    });
 });

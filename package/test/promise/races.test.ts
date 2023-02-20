@@ -19,4 +19,12 @@ describe('describe', () => {
         expect(result).toEqual([20]);
     });
 
+    test('rejected promise', async () => {
+        const rejectedPromise = new Promise((resolve, reject) => {
+            setTimeout(() => reject('rejected'), 20); 
+        });
+        const result = races(2, delayedPromise(20), rejectedPromise, delayedPromise(60));
+        void expect(result).rejects.toBe(  'rejected');
+    });
+        
 });

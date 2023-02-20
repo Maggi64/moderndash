@@ -8,7 +8,9 @@
 <div align=center class="space-y">
   ✅ ESM
   ✅ Tree-shakable
-  ✅ Typescript Strict Mode (no any)<br>
+  ✅ Typescript Strict Mode (no any)
+  ✅ 100% Test Coverage
+  <br>
   ✅ Zero dependencies
   ✅ Hoverable Docs
   ✅ TS Decorators

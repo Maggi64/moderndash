@@ -13,5 +13,8 @@ describe('set', () => {
         const obj = { a: { b: 2, c: [1, 2] } };
         set(obj, 'a.c[2]', 1);
         expect(obj).toEqual({ a: { b: 2, c: [1, 2, 1] } });
+
+        set(obj, 'a.d[0].c', 3);
+        expect(obj).toEqual({ a: { b: 2, c: [1, 2, 1], d: [{ c: 3 }] } });
     });
 });

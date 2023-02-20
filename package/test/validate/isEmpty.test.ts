@@ -14,6 +14,11 @@ describe('isEmpty', () => {
         expect(isEmpty('some string')).toBe(false);
     });
 
+    test('isEmpty false on unsupported types', () => {
+        // @ts-expect-error - number not allowed
+        expect(isEmpty(0)).toBe(false);
+    });
+
     test('isEmpty with array', () => {
         expect(isEmpty([])).toBe(true);
         expect(isEmpty([1, 2, 3])).toBe(false);

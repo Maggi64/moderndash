@@ -19,4 +19,13 @@ describe('timeout', () => {
             expect(err.message).toBe('Promise timed out after 50ms');
         }
     });
+
+    test('rejected promise', async () => {
+        try {
+            await timeout(Promise.reject('rejected'), 50);
+        } catch (error) {
+            const err = error as Error;
+            expect(err).toBe('rejected');
+        }
+    });
 });
