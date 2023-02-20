@@ -7,7 +7,7 @@ import { isEqual } from '@validate/isEqual';
  * 
  * Optionally, use a compare function to determine the comparison of elements (default: {@link isEqual}).
  * @example
- * difference([2, 1], [2, 3])
+ * difference([2, 1], [2, 3], [6])
  * // => [1]
  *
  * // ---- Custom compare function ----
