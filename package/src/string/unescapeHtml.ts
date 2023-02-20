@@ -17,5 +17,5 @@ export function unescapeHtml(str: string): string {
         '&quot;': '"',
         '&#39;': '\''
     };
-    return str.replace(/&(?:amp|lt|gt|quot|#(0+)?39);/g, (entity: string) => entityMap[entity] || entity);
+    return str.replace(/&(?:amp|lt|gt|quot|#(0+)?39);/g, (entity: string) => entityMap[entity]);
 }
