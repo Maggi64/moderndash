@@ -1,6 +1,6 @@
 {
   "name": "moderndash",
-  "version": "0.14.2",
+  "version": "0.14.1",
   "type": "module",
   "description": "A lodash inspired utility framework for ESM/Typescript/ESNext",
   "engines": {
@@ -11,7 +11,8 @@
   "scripts": {
     "build:index": "ctix create --startAt src --overwrite --noBackup",
     "build": "tsup",
-    "release": "npm run test && npm run build && cp '../README.md' './README.md' && cp '../LICENSE' './LICENSE' && npx changeset publish && rm './README.md' && rm './LICENSE'",
+    "prepublishOnly": "npm run test && npm run build && cp '../README.md' './README.md' && cp '../LICENSE' './LICENSE'",
+    "postpublish": "rm './README.md' && rm './LICENSE'",
     "test-dev": "vitest --ui",
     "test": "vitest run --coverage"
   },
