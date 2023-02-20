@@ -14,8 +14,7 @@ import { deburr } from './deburr.js';
  * // => 'foo_bar'
  * snakeCase('foo2bar')
  * // => 'foo_2_bar'
- * snakeCase('Héllo World')
- * // => 'hello_world'
+ * 
  * @param str - The string to convert.
  * @returns Returns the snake cased string.
  */

@@ -13,8 +13,6 @@ import { deburr } from './deburr.js';
  * // => 'FooBar'
  * pascalCase('__FOO_BAR__')
  * // => 'FooBar'
- * pascalCase('Héllo World')
- * // => 'HelloWorld'
  * 
  * @param str - The string to convert.
  * @returns Returns the pascal cased string.
