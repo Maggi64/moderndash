@@ -17,6 +17,7 @@
         ">2% and not dead"
     ],
     "devDependencies": {
+        "@changesets/cli": "2.26.0",
         "@types/showdown": "2.0.0",
         "@typescript-eslint/eslint-plugin": "5.51.0",
         "@typescript-eslint/parser": "5.51.0",

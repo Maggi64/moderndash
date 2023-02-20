@@ -1,37 +1,40 @@
-name: "NPM Release"
+name: Release
+
 on:
   push:
     branches:
       - main
-    paths:
-      - 'package/src/**'
-      - 'README.md'
-      - 'LICENSE'
-  workflow_dispatch:
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  npm:
-    name: NPM Release
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name : Use Node.js 19.x
-        uses : actions/setup-node@v3
-        with :
-          node-version : 19.x
-          cache: npm
-      - name: Test & Build
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 19.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19.x
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Tests
         shell: bash
         run: |
-          npm ci
           cd package
           npx vitest run
-          npm run build
-          cp '../README.md' './README.md'
-          cp '../LICENSE' './LICENSE'
-      - uses: mikeal/merge-release@master
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: npm run release --workspace=package
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-          DEPLOY_DIR: package
-          SRC_PACKAGE_DIR: package
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
