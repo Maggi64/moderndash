@@ -11,7 +11,7 @@ import { debounce } from '@function/debounce.js';
  * @example
  * ```typescript
  * class TestClass {
- *   @decDebounce(1000)
+ *   @decDebounce(100)
  *   testMethod(str: string) {
  *     console.log("Debounced:", str);
  *   }
