@@ -24,6 +24,7 @@ h3 {
 
 pre {
     @apply bg-gray-100 p-4 rounded mt-4;
+    overflow-x: auto;
 }
 
 code {
