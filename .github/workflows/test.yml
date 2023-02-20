@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 19.x
+          cache: npm
 
       - name: Install Dependencies
         run: npm ci
