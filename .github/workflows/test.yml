@@ -4,6 +4,7 @@ on:
   pull_request :
     paths :
       - 'package/src/**'
+      - 'package/test/**'
 
 jobs:
   release:
