@@ -65,4 +65,4 @@ If you still believe a function is missing, please open an issue.
 ### Why no pipe utility functions?
 The upcoming [pipe operator](https://github.com/tc39/proposal-pipeline-operator) in JavaScript will provide function composition, so the framework focuses on providing other useful utility functions that are not yet available.
 
-The pipeline operator can already be included via [babel](https://babeljs.io/docs/en/babel-plugin-proposal-pipeline-operator).
+The pipe operator can already be included via [babel](https://babeljs.io/docs/en/babel-plugin-proposal-pipeline-operator).
