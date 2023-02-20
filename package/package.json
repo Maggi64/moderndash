@@ -11,7 +11,7 @@
   "scripts": {
     "build:index": "ctix create --startAt src --overwrite --noBackup",
     "build": "tsup",
-    "release": "npm run test && npm run build && @powershell cp '../README.md' './README.md' && @powershell cp '../LICENSE' './LICENSE' && changesets publish && @powershell rm './README.md' && @powershell rm './LICENSE'",
+    "release": "npm run test && npm run build && cp '../README.md' './README.md' && cp '../LICENSE' './LICENSE' && changesets publish && @powershell rm './README.md' && @powershell rm './LICENSE'",
     "test-dev": "vitest --ui",
     "test": "vitest run --coverage"
   },
