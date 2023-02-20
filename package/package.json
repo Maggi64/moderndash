@@ -9,10 +9,11 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build": "ctix create ----startAt src --overwrite --noBackup & tsup",
-    "release": "npm run build && @powershell cp '../README.md' './README.md' && @powershell cp '../LICENSE' './LICENSE' && changesets publish && @powershell rm './README.md' && @powershell rm './LICENSE'",
-    "test": "vitest",
-    "test-ui": "vitest --ui"
+    "build:index": "ctix create --startAt src --overwrite --noBackup",
+    "build": "tsup",
+    "release": "npm run test && npm run build && @powershell cp '../README.md' './README.md' && @powershell cp '../LICENSE' './LICENSE' && changesets publish && @powershell rm './README.md' && @powershell rm './LICENSE'",
+    "test-dev": "vitest --ui",
+    "test": "vitest run --coverage"
   },
   "repository": {
     "type": "git",

@@ -25,4 +25,4 @@ jobs:
         shell: bash
         run: |
           cd package
-          npx vitest run
+          npm run test

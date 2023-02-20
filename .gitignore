@@ -9,5 +9,6 @@ build
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+package/coverage
 
 website/src/assets/extractedTypes.json

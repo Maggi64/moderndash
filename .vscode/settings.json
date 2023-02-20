@@ -32,4 +32,5 @@
   "[javascript]": {
       "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "vitest.commandLine": "npx vitest --root package"
 }

@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths :
+        - 'package/**'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -22,12 +24,6 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
-
-      - name: Run Tests
-        shell: bash
-        run: |
-          cd package
-          npx vitest run
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
