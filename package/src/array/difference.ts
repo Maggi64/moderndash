@@ -11,7 +11,8 @@ import { isEqual } from '@validate/isEqual';
  * // => [1]
  *
  * // ---- Custom compare function ----
- * difference((a, b) => Math.floor(a) === Math.floor(b), [1.2, 3.1], [1.3, 2.4])
+ * const compareByFloor = (a, b) => Math.floor(a) === Math.floor(b);
+ * difference(compareByFloor, [1.2, 3.1], [1.3, 2.4])
  * // => [3.1]
  *
  * // ---- Only compare by id ----
