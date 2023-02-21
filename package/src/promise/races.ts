@@ -3,15 +3,16 @@
  * but allows to specify how many promises to wait for.
  *
  * @example
- * const promise1 = Promise.resolve(1);
- * const promise2 = Promise.resolve(2);
- * const promise3 = Promise.resolve(3);
+ * const prom1 = Promise.resolve(1);
+ * const prom2 = new Promise(resolve => setTimeout(resolve, 100, 2));
+ * const prom3 = Promise.resolve(3);
  * 
- * const firstThree = await races(3, promise1, promise2, promise3);
- * // => [1, 2, 3]
- * @template TRes - The type of the result of the promises.
- * @param waitFor - The number of promises to wait for.
- * @param promises - The promises to wait for.
+ * const firstTwo = await races(2, prom1, prom2, prom3);
+ * // => [1, 3]
+ * 
+ * @template TRes The type of the result of the promises.
+ * @param waitFor The number of promises to wait for.
+ * @param promises The promises to wait for.
  * @returns A promise that resolves an array of the results of the first n promises.
  */
 
