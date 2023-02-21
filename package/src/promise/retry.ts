@@ -11,22 +11,23 @@ import { sleep } from '@promise/sleep.js';
  * await retry(() => fetch('https://example.com'));
  * 
  * // ---- Advanced example ----
- * const fetchSite = async (url: string) => {
- *    const response = await fetch(url);
+ * const fetchSite = async () => {
+ *    const response = await fetch('https://example.com');
  *    if(!response.ok)
  *        throw new Error('Failed to fetch');
  * }
  * 
  * const logger = (error: unknown, retry?: number) => console.log("Retrying", retry, error);
  * 
- * await retry(() => fetchSite('https://example.com'), { maxRetries: 3, backoff: retries => retries * 1000, onRetry: logger });
- * // => Will retry 3 times with a 1 second delay between each retry. Will log the error and retry number.
+ * await retry(fetchSite, { maxRetries: 3, backoff: retries => retries * 1000, onRetry: logger });
+ * // => Will retry 3 times with a 1 second delay between each retry.
+ * // => Will log the error and retry number.
  * 
  * @param func The function to retry.
  * @param options The options for the retry.
  * @param options.maxRetries The maximum number of retries. Defaults to `5`.
  * @param options.backoff The backoff function to use. Defaults to `2^retries * 100`.
- * @param options.onRetry The function to call when a retry is attempted.
+ * @param options.onRetry The function to call when a retry is attempted. It will be called with the error and the attempt number.
  * @template TRes The type of the result of the function.
  * @returns A promise that resolves when the function succeeds.
  */
@@ -36,7 +37,7 @@ export async function retry<TRes>(
     options?: { 
         maxRetries?: number,
         backoff?: ((retries: number) => number),
-        onRetry: (error?: unknown, retry?: number) => void
+        onRetry?: (error?: unknown, attempted?: number) => void
     }
 ): Promise<TRes> {
     const backOffFn = options?.backoff ?? (retries => (2 ** retries) * 100);
