@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "Maggi64/moderndash" }],
+  "changelog": ["@svitejs/changesets-changelog-github-compact", { "repo": "Maggi64/moderndash" }],
   "commit": false,
   "fixed": [],
   "linked": [],
