@@ -1,5 +1,17 @@
 # moderndash
 
+## 1.1.0
+
+### Minor Changes
+
+- feat: added range function ([`57a0a59`](https://github.com/Maggi64/moderndash/commit/57a0a59fd39f6a19f68f39fc3d56f93f3e60f1de))
+
+### Patch Changes
+
+- difference docs make it clear that more then 2 arrays can be used ([`f0fb289`](https://github.com/Maggi64/moderndash/commit/f0fb289f431062bf49762c9e10e3bc5e4bc90546))
+
+- simplify retry docs ([`1c52df6`](https://github.com/Maggi64/moderndash/commit/1c52df6c1155d88b70fae3160338f1fc51a1420f))
+
 ## 1.0.0
 
 ### Major Changes
