@@ -3,15 +3,14 @@ import type { PlainObject } from '@type/PlainObject.js';
 /**
  * Sets the value at path of object. If a portion of path doesn’t exist, it’s created.
  * 
- * @alpha
  * @example
  * const obj = { a: { b: 2 } };
  * set(obj, 'a.c', 1);
  * // => { a: { b: 2, c: 1 } }
  * 
- * @param obj - The object to modify.
- * @param path - The path of the property to set.
- * @param value - The value to set.
+ * @param obj The object to modify.
+ * @param path The path of the property to set.
+ * @param value The value to set.
  * @returns The modified object.
  */
 
