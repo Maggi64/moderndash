@@ -1,5 +1,15 @@
 # moderndash
 
+## 1.1.1
+
+### Patch Changes
+
+- remove alpha tag from set function ([`42085ce`](https://github.com/Maggi64/moderndash/commit/42085ce524fd2732a5b00ec4f671736bebe8a288))
+
+- clarify races docs ([`ba3d6e9`](https://github.com/Maggi64/moderndash/commit/ba3d6e9107eb5ad09d4e0341c415a6c76e2640ce))
+
+- use array spread in range docs ([`445eff2`](https://github.com/Maggi64/moderndash/commit/445eff2773e8d9379407362cb8758c0fed1e7a1e))
+
 ## 1.1.0
 
 ### Minor Changes
