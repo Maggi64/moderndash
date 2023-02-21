@@ -21,7 +21,7 @@
     {#if isOpen}
         <div>
             {#each entries as entry}
-                <div class="ml-[0.4rem] pl-6 border-l-2 border-gray-200 hover:border-cyan-300 py-[0.3rem]">
+                <div class="ml-[0.4rem] pl-7 border-l-2 border-gray-200 hover:border-cyan-300 py-[0.3rem]">
                     <a href="/docs/{entry.toLowerCase()}" class="text-slate-900 hover:text-slate-800">
                         {entry}
                     </a>
