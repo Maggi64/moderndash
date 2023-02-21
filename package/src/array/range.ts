@@ -9,7 +9,7 @@
  * // => 1 2 3 4 5
  * 
  * // Generate an array of even numbers between 0 and 10:
- * const arr = Array.from(range(0, 10, 2));
+ * const arr = [...range(0, 10, 2)];
  * // => [0, 2, 4, 6, 8, 10]
  * 
  * @param start The starting number of the sequence.
