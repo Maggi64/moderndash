@@ -6,7 +6,6 @@
     "module": "ESNext",                                  /* Specify what module code is generated. */
     "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
-    "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
     "strict": true,                                      /* Enable all strict type-checking options. */
     "skipLibCheck": true,
     "paths": {
