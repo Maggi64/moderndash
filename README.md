@@ -25,6 +25,9 @@
   <a href="https://www.npmjs.com/package/moderndash">
     <img alt="npm" src="https://img.shields.io/npm/dw/moderndash">
   </a>
+  <a href="https://www.npmjs.com/package/moderndash">
+    <img alt="npm" src="https://img.shields.io/npm/v/moderndash?label=version">
+  </a>
   <img alt="node-current" src="https://img.shields.io/node/v/moderndash">
   <a href="https://github.com/Maggi64/moderndash/blob/main/LICENSE">
     <img alt="GitHub" src="https://img.shields.io/github/license/maggi64/moderndash">
