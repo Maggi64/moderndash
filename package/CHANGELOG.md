@@ -1,5 +1,15 @@
 # moderndash
 
+## 1.2.0
+
+### Minor Changes
+
+- feat: add round function ([`7d239cb`](https://github.com/Maggi64/moderndash/commit/7d239cb32ea37290ad4a4e18c39b03631d654b2c))
+
+### Patch Changes
+
+- remove dash from @param docs ([`82d184e`](https://github.com/Maggi64/moderndash/commit/82d184e7643010d4efa38ac189e4da8478fac6b0))
+
 ## 1.1.1
 
 ### Patch Changes
