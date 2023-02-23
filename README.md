@@ -26,11 +26,11 @@
     <img alt="npm" src="https://img.shields.io/npm/dw/moderndash">
   </a>
   <a href="https://www.npmjs.com/package/moderndash">
-    <img alt="npm" src="https://img.shields.io/npm/v/moderndash?label=version">
+    <img alt="npm" src="https://img.shields.io/npm/v/moderndash?color=blue&label=version">
   </a>
-  <img alt="node-current" src="https://img.shields.io/node/v/moderndash">
+  <img alt="node-current" src="https://img.shields.io/node/v/moderndash?color=blue">
   <a href="https://github.com/Maggi64/moderndash/blob/main/LICENSE">
-    <img alt="GitHub" src="https://img.shields.io/github/license/maggi64/moderndash">
+    <img alt="GitHub" src="https://img.shields.io/github/license/maggi64/moderndash?color=orange">
   </a>
 </div>
 
