@@ -74,7 +74,7 @@ describe('isEqual', () => {
     });
 
     test('objects with functions', () => {
-        expect(isEqual({ a: () => { return 1 } }, { a: () => { return 1 } })).toBe(false);
+        expect(isEqual({ a: () => 1 }, { a: () => 1 })).toBe(false);
         expect(isEqual({ a: testFunction }, { a: testFunction })).toBe(true);
     });
 
@@ -85,9 +85,9 @@ describe('isEqual', () => {
 
     test('deepEquals with Error objects', () => {
         const error1 = new Error('test error');
-        let error2 = new Error('test error');
-        expect(error1).toEqual(error2);
-        error2 = new Error('different error');
-        expect(error1).not.toEqual(error2);
+        const error2 = new Error('test error');
+        expect(isEqual(error1, error1)).toBe(true);
+        expect(isEqual(error1, error2)).toBe(false);
     });
+    
 });
