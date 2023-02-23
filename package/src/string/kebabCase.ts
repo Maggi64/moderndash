@@ -13,7 +13,7 @@ import { deburr } from './deburr.js';
  * kebabCase('__FOO_BAR__')
  * // => 'foo-bar'
  * 
- * @param str - The string to convert.
+ * @param str The string to convert.
  * @returns Returns the kebab cased string.
  */
 

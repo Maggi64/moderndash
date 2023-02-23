@@ -6,7 +6,7 @@
  * // => true
  * isUrl('google.com')
  * // => false
- * @param str - The string to check.
+ * @param str The string to check.
  * @returns Returns `true` if given string is a valid URL, else `false`.
  */
 

@@ -12,7 +12,7 @@ import { deburr } from './deburr.js';
  * // => 'fooBar'
  * camelCase('__FOO_BAR__')
  * // => 'fooBar'
- * @param str - The string to convert.
+ * @param str The string to convert.
  * @returns Returns the camel cased string.
  */
 

@@ -27,7 +27,7 @@ type Tail<T extends unknown[]> = T extends [infer _Head, ...infer Tail] ? Tail :
  * instance.testMethod(); 
  * // => Log "Hello World" and return 1
  * ```
- * @param func - The function to transform.
+ * @param func The function to transform.
  * @returns A decorator function that can be used to decorate a method.
  */
 

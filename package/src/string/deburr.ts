@@ -8,7 +8,7 @@
  * @example
  * deburr('déjà vu')
  * // => 'deja vu'
- * @param str - The string to deburr.
+ * @param str The string to deburr.
  * @returns Returns the deburred string.
  */
 

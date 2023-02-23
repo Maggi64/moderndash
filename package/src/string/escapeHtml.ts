@@ -4,7 +4,7 @@
  * @example
  * escapeHtml('fred, barney, & pebbles')
  * // => 'fred, barney, &amp; pebbles'
- * @param str - The string to escape.
+ * @param str The string to escape.
  * @returns Returns the escaped string.
  */
 

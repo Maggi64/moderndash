@@ -2,7 +2,6 @@ import { describe, expect, test } from 'vitest';
 
 import { round } from '@number/round.js';
 
-
 describe('round', () => {
     test('should round a number to the given precision', () => {
         expect(round(1.23456, 2)).toBe(1.23);

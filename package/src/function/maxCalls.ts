@@ -17,8 +17,8 @@ import type { GenericFunction } from '@type/GenericFunction.js';
  * limitAddCount() // => 2
  * limitAddCount() // => 2
  * // => `limitAddCount` is invoked twice and the result is cached.
- * @param n - The number of calls before the cached result is returned.
- * @param func - The function to restrict.
+ * @param n The number of calls before the cached result is returned.
+ * @param func The function to restrict.
  * @returns Returns the new restricted function.
  */
 

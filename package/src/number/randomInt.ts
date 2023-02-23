@@ -6,8 +6,8 @@
  * @example
  * randomInt(1, 10) // => 5
  * 
- * @param min - The smallest integer that can be generated.
- * @param max - The largest integer that can be generated.
+ * @param min The smallest integer that can be generated.
+ * @param max The largest integer that can be generated.
  * 
  * @returns A random integer between `min` and `max`, including `min` and `max`.
  */

@@ -21,7 +21,7 @@ import { throttle } from '@function/throttle.js';
  * instance.testMethod(); // => "Throttled!" is logged once per second.
  * instance.testMethod(); // nothing happens
  * ```
- * @param wait - The number of milliseconds to wait between invocations.
+ * @param wait The number of milliseconds to wait between invocations.
  */
 
 export function decThrottle(wait: number) {

@@ -4,7 +4,7 @@
  * @example
  * capitalize('FRED')
  * // => 'Fred'
- * @param str - The string to capitalize.
+ * @param str The string to capitalize.
  * @returns Returns the capitalized string.
  */
 

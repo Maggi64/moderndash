@@ -16,8 +16,8 @@ import type { GenericFunction } from '@type/GenericFunction.js';
  * debouncedSayHello("John");
  * debouncedSayHello("Jane");
  * // => Only the second invocation of `debouncedSayHello` is executed, after a delay of 200ms.
- * @param func - The function to debounce.
- * @param wait - The number of milliseconds to wait before invoking `func`.
+ * @param func The function to debounce.
+ * @param wait The number of milliseconds to wait before invoking `func`.
  * @returns A debounced version of `func` with `cancel` and `flush` methods.
  */
 

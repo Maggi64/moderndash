@@ -15,7 +15,7 @@ import { deburr } from './deburr.js';
  * snakeCase('foo2bar')
  * // => 'foo_2_bar'
  * 
- * @param str - The string to convert.
+ * @param str The string to convert.
  * @returns Returns the snake cased string.
  */
 

@@ -23,7 +23,7 @@ import { maxCalls } from '@function/maxCalls.js';
  * instance.testMethod(); // => 2
  * instance.testMethod(); // => 2
  * ```
- * @param n - The number of calls before the cached result is returned.
+ * @param n The number of calls before the cached result is returned.
  */
 
 export function decMaxCalls(n: number) {

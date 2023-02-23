@@ -14,7 +14,7 @@ import { deburr } from './deburr.js';
  * // => 'Foo Bar'
  * titleCase('HélloWorld')
  * // => 'Hello World'
- * @param str - The string to convert.
+ * @param str The string to convert.
  * @returns Returns the title cased string.
  */
 

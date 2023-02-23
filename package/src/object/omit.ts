@@ -10,8 +10,8 @@ import { pick } from './pick.js';
  * omit(obj, ['a', 'b']);
  * // => {c: 3}
  *
- * @param object - The object to filter
- * @param keysToOmit - The keys to exclude from the returned object
+ * @param object The object to filter
+ * @param keysToOmit The keys to exclude from the returned object
  * @returns - An object without the specified keys
  *
  */

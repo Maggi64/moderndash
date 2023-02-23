@@ -22,7 +22,7 @@ import { debounce } from '@function/debounce.js';
  * instance.testMethod("World");
  * // => Only the second invocation of `debouncedSayHello` is executed, after a delay of 1000ms.
  * ```
- * @param wait - Milliseconds to wait before invoking the decorated function after the last invocation.
+ * @param wait Milliseconds to wait before invoking the decorated function after the last invocation.
  */
 
 export function decDebounce(wait: number) {

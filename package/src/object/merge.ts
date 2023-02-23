@@ -17,8 +17,8 @@ import { isPlainObject } from '@validate/isPlainObject.js';
  * 
  * merge({ a: 1 }, { a: "Yes" })
  * // => { a: "Yes" }
- * @param target - The target object
- * @param sources - The source objects
+ * @param target The target object
+ * @param sources The source objects
  * @returns A new merged object
  */
 

@@ -5,7 +5,7 @@
  * @example
  * sum([1, 2, 3, 4, 5]) // => 15
  * 
- * @param numbers - The input array of numbers
+ * @param numbers The input array of numbers
  * @returns The sum of the input array 
  */
 

@@ -14,8 +14,8 @@
  *   { order: 'desc', by: item => item.b }
  * )
  * // => [{ a: 1, b: 2 }, { a: 1, b: 1 }, { a: 2, b: 1 }]
- * @param array - The array to sort.
- * @param orders - The sorting criteria, one or multiple objects with properties order (either 'asc' or 'desc') and by (iteratee function to sort based on a specific property).
+ * @param array The array to sort.
+ * @param orders The sorting criteria, one or multiple objects with properties order (either 'asc' or 'desc') and by (iteratee function to sort based on a specific property).
  * @param orders.order - The order to sort in, either 'asc' or 'desc'.
  * @param orders.by - The iteratee function to sort based on a specific property.
  * @returns Returns the sorted array.

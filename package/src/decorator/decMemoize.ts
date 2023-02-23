@@ -28,7 +28,7 @@ import { memoize } from '@function/memoize.js';
  * // After 1 second:
  * instance.testMethod(1, 2); // => 3 (cache miss)
  * ```
- * @param options - The options object.
+ * @param options The options object.
  * @param options.resolver - A function that determines the cache key for storing the result based on the arguments provided.
  * @param options.ttl - The time to live for the cache in milliseconds.
  */

@@ -6,7 +6,7 @@
  * median([1, 2, 3, 4, 5]) // => 3
  * median([1, 2, 3, 4, 5, 6]) // => 3.5
  * 
- * @param numbers - The input array of numbers
+ * @param numbers The input array of numbers
  * @returns The median of the input array
  */
 

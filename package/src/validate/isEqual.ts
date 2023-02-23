@@ -15,8 +15,8 @@ import { isPlainObject } from './isPlainObject.js';
  *
  * object === other;
  * // => false
- * @param a - The value to compare.
- * @param b - The other value to compare.
+ * @param a The value to compare.
+ * @param b The other value to compare.
  * @returns Returns `true` if the values are equivalent, else `false`.
  */
 

@@ -5,8 +5,8 @@
  * @example
  * randomFloat(1, 10) // => 1.123456789
  * 
- * @param min - The smallest float that can be generated.
- * @param max - The largest float that can be generated.
+ * @param min The smallest float that can be generated.
+ * @param max The largest float that can be generated.
  * 
  * @returns A random float between `min` and `max`, including `min` and `max`.
  */

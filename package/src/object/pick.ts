@@ -8,8 +8,8 @@ import type { PlainObject } from '@type/PlainObject.js';
  *
  * pick(object, ['a', 'c'])
  * // => { 'a': 1, 'c': 3 }
- * @param object - The source object.
- * @param keysToPick - The property paths to pick.
+ * @param object The source object.
+ * @param keysToPick The property paths to pick.
  * @returns Returns the new object.
  */
 

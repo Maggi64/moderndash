@@ -10,8 +10,8 @@ import type { GenericFunction } from '@type/GenericFunction.js';
  * throttled();
  * throttled();
  * // => "Throttled!" is logged once per second.
- * @param func - The function to throttle.
- * @param wait - The number of milliseconds to throttle invocations to.
+ * @param func The function to throttle.
+ * @param wait The number of milliseconds to throttle invocations to.
  * @returns Returns the new throttled function.
  */
 

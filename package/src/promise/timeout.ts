@@ -9,8 +9,8 @@
  *   // => 'Promise timed out after 1000ms'
  * }
  * @template TRes - The type of the resolved value.
- * @param promise - The promise to wrap.
- * @param timeout - The timeout in milliseconds.
+ * @param promise The promise to wrap.
+ * @param timeout The timeout in milliseconds.
  * 
  * @returns A new promise that will reject with an error after the specified timeout.
  */

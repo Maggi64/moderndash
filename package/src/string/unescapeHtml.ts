@@ -5,7 +5,7 @@
  * @example
  * unescapeHtml('fred, barney, &amp; pebbles')
  * // => 'fred, barney, & pebbles'
- * @param str - The string to unescape.
+ * @param str The string to unescape.
  * @returns Returns the unescaped string.
  */
 

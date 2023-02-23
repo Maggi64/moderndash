@@ -11,7 +11,7 @@ import type { PlainObject } from '@type/PlainObject.js';
  * isPlainObject([]) // => false
  * isPlainObject(new Function()) // => false
  * isPlainObject(new Date()) // => false
- * @param value - The value to check
+ * @param value The value to check
  * @returns Boolean indicating if the value is a plain object
  */
 

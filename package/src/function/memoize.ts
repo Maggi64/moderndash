@@ -37,8 +37,8 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  * // This is the default way to create cache keys.
  * const defaultResolver = (...args: unknown[]) => JSON.stringify(args)
  * ```
- * @param func - The function to have its output memoized.
- * @param options - The options object with optional `resolver` and `ttl` parameters.
+ * @param func The function to have its output memoized.
+ * @param options The options object with optional `resolver` and `ttl` parameters.
  * @param options.resolver - A function that determines the cache key for storing the result based on the arguments provided.
  * @param options.ttl - The time to live for the cache in milliseconds.
  * @template TFunc The type of the function to memoize.

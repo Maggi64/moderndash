@@ -11,8 +11,8 @@
  *
  * takeRightWhile(({ active }) => active, users)
  * // => objects for ['fred', 'pebbles']
- * @param predicate - The function invoked per iteration.
- * @param array - The array to query.
+ * @param predicate The function invoked per iteration.
+ * @param array The array to query.
  * @returns Returns the slice of `array`.
  */
 

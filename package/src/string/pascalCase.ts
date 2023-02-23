@@ -14,7 +14,7 @@ import { deburr } from './deburr.js';
  * pascalCase('__FOO_BAR__')
  * // => 'FooBar'
  * 
- * @param str - The string to convert.
+ * @param str The string to convert.
  * @returns Returns the pascal cased string.
  */
 
