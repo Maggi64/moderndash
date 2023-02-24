@@ -92,3 +92,7 @@ Run the following commands to start the website dev server.
 - `npm run dev` => Start the dev server
 
 The website can be rendered for production with `npm run build:docs` from the project root.
+
+### VSCode Settings
+Some folders are hidden by default you can make them visible by editing `.vscode/settings.json`.  
+This repo comes with recommended extensions you can install to improve your dev experience for this project.
