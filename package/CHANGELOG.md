@@ -1,5 +1,15 @@
 # moderndash
 
+## 1.3.0
+
+### Minor Changes
+
+- feat: add tryCatch function ([`de31155`](https://github.com/Maggi64/moderndash/commit/de31155457c9799a059dae7a21391da2acfc4c75))
+
+### Patch Changes
+
+- fix: reduce example indent to 2 ([`3589b11`](https://github.com/Maggi64/moderndash/commit/3589b11c5e90c0ade4c764da616de04cfc8e285b))
+
 ## 1.2.0
 
 ### Minor Changes
