@@ -6,6 +6,7 @@ on:
       - main
     paths :
         - 'package/**'
+  [workflow_dispatch]
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
