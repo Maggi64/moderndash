@@ -60,7 +60,7 @@ export async function retry<TRes>(
             }
             await sleep(backOffFn(retries));
         }
+    /* c8 ignore next 2 */
     }
-
     throw new Error('Retry terminated without success, this should never happen');
 }
