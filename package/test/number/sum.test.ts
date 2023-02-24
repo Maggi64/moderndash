@@ -3,19 +3,19 @@ import { describe, expect, test } from 'vitest';
 import { sum } from '@number/sum.js';
 
 describe('sum', () => {
-    test('should calculate the sum of an array of numbers', () => {
+    test('calculate the sum of an array of numbers', () => {
         expect(sum([1, 2, 3, 4, 5])).toEqual(15);
     });
 
-    test('should return the value of a single-element array', () => {
+    test('return the value of a single-element array', () => {
         expect(sum([42])).toEqual(42);
     });
 
-    test('should handle negative numbers correctly', () => {
+    test('handle negative numbers correctly', () => {
         expect(sum([1, -2, 3])).toEqual(2);
     });
 
-    test('should handle floating point numbers correctly', () => {
+    test('handle floating point numbers correctly', () => {
         expect(sum([1.5, 2.5, 3.5])).toEqual(7.5);
     }); 
 

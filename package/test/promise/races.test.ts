@@ -9,7 +9,7 @@ describe('describe', () => {
         }, delay);
     });
 
-    test('should resolve the first 2 promises', async () => {
+    test('resolve the first 2 promises', async () => {
         const result = await races(2, delayedPromise(20), delayedPromise(40), delayedPromise(60));
         expect(result).toEqual([20, 40]);
     });

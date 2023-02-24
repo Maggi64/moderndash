@@ -4,7 +4,7 @@ import { merge } from '@object/merge.js';
 
 
 describe('merge', () => {
-    test('should merge two or more objects', () => {
+    test('merge two or more objects', () => {
         const obj1 = { a: 1 };
         const obj2 = { b: 2 };
         const obj3 = { c: 3 };
