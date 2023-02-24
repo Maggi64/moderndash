@@ -69,7 +69,9 @@
         'editor.parameterHints.enabled': true,
         'editor.inlayHints.enabled': 'on',
         'typescript.inlayHints.parameterNames.enabled': 'all',
-        'editor.parameterHints': { 'enabled': true, 'cycle': true }
+        'editor.parameterHints': { 'enabled': true, 'cycle': true },
+        'editor.folding': false,
+        'editor.lineDecorationsWidth': 20
     };
 
     const tsConfig = {
