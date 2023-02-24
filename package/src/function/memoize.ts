@@ -19,8 +19,8 @@ const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
  * @example
  * ```typescript
  * function fibonacci(n: number) {
- *     if (n <= 1) return n;
- *     return fibonacci(n - 1) + fibonacci(n - 2);
+ *   if (n <= 1) return n;
+ *   return fibonacci(n - 1) + fibonacci(n - 2);
  * }
  *
  * const memoizedFib = memoize(fibonacci, { ttl: 1000 })

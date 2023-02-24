@@ -24,7 +24,7 @@ export const load: PageServerLoad = (({ params }) => {
             let lines = code.split('\n');
             lines = lines.map((line, index) => {
                 if (index < lines.length - 1) {
-                    return '    ' + line;
+                    return '  ' + line;
                 }
                 return line;
             });

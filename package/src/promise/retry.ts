@@ -12,9 +12,9 @@ import { sleep } from '@promise/sleep.js';
  * 
  * // ---- Advanced example ----
  * const fetchSite = async () => {
- *    const response = await fetch('https://example.com');
- *    if(!response.ok)
- *        throw new Error('Failed to fetch');
+ *   const response = await fetch('https://example.com');
+ *   if(!response.ok)
+ *     throw new Error('Failed to fetch');
  * }
  * 
  * const logger = (error: unknown, retry?: number) => console.log("Retrying", retry, error);

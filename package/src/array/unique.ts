@@ -11,13 +11,12 @@ import { isEqual } from '@validate/isEqual';
  * // => [2, 1]
  *
  * const users = [
- *      { id: 1, name: 'a' },
- *      { id: 1, name: 'c' }
+ *   { id: 1, name: 'a' },
+ *   { id: 1, name: 'c' }
  * ]
  *
  * unique(users, (a, b) => a.id === b.id)
  * // => [{ id: 1, name: 'a' }]
- *
  *
  * @param array The array to inspect.
  * @param iteratee The iteratee invoked per element.

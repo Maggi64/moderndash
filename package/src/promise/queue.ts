@@ -19,14 +19,14 @@
  * queue.add(() => fetch('https://example.com'));
  * 
  * queue.add(async () => {
- *     const response = await fetch('https://example.com');
- *     return response.json();
+ *   const response = await fetch('https://example.com');
+ *   return response.json();
  * });
  * 
  * // Add an array of tasks to the queue and wait for them to resolve
  * await queue.add([
- *      () => fetch('https://apple.com'),
- *      () => fetch('https://microsoft.com')
+ *   () => fetch('https://apple.com'),
+ *   () => fetch('https://microsoft.com')
  * ]);
  * // => [Response, Response]
  */
