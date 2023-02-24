@@ -1,5 +1,7 @@
 import type { ArrayMinLength } from '@type/ArrayMinLength.js';
 
+import { fastArrayFlat } from '@helpers/fastArrayFlat.js';
+
 import { unique } from './unique.js';
 
 /**
@@ -31,14 +33,13 @@ export function intersection<TArr>(arrayOrCompFn: (a: TArr, b: TArr) => boolean,
 export function intersection<TArr>(arrayOrCompFn: TArr[] | ((a: TArr, b: TArr) => boolean), ...arrays: ArrayMinLength<TArr[], 2>): TArr[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
     const firstArray = unique(withCompareFn ? arrays.shift()! : arrayOrCompFn);
+    const combinedRestArray = fastArrayFlat(arrays);
 
-    // If no compare function we can optimize by using sets
     if (!withCompareFn) {
-        const restSets = arrays.map(array => new Set(array));
-        return firstArray.filter(element => restSets.every(set => set.has(element)));
+        const restSet = new Set(combinedRestArray);
+        return firstArray.filter(element => restSet.has(element));
     }
-        
-    // handle compare function
+    
     const compareFN = arrayOrCompFn as (a: TArr, b: TArr) => boolean;
     const intersection: TArr[] = [];
 

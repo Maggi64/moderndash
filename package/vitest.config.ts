@@ -16,6 +16,7 @@ export default defineConfig({
             '@string': getPath('src/string'),
             '@crypto': getPath('src/crypto'),
             '@number': getPath('src/number'),
+            '@helpers': getPath('src/helpers'),
             '@promise': getPath('src/promise'),
             '@validate': getPath('src/validate'),
             '@type': getPath('src/type'),

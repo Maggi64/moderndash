@@ -15,6 +15,7 @@
       "@number/*": ["src/number/*"],
       "@crypto/*": ["src/crypto/*"],
       "@string/*": ["src/string/*"],
+      "@helpers/*": ["src/helpers/*"],
       "@promise/*": ["src/promise/*"],
       "@validate/*": ["src/validate/*"],
       "@type/*": ["src/type/*"],

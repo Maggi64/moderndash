@@ -1,5 +1,7 @@
 import type { ArrayMinLength } from '@type/ArrayMinLength.js';
 
+import { fastArrayFlat } from '@helpers/fastArrayFlat.js';
+
 /**
  * Create a new array with values from the first array that are not present in the other arrays.
  * 
@@ -29,7 +31,6 @@ export function difference<TElem>(...arrays: ArrayMinLength<TElem[], 2>): TElem[
 export function difference<TElem>(arrayOrCompFn: (a: TElem, b: TElem) => boolean, ...arrays: ArrayMinLength<TElem[], 2>): TElem[];
 export function difference<TElem>(arrayOrCompFn: TElem[] | ((a: TElem, b: TElem) => boolean), ...arrays: ArrayMinLength<TElem[], 2>): TElem[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
-
     const firstArray = withCompareFn ? arrays.shift()! : arrayOrCompFn;
     const combinedRestArray = fastArrayFlat(arrays);
 
@@ -48,10 +49,3 @@ export function difference<TElem>(arrayOrCompFn: TElem[] | ((a: TElem, b: TElem)
 
     return difference;
 }
-
-// native array.flat is much slower than this - node 19
-const fastArrayFlat = <TElem>(arr: TElem[][]): TElem[] => {
-    if (arr.length === 1) return arr[0];
-    // eslint-disable-next-line unicorn/prefer-array-flat
-    return arr.reduce((acc, val) => [...acc, ...val], []);
-};
