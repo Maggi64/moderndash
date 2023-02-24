@@ -61,7 +61,7 @@ arr.filter(Boolean)
 npm install moderndash
 ```
 
-## FAQ
+## 🗃 FAQ
 
 ### Why is X lodash function not included?
 Please refer to [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) or [youmightnotneed.com/lodash](https://youmightnotneed.com/lodash) for native replacements.  
@@ -72,7 +72,7 @@ The upcoming [pipe operator](https://github.com/tc39/proposal-pipeline-operator)
 
 The pipe operator can already be included via [babel](https://babeljs.io/docs/en/babel-plugin-proposal-pipeline-operator).
 
-## Contribute
+## 🧰 Contribute
 
 ### Package
 The documentation and examples are stored directly in the code as TSDoc and will be extracted in the website build process.
