@@ -4,7 +4,7 @@
  * This is useful for handling errors in async functions without try/catch blocks.
  * @example
  * const [data, error] = await tryCatch(fetch('https://example.com/api'));
- * if (error) {
+ * if (error)
  *   console.error(`Error: ${error.message}`);
  * 
  * @param promise A Promise to be executed.
