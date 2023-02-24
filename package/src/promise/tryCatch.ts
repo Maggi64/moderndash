@@ -2,11 +2,13 @@
  * Attempts to execute a promise and returns an array with the result or error.
  * 
  * This is useful for handling errors in async functions without try/catch blocks.
+ * 
  * @example
+ * ```typescript
  * const [data, error] = await tryCatch(fetch('https://example.com/api'));
  * if (error)
  *   console.error(`Error: ${error.message}`);
- * 
+ * ```
  * @param promise A Promise to be executed.
  * @returns A Promise that resolves to an array containing the result or error.  
  * If the Promise executes successfully, the array contains the result and a null error.  
