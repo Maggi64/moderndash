@@ -20,17 +20,13 @@
  * @returns Returns the composed aggregate object.
  */
 
-export function count<TElem, TKey extends PropertyKey>(array: TElem[], criteria: (value: TElem) => TKey | boolean): Record<TKey, number> {
+export function count<TElem, TKey extends PropertyKey>(array: TElem[], criteria: (value: TElem) => TKey): Record<TKey, number> {
     const result = {} as Record<TKey, number>;
     for (const value of array) {
-        let key = criteria(value);
-        if (typeof key === 'boolean')
-            key = key.toString() as TKey;
+        const key = criteria(value);
+
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-        if (result[key] === undefined)
-            result[key] = 1;
-        else
-            result[key] += 1;
+        result[key] = (result[key] ?? 0) + 1;
     }
     return result;
 }
