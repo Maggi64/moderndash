@@ -4,7 +4,10 @@
  * 
  * @example
  * let arr: ArrayMinLength<number, 3> = [1, 2, 3];
- * arr = [1, 2]; // Error
+ * // => OK
+ * 
+ * arr = [1, 2];
+ * // => Type '[number, number]' is not assignable to type '[number, number, number, ...number[]]'.
  * 
  * @template TElem The type of the array elements.
  * @template TMinLength The minimum length of the array.
