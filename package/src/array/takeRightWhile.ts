@@ -16,7 +16,7 @@
  * @returns Returns the slice of `array`.
  */
 
-export function takeRightWhile<TArr>(predicate: (elem: TArr) => boolean, array: TArr[]): TArr[] {
+export function takeRightWhile<TArr>(array: TArr[], predicate: (elem: TArr) => boolean): TArr[] {
     const result: TArr[] = [];
 
     for (let i = array.length - 1; i >= 0; i--) {
