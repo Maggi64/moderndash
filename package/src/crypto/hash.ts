@@ -10,11 +10,11 @@ type SupportedAlgorithms = 'SHA-256' | 'SHA-384' | 'SHA-512';
  * *Note: If you need a secure hash use a library like [crypto-js](https://www.npmjs.com/package/crypto-js) instead.*
  * 
  * @example
- * // Generate a hash from a string using the default algorithm (SHA-256)
+ * // Hash a string using the default algorithm (SHA-256)
  * const hashValue = await hash('hello world'); 
  * // => "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"
  *
- * // Generate a hash from an object using the SHA-512 algorithm
+ * // Hash an object using the SHA-512 algorithm
  * const data = { foo: 'bar', baz: 123 };
  * const hashValue = await hash(data, 'SHA-512');
  * // => "d8f3c752c6820e580977099368083f4266b569660558280f65494e39fe022e94ddf6f73037f9f83e67c868796c1c4a508d8d85952d04ccc7105fdbfda526e287"
