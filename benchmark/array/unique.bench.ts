@@ -29,9 +29,4 @@ describe('unique', () => {
         uniqRemeda(getStringArray());
         uniqRemeda(getNumberArray());
     });
-
-    bench('native', () => {
-        [...new Set(getStringArray())];
-        [...new Set(getNumberArray())];
-    });
 });
