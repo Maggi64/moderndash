@@ -14,9 +14,10 @@ type JsonPrimitive = string | number | boolean | null;
  * const error: Jsonifiable = {
  *     map: new Map([['a', 1]]),
  * };
+ * // => TypeError: Map is not a valid JSON value.
  * 
  * JSON.stringify(error);
- * //=> {"map": {}}
+ * // => {"map": {}}
  * 
  * const good: Jsonifiable = {
  *     number: 3,
