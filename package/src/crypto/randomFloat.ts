@@ -3,7 +3,8 @@
  * 
  * It uses `crypto.getRandomValues` to generate the random number.
  * @example
- * randomFloat(1, 10) // => 1.123456789
+ * randomFloat(1, 10) 
+ * // => 1.123456789
  * 
  * @param min The smallest float that can be generated.
  * @param max The largest float that can be generated.

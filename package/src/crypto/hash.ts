@@ -17,7 +17,7 @@ type SupportedAlgorithms = 'SHA-256' | 'SHA-384' | 'SHA-512';
  * // Generate a hash from an object using the SHA-512 algorithm
  * const data = { foo: 'bar', baz: 123 };
  * const hashValue = await hash(data, 'SHA-512');
- * // => "7746c5499046ec31901ef35d75bbf84c8f810ba6c5d5a9f5e539f8e1db5a1b429ebd858f7b8028a413240901df4ea752d9b3e1c32003b192be4f90e05df1fa2"
+ * // => "d8f3c752c6820e580977099368083f4266b569660558280f65494e39fe022e94ddf6f73037f9f83e67c868796c1c4a508d8d85952d04ccc7105fdbfda526e287"
  * 
  * @param data The data to hash, either as a string or a JSON-serializable object.
  * @param algorithm The hashing algorithm to use. Defaults to 'SHA-256'.

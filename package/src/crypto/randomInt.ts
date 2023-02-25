@@ -4,7 +4,8 @@
  * 
  * It uses `crypto.getRandomValues` to generate the random number.
  * @example
- * randomInt(1, 10) // => 5
+ * randomInt(1, 10) 
+ * // => 5
  * 
  * @param min The smallest integer that can be generated.
  * @param max The largest integer that can be generated.
