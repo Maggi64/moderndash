@@ -1,5 +1,11 @@
 # moderndash
 
+## 2.0.1
+
+### Patch Changes
+
+- Add whitespace to jsonifiable type docs ([`d31aec8`](https://github.com/Maggi64/moderndash/commit/d31aec8c4e8e2fcbf4b612e218ceb792a3885e0f))
+
 ## 2.0.0
 
 ### Major Changes
