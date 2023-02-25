@@ -1,5 +1,21 @@
 # moderndash
 
+## 2.1.0
+
+### Minor Changes
+
+- `difference`, `unique`, `intersection` | remove isEqual as default for comparison to improve performance ([`2a9713a`](https://github.com/Maggi64/moderndash/commit/2a9713af3985eb171cf5724f62185afa69c36c53))
+
+- `takeWhileRight` | Swapped parameter to correct order ([`f89650f`](https://github.com/Maggi64/moderndash/commit/f89650f251863ec4260d483168fac8d36dab569c))
+
+### Patch Changes
+
+- fix: randomString return empty string if charSet is emtpy ([`4327829`](https://github.com/Maggi64/moderndash/commit/43278294a8786a9b7f88fb6c68931c82952b2c29))
+
+- Clarify ArrayMinLength docs ([`3870da0`](https://github.com/Maggi64/moderndash/commit/3870da0b01a078036896306a7cc280b4b1416571))
+
+- fix optimize chunk & unique performance ([`e113a48`](https://github.com/Maggi64/moderndash/commit/e113a4826f2dc40e0686102bffc26b3a1be67721))
+
 ## 2.0.1
 
 ### Patch Changes
