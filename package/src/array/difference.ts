@@ -1,11 +1,10 @@
 import type { ArrayMinLength } from '@type/ArrayMinLength.js';
 
-import { isEqual } from '@validate/isEqual';
-
 /**
  * Create a new array with values from the first array that are not present in the other arrays.
  * 
- * Optionally, use a compare function to determine the comparison of elements (default: {@link isEqual}).
+ * Optionally, use a compare function to determine the comparison of elements (default is ===).
+ * 
  * @example
  * difference([2, 1], [2, 3], [6])
  * // => [1]
@@ -30,7 +29,7 @@ export function difference<TElem>(...arrays: ArrayMinLength<TElem[], 2>): TElem[
 export function difference<TElem>(arrayOrCompFn: (a: TElem, b: TElem) => boolean, ...arrays: ArrayMinLength<TElem[], 2>): TElem[];
 export function difference<TElem>(arrayOrCompFn: TElem[] | ((a: TElem, b: TElem) => boolean), ...arrays: ArrayMinLength<TElem[], 2>): TElem[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
-    const compareFN = withCompareFn ? arrayOrCompFn as (a: TElem, b: TElem) => boolean : isEqual;
+    const compareFN = withCompareFn ? arrayOrCompFn as (a: TElem, b: TElem) => boolean : (a: TElem, b: TElem) => a === b;
 
     const [firstArray, ...restArrays] = withCompareFn ? arrays : [arrayOrCompFn, ...arrays];
     const difference: TElem[] = [];

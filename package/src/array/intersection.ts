@@ -1,11 +1,9 @@
 import type { ArrayMinLength } from '@type/ArrayMinLength.js';
 
-import { isEqual } from '@validate/isEqual';
-
 /**
  * Create an array with unique values from all input arrays, with order based on the first array. 
  * 
- * Optionally, use a compare function for element comparison (default: {@link isEqual}).
+ * Optionally, use a compare function for element comparison (default is ===).
  * @example
  * intersection([2, 1], [2, 3])
  * // => [2]
@@ -30,7 +28,7 @@ export function intersection<TArr>(...arrays: ArrayMinLength<TArr[], 2>): TArr[]
 export function intersection<TArr>(arrayOrCompFn: (a: TArr, b: TArr) => boolean, ...arrays: ArrayMinLength<TArr[], 2>): TArr[];
 export function intersection<TArr>(arrayOrCompFn: TArr[] | ((a: TArr, b: TArr) => boolean), ...arrays: ArrayMinLength<TArr[], 2>): TArr[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
-    const compareFN = withCompareFn ? arrayOrCompFn as (a: TArr, b: TArr) => boolean : isEqual;
+    const compareFN = withCompareFn ? arrayOrCompFn as (a: TArr, b: TArr) => boolean : (a: TArr, b: TArr) => a === b;
 
     const [firstArray, ...restArrays] = withCompareFn ? arrays : [arrayOrCompFn, ...arrays];
     const intersection: TArr[] = [];
