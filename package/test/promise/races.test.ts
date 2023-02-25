@@ -23,8 +23,6 @@ describe('describe', () => {
         const rejectedPromise = new Promise((resolve, reject) => {
             setTimeout(() => reject('rejected'), 20); 
         });
-        const result = races(2, delayedPromise(20), rejectedPromise, delayedPromise(60));
-        void expect(result).rejects.toBe(  'rejected');
+        await expect(races(2, delayedPromise(20), rejectedPromise, delayedPromise(60))).rejects.toBe('rejected');
     });
-        
 });

@@ -1,6 +1,7 @@
 import { test, expect, describe } from 'vitest';
 
 import { unique } from '@array/unique';
+import { isEqual } from '@validate/isEqual.js';
 
 describe('unique', () => {
     test('return an array with only unique values', () => {
@@ -10,10 +11,9 @@ describe('unique', () => {
     });
 
     test('handle objects and arrays correctly', () => {
-        const input = [{ a: 1 }, { a: 2 }, { a: 1 }, [1, 2], [1, 2], [1, 2, 3]
-        ];
+        const input = [{ a: 1 }, { a: 2 }, { a: 1 }, [1, 2], [1, 2], [1, 2, 3]];
         const expectedOutput = [{ a: 1 }, { a: 2 }, [1, 2], [1, 2, 3]];
-        expect(unique(input)).toEqual(expectedOutput);
+        expect(unique(input, isEqual)).toEqual(expectedOutput);
     });
 
     test('hande compareFN', () => {
