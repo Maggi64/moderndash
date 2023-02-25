@@ -1,5 +1,19 @@
 # moderndash
 
+## 2.0.0
+
+### Major Changes
+
+- breaking: rename `sample` to `randomElem` and move into crypto category ([`19f8365`](https://github.com/Maggi64/moderndash/commit/19f83651bbb96b2d2154042887f1e46b1e79c092))
+
+- breaking: move randomInt & randomFloat into crypto category ([`f869bd8`](https://github.com/Maggi64/moderndash/commit/f869bd8273c498787f2ee1ec0cc7e4e1ea6d845f))
+
+### Minor Changes
+
+- feat: add `randomString` function ([`0d2caf4`](https://github.com/Maggi64/moderndash/commit/0d2caf4f3d4a6b07000a5e114d6ce720262b3a5a))
+
+- feat: add `hash` function ([`750d942`](https://github.com/Maggi64/moderndash/commit/750d94245db4905bd0c30754ac70b7bedf197d26))
+
 ## 1.3.0
 
 ### Minor Changes
