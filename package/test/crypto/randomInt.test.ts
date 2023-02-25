@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { randomInt } from '@number/randomInt.js';
+import { randomInt } from '@crypto/randomInt.js';
 
 
 describe('randomInt', () => {

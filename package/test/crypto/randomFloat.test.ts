@@ -1,6 +1,6 @@
-import { describe, expect, test, vi } from 'vitest';
+import { describe, expect, test } from 'vitest';
 
-import { randomFloat } from '@number/randomFloat.js';
+import { randomFloat } from '@crypto/randomFloat.js';
 
 describe('randomFloat', () => {
     test('throw an error if min is greater than max', () => {

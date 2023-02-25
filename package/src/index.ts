@@ -1,4 +1,5 @@
 export * from './array';
+export * from './crypto';
 export * from './decorator';
 export * from './function';
 export * from './number';
