@@ -19,7 +19,7 @@
 <p></p>
 
 <div align=center class="center">
-  <a href="https://bundlephobia.com/package/moderndash@0.11.1">
+  <a href="https://bundlephobia.com/package/moderndash@latest">
     <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/moderndash@latest?color=Green">
   </a>
   <a href="https://www.npmjs.com/package/moderndash">
