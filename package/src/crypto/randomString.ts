@@ -19,6 +19,8 @@ const DEFAULT_CHARSET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012
  */
 
 export function randomString(length: number, charSet = DEFAULT_CHARSET): string {
+    if (charSet.length <= 0) return '';
+
     const randomValues = new Uint32Array(length);
     crypto.getRandomValues(randomValues);
 
