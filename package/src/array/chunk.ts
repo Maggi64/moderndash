@@ -20,11 +20,8 @@ export function chunk<TElem>(array: TElem[], chunkSize: number): TElem[][] {
     }
 
     const chunkedArray = [];
-    let i = 0;
-
-    while (i < array.length) {
+    for (let i = 0; i < array.length; i += sizeInteger) {
         chunkedArray.push(array.slice(i, i + sizeInteger));
-        i += sizeInteger;
     }
 
     return chunkedArray;

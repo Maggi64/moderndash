@@ -24,7 +24,21 @@ import { isEqual } from '@validate/isEqual';
  */
 
 export function unique<TInput>(array: TInput[], compareFn = (a: TInput, b: TInput) => isEqual(a, b)): TInput[] {
-    return array.filter((value, index, self) => {
-        return self.findIndex(otherValue => compareFn(value, otherValue)) === index;
-    });
+    const uniqueArray: TInput[] = [];
+
+    for (const value of array) {
+        let isUnique = true;
+  
+        for (const uniqueValue of uniqueArray) {
+            if (compareFn(value, uniqueValue)) {
+                isUnique = false;
+                break;
+            }
+        }
+  
+        if (isUnique)
+            uniqueArray.push(value);
+    }
+  
+    return uniqueArray;
 }
