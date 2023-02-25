@@ -10,7 +10,7 @@ const arraySize = 200;
 const getStringArray = () => Array.from({ length: arraySize }, () => randomString(3));
 const getNumberArray = () => Array.from({ length: arraySize }, () => Math.floor(Math.random() * 10) + 1);
 
-describe('unique', () => {
+describe('chunk', () => {
 
     bench('moderndash', () => {
         chunk(getStringArray(), 5);
