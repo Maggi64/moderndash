@@ -28,7 +28,7 @@
  */
 
 export function unique<TInput>(array: TInput[], compareFn?: (a: TInput, b: TInput) => boolean): TInput[] {
-    // Large arrays optimized with native Set
+    // Arrays optimized with native Set
     if (!compareFn)
         return [...new Set(array)];
 
