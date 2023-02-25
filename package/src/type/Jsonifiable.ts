@@ -3,8 +3,8 @@ type JsonifiableArray = readonly Jsonifiable[];
 type JsonPrimitive = string | number | boolean | null;
 
 /**
- * Matches a value that can be losslessly converted to JSON.
- * Can be used to type values that you expect to pass to `JSON.stringify`.
+ * Matches a value that can be losslessly converted to JSON.  
+ * Can be used to type values that you expect to pass to `JSON.stringify`.  
  * `undefined` is allowed in object fields (for example, `{a?: number}`) as a special case even though `JSON.stringify({a: undefined})` is `{}` because it makes this class more widely useful and checking for undefined-but-present values is likely an anti-pattern.
  * 
  * @example
