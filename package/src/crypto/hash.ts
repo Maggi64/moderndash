@@ -7,7 +7,7 @@ type SupportedAlgorithms = 'SHA-256' | 'SHA-384' | 'SHA-512';
  *
  * It uses the Web Crypto API to generate the hash.
  * 
- * *Note: If you need a secure hash use a library like [crypto-js](https://www.npmjs.com/package/crypto-js) instead.*
+ * *Note: If you need a secure hash use a specialized library like [crypto-js](https://www.npmjs.com/package/crypto-js) instead.*
  * 
  * @example
  * // Hash a string using the default algorithm (SHA-256)
@@ -31,7 +31,7 @@ export async function hash(data: Jsonifiable, algorithm: SupportedAlgorithms = '
     const dataBuffer = typeof data === 'string'
         ? encoder.encode(data) 
         : encoder.encode(JSON.stringify(data));
-  
+    
     const hashBuffer = await crypto.subtle.digest(algorithm, dataBuffer);
     const hashArray = [...new Uint8Array(hashBuffer)];
     const hexValues = hashArray.map(b => b.toString(16).padStart(2, '0'));
