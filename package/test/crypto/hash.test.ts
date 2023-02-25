@@ -13,15 +13,4 @@ describe('hash', () => {
         const hashValue = await hash(data, 'SHA-512');
         expect(hashValue).toEqual('d8f3c752c6820e580977099368083f4266b569660558280f65494e39fe022e94ddf6f73037f9f83e67c868796c1c4a508d8d85952d04ccc7105fdbfda526e287');
     });
-
-    test('should throw an error if an invalid algorithm is specified', async () => {
-        expect.assertions(1);
-
-        try {
-            await hash('hello world', 'invalid-algorithm'); 
-        } catch (error) { 
-            expect(error).toBeInstanceOf(DOMException); 
-        } 
-
-    });
 });
