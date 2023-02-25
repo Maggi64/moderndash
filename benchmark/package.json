@@ -1,0 +1,19 @@
+
+{
+	"name": "benchmark",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"bench": "vitest bench"
+	},
+	"dependencies": {
+	},
+	"devDependencies": {
+        "@types/lodash-es": "latest",
+		"moderndash": "../moderndash",
+		"lodash-es": "latest",
+		"radash": "latest",
+		"remeda": "latest"
+	},
+	"type": "module"
+}
