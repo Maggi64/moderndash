@@ -9,8 +9,6 @@ type JsonPrimitive = string | number | boolean | null;
  * 
  * @example
  * ```typescript
- * import type {Jsonifiable} from 'type-fest';
- * 
  * const error: Jsonifiable = {
  *     map: new Map([['a', 1]]),
  * };
