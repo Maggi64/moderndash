@@ -9,10 +9,10 @@ import { randomInt } from './randomInt.js';
  * 
  * It uses `crypto.getRandomValues` to get the random element.
  * @example
- * sample([1, 2, 3, 4])
+ * randomElem([1, 2, 3, 4])
  * // => 2
  *
- * sample([1, 2, 3, 4], 2)
+ * randomElem([1, 2, 3, 4], 2)
  * // => [3, 1]
  * @param array The array to sample.
  * @returns Returns the random element.
