@@ -11,7 +11,7 @@ export const load: LayoutServerLoad = (() => {
 
 
     // Sorts the groups so that the top categories are at the top
-    const topCategories = ['array', 'object', 'string', 'number', 'promise', 'validate', 'function', 'decorator'];
+    const topCategories = ['array', 'object', 'string', 'number', 'promise', 'validate', 'function', 'crypto', 'decorator'];
 
     const sortedGroups = Object.entries(funcGroups).sort(([titleA], [titleB]) => {
         const indexA = topCategories.indexOf(titleA);
