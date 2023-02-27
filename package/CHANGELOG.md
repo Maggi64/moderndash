@@ -1,5 +1,19 @@
 # moderndash
 
+## 2.1.1
+
+### Patch Changes
+
+- `intersection` | return unique values ([`8b1f9db`](https://github.com/Maggi64/moderndash/commit/8b1f9db719227353c5e323e1ff11fc13cb706198))
+
+- `isEqual` | improve performance ([`4a3615c`](https://github.com/Maggi64/moderndash/commit/4a3615c96cb75b60c265be15c1c08bdd792f3e37))
+
+- deburr | simplify and optimize ([`534ffc0`](https://github.com/Maggi64/moderndash/commit/534ffc0cc8d4a6b16e6be89d082a79688f2ba5ee))
+
+- `count` | improve performance & remove automatic boolean handling ([`77b728c`](https://github.com/Maggi64/moderndash/commit/77b728c73d1160ac808dfb4adedeba662727de7a))
+
+- `intersection` | performance optimization ([`86df217`](https://github.com/Maggi64/moderndash/commit/86df2171430836f88ee5137fb3d8bcd0a1b7d29e))
+
 ## 2.1.0
 
 ### Minor Changes
