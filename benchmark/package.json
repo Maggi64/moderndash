@@ -10,7 +10,7 @@
 	},
 	"devDependencies": {
         "@types/lodash-es": "latest",
-		"moderndash": "../moderndash",
+		"moderndash": "../package",
 		"lodash-es": "latest",
 		"radash": "latest",
 		"remeda": "latest"

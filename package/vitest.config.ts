@@ -3,7 +3,7 @@
 
 import { fileURLToPath, URL } from 'url';
 
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 
 const getPath = (path: string) => fileURLToPath(new URL(path, import.meta.url));
 

@@ -30,7 +30,7 @@
 		"vite": "4.1.3",
 		"marked": "4.2.12",
 		"svelte-meta-tags": "2.6.5",
-		"moderndash": "../moderndash",
+		"moderndash": "../package",
 		"@stackblitz/sdk": "1.8.2"
 	},
 	"type": "module"
