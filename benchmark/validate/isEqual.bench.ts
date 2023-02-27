@@ -8,8 +8,8 @@ import { bench, describe } from 'vitest';
 
 describe('isEqual', () => {
     const object = { 'a': 1, 'b': 2, 'c': 3, 'd': [1, 2, 3] };
-    const same = { 'a': 1, 'b': 2, 'c': 3, 'd': [1, 2, 3] };
-    const other = { 'a': 1, 'b': 2, 'c': 3, 'd': [1, 2, 2] };
+    const other = { 'a': 1, 'b': 2, 'c': 3, 'd': [1, 2, 4] };
+    const same = structuredClone(object);
 
     const set = new Set([1, 2, 3, 4]);
     const sameSet = new Set([1, 2, 3, 4]);
