@@ -30,7 +30,7 @@ export function intersection<TArr>(...arrays: ArrayMinLength<TArr[], 2>): TArr[]
 export function intersection<TArr>(arrayOrCompFn: (a: TArr, b: TArr) => boolean, ...arrays: ArrayMinLength<TArr[], 2>): TArr[];
 export function intersection<TArr>(arrayOrCompFn: TArr[] | ((a: TArr, b: TArr) => boolean), ...arrays: ArrayMinLength<TArr[], 2>): TArr[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
-    const firstArray = withCompareFn ? arrays.shift()! : arrayOrCompFn;
+    const firstArray = unique(withCompareFn ? arrays.shift()! : arrayOrCompFn);
 
     // If no compare function we can optimize by using sets
     if (!withCompareFn) {

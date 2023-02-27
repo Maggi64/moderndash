@@ -26,4 +26,13 @@ describe('intersection', () => {
         const result = intersection((a, b) => a % 2 === 0 && a === b, arr1, arr2);
         expect(result).toEqual([4]);
     });
+
+    test('returns unique values', () => {
+        const arr1 = [1, 2, 3, 3, 4, 5];
+        const arr2 = [3, 4, 5, 6, 7];
+        const arr3 = [3, 4, 5, 6, 7];
+
+        const result = intersection(arr1, arr2, arr3);
+        expect(result).toEqual([3, 4, 5]);
+    });
 });
