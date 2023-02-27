@@ -28,7 +28,7 @@
 		"tslib": "2.5.0",
 		"marked": "4.2.12",
 		"svelte-meta-tags": "2.6.5",
-		"moderndash": "2.1.0",
+		"moderndash": "../package",
 		"@stackblitz/sdk": "1.8.2"
 	},
 	"type": "module"
