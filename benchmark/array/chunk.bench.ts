@@ -1,33 +1,37 @@
 import { chunk as chunkLodash } from 'lodash-es';
-import { chunk, randomString } from 'moderndash';
+import { chunk } from 'moderndash';
 import { cluster as chunkRadash } from 'radash';
 import { chunk as chunkRemeda } from 'remeda';
 import { bench, describe } from 'vitest';
 
-const arraySize = 200;
-const getStringArray = () => Array.from({ length: arraySize }, () => randomString(3));
-const getNumberArray = () => Array.from({ length: arraySize }, () => Math.floor(Math.random() * 10) + 1);
+import { randomNumberArray, randomObjectArray, randomStringArray } from '../testData.js';
 
 describe('chunk', () => {
+    const strArray = randomStringArray(100);
+    const numArray = randomNumberArray(100);
+    const objArray = randomObjectArray(20);
 
     bench('moderndash', () => {
-        chunk(getStringArray(), 5);
-        chunk(getNumberArray(), 5);
-    });
-
-    bench('lodash', () => {
-        chunkLodash(getStringArray(), 5);
-        chunkLodash(getNumberArray(), 5);
+        chunk(strArray, 5);
+        chunk(numArray, 5);
+        chunk(objArray, 5);
     });
 
     bench('radash', () => {
-        chunkRadash(getStringArray(), 5);
-        chunkRadash(getNumberArray(), 5);
-    });
+        chunkRadash(strArray, 5);
+        chunkRadash(numArray, 5);
+        chunkRadash(objArray, 5);
+    }); 
 
     bench('remeda', () => {
-        chunkRemeda(getStringArray(), 5);
-        chunkRemeda(getNumberArray(), 5);
+        chunkRemeda(strArray, 5);
+        chunkRemeda(numArray, 5);
+        chunkRemeda(objArray, 5);
     });
 
+    bench('lodash', () => {
+        chunkLodash(strArray, 5);
+        chunkLodash(numArray, 5);
+        chunkLodash(objArray, 5);
+    });
 });
