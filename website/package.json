@@ -29,11 +29,7 @@
 		"marked": "4.2.12",
 		"svelte-meta-tags": "2.6.5",
 		"moderndash": "2.1.0",
-		"@stackblitz/sdk": "1.8.2",
-		"vitest": "0.29.1",
-        "@vitest/coverage-c8": "0.29.1",
-        "@vitest/ui": "0.29.1",
-        "vite": "4.1.4"
+		"@stackblitz/sdk": "1.8.2"
 	},
 	"type": "module"
 }

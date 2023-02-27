@@ -13,9 +13,7 @@
 		"moderndash": "../package",
 		"lodash-es": "latest",
 		"radash": "latest",
-		"remeda": "latest",
-		"vitest": "0.29.1",
-        "vite": "4.1.4"
+		"remeda": "latest"
 	},
 	"type": "module"
 }
