@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import type { PlainObject } from '@type/PlainObject.js';
 
 import { isPlainObject } from './isPlainObject.js';
@@ -23,6 +24,8 @@ import { isPlainObject } from './isPlainObject.js';
 export function isEqual(a: unknown, b: unknown): boolean {
     if (Object.is(a, b)) return true;
     
+    if (typeof a !== typeof b) return false;
+
     if (Array.isArray(a) && Array.isArray(b)) {
         return isSameArray(a, b);
     }
