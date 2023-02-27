@@ -1,5 +1,7 @@
 import type { ArrayMinLength } from '@type/ArrayMinLength.js';
 
+import { unique } from './unique.js';
+
 /**
  * Create an array with unique values from all input arrays, with order based on the first array. 
  * 
@@ -28,13 +30,20 @@ export function intersection<TArr>(...arrays: ArrayMinLength<TArr[], 2>): TArr[]
 export function intersection<TArr>(arrayOrCompFn: (a: TArr, b: TArr) => boolean, ...arrays: ArrayMinLength<TArr[], 2>): TArr[];
 export function intersection<TArr>(arrayOrCompFn: TArr[] | ((a: TArr, b: TArr) => boolean), ...arrays: ArrayMinLength<TArr[], 2>): TArr[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
-    const compareFN = withCompareFn ? arrayOrCompFn as (a: TArr, b: TArr) => boolean : (a: TArr, b: TArr) => a === b;
+    const firstArray = withCompareFn ? arrays.shift()! : arrayOrCompFn;
 
-    const [firstArray, ...restArrays] = withCompareFn ? arrays : [arrayOrCompFn, ...arrays];
+    // If no compare function we can optimize by using sets
+    if (!withCompareFn) {
+        const restSets = arrays.map(array => new Set(array));
+        return firstArray.filter(element => restSets.every(set => set.has(element)));
+    }
+        
+    // handle compare function
+    const compareFN = arrayOrCompFn as (a: TArr, b: TArr) => boolean;
     const intersection: TArr[] = [];
 
     firstArray.forEach(element => {
-        if (restArrays.every(array => array.some(item => compareFN(item, element)))) {
+        if (arrays.every(array => array.some(item => compareFN(item, element)))) {
             intersection.push(element);
         }
     });

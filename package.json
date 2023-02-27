@@ -9,7 +9,8 @@
     "type": "module",
     "scripts": {
         "build:docs-data": "typedoc --options typedoc.json && typedoc-json-parser --json ./website/src/assets/extractedTypes.json --verbose",
-        "build:docs": "npm run build:docs-data && npm run build --workspace=website"
+        "build:docs": "npm run build:docs-data && npm run build --workspace=website",
+        "benchmark": "npm run build --workspace=package && npm run bench --workspace=benchmark"
     },
     "browserslist": [
         ">2% and not dead"

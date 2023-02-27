@@ -56,11 +56,11 @@ export function randomStringArray(n: number) {
     return arr;
 }
 
-export function randomNumberArray(n: number) {
+export function randomNumberArray(n: number, min = 0, max = 1000) {
     const arr = [] as number[];
 
     for (let i = 0; i < n; i++) {
-        arr.push(randomInt(0, 1000));
+        arr.push(randomInt(min, max));
     }
 
     return arr;
