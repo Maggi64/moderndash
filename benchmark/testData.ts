@@ -46,11 +46,11 @@ export function randomObjectArray(n: number) {
     return arr;
 }
 
-export function randomStringArray(n: number) {
+export function randomStringArray(n: number, charSet?: string) {
     const arr = [] as string[];
 
     for (let i = 0; i < n; i++) {
-        arr.push(randomString(randomInt(0, 4) + 4));
+        arr.push(randomString(randomInt(0, 4) + 4, charSet));
     }
 
     return arr;

@@ -1,16 +1,21 @@
 import { deburr as lodashVersion } from 'lodash-es';
-import { deburr, randomString } from 'moderndash';
+import { deburr } from 'moderndash';
 import { bench, describe } from 'vitest';
 
-const getDeburrableString = () => randomString(10, 'avdasfaáäæÅèÊ');
+import { randomStringArray } from '../testData.js';
 
 describe('deburr', () => {
+    const strings = randomStringArray(100, 'avdasfaáäæÅèÊ');
+
     bench('moderndash', () => {
-    
-        deburr(getDeburrableString());
+        for (const str of strings) {
+            deburr(str);
+        }
     });
 
     bench('lodash', () => {
-        lodashVersion(getDeburrableString());
+        for (const str of strings) {
+            lodashVersion(str);
+        }
     });
 });
