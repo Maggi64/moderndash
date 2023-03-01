@@ -11,7 +11,7 @@ describe('capitalize', () => {
         expect(capitalize('')).toBe('');
     });
 
-    test('returns the original string for a single-character string', () => {
+    test('deal with 1 letter', () => {
         expect(capitalize('a')).toBe('A');
     });
 });
