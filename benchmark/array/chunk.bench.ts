@@ -17,6 +17,12 @@ describe('chunk', () => {
         chunk(objArray, 5);
     });
 
+    bench('lodash', () => {
+        chunkLodash(strArray, 5);
+        chunkLodash(numArray, 5);
+        chunkLodash(objArray, 5);
+    });
+
     bench('radash', () => {
         chunkRadash(strArray, 5);
         chunkRadash(numArray, 5);
@@ -27,11 +33,5 @@ describe('chunk', () => {
         chunkRemeda(strArray, 5);
         chunkRemeda(numArray, 5);
         chunkRemeda(objArray, 5);
-    });
-
-    bench('lodash', () => {
-        chunkLodash(strArray, 5);
-        chunkLodash(numArray, 5);
-        chunkLodash(objArray, 5);
     });
 });
