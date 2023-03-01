@@ -42,11 +42,11 @@ export function intersection<TArr>(arrayOrCompFn: TArr[] | ((a: TArr, b: TArr) =
     const compareFN = arrayOrCompFn as (a: TArr, b: TArr) => boolean;
     const intersection: TArr[] = [];
 
-    firstArray.forEach(element => {
+    for (const element of firstArray) {
         if (arrays.every(array => array.some(item => compareFN(item, element)))) {
             intersection.push(element);
         }
-    });
+    }
 
     return intersection;
 }

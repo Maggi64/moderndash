@@ -34,11 +34,11 @@ export function difference<TElem>(arrayOrCompFn: TElem[] | ((a: TElem, b: TElem)
     const [firstArray, ...restArrays] = withCompareFn ? arrays : [arrayOrCompFn, ...arrays];
     const difference: TElem[] = [];
 
-    firstArray.forEach(element => {
+    for (const element of firstArray) {
         if (!restArrays.some(array => array.some(item => compareFN(item, element)))) {
             difference.push(element);
         }
-    });
+    }
 
     return difference;
 }
