@@ -2,4 +2,4 @@
 "moderndash": patch
 ---
 
-`shuffle` `sort` | clarify that they return a new array
+`shuffle`, `sort` | clarify that they return a new array
