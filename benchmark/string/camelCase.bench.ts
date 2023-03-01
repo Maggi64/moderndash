@@ -9,20 +9,20 @@ describe('camelCase', () => {
     const stringArray = randomStringArray(200);
 
     bench('moderndash', () => {
-        stringArray.forEach((str) => {
+        for (const str of stringArray) {
             camelCase(str);
-        });
+        }
     });
 
     bench('lodash', () => {
-        stringArray.forEach((str) => {
+        for (const str of stringArray) {
             lodashVersion(str);
-        });
+        }
     });
 
     bench('radash', () => {
-        stringArray.forEach((str) => {
+        for (const str of stringArray) {
             radashVersion(str);
-        });
+        }
     });
 });
