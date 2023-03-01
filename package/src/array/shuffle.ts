@@ -11,21 +11,17 @@
 
 export function shuffle<TArr>(array: TArr[]): TArr[] {
     const shuffledArray = [...array];
-    let currentIndex = shuffledArray.length;
-    let temporaryValue: TArr;
-    let randomIndex: number;
 
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
+    const lastIndex = shuffledArray.length - 1;
+    let index = -1;
 
-        // And swap it with the current element.
-        temporaryValue = shuffledArray[currentIndex];
-        shuffledArray[currentIndex] = shuffledArray[randomIndex];
-        shuffledArray[randomIndex] = temporaryValue;
+    while (++index < shuffledArray.length) {
+        const randomIndex = Math.floor(Math.random() * (lastIndex - index + 1)) + index;
+        const value = shuffledArray[randomIndex];
+
+        shuffledArray[randomIndex] = shuffledArray[index];
+        shuffledArray[index] = value;
     }
-
+    
     return shuffledArray;
 }
