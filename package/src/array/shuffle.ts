@@ -6,7 +6,7 @@
  * shuffle([1, 2, 3, 4])
  * // => [4, 1, 3, 2]
  * @param array The array or object to shuffle.
- * @returns Returns the new shuffled array.
+ * @returns Returns a new shuffled array.
  */
 
 export function shuffle<TArr>(array: TArr[]): TArr[] {

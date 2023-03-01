@@ -18,7 +18,7 @@
  * @param orders The sorting criteria, one or multiple objects with properties order (either 'asc' or 'desc') and by (iteratee function to sort based on a specific property).
  * @param orders.order - The order to sort in, either 'asc' or 'desc'.
  * @param orders.by - The iteratee function to sort based on a specific property.
- * @returns Returns the sorted array.
+ * @returns Returns a new sorted array.
 */
 export function sort<TInput>(array: TInput[], ...orders: { order?: 'asc' | 'desc', by?: (item: TInput) => number | bigint | Date | string }[]): TInput[] {
     return [...array].sort((a, b) => {
