@@ -15,4 +15,11 @@ describe('pick', () => {
 
         expect(pick(object, [])).toEqual({});
     });
+
+    test('ignores non-existent keys', () => {
+        const object = { a: 1, b: 2, c: 3 };
+
+        // @ts-expect-error - d does not exist on object
+        expect(pick(object, ['a', 'd'])).toEqual({ a: 1 });
+    });
 });
