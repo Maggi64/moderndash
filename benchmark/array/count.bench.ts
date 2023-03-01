@@ -9,19 +9,20 @@ const arraySize = 500;
 const getRandomArray = () => Array.from({ length: arraySize }, () => ({ a: randomString(3), b: randomInt(1, 3) }));
 
 describe('count', () => {
+    const arr = getRandomArray();
 
     bench('moderndash', () => {
-        count(getRandomArray(), elem => elem.b);
-        count(getRandomArray(), elem => elem.a + elem.b.toString());
+        count(arr, elem => elem.b);
+        count(arr, elem => elem.a + elem.b.toString());
     });
 
     bench('lodash', () => {
-        lodashVersion(getRandomArray(), elem => elem.b);
-        lodashVersion(getRandomArray(), elem => elem.a + elem.b.toString());
+        lodashVersion(arr, elem => elem.b);
+        lodashVersion(arr, elem => elem.a + elem.b.toString());
     });
 
     bench('radash', () => {
-        radashVersion(getRandomArray(), elem => elem.b);
-        radashVersion(getRandomArray(), elem => elem.a + elem.b.toString());
+        radashVersion(arr, elem => elem.b);
+        radashVersion(arr, elem => elem.a + elem.b.toString());
     });
 });
