@@ -121,6 +121,7 @@ module.exports = {
         "unicorn/numeric-separators-style": ["error", { "onlyIfContainsSeparator": true }],
         "unicorn/prefer-module": 0,
         "unicorn/prefer-node-protocol": 0,
+        "unicorn/no-new-array": 0,
         "unicorn/prefer-number-properties": 0,
         "unicorn/prefer-switch": 0,
         "unicorn/prefer-ternary": ["error", "only-single-line"],
