@@ -1,6 +1,6 @@
 {
   "name": "moderndash",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "type": "module",
   "description": "A lodash inspired utility framework for ESM/Typescript/ESNext",
   "engines": {

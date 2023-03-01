@@ -1,5 +1,15 @@
 # moderndash
 
+## 2.1.2
+
+### Patch Changes
+
+- `chunk` | Optimize performance ([`0f48b18`](https://github.com/Maggi64/moderndash/commit/0f48b18e6d09b177147e27244d3f2a798b7761a8))
+
+- `shuffle` | simplify code and optimize performance ([`41901af`](https://github.com/Maggi64/moderndash/commit/41901af53ea6f6a56a867637dfb49603e04e28b1))
+
+- `shuffle`, `sort` | clarify that they return a new array ([`b349d6b`](https://github.com/Maggi64/moderndash/commit/b349d6be95e45905d28e26f7fe24b6d9264dccc4))
+
 ## 2.1.1
 
 ### Patch Changes
