@@ -1,6 +1,5 @@
 /**
- * Creates a new array of shuffled values, using a version of the
- * [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher-Yates_shuffle).
+ * Creates a new array of shuffled values, using the Fisher-Yates-Durstenfeld Shuffle algorithm.
  *
  * @example
  * shuffle([1, 2, 3, 4])
@@ -9,19 +8,13 @@
  * @returns Returns a new shuffled array.
  */
 
-export function shuffle<TArr>(array: TArr[]): TArr[] {
+export function shuffle<TElem>(array: TElem[]): TElem[] {
     const shuffledArray = [...array];
-
-    const lastIndex = shuffledArray.length - 1;
-    let index = -1;
-
-    while (++index < shuffledArray.length) {
-        const randomIndex = Math.floor(Math.random() * (lastIndex - index + 1)) + index;
-        const value = shuffledArray[randomIndex];
-
-        shuffledArray[randomIndex] = shuffledArray[index];
-        shuffledArray[index] = value;
+  
+    for (let index = shuffledArray.length - 1; index > 0; index--) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [shuffledArray[index], shuffledArray[randomIndex]] = [shuffledArray[randomIndex], shuffledArray[index]];
     }
-    
+  
     return shuffledArray;
 }

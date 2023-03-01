@@ -2,4 +2,4 @@
 "moderndash": patch
 ---
 
-`shuffle` | simplify code
+`shuffle` | simplify code and optimize performance
