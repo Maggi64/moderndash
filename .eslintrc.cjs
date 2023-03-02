@@ -115,7 +115,7 @@ module.exports = {
         "template-curly-spacing": "error",
         "unicorn/filename-case": ["error", { "cases": { "camelCase": true, "pascalCase": true } }],
         "unicorn/no-null": 0,
-        "unicorn/no-array-reduce": ["error", {"allowSimpleOperations": true}],
+        "unicorn/no-array-reduce": 0,
         "unicorn/no-thenable": 0,
         "unicorn/no-useless-undefined": 0,
         "unicorn/numeric-separators-style": ["error", { "onlyIfContainsSeparator": true }],

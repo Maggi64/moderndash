@@ -29,16 +29,29 @@ export function difference<TElem>(...arrays: ArrayMinLength<TElem[], 2>): TElem[
 export function difference<TElem>(arrayOrCompFn: (a: TElem, b: TElem) => boolean, ...arrays: ArrayMinLength<TElem[], 2>): TElem[];
 export function difference<TElem>(arrayOrCompFn: TElem[] | ((a: TElem, b: TElem) => boolean), ...arrays: ArrayMinLength<TElem[], 2>): TElem[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
-    const compareFN = withCompareFn ? arrayOrCompFn as (a: TElem, b: TElem) => boolean : (a: TElem, b: TElem) => a === b;
 
-    const [firstArray, ...restArrays] = withCompareFn ? arrays : [arrayOrCompFn, ...arrays];
+    const firstArray = withCompareFn ? arrays.shift()! : arrayOrCompFn;
+    const combinedRestArray = fastArrayFlat(arrays);
+
+    if (!withCompareFn) {
+        const restSet = new Set(combinedRestArray);
+        return firstArray.filter(element => !restSet.has(element));
+    }
+
+    const compareFN = arrayOrCompFn as (a: TElem, b: TElem) => boolean;
     const difference: TElem[] = [];
-
     for (const element of firstArray) {
-        if (!restArrays.some(array => array.some(item => compareFN(item, element)))) {
+        if (combinedRestArray.every(item => !compareFN(item, element))) {
             difference.push(element);
         }
     }
 
     return difference;
 }
+
+// native array.flat is much slower than this - node 19
+const fastArrayFlat = <TElem>(arr: TElem[][]): TElem[] => {
+    if (arr.length === 1) return arr[0];
+    // eslint-disable-next-line unicorn/prefer-array-flat
+    return arr.reduce((acc, val) => [...acc, ...val], []);
+};

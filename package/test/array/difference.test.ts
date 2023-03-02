@@ -7,7 +7,7 @@ describe('difference', () => {
         const array1 = [1, undefined, null, NaN, 3, 4, 5];
         const array2 = [2, 4, undefined, NaN, null, 8];
         const result = difference(array1, array2);
-        expect(result).toEqual([1, NaN, 3, 5]);
+        expect(result).toEqual([1, 3, 5]);
     });
 
     test('return match based on input function', () => {
