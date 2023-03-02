@@ -44,7 +44,7 @@ export function intersection<TArr>(arrayOrCompFn: TArr[] | ((a: TArr, b: TArr) =
     const intersection: TArr[] = [];
 
     for (const element of firstArray) {
-        if (arrays.every(array => array.some(item => compareFN(item, element)))) {
+        if (combinedRestArray.some(item => compareFN(item, element))) {
             intersection.push(element);
         }
     }

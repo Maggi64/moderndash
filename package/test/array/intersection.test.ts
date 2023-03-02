@@ -35,4 +35,12 @@ describe('intersection', () => {
         const result = intersection(arr1, arr2, arr3);
         expect(result).toEqual([3, 4, 5]);
     });
+
+    test('handles 1 missing array', () => {
+        const arr1 = [1, 2, 3, 4, 5];
+
+        // @ts-expect-error - one array is missing
+        const result = intersection((a, b) => a % 2 === 0 && a === b, arr1);
+        expect(result).toEqual([]);
+    });
 });
