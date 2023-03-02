@@ -2,4 +2,4 @@
 "moderndash": patch
 ---
 
-`Difference` | improve performance
+`difference` | improve performance
