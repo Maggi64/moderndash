@@ -61,6 +61,12 @@ arr.filter(Boolean)
 npm install moderndash
 ```
 
+## 🚀 Performance
+
+ModernDash aims to outperform Lodash and deliver lightning-fast utility functions. Performance is not an afterthought, but a top priority. You can expect ModernDash to match or even exceed the performance of Lodash in most benchmarks, ensuring that your project stays speedy and efficient.
+
+**[[ Benchmark Results](https://github.com/Maggi64/moderndash/blob/main/benchmark/RESULTS.md) ]**
+
 ## 🗃 FAQ
 
 ### Why is X lodash function not included?
