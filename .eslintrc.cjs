@@ -30,6 +30,7 @@ module.exports = {
             parser: "svelte-eslint-parser",
             parserOptions: {
                 parser: "@typescript-eslint/parser",
+                project: './*/tsconfig.json'
             },
         }
     ],
@@ -117,6 +118,7 @@ module.exports = {
         "unicorn/no-null": 0,
         "unicorn/no-array-reduce": 0,
         "unicorn/no-thenable": 0,
+        "unicorn/prefer-at": 1,
         "unicorn/no-useless-undefined": 0,
         "unicorn/numeric-separators-style": ["error", { "onlyIfContainsSeparator": true }],
         "unicorn/prefer-module": 0,
