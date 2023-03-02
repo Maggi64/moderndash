@@ -1,5 +1,17 @@
 # moderndash
 
+## 2.1.3
+
+### Patch Changes
+
+- Add benchmark results to readme ([`f5d6128`](https://github.com/Maggi64/moderndash/commit/f5d612813f70e217c6a892d3ff28518812abae80))
+
+- `intersection` | Add fastArrayFlat optimization from `difference` ([`192f807`](https://github.com/Maggi64/moderndash/commit/192f8079574d886cc49645408af607a1cbf82bc2))
+
+- `difference` | improve performance ([`59612cc`](https://github.com/Maggi64/moderndash/commit/59612ccc4cd41e7801cbe2239d208aa24f1054e6))
+
+- `group` | improve performance ([`f53bf9d`](https://github.com/Maggi64/moderndash/commit/f53bf9de857e2abbf8eaef0f48b422419765a632))
+
 ## 2.1.2
 
 ### Patch Changes
