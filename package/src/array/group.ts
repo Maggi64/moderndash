@@ -9,20 +9,16 @@
  * // => { 'false': [4.2], 'true': [6.1, 6.3] }
  * 
  * @param collection The array or object to iterate over.
- * @param criteria The criteria to group by.
+ * @param getGroupKey A function that returns the group id for each item.
  * @template TElem The type of the array elements.
  * @returns An object with grouped items.
  */
 
-export function group<TElem, TKey extends PropertyKey>(array: TElem[], criteria: (value: TElem) => TKey | boolean): Record<TKey, TElem[]> {
+export function group<TElem, TKey extends PropertyKey>(array: TElem[], getGroupKey: (value: TElem) => TKey): Record<TKey, TElem[]> {
     const result = {} as Record<TKey, TElem[]>;
-    for (const value of array) {
-        let key = criteria(value);
-        if (typeof key === 'boolean')
-            key = key.toString() as TKey;
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-        result[key] = result[key] ?? [];
-        result[key].push(value);
+    for (const elem of array) {
+        const key = getGroupKey(elem);
+        (result[key] ??= []).push(elem);
     }
     return result;
 }
