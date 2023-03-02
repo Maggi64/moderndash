@@ -65,4 +65,8 @@ hr {
     .space-y {
         @apply my-4;
     }
+
+    h2 {
+        @apply border-b pb-2
+    }
 }
