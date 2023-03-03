@@ -18,9 +18,10 @@
  * @param orders The sorting criteria, one or multiple objects with properties order (either 'asc' or 'desc') and by (iteratee function to sort based on a specific property).
  * @param orders.order - The order to sort in, either 'asc' or 'desc'.
  * @param orders.by - The iteratee function to sort based on a specific property.
+ * @template TElem The type of the array elements.
  * @returns Returns a new sorted array.
 */
-export function sort<TInput>(array: TInput[], ...orders: { order?: 'asc' | 'desc', by?: (item: TInput) => number | bigint | Date | string }[]): TInput[] {
+export function sort<TElem>(array: TElem[], ...orders: { order?: 'asc' | 'desc', by?: (item: TElem) => number | bigint | Date | string }[]): TElem[] {
     return [...array].sort((a, b) => {
         for (const { order, by } of orders) {
             const aValue = by ? by(a) : a;

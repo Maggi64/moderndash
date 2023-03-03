@@ -25,12 +25,13 @@ import { unique } from './unique.js';
  * intersection((a, b) => a.id === b.id, arr1, arr2)
  * // => [{ id: 3, name: 'John' }]
  * @param arrays The arrays to inspect.
+ * @template TElem The type of the array elements.
  * @returns Returns the new array of intersecting values.
  */
 
-export function intersection<TArr>(...arrays: ArrayMinLength<TArr[], 2>): TArr[];
-export function intersection<TArr>(arrayOrCompFn: (a: TArr, b: TArr) => boolean, ...arrays: ArrayMinLength<TArr[], 2>): TArr[];
-export function intersection<TArr>(arrayOrCompFn: TArr[] | ((a: TArr, b: TArr) => boolean), ...arrays: ArrayMinLength<TArr[], 2>): TArr[] {
+export function intersection<TElem>(...arrays: ArrayMinLength<TElem[], 2>): TElem[];
+export function intersection<TElem>(arrayOrCompFn: (a: TElem, b: TElem) => boolean, ...arrays: ArrayMinLength<TElem[], 2>): TElem[];
+export function intersection<TElem>(arrayOrCompFn: TElem[] | ((a: TElem, b: TElem) => boolean), ...arrays: ArrayMinLength<TElem[], 2>): TElem[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
     const firstArray = unique(withCompareFn ? arrays.shift()! : arrayOrCompFn);
     const combinedRestArray = fastArrayFlat(arrays);
@@ -40,8 +41,8 @@ export function intersection<TArr>(arrayOrCompFn: TArr[] | ((a: TArr, b: TArr) =
         return firstArray.filter(element => restSet.has(element));
     }
     
-    const compareFN = arrayOrCompFn as (a: TArr, b: TArr) => boolean;
-    const intersection: TArr[] = [];
+    const compareFN = arrayOrCompFn as (a: TElem, b: TElem) => boolean;
+    const intersection: TElem[] = [];
 
     for (const element of firstArray) {
         if (combinedRestArray.some(item => compareFN(item, element))) {

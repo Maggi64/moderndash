@@ -5,6 +5,7 @@
  * shuffle([1, 2, 3, 4])
  * // => [4, 1, 3, 2]
  * @param array The array or object to shuffle.
+ * @template TElem The type of the array elements.
  * @returns Returns a new shuffled array.
  */
 

@@ -11,7 +11,7 @@
  * // compare by object values
  * const users = [
  *   { id: 1, name: 'john' },
- *   { id: 2, name: 'john' }
+ *   { id: 2, name: 'john' },
  *   { id: 2, name: 'john' },
  * ]
  * 
