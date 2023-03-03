@@ -43,7 +43,7 @@ export const load: PageServerLoad = (({ params }) => {
 function generateImportString(functionName: string, code: string) {
     const codeWithOutComments = code.replace(/\/\*[\S\s]*?\*\/|(?<=[^:])\/\/.*|^\/\/.*/g, '');
     const foundFunctionNames = codeWithOutComments.match(
-        new RegExp(`\\b(\\?\\!\\.)(${docData.functions.map(func => func.name).join('|')})\\b`, 'g')
+        new RegExp(`(?<!\\.)\\b(${docData.functions.map(func => func.name).join('|')})\\b`, 'g')
     );
 
     const functionsToImport = unique([functionName, ...(foundFunctionNames ?? [])]);
