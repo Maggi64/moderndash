@@ -40,7 +40,7 @@
 
 - `isEqual` | improve performance ([`4a3615c`](https://github.com/Maggi64/moderndash/commit/4a3615c96cb75b60c265be15c1c08bdd792f3e37))
 
-- deburr | simplify and optimize ([`534ffc0`](https://github.com/Maggi64/moderndash/commit/534ffc0cc8d4a6b16e6be89d082a79688f2ba5ee))
+- `deburr` | simplify and optimize ([`534ffc0`](https://github.com/Maggi64/moderndash/commit/534ffc0cc8d4a6b16e6be89d082a79688f2ba5ee))
 
 - `count` | improve performance & remove automatic boolean handling ([`77b728c`](https://github.com/Maggi64/moderndash/commit/77b728c73d1160ac808dfb4adedeba662727de7a))
 
