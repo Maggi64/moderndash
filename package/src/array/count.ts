@@ -8,11 +8,11 @@
  *   { 'user': 'fred', 'active': true, age: 40 }
  * ]
  *
- * count(users, value => value.active);
- * // => { 'true': 2, 'false': 1 }
+ * count(users, value => value.active ? 'active' : 'inactive');
+ * // => { 'active': 2, 'inactive': 1 }
  *
  * count(users, value => value.age);
- * // => { '36': 2, '40': 1 }
+ * // => { 36: 2, 40: 1 }
  *
  * @param criteria The criteria to count by.
  * @param array The array or record to iterate over.
