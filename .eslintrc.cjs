@@ -126,6 +126,7 @@ module.exports = {
         "unicorn/no-new-array": 0,
         "unicorn/prefer-number-properties": 0,
         "unicorn/prefer-switch": 0,
+        "unicorn/prefer-top-level-await": 0,
         "unicorn/prefer-ternary": ["error", "only-single-line"],
         "unicorn/prevent-abbreviations": 0,
         "unicorn/switch-case-braces": ["error", "avoid"],

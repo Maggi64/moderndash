@@ -1,5 +1,7 @@
 import type { PageServerLoad } from './$types.js';
 
+import { unique } from 'moderndash';
+
 import { docData } from '$utils/docData.js';
 import { markdownParser } from '$utils/markdown.js';
 
@@ -21,19 +23,10 @@ export const load: PageServerLoad = (({ params }) => {
         
         // Deals with Top Level Await Bug in Stackblitz
         if (code.includes('await')) {
-            let lines = code.split('\n');
-            lines = lines.map((line, index) => {
-                if (index < lines.length - 1) {
-                    return '  ' + line;
-                }
-                return line;
-            });
-            code = lines.join('\n');
-            code = `(async () => {\n${code}})()`;
+            code = wrapInAsyncFunc(code);
         }
-        // ----
 
-        return `import { ${signature.name} } from 'moderndash';\n\n${code}`;
+        return generateImportString(signature.name, code) + code;
     }
 
     const parsedMarkdown = markdownParser(signature?.comment.description ?? 'No description').replace(/{@link ([^}]+)}/g, '<a href="/docs/$1">$1</a>');
@@ -46,3 +39,26 @@ export const load: PageServerLoad = (({ params }) => {
         path: fileSource && (fileSource.path + '/' + fileSource.file)
     };
 });
+
+function generateImportString(functionName: string, code: string) {
+    const codeWithOutComments = code.replace(/\/\*[\S\s]*?\*\/|(?<=[^:])\/\/.*|^\/\/.*/g, '');
+    const foundFunctionNames = codeWithOutComments.match(
+        new RegExp(`\\b(\\?\\!\\.)(${docData.functions.map(func => func.name).join('|')})\\b`, 'g')
+    );
+
+    const functionsToImport = unique([functionName, ...(foundFunctionNames ?? [])]);
+    return `import { ${functionsToImport.join(', ')} } from 'moderndash';\n\n`;
+}
+
+function wrapInAsyncFunc(code: string) {
+    let lines = code.split('\n');
+    lines = lines.map((line, index) => {
+        if (index < lines.length - 1) {
+            return '  ' + line;
+        }
+        return line;
+    });
+    code = lines.join('\n');
+    code = `(async () => {\n${code}})()`;
+    return code;
+}
