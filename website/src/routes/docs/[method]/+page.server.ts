@@ -14,31 +14,36 @@ export const load: PageServerLoad = (({ params }) => {
 
     const signature = methodDoc?.signatures[0] ?? typeDoc ?? classDoc;
     const fileSource = methodDoc?.source ?? typeDoc?.source ?? classDoc?.source;
-    const code = generateCode(signature?.comment.blockTags.find(tag => tag.name === 'example')?.text);
+    
+    if (!signature) return { status: 404 };
 
-    // Removes markdown code block syntax and adds imports
-    function generateCode(codetext: string | undefined) {
-        if (!codetext || !signature) return '';
-        let code = codetext.replace(/```(ts|typescript)\n/, '').replace('```', '');
-        
-        // Deals with Top Level Await Bug in Stackblitz
-        if (code.includes('await')) {
-            code = wrapInAsyncFunc(code);
-        }
+    const codeMarkdown = signature.comment.blockTags.find(tag => tag.name === 'example')?.text;
+    const code = getEmbedCode(signature.name, codeMarkdown);
 
-        return generateImportString(signature.name, code) + code;
-    }
-
-    const parsedMarkdown = markdownParser(signature?.comment.description ?? 'No description').replace(/{@link ([^}]+)}/g, '<a href="/docs/$1">$1</a>');
+    const description = signature.comment.description ?? 'No description';
+    const parsedMarkdown = markdownParser(description).replace(/{@link ([^}]+)}/g, '<a href="/docs/$1">$1</a>');
 
     return {
         name: methodDoc?.name ?? typeDoc?.name ?? classDoc?.name,
-        description: signature?.comment.description ?? 'No description',
+        description,
         code,
         parsedMarkdown,
         path: fileSource && (fileSource.path + '/' + fileSource.file)
     };
 });
+
+function getEmbedCode(functionName: string, codetext: string | undefined) {
+    if (!codetext) return '';
+    let code = codetext.replace(/```(ts|typescript)\n/, '').replace('```', '');
+    
+    // Deals with Top Level Await Bug in Stackblitz
+    if (code.includes('await')) {
+        code = wrapInAsyncFunc(code);
+    }
+
+    return generateImportString(functionName, code) + code;
+}
+
 
 function generateImportString(functionName: string, code: string) {
     const codeWithOutComments = code.replace(/\/\*[\S\s]*?\*\/|(?<=[^:])\/\/.*|^\/\/.*/g, '');
