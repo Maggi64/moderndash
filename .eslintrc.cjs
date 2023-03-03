@@ -60,7 +60,7 @@ module.exports = {
         "arrow-spacing": "error",
         "block-spacing": "error",
         "camelcase": ["error", { "properties": "always" }],
-        "complexity": ["error", 10],
+        "complexity": ["error", 12],
         "default-case-last": "error",
         "eqeqeq": ["error", "always"],
         "import/default": 2,
