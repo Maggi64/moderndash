@@ -1,5 +1,15 @@
 # moderndash
 
+## 2.1.4
+
+### Patch Changes
+
+- Array Functions | Fix documentation errors ([`605fe75`](https://github.com/Maggi64/moderndash/commit/605fe75dc3d9c3ed10845aa4e3ff425bb4ef0e25))
+
+- Array, Object, Number functions | Add readonly attribute to arrays + docs fixes ([`8708dea`](https://github.com/Maggi64/moderndash/commit/8708dea40338d729a3518337e38e7492f88761ad))
+
+- `count` | typefixes in example ([`b4b775d`](https://github.com/Maggi64/moderndash/commit/b4b775d972e86dd55bf78626e09f55799de72b63))
+
 ## 2.1.3
 
 ### Patch Changes
