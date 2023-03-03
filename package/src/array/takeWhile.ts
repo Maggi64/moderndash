@@ -17,7 +17,7 @@
  * @returns Returns the slice of `array`.
  */
 
-export function takeWhile<TElem>(array: TElem[], predicate: (elem: TElem) => boolean): TElem[] {
+export function takeWhile<TElem>(array: readonly TElem[], predicate: (elem: TElem) => boolean): TElem[] {
     const result: TElem[] = [];
 
     for (const element of array) {

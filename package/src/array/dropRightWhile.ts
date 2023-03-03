@@ -17,7 +17,7 @@
  * @returns Returns the slice of `array`.
  */
 
-export function dropRightWhile<TElem>(array: TElem[], predicate: (value: TElem) => boolean) {
+export function dropRightWhile<TElem>(array: readonly TElem[], predicate: (value: TElem) => boolean) {
     let i = array.length;
     while (i > 0 && predicate(array[i - 1])) {
         i--;

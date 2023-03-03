@@ -13,7 +13,7 @@
  * @returns Returns the new array of chunks.
  */
 
-export function chunk<TElem>(array: TElem[], size: number): TElem[][] {
+export function chunk<TElem>(array: readonly TElem[], size: number): TElem[][] {
     const intSize = Math.trunc(size);
     if (array.length === 0 || intSize < 1) {
         return [];

@@ -10,7 +10,7 @@
  * @returns The median of the input array
  */
 
-export function median(numbers: number[]): number {
+export function median(numbers: readonly number[]): number {
     if (numbers.length === 0)
         return NaN;
     const sortedArray = [...numbers].sort((a, b) => a - b);

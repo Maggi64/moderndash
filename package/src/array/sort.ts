@@ -21,7 +21,7 @@
  * @template TElem The type of the array elements.
  * @returns Returns a new sorted array.
 */
-export function sort<TElem>(array: TElem[], ...orders: { order?: 'asc' | 'desc', by?: (item: TElem) => number | bigint | Date | string }[]): TElem[] {
+export function sort<TElem>(array: readonly TElem[], ...orders: { order?: 'asc' | 'desc', by?: (item: TElem) => number | bigint | Date | string }[]): TElem[] {
     return [...array].sort((a, b) => {
         for (const { order, by } of orders) {
             const aValue = by ? by(a) : a;

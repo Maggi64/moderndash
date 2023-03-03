@@ -27,9 +27,9 @@ import { fastArrayFlat } from '@helpers/fastArrayFlat.js';
  * @returns Returns the new array of filtered values.
  */
 
-export function difference<TElem>(...arrays: ArrayMinLength<TElem[], 2>): TElem[];
-export function difference<TElem>(arrayOrCompFn: (a: TElem, b: TElem) => boolean, ...arrays: ArrayMinLength<TElem[], 2>): TElem[];
-export function difference<TElem>(arrayOrCompFn: TElem[] | ((a: TElem, b: TElem) => boolean), ...arrays: ArrayMinLength<TElem[], 2>): TElem[] {
+export function difference<TElem>(...arrays: ArrayMinLength<readonly TElem[], 2>): TElem[];
+export function difference<TElem>(arrayOrCompFn: (a: TElem, b: TElem) => boolean, ...arrays: ArrayMinLength<readonly TElem[], 2>): TElem[];
+export function difference<TElem>(arrayOrCompFn: readonly TElem[] | ((a: TElem, b: TElem) => boolean), ...arrays: ArrayMinLength<readonly TElem[], 2>): TElem[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
     const firstArray = withCompareFn ? arrays.shift()! : arrayOrCompFn;
     const combinedRestArray = fastArrayFlat(arrays);

@@ -11,6 +11,7 @@ import type { PlainObject } from '@type/PlainObject.js';
  * @param obj The object to modify.
  * @param path The path of the property to set.
  * @param value The value to set.
+ * @template TObj The type of the object.
  * @returns The modified object.
  */
 

@@ -20,7 +20,7 @@
  * @returns Returns the composed aggregate object.
  */
 
-export function count<TElem, TKey extends PropertyKey>(array: TElem[], criteria: (value: TElem) => TKey): Record<TKey, number> {
+export function count<TElem, TKey extends PropertyKey>(array: readonly TElem[], criteria: (value: TElem) => TKey): Record<TKey, number> {
     const result = {} as Record<TKey, number>;
     for (const value of array) {
         const key = criteria(value);

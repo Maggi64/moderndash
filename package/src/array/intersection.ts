@@ -29,9 +29,9 @@ import { unique } from './unique.js';
  * @returns Returns the new array of intersecting values.
  */
 
-export function intersection<TElem>(...arrays: ArrayMinLength<TElem[], 2>): TElem[];
-export function intersection<TElem>(arrayOrCompFn: (a: TElem, b: TElem) => boolean, ...arrays: ArrayMinLength<TElem[], 2>): TElem[];
-export function intersection<TElem>(arrayOrCompFn: TElem[] | ((a: TElem, b: TElem) => boolean), ...arrays: ArrayMinLength<TElem[], 2>): TElem[] {
+export function intersection<TElem>(...arrays: ArrayMinLength<readonly TElem[], 2>): TElem[];
+export function intersection<TElem>(arrayOrCompFn: (a: TElem, b: TElem) => boolean, ...arrays: ArrayMinLength<readonly TElem[], 2>): TElem[];
+export function intersection<TElem>(arrayOrCompFn: readonly TElem[] | ((a: TElem, b: TElem) => boolean), ...arrays: ArrayMinLength<readonly TElem[], 2>): TElem[] {
     const withCompareFn = typeof arrayOrCompFn === 'function';
     const firstArray = unique(withCompareFn ? arrays.shift()! : arrayOrCompFn);
     const combinedRestArray = fastArrayFlat(arrays);

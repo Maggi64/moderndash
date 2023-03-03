@@ -9,7 +9,7 @@
  * @returns Returns a new shuffled array.
  */
 
-export function shuffle<TElem>(array: TElem[]): TElem[] {
+export function shuffle<TElem>(array: readonly TElem[]): TElem[] {
     const shuffledArray = [...array];
   
     for (let index = shuffledArray.length - 1; index > 0; index--) {

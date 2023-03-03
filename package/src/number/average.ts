@@ -11,7 +11,7 @@ import { sum } from '@number/sum.js';
  * @returns The average of the input array, or NaN if the input array is empty
  */
 
-export function average(numbers: number[]): number {
+export function average(numbers: readonly number[]): number {
     if (numbers.length === 0)
         return NaN;
     return sum(numbers) / numbers.length;

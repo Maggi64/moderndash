@@ -9,7 +9,7 @@
  * @returns The sum of the input array 
  */
 
-export function sum(numbers: number[]): number {
+export function sum(numbers: readonly number[]): number {
     if (numbers.length === 0)
         return NaN;
     return numbers.reduce((total, current) => total + current, 0);

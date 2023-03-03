@@ -19,6 +19,8 @@ import { isPlainObject } from '@validate/isPlainObject.js';
  * // => { a: "Yes" }
  * @param target The target object
  * @param sources The source objects
+ * @template TTarget The type of the target object
+ * @template TSources The type of the source objects
  * @returns A new merged object
  */
 

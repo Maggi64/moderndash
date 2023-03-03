@@ -14,7 +14,7 @@
  * @returns An object with grouped items.
  */
 
-export function group<TElem, TKey extends PropertyKey>(array: TElem[], getGroupKey: (elem: TElem) => TKey): Record<TKey, TElem[]> {
+export function group<TElem, TKey extends PropertyKey>(array: readonly TElem[], getGroupKey: (elem: TElem) => TKey): Record<TKey, TElem[]> {
     const result = {} as Record<TKey, TElem[]>;
     for (const elem of array) {
         const key = getGroupKey(elem);

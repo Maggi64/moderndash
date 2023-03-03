@@ -24,15 +24,16 @@
  *
  * @param array The array to inspect.
  * @param iteratee The iteratee invoked per element.
+ * @template TElem The type of the array elements.
  * @returns Returns the new duplicate free array.
  */
 
-export function unique<TInput>(array: TInput[], compareFn?: (a: TInput, b: TInput) => boolean): TInput[] {
+export function unique<TElem>(array: readonly TElem[], compareFn?: (a: TElem, b: TElem) => boolean): TElem[] {
     // Arrays optimized with native Set
     if (!compareFn)
         return [...new Set(array)];
 
-    const uniqueArray: TInput[] = [];
+    const uniqueArray: TElem[] = [];
     for (const value of array) {
         let isUnique = true;
   
