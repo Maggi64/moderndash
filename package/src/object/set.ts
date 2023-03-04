@@ -29,13 +29,13 @@ import { isPlainObject } from '@validate/isPlainObject.js';
  * @returns The modified object.
  */
 
-export function set<TObj extends PlainObject>(obj: TObj, path: string, value: unknown): TObj {
+export function set(obj: PlainObject, path: string, value: unknown): PlainObject {
     const validPathRegex = /^((\w)+(\[\d*])*(\.|\[\d+]))+((\w)+(\[\d*])*)+$/;
     if (!validPathRegex.test(path))
         throw new Error('Invalid path, look at the examples for the correct format.');
 
     const pathParts = path.split(/\.|(?=\[)/g).filter(x => Boolean(x.trim()));
-    let currentObj: Record<string | number, unknown> = obj;
+    let currentObj: PlainObject = obj;
     for (let index = 0; index < pathParts.length; index++) {
         let key: string | number = pathParts[index].replace(/\[(.*)]/, '$1');
 
@@ -55,7 +55,7 @@ export function set<TObj extends PlainObject>(obj: TObj, path: string, value: un
         } else if (nextElemIn === 'object' && !isPlainObject(currentObj[key])) {
             currentObj[key] = {};
         }
-        currentObj = currentObj[key] as Record<string | number, unknown>;
+        currentObj = currentObj[key] as PlainObject;
     }
 
     return obj;
