@@ -16,27 +16,27 @@ import { isPlainObject } from '@validate/isPlainObject.js';
  */
 
 export function flatKeys<TObj extends PlainObject>(obj: TObj): Record<string, unknown> {
-    const result: Record<string, unknown> = {};
-  
-    function addToResult(prefix: string, value: unknown) {
-        if (isPlainObject(value)) {
-            const flatObj = flatKeys(value);
-            for (const [flatKey, flatValue] of Object.entries(flatObj)) {
-                result[`${prefix}.${flatKey}`] = flatValue;
-            }
-        } else if (Array.isArray(value)) {
-            for (const [index, element] of value.entries()) {
-                addToResult(`${prefix}[${index}]`, element);
-            }
-
-        } else {
-            result[prefix] = value;
-        }
-    }
+    const flatObject: Record<string, unknown> = {};
   
     for (const [key, value] of Object.entries(obj)) {
-        addToResult(key, value);
+        addToResult(key, value, flatObject);
     }
   
-    return result;
+    return flatObject;
+}
+
+function addToResult(prefix: string, value: unknown, flatObject: Record<string, unknown>) {
+    if (isPlainObject(value)) {
+        const flatObj = flatKeys(value);
+        for (const [flatKey, flatValue] of Object.entries(flatObj)) {
+            flatObject[`${prefix}.${flatKey}`] = flatValue;
+        }
+    } else if (Array.isArray(value)) {
+        for (const [index, element] of value.entries()) {
+            addToResult(`${prefix}[${index}]`, element, flatObject);
+        }
+
+    } else {
+        flatObject[prefix] = value;
+    }
 }
