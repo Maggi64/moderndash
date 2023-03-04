@@ -30,6 +30,10 @@ import { isPlainObject } from '@validate/isPlainObject.js';
  */
 
 export function set<TObj extends PlainObject>(obj: TObj, path: string, value: unknown): TObj {
+    const validPathRegex = /^((\w)+(\[\d*])*(\.|\[\d+]))+((\w)+(\[\d*])*)+$/;
+    if (!validPathRegex.test(path))
+        throw new Error('Invalid path, look at the examples for the correct format.');
+
     const pathParts = path.split(/\.|(?=\[)/g).filter(x => Boolean(x.trim()));
     let currentObj: Record<string | number, unknown> = obj;
     for (let index = 0; index < pathParts.length; index++) {
