@@ -4,7 +4,7 @@ import { bench, describe } from 'vitest';
 
 import { randomNumberArray, randomStringArray } from '../testData.js';
 
-describe('takeWhile', () => {
+describe('takeRightWhile', () => {
     const numArray = randomNumberArray(200);
     const stringArray = randomStringArray(200);
 
