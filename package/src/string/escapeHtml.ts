@@ -1,3 +1,12 @@
+const charRegex = /["&'<>]/g;
+const escapeChars = new Map([
+    ['&', '&amp;'],
+    ['<', '&lt;'],
+    ['>', '&gt;'],
+    ['\'', '&#39;'],
+    ['"', '&quot;']
+]);
+
 /**
  * Converts the characters `&`, `<`, `>`, `"` and `'` in a string to their corresponding HTML entities.
  *
@@ -9,12 +18,5 @@
  */
 
 export function escapeHtml(str: string): string {
-    const escapeChars: Record<string, string> = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '\'': '&#39;',
-        '"': '&quot;'
-    };
-    return str.replace(/["&'<>]/g, char => escapeChars[char]);
+    return str.replace(charRegex, char => escapeChars.get(char)!);
 }

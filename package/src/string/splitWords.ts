@@ -1,3 +1,14 @@
+// Split non-alphanumeric characters with spaces and deal with camel/PascalCase
+const splitWordsRegex = new RegExp(
+    '[^\\dA-Za-z]' +  // match any character that is not a letter or a digit
+    '|' +                    // or
+    '(?<=[a-z])' +           // lookbehind for a lowercase letter
+    '(?=[A-Z])' +            // lookahead for an uppercase letter
+    '|' +                    // or
+    '(?<=[A-Z])' +           // lookbehind for an uppercase letter
+    '(?=[A-Z][a-z])'         // lookahead for an uppercase letter followed by a lowercase letter
+);
+
 /**
  * Split a string into words. Can deal with camelCase, PascalCase & snake_case.
  * 
@@ -16,16 +27,5 @@
  */
 
 export function splitWords(str: string): string[] {
-    // Split non-alphanumeric characters with spaces and deal with camel/PascalCase
-    const regex = new RegExp(
-        '[^\\dA-Za-z]' +  // match any character that is not a letter or a digit
-        '|' +                    // or
-        '(?<=[a-z])' +           // lookbehind for a lowercase letter
-        '(?=[A-Z])' +            // lookahead for an uppercase letter
-        '|' +                    // or
-        '(?<=[A-Z])' +           // lookbehind for an uppercase letter
-        '(?=[A-Z][a-z])'         // lookahead for an uppercase letter followed by a lowercase letter
-    );
-
-    return str.split(regex).filter(Boolean);
+    return str.split(splitWordsRegex).filter(Boolean);
 }

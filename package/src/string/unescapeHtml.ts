@@ -1,3 +1,12 @@
+const htmlEntitiesRegex = /&(?:amp|lt|gt|quot|#39);/g;
+const entityMap = new Map([
+    ['&amp;', '&'],
+    ['&lt;', '<'],
+    ['&gt;', '>'],
+    ['&quot;', '"'],
+    ['&#39;', '\'']
+]);
+
 /**
  * Converts the HTML entities `&amp;`, `&lt;`, `&gt;`, `&quot;` and `&#39;`
  * in a string to their corresponding characters.
@@ -10,12 +19,5 @@
  */
 
 export function unescapeHtml(str: string): string {
-    const entityMap: Record<string, string> = {
-        '&amp;': '&',
-        '&lt;': '<',
-        '&gt;': '>',
-        '&quot;': '"',
-        '&#39;': '\''
-    };
-    return str.replace(/&(?:amp|lt|gt|quot|#(0+)?39);/g, (entity: string) => entityMap[entity]);
+    return str.replace(htmlEntitiesRegex, (entity: string) => entityMap.get(entity)!);
 }

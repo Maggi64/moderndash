@@ -1,3 +1,5 @@
+const accentControlRegex = /[\u0300-\u036F]/g;
+
 /**
  * Deburrs a string by converting
  * [Latin-1 Supplement](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)#Character_table)
@@ -13,6 +15,5 @@
  */
 
 export function deburr(str: string): string {
-    // eslint-disable-next-line no-control-regex
-    return str.normalize('NFD').replace(/[\u0300-\u036F]/g, '');
+    return str.normalize('NFD').replace(accentControlRegex, '');
 }

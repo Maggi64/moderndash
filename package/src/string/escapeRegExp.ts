@@ -1,3 +1,5 @@
+const escapleCharsRegex = /[$()*+.?[\\\]^{|}]/g;
+
 /**
  * Escapes the `RegExp` special characters `^`, `$`, `\`, `.`, `*`, `+`,
  * `?`, `(`, `)`, `[`, `]`, `{`, `}`, and `|` in a string.
@@ -10,5 +12,5 @@
  */
 
 export function escapeRegExp(str: string): string {
-    return str.replace(/[$()*+.?[\\\]^{|}]/g, '\\$&');
+    return str.replace(escapleCharsRegex, '\\$&');
 }
