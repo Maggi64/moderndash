@@ -25,23 +25,13 @@ export function flatKeys<TObj extends PlainObject>(obj: TObj): Record<string, un
                 result[`${prefix}.${flatKey}`] = flatValue;
             }
         } else if (Array.isArray(value)) {
-            const flatArr = flattenArray(prefix, value);
-            for (const [flatKey, flatValue] of Object.entries(flatArr)) {
-                result[flatKey] = flatValue;
+            for (const [index, element] of value.entries()) {
+                addToResult(`${prefix}[${index}]`, element);
             }
+
         } else {
             result[prefix] = value;
         }
-    }
-  
-    function flattenArray<TElem>(prefix: string, array: TElem[]) {
-        const result: Record<string, unknown> = {};
-  
-        for (const [index, element] of array.entries()) {
-            addToResult(`${prefix}[${index}]`, element);
-        }
-  
-        return result;
     }
   
     for (const [key, value] of Object.entries(obj)) {

@@ -18,5 +18,9 @@ describe('flatKeys', () => {
         const obj = { a: [[1, 2], [3, 4]] };
         expect(flatKeys(obj)).toEqual({ 'a[0][0]': 1, 'a[0][1]': 2, 'a[1][0]': 3, 'a[1][1]': 4 });
     });
-});
 
+    test('simple array', () => {
+        const obj = { a: [1, 2, 3, 4] };
+        expect(flatKeys(obj)).toEqual({ 'a[0]': 1, 'a[1]': 2, 'a[2]': 3, 'a[3]': 4 });
+    });
+});
