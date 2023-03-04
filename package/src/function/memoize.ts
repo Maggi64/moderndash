@@ -3,16 +3,18 @@ import type { GenericFunction } from '@type/GenericFunction.js';
 const defaultResolver = (...args: unknown[]) => JSON.stringify(args);
 
 /**
- * Creates a function that caches the result of `func`.
+ * Creates a function that memoizes the result of a given function.
  * 
- * The cache key is either determined by the provided `resolver` or by the arguments used in the cached function.
- *
- * The `cache` property is exposed on the cached function. It is an instance of `Map` and can be used to clear or inspect the cache.  
- * The cache property can be replaced by a custom cache as long as it implements the `Map` interface.
+ * The cache key is determined by the `resolver` or by the arguments from the function call.
  *
  * **Options:**
- * - `resolver` A function that determines the cache key for storing the result based on the arguments provided.
- * - `ttl` sets the time to live for the cache in milliseconds. After `ttl` milliseconds, the next call to the memoized function will result in a cache miss.
+ * - `resolver` A function that determines the cache key based on the arguments provided.
+ * - `ttl` the time to live for the cache entries in milliseconds.
+ * 
+ * **Properties:**
+ * - `cache` The cache is an instance of `Map` and can be used to clear or inspect the cache. 
+ * It can be replaced by a custom cache that matches the `Map` interface.
+ * 
  * 
  * This function can be used as a decorator with {@link decMemoize}.
  * 
