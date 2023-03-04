@@ -37,7 +37,7 @@ export function set(obj: PlainObject, path: string, value: unknown): PlainObject
     const pathParts = path.split(/\.|(?=\[)/g).filter(x => Boolean(x.trim()));
     let currentObj: PlainObject = obj;
     for (let index = 0; index < pathParts.length; index++) {
-        let key: string | number = pathParts[index].replace(/\[(.*)]/, '$1');
+        let key: string | number = pathParts[index].replace(/[[\]]/g, '');
 
         if (/^\d+$/.test(key)) // if key is a number
             key = Number.parseInt(key);
