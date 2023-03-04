@@ -2,6 +2,10 @@ import type { PlainObject } from '@type/PlainObject.js';
 
 import { isPlainObject } from '@validate/isPlainObject.js';
 
+const validPathRegex = /^(?:[^.[\]]+(?:\[\d+])*(?:\.|\[\d+]))+(?:[^.[\]]+(?:\[\d+])*)+$/;
+const pathSplitRegex = /\.|(?=\[)/g;
+const matchBracketsRegex = /[[\]]/g;
+
 /**
  * Sets the value at path of object. If a portion of path doesn’t exist, it’s created.
  * 
@@ -30,24 +34,20 @@ import { isPlainObject } from '@validate/isPlainObject.js';
  */
 
 export function set(obj: PlainObject, path: string, value: unknown): PlainObject {
-    const validPathRegex = /^([^.[\]]+(\[\d*])*(\.|\[\d+]))+([^.[\]]+(\[\d*])*)+$/;
     if (!validPathRegex.test(path))
         throw new Error('Invalid path, look at the examples for the correct format.');
 
-    const pathParts = path.split(/\.|(?=\[)/g).filter(x => Boolean(x.trim()));
+    const pathParts = path.split(pathSplitRegex);
     let currentObj: PlainObject = obj;
     for (let index = 0; index < pathParts.length; index++) {
-        let key: string | number = pathParts[index].replace(/[[\]]/g, '');
-
-        if (/^\d+$/.test(key)) // if key is a number
-            key = Number.parseInt(key);
+        const key = pathParts[index].replace(matchBracketsRegex, '');
 
         if (index === pathParts.length - 1) {
             currentObj[key] = value;
             break;
         }
 
-        const nextElemIn = /\[\d+]/.test(pathParts[index + 1]) ? 'array' : 'object';
+        const nextElemIn = pathParts[index + 1].startsWith('[') ? 'array' : 'object';
         if (currentObj[key] === undefined) {
             currentObj[key] = nextElemIn === 'array' ? [] : {};
         } else if (nextElemIn === 'array' && !Array.isArray(currentObj[key])) {
