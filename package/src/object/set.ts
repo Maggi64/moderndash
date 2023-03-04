@@ -1,5 +1,7 @@
 import type { PlainObject } from '@type/PlainObject.js';
 
+import { isPlainObject } from '@validate/isPlainObject.js';
+
 /**
  * Sets the value at path of object. If a portion of path doesn’t exist, it’s created.
  * 
@@ -8,8 +10,17 @@ import type { PlainObject } from '@type/PlainObject.js';
  * set(obj, 'a.c', 1);
  * // => { a: { b: 2, c: 1 } }
  * 
- * set(obj, 'a.c[0]', "hello"");
- * // => { a: { b: 2, c: ["hello"] } }
+ * // `[number]` can be used to access array elements
+ * set(obj, 'a.c[0]', 'hello');
+ * // => { a: { b: 2, c: ['hello'] } }
+ * 
+ * // numbers with dots are treated as keys
+ * set(obj, 'a.c.0.d', 'world');
+ * // => { a: { b: 2, c: { 0: { d: 'world' } } }
+ * 
+ * // supports numbers in keys
+ * set(obj, 'a.e0.a', 1);
+ * // => { a: { e0: { a: 1 } } }
  * 
  * @param obj The object to modify.
  * @param path The path of the property to set.
@@ -19,21 +30,27 @@ import type { PlainObject } from '@type/PlainObject.js';
  */
 
 export function set<TObj extends PlainObject>(obj: TObj, path: string, value: unknown): TObj {
-    const pathParts = path.split(/[.[\]]/g).filter(x => Boolean(x.trim()));
-
+    const pathParts = path.split(/\.|(?=\[)/g).filter(x => Boolean(x.trim()));
     let currentObj: Record<string | number, unknown> = obj;
     for (let index = 0; index < pathParts.length; index++) {
-        const key = pathParts[index];
+        let key: string | number = pathParts[index].replace(/\[(.*)]/, '$1');
+
+        if (/^\d+$/.test(key)) // if key is a number
+            key = Number.parseInt(key);
 
         if (index === pathParts.length - 1) {
             currentObj[key] = value;
             break;
         }
-        
-        const nextIsNumber = !Number.isNaN(Number.parseInt(pathParts[index + 1]));
-        if (currentObj[key] === undefined)
-            currentObj[key] = nextIsNumber ? [] : {};
 
+        const nextElemIn = /\[\d+]/.test(pathParts[index + 1]) ? 'array' : 'object';
+        if (currentObj[key] === undefined) {
+            currentObj[key] = nextElemIn === 'array' ? [] : {};
+        } else if (nextElemIn === 'array' && !Array.isArray(currentObj[key])) {
+            currentObj[key] = [];
+        } else if (nextElemIn === 'object' && !isPlainObject(currentObj[key])) {
+            currentObj[key] = {};
+        }
         currentObj = currentObj[key] as Record<string | number, unknown>;
     }
 

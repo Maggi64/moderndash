@@ -16,5 +16,15 @@ describe('set', () => {
 
         set(obj, 'a.d[0].c', 3);
         expect(obj).toEqual({ a: { b: 2, c: [1, 2, 1], d: [{ c: 3 }] } });
+
+        set(obj, 'a[0].c', 3);
+        expect(obj).toEqual({ a: [{ c: 3 }] });
     });
+
+    test('recognise number key', () => {
+        const obj = { a: 1 };
+        set(obj, 'a.e0[0]', 1);
+        expect(obj).toEqual({ a: { e0: [1] } });
+    });
+
 });
