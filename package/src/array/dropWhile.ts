@@ -9,7 +9,7 @@
  *   { 'user': 'pebbles', 'active': false }
  * ]
  *
- * dropWhile(users, ({ active }) => active)
+ * dropWhile(users, user => user.active)
  * // => objects for ['pebbles']
  * @param predicate The function invoked per iteration.
  * @param array The array to query.

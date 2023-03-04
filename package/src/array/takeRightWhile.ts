@@ -9,7 +9,7 @@
  *   { 'user': 'pebbles', 'active': true }
  * ]
  *
- * takeRightWhile(users, ({ active }) => active)
+ * takeRightWhile(users, user => user.active)
  * // => objects for ['fred', 'pebbles']
  * @param predicate The function invoked per iteration.
  * @param array The array to query.
