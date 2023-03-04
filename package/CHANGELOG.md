@@ -1,5 +1,27 @@
 # moderndash
 
+## 2.2.0
+
+### Minor Changes
+
+- Add `flatKeys` function ([`a45e4e4`](https://github.com/Maggi64/moderndash/commit/a45e4e47c8729db5d22d61bf00abc44b98207fe5))
+
+### Patch Changes
+
+- `set` | make path dot notation more robust ([`be904aa`](https://github.com/Maggi64/moderndash/commit/be904aac6284cc22051d89b297d24845cf5bfb5e))
+
+- string functions | improve performance (use Map + reuse regex object) ([`b380dfa`](https://github.com/Maggi64/moderndash/commit/b380dfadcda599804389a7934a2779d11ea12f90))
+
+- `chunk` | rename parameter to chunkSize ([`2e2bbdf`](https://github.com/Maggi64/moderndash/commit/2e2bbdf6f91688898c4a87a3f6daa5710cda0884))
+
+- `set` | add example with array ([`8564d2f`](https://github.com/Maggi64/moderndash/commit/8564d2fd794730a6a961a9593171ec38b3ebef69))
+
+- `drop/takeWhile` | simplify docs ([`42a51ee`](https://github.com/Maggi64/moderndash/commit/42a51ee73695f46a69d1a2145220b9fab9577681))
+
+- `Memoize` | simplify docs ([`7ab7166`](https://github.com/Maggi64/moderndash/commit/7ab71665f460c30812f538cac2c767f652a4b531))
+
+- `set` | check path with regex, ensuring it matches the right format ([`25b78e0`](https://github.com/Maggi64/moderndash/commit/25b78e0cc784d4b440690ebace80e64bebbf6b8d))
+
 ## 2.1.4
 
 ### Patch Changes
