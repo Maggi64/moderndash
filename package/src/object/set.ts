@@ -8,6 +8,9 @@ import type { PlainObject } from '@type/PlainObject.js';
  * set(obj, 'a.c', 1);
  * // => { a: { b: 2, c: 1 } }
  * 
+ * set(obj, 'a.c[0]', "hello"");
+ * // => { a: { b: 2, c: ["hello"] } }
+ * 
  * @param obj The object to modify.
  * @param path The path of the property to set.
  * @param value The value to set.
