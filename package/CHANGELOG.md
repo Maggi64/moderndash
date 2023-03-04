@@ -1,5 +1,11 @@
 # moderndash
 
+## 2.2.1
+
+### Patch Changes
+
+- `flatKeys` | extract function into outer scope => performance ([`1207268`](https://github.com/Maggi64/moderndash/commit/12072685e20ab6e09a5526c3faab8dbb19af6891))
+
 ## 2.2.0
 
 ### Minor Changes
