@@ -30,7 +30,7 @@ import { isPlainObject } from '@validate/isPlainObject.js';
  */
 
 export function set(obj: PlainObject, path: string, value: unknown): PlainObject {
-    const validPathRegex = /^((\w)+(\[\d*])*(\.|\[\d+]))+((\w)+(\[\d*])*)+$/;
+    const validPathRegex = /^([^.[\]]+(\[\d*])*(\.|\[\d+]))+([^.[\]]+(\[\d*])*)+$/;
     if (!validPathRegex.test(path))
         throw new Error('Invalid path, look at the examples for the correct format.');
 

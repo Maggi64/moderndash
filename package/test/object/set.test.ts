@@ -27,4 +27,15 @@ describe('set', () => {
         expect(obj).toEqual({ a: { e0: [1] } });
     });
 
+    test('throw error on incorrect path format', () => {
+        const obj = { a: { b: 2 } };
+        expect(() => set(obj, 'a.c[1', 1)).toThrow();
+        expect(() => set(obj, 'a.c.', 1)).toThrow();
+    });
+
+    test('allow _ and $ in path', () => {
+        const obj = { a: { b: 2 } };
+        expect(() => set(obj, 'a.c_1', 1)).not.toThrow();
+        expect(() => set(obj, 'a.c-$1', 1)).not.toThrow();
+    });
 });
