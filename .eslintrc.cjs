@@ -23,7 +23,15 @@ module.exports = {
         "sonarjs",
         "unicorn",
     ],
-    ignorePatterns: ["**/build/**", "**/node_modules/**", "**/.svelte-kit/**", "**/dist/**", "website/*.config.*", ".eslintrc.cjs"],
+    ignorePatterns: [
+        "**/build/**",
+        "**/node_modules/**", 
+        "**/.svelte-kit/**", 
+        "**/dist/**", 
+        "website/*.config.*", 
+        ".eslintrc.cjs", 
+        "**/coverage/**"
+    ],
     overrides: [
         {
             files: ["*.svelte"],
@@ -138,6 +146,9 @@ module.exports = {
         "@typescript-eslint/type-annotation-spacing": 1,
         "@typescript-eslint/consistent-type-definitions": 0,
         "@typescript-eslint/default-param-last": 2,
+        "@typescript-eslint/no-useless-empty-export": 2,
+        "@typescript-eslint/no-confusing-void-expression": ["warn", { "ignoreArrowShorthand": true, "ignoreVoidOperator": true }],
+        "@typescript-eslint/switch-exhaustiveness-check": "warn",
         "@typescript-eslint/indent": ["error", 4, { "SwitchCase": 1 }],
         "@typescript-eslint/keyword-spacing": 2,
         "@typescript-eslint/no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
