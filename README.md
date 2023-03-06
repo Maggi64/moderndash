@@ -36,7 +36,7 @@
 
 <h3 align=center class="hide-on-website">
   <a href="https://moderndash.io" target="_blank">
-       📖 Documentation
+       📓 Documentation
   </a>
 </h3>
 
