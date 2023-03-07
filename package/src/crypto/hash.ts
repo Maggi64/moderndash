@@ -2,6 +2,8 @@ import type { Jsonifiable } from '@type/Jsonifiable.js';
 
 type SupportedAlgorithms = 'SHA-256' | 'SHA-384' | 'SHA-512';
 
+const textEncoder = new TextEncoder();
+
 /**
  * Generates a hash from the given data using the specified algorithm.
  *
@@ -26,10 +28,9 @@ type SupportedAlgorithms = 'SHA-256' | 'SHA-384' | 'SHA-512';
  */
 
 export async function hash(data: Jsonifiable, algorithm: SupportedAlgorithms = 'SHA-256'): Promise<string> {
-    const encoder = new TextEncoder();
     const dataBuffer = typeof data === 'string'
-        ? encoder.encode(data) 
-        : encoder.encode(JSON.stringify(data));
+        ? textEncoder.encode(data) 
+        : textEncoder.encode(JSON.stringify(data));
     
     const hashBuffer = await crypto.subtle.digest(algorithm, dataBuffer);
     const hashArray = [...new Uint8Array(hashBuffer)];
