@@ -1,3 +1,7 @@
+/* eslint-disable no-bitwise */
+const shiftLeft20Bits = 2 ** 20;
+const shiftRight52Bits = 2 ** -52;
+
 /**
  * Generates a random float between two given numbers, including those numbers.
  * 
@@ -13,11 +17,17 @@
  */
 
 export function randomFloat(min: number, max: number): number {
-    if (min > max)
-        throw new Error('min must be less than or equal to max');
+    if (min >= max) {
+        throw new Error('max must be greater than min');
+    }
     const range = max - min;
-    const randomBuffer = new Uint32Array(1);
+    const randomBuffer = new Uint32Array(2);
     crypto.getRandomValues(randomBuffer);
-    const random = randomBuffer[0] / 0xFFFFFFFF;
-    return min + (random * range);
+
+    // keep all 32 bits of the the first, top 20 of the second for 52 random bits
+    const mantissa = (randomBuffer[0] * shiftLeft20Bits) + (randomBuffer[1] >>> 12);
+
+    // shift all 52 bits to the right of the decimal point
+    const randomFloat = mantissa * shiftRight52Bits;
+    return min + (randomFloat * range);
 }
