@@ -1,5 +1,17 @@
 # moderndash
 
+## 2.2.2
+
+### Patch Changes
+
+- `hash` | move TextEncoder in outer scope to improve performance ([`5512d34`](https://github.com/Maggi64/moderndash/commit/5512d343be8f7f6332941ac9d4ca6d705cb5fb8f))
+
+- `randomInt` | Fix modulo bias ([`5f993cc`](https://github.com/Maggi64/moderndash/commit/5f993cc1ea6a6291d43c9f1e3061357c652f33cb))
+
+- `randomString` | use randomInt internaly to fix modulo bias ([`b1b8d66`](https://github.com/Maggi64/moderndash/commit/b1b8d662b1c6340be9456bab75f5211c69783e6c))
+
+- `randomFloat` | improve precision by generating all 52 float bits ([`d6dd5e0`](https://github.com/Maggi64/moderndash/commit/d6dd5e06b244f370969141653fa9c90a63342c2c))
+
 ## 2.2.1
 
 ### Patch Changes
