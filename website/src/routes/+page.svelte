@@ -7,7 +7,7 @@
     export let data: PageServerData;
 </script>
 
-<Meta title="Home"/>
+<Meta title="Documentation"/>
 
 <div id="readme">
     {@html data.parsedMarkdown}
