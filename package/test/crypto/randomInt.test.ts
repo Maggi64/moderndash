@@ -33,10 +33,7 @@ describe('randomInt', () => {
     }, { retry: 3 });
 
     test('throw an error if min is greater than max', () => {
-        const min = 10;
-        const max = 1;
-
-        expect(() => randomInt(min, max)).toThrowError(); 
+        expect(() => randomInt(10, 1)).toThrowError(); 
     }); 
 
     test('average of 1000000 random numbers should be close to the middle', () => {
@@ -54,4 +51,12 @@ describe('randomInt', () => {
         expect(average).toBeGreaterThanOrEqual(5 - 0.1);
         expect(average).toBeLessThanOrEqual(5 + 0.1);
     }, { retry: 3 });
+
+    test('throw an error if min is not an integer', () => {
+        expect(() => randomInt(1.1, 10)).toThrowError(); 
+    });
+
+    test('throw an error if max is not an integer', () => {
+        expect(() => randomInt(1, 10.1)).toThrowError(); 
+    });
 });
