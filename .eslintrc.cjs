@@ -88,7 +88,7 @@ module.exports = {
         ],
         "linebreak-style": ["error", "unix"],
         "max-depth": ["error", 4],
-        "max-lines": ["error", { "max": 250, "skipComments": true, "skipBlankLines": true }],
+        "max-lines": ["warn", { "max": 250, "skipComments": true, "skipBlankLines": true }],
         "max-params": ["error", 6],
         "new-cap": ["error", { "capIsNewExceptions": ["Router"] }],
         "no-await-in-loop": "error",
@@ -149,7 +149,7 @@ module.exports = {
         "@typescript-eslint/no-useless-empty-export": 2,
         "@typescript-eslint/no-confusing-void-expression": ["warn", { "ignoreArrowShorthand": true, "ignoreVoidOperator": true }],
         "@typescript-eslint/switch-exhaustiveness-check": "warn",
-        "@typescript-eslint/indent": ["error", 4, { "SwitchCase": 1 }],
+        "@typescript-eslint/indent": ["warn", 4, { "SwitchCase": 1 }],
         "@typescript-eslint/keyword-spacing": 2,
         "@typescript-eslint/no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
         "@typescript-eslint/object-curly-spacing": ["error", "always", { "objectsInObjects": true }],
@@ -164,6 +164,7 @@ module.exports = {
         "@typescript-eslint/prefer-enum-initializers": "warn",
         "@typescript-eslint/comma-spacing": "warn",
         "@typescript-eslint/no-non-null-assertion": 0,
+        "@typescript-eslint/prefer-nullish-coalescing": ["warn", { "ignoreTernaryTests": false, "ignoreConditionalTests": false, "ignoreMixedLogicalExpressions": false }],
         "svelte/require-optimized-style-attribute": "error",
         "svelte/html-closing-bracket-spacing": ["error", {
             "startTag": "never",
@@ -172,7 +173,7 @@ module.exports = {
         }],
         "svelte/html-quotes": "error",
         "svelte/html-self-closing": "error",
-        "svelte/indent": ["error", {
+        "svelte/indent": ["warn", {
             "indent": 4,
             "switchCase": 2,
         }],
