@@ -37,7 +37,7 @@
 </div>
 
 <h3 align=center class="hide-on-website">
-  <a href="https://moderndash.io" target="_blank">
+  <a href="https://moderndash.io/docs/chunk" target="_blank">
        📓 Documentation
   </a>
 </h3>
