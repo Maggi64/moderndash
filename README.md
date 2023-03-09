@@ -28,7 +28,9 @@
   <a href="https://www.npmjs.com/package/moderndash">
     <img alt="npm" src="https://img.shields.io/npm/v/moderndash?color=blue&label=version">
   </a>
-  <img alt="node-current" src="https://img.shields.io/node/v/moderndash?color=blue">
+  <span>
+    <img alt="node-current" src="https://img.shields.io/node/v/moderndash?color=blue">
+  </span>
   <a href="https://github.com/Maggi64/moderndash/blob/main/LICENSE">
     <img alt="GitHub" src="https://img.shields.io/github/license/maggi64/moderndash?color=orange">
   </a>
@@ -42,11 +44,8 @@
 
 ---
 
-## 📓 Introduction
-ModernDash is a modern and lightweight alternative to utility libraries like Lodash. It provides important functions while encouraging the use of native JS wherever possible.
-
-<div align=center class="center">
-  <img alt="examples" src="https://raw.githubusercontent.com/Maggi64/moderndash/main/website/src/assets/exampleCode.svg">
+<div align=center class="space-y">
+  <img alt="introduction code" src="https://raw.githubusercontent.com/Maggi64/moderndash/main/website/src/assets/introCode.svg">
 </div>
 
 ## 💾 Installation
