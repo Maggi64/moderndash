@@ -12,7 +12,8 @@
 		"moderndash": "../package",
 		"lodash-es": "latest",
 		"radash": "latest",
-		"remeda": "latest"
+		"remeda": "latest",
+		"rambda": "latest"
 	},
 	"type": "module"
 }
