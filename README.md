@@ -1,4 +1,4 @@
-![ModernDash Logo](/website/src/assets/moderndashLogo.svg)
+![ModernDash Logo](https://raw.githubusercontent.com/Maggi64/moderndash/main/website/src/assets/moderndashLogo.svg)
 
 <p align=center>
   A Typescript-First utility library inspired by Lodash.
@@ -45,16 +45,10 @@
 ## 📓 Introduction
 ModernDash is a modern and lightweight alternative to utility libraries like Lodash. It provides important functions while encouraging the use of native JS wherever possible.
 
-ModernDash ignores trivial functions and instead focuses on the functions that you actually need.
-```typescript
-// We don't need
-Lodash.isArray(arr)
-Lodash.compact(arr)
+<div align=center class="center">
+  <img alt="examples" src="https://raw.githubusercontent.com/Maggi64/moderndash/main/website/src/assets/exampleCode.svg">
+</div>
 
-// When we have these native replacements
-Array.isArray(arr)
-arr.filter(Boolean)
-```
 ## 💾 Installation
 
 ```bash
