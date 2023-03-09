@@ -1,9 +1,9 @@
-import type { PlainObject } from 'moderndash';
-
 import { randomInt, randomString } from 'moderndash';
 
-export function randomObject(fieldCount: number, allowNested = true): PlainObject {
-    const generatedObj = {} as Record<string, unknown>;
+type RandomObject = Record<string, object | number | string | boolean>;
+
+export function randomObject(fieldCount: number, allowNested = true): RandomObject {
+    const generatedObj = {} as RandomObject;
 
     for (let i = 0; i < fieldCount; i++) {
         let generatedObjField: object | number | string | boolean = '';
@@ -37,7 +37,7 @@ export function randomObject(fieldCount: number, allowNested = true): PlainObjec
 }
 
 export function randomObjectArray(n: number) {
-    const arr = [] as PlainObject[];
+    const arr = [];
 
     for (let i = 0; i < n; i++) {
         arr.push(randomObject(6));
