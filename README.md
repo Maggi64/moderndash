@@ -45,7 +45,7 @@
 ---
 
 <div align=center class="space-y">
-  <img alt="introduction code" src="https://raw.githubusercontent.com/Maggi64/moderndash/main/website/src/assets/introCode.svg">
+  <img alt="introduction code" src="https://raw.githubusercontent.com/Maggi64/moderndash/main/website/src/assets/introCodeV3.png">
 </div>
 
 ## 💾 Installation
