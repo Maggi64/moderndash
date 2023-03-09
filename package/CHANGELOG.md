@@ -1,5 +1,11 @@
 # moderndash
 
+## 2.2.3
+
+### Patch Changes
+
+- `hash` | only create textEncoder when needed ([`991a1d9`](https://github.com/Maggi64/moderndash/commit/991a1d96e768ac01052d578e8d141d15db3e859d))
+
 ## 2.2.2
 
 ### Patch Changes
