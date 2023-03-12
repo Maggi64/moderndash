@@ -7,14 +7,14 @@
 
 <div align=center class="space-y">
   ✅ ESM
+  ✅ Fast & Lightweight
   ✅ Tree-shakable
   ✅ Typescript Strict Mode (no any)
-  ✅ 100% Test Coverage
   <br>
+  ✅ 100% Test Coverage
   ✅ Zero dependencies
   ✅ Hoverable Docs
   ✅ TS Decorators
-  ✅ ESNext
 </div>
 <p></p>
 
