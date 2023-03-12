@@ -7,7 +7,7 @@ import { unique } from './unique.js';
 /**
  * Create an array with unique values from all input arrays, with order based on the first array. 
  * 
- * Optionally, use a compare function for element comparison (default is ===).
+ * Optionally, use a compare function for element comparison (default is `===`).
  * @example
  * intersection([2, 1], [2, 3])
  * // => [2]
