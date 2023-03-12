@@ -1,5 +1,11 @@
 # moderndash
 
+## 2.3.0
+
+### Minor Changes
+
+- Reduce requirement to Node 16 | Add flag disclaimer for NodeJS <19 ([`6770e58`](https://github.com/Maggi64/moderndash/commit/6770e5822e1717503303b4e29bc3d939de531d58))
+
 ## 2.2.3
 
 ### Patch Changes
