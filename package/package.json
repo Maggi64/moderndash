@@ -4,8 +4,8 @@
   "type": "module",
   "description": "A lodash inspired utility framework for ESM/Typescript/ESNext",
   "engines": {
-    "node": ">=19.x.x",
-    "npm": ">=8.x.x"
+    "node": ">=16.15",
+    "npm": ">=8"
   },
   "sideEffects": false,
   "scripts": {

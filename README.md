@@ -53,6 +53,17 @@
 ```bash
 npm install moderndash
 ```
+## 📋 Requirements
+
+**NodeJS:** `>16.14` | **Typescript**: `>4.7`
+
+*NodeJS 16-18*:  
+To use the `cryto` functions set the [experimental-global-webcrypto](https://nodejs.dev/en/api/v16/cli#--experimental-global-webcrypto) flag.
+
+*Typescript 4.8 - 4.9:*  
+To use the `decorator` functions set the [experimentalDecorators](https://www.typescriptlang.org/tsconfig#experimentalDecorators) flag.
+
+**Works out of the box with NodeJS 19 & Typescript 5 or above.**
 
 ## 🚀 Performance
 

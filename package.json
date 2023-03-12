@@ -7,6 +7,10 @@
         "benchmark"
     ],
     "type": "module",
+    "engines": {
+        "node": ">=19.x.x",
+        "npm": ">=8.x.x"
+    },
     "scripts": {
         "build:docs-data": "typedoc --options typedoc.json && typedoc-json-parser --json ./website/src/assets/extractedTypes.json --verbose",
         "build:docs": "npm run build --workspace=package && npm run build:docs-data && npm run build --workspace=website",
