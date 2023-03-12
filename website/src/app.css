@@ -28,7 +28,7 @@ pre {
 }
 
 code {
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-family: 'Source Code Pro', 'Courier New', monospace;
     @apply text-gray-900 px-1 bg-gray-100 rounded
 }
 
