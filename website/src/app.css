@@ -48,6 +48,13 @@ a {
     }
 }
 
+blockquote {
+    code {
+        @apply text-gray-700;
+    }
+    @apply border-l-4 mt-4 border-gray-200 px-4 text-slate-600;
+}
+
 hr {
     @apply my-4 lg:my-8 border-gray-200;
 }
