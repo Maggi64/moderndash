@@ -1,5 +1,11 @@
 # moderndash
 
+## 2.3.1
+
+### Patch Changes
+
+- Update readme in package ([`867c378`](https://github.com/Maggi64/moderndash/commit/867c378878082a6176d991beebbc9b31039c2302))
+
 ## 2.3.0
 
 ### Minor Changes
