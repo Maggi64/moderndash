@@ -45,7 +45,7 @@
 ---
 
 <div align=center class="space-y">
-  <img alt="introduction code" src="https://raw.githubusercontent.com/Maggi64/moderndash/main/website/src/assets/introCodeV6.png">
+  <img alt="Intro Code" width=100% src="https://raw.githubusercontent.com/Maggi64/moderndash/main/website/src/assets/introCodeV6.svg"></img>
 </div>
 
 ## 💾 Installation
@@ -57,7 +57,7 @@ npm install moderndash
 
 **NodeJS**: >16.14 | **Typescript**: >4.7
 
-*NodeJS 16-18*: To use the `crypto` functions, set the [experimental-global-webcrypto](https://nodejs.dev/en/api/v16/cli#--experimental-global-webcrypto) flag.  
+*NodeJS 16-18:* To use the `crypto` functions, set the [experimental-global-webcrypto](https://nodejs.dev/en/api/v16/cli#--experimental-global-webcrypto) flag.  
 *Typescript 4.8 - 4.9:* To use the `decorator` functions, set the [experimentalDecorators](https://www.typescriptlang.org/tsconfig#experimentalDecorators) flag.
 
 *Works out of the box with NodeJS 19 & Typescript 5 or above.*
