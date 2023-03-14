@@ -1,5 +1,11 @@
 # moderndash
 
+## 3.0.0
+
+### Major Changes
+
+- [Breaking] `intersection` & `difference` | compareFunc as last parameter, allow different types if compareFn is provided ([`b5378c8`](https://github.com/Maggi64/moderndash/commit/b5378c8b39eccc5e3f8d7508347ca637eedd756a))
+
 ## 2.3.1
 
 ### Patch Changes
