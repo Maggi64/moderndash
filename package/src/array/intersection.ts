@@ -11,7 +11,7 @@ import { unique } from './unique.js';
  * 
  * Optionally, use a compare function for element comparison (default is `===`).
  * @example
- * intersection([2, 1], [2, 3])
+ * intersection([2, 1], [2, 3], [6, 2])
  * // => [2]
  *
  * // ---- Custom compare function ----
