@@ -5,6 +5,7 @@ on:
     paths :
       - 'package/src/**'
       - 'package/test/**'
+  workflow_dispatch:
 
 jobs:
   release:
