@@ -1,5 +1,3 @@
-import type { PageServerLoad } from './$types';
-
 import readme from '../../../README.md?raw';
 
 import { markdownParser } from '$utils/markdown.js';
@@ -8,7 +6,7 @@ import { markdownParser } from '$utils/markdown.js';
 const trimmedReadme = readme.replace(/!\[.*]\(.*\)/, '');
 const parsedMarkdown = markdownParser(trimmedReadme);
 
-export const load: PageServerLoad = (() => {
+export const load = (() => {
     return {
         parsedMarkdown
     };
