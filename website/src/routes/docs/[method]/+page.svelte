@@ -20,8 +20,10 @@
     <h2>{name}</h2>
     {@html parsedMarkdown}
 
-    <h3>Example</h3>
-    <Playground {code}/>
+    {#if code}
+        <h3>Example</h3>
+        <Playground {code}/>
+    {/if}
 
     {#if path}
         <EditButton href={`https://github.com/Maggi64/moderndash/edit/main/package/src/${path}`}/>
