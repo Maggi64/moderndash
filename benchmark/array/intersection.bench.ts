@@ -36,8 +36,8 @@ describe('intersectionWith', () => {
     const array4 = randomStringArray(50);
 
     bench('moderndash', () => {
-        intersection((a, b) => a - b === 0, array1, array2);
-        intersection((a, b) => a.replace('a', '') === b.replace('a', 'b'), array3, array4);
+        intersection(array1, array2, (a, b) => a - b === 0);
+        intersection(array3, array4, (a, b) => a.replace('a', '') === b.replace('a', 'b'));
     });
 
     bench('lodash', () => {

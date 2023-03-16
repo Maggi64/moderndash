@@ -55,7 +55,7 @@ describe('difference compareFn', () => {
     const array2 = randomNumberArray(50, 0, 50);
     
     bench('moderndash', () => {
-        difference((a, b) => a - 1 === b, array1, array2);
+        difference(array1, array2, (a, b) => a - 1 === b);
     });
 
     bench('lodash', () => {
