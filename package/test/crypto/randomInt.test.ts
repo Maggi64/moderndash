@@ -39,7 +39,7 @@ describe('randomInt', () => {
     test('average of 1000000 random numbers should be close to the middle', () => {
         const min = 0;
         const max = 10;
-        const iterations = 1000;
+        const iterations = 10000;
         let sum = 0;
 
         for (let i = 0; i < iterations; i++) {

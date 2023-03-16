@@ -6,7 +6,7 @@ import { isPlainObject } from '@validate/isPlainObject.js';
  * Flattens an object into a single level object.
  * 
  * @example
- * const obj = { a: { b: 2, c: [{ d: 3 }, {d: 4 }] } };
+ * const obj = { a: { b: 2, c: [{ d: 3 }, { d: 4 }] } };
  * flatKeys(obj);
  * // => { 'a.b': 2, 'a.c[0].d': 3, 'a.c[1].d': 4 }
  * 

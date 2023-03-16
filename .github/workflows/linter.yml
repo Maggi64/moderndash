@@ -6,7 +6,6 @@ on:
       - '**.ts'
       - '**.svelte'
     
-
 jobs:
   eslint:
     runs-on: ubuntu-latest

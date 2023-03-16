@@ -14,7 +14,7 @@
     "prepublishOnly": "npm run test && npm run build && cp '../README.md' './README.md' && cp '../LICENSE' './LICENSE'",
     "postpublish": "rm './README.md' && rm './LICENSE'",
     "test-dev": "vitest --ui",
-    "test": "vitest run --coverage"
+    "test": "cross-env NODE_OPTIONS='--experimental-global-webcrypto' vitest run --coverage"
   },
   "repository": {
     "type": "git",
@@ -44,7 +44,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "dist"
@@ -52,6 +53,7 @@
   "homepage": "https://moderndash.io",
   "devDependencies": {
     "tsup": "6.6.3",
-    "ctix": "1.8.2"
+    "ctix": "1.8.2",
+    "cross-env": "7.0.3"
   }
 }
