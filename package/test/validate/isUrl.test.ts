@@ -1,5 +1,6 @@
-import { isUrl } from '@validate/isUrl.js';
 import { describe, test, expect } from 'vitest';
+
+import { isUrl } from '@validate/isUrl.js';
 
 
 describe('isUrl', () => {

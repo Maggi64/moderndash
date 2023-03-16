@@ -83,6 +83,7 @@
         'exclude': ['node_modules']
     };
 
+    // eslint-disable-next-line unicorn/prefer-top-level-await
     $: void updateCode(code);
 
     async function updateCode(code: string) {
