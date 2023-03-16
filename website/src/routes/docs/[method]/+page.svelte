@@ -1,9 +1,11 @@
 <script lang="ts">
+    import type { PageServerData } from './$types.js';
+
     import EditButton from '$components/EditButton.svelte';
     import Meta from '$components/Meta.svelte';
     import Playground from '$components/Playground.svelte';
     
-    export let data;
+    export let data: PageServerData;
 
     $: name = data.name;
     $: description = data.description;

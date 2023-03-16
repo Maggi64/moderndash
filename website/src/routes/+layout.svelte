@@ -1,11 +1,14 @@
 <script lang="ts">
     import '../app.css';
+
+    import type { LayoutData } from './$types.js';
+
     import icon from '$assets/moderndashIcon.svg';
     import Header from '$components/Header.svelte';
     import Sidebar from '$components/sidebar/Sidebar.svelte';
     import SidebarBtn from '$components/sidebar/SideBarBtn.svelte';
 
-    export let data;
+    export let data: LayoutData;
 </script>
 
 <svelte:head>

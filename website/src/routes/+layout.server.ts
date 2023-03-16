@@ -1,8 +1,10 @@
+import type { LayoutServerLoad } from './$types';
+
 import { group } from 'moderndash';
 
 import { docData } from '$utils/docData.js';
  
-export const load = (() => {
+export const load: LayoutServerLoad = (() => {
     const libaryElements = [...docData.functions, ...docData.classes, ...docData.typeAliases];
 
     const funcGroups = group(libaryElements, elem => elem.source?.path ?? 'Other');

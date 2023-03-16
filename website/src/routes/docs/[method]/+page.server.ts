@@ -1,9 +1,11 @@
+import type { PageServerLoad } from './$types.js';
+
 import { unique } from 'moderndash';
 
 import { docData } from '$utils/docData.js';
 import { markdownParser } from '$utils/markdown.js';
 
-export const load = (({ params }) => {
+export const load: PageServerLoad = (({ params }) => {
     const methodName = params.method;
     
     const methodDoc = docData.functions.find(func => func.name.toLowerCase() === methodName.toLowerCase());

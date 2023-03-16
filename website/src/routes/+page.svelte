@@ -1,8 +1,10 @@
 <script lang="ts">
+    import type { PageServerData } from './$types.js';
+
     import EditButton from '$components/EditButton.svelte';
     import Meta from '$components/Meta.svelte';
 
-    export let data;
+    export let data: PageServerData;
 </script>
 
 <Meta title="Documentation"/>
