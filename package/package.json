@@ -52,7 +52,7 @@
   ],
   "homepage": "https://moderndash.io",
   "devDependencies": {
-    "tsup": "6.6.3",
+    "tsup": "6.7.0",
     "ctix": "1.8.2",
     "cross-env": "7.0.3"
   }
