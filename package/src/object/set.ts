@@ -1,7 +1,7 @@
 import type { PlainObject } from '@type/PlainObject.js';
+import type { Call, Objects } from 'hotscript';
 
 import { isPlainObject } from '@validate/isPlainObject.js';
-import { Call, Objects, Pipe, Strings } from 'hotscript';
 
 const validPathRegex = /^(?:[^.[\]]+(?:\[\d+])*(?:\.|\[\d+]))+(?:[^.[\]]+(?:\[\d+])*)+$/;
 const pathSplitRegex = /\.|(?=\[)/g;
