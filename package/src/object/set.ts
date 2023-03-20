@@ -1,6 +1,7 @@
 import type { PlainObject } from '@type/PlainObject.js';
 
 import { isPlainObject } from '@validate/isPlainObject.js';
+import { Call, Objects, Pipe, Strings } from 'hotscript';
 
 const validPathRegex = /^(?:[^.[\]]+(?:\[\d+])*(?:\.|\[\d+]))+(?:[^.[\]]+(?:\[\d+])*)+$/;
 const pathSplitRegex = /\.|(?=\[)/g;
@@ -30,10 +31,14 @@ const matchBracketsRegex = /[[\]]/g;
  * @param path The path of the property to set.
  * @param value The value to set.
  * @template TObj The type of the object.
+ * @template TPath The type of the object path.
+ * @template TVal The type of the value to set.
  * @returns The modified object.
  */
 
-export function set(obj: PlainObject, path: string, value: unknown): PlainObject {
+export function set<TObj extends PlainObject, TPath extends Call<Objects.AllPaths, TObj>, TVal>(obj: TObj, path: TPath, value: TVal): Call<Objects.Update<TPath, TVal>, TObj>;
+export function set<TObj extends PlainObject>(obj: TObj, path: string, value: unknown): TObj;
+export function set<TObj extends PlainObject>(obj: TObj, path: string, value: unknown): TObj {
     if (!validPathRegex.test(path))
         throw new Error('Invalid path, look at the examples for the correct format.');
 
