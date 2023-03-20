@@ -38,5 +38,6 @@
         "@vitest/coverage-c8": "0.29.7",
         "@vitest/ui": "0.29.7",
         "vite": "4.2.1"
+        "hotscript": "1.0.10"
     }
 }
