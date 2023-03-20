@@ -1,5 +1,5 @@
 
-import type { Pipe, Tuples, Call } from 'hotscript';
+import type { Tuples, Call } from 'hotscript';
 
 /**
  * Calculates the sum of an array of numbers.
@@ -14,13 +14,8 @@ import type { Pipe, Tuples, Call } from 'hotscript';
 
 export function sum(numbers: number[]): number;
 export function sum<TNum extends readonly number[]>(numbers: TNum): Call<Tuples.Sum, TNum>;
-export function sum<TNum extends number[]>(numbers: TNum): Call<Tuples.Sum, TNum> | number {
-if (numbers.length === 0)
+export function sum<TNum extends readonly number[]>(numbers: TNum): Call<Tuples.Sum, TNum> | number {
+    if (numbers.length === 0)
         return NaN;
     return numbers.reduce((total, current) => total + current, 0);
 }
-
-const arr = [1, 2, 3] as const;
-
-const test = sum(arr);
-//     ^? 
