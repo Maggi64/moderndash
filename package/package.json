@@ -2,7 +2,7 @@
   "name": "moderndash",
   "version": "3.0.0",
   "type": "module",
-  "description": "A lodash inspired utility framework for ESM/Typescript/ESNext",
+  "description": "A Typescript-First utility library inspired by Lodash. Optimized for modern browsers.",
   "engines": {
     "node": ">=16.15",
     "npm": ">=8"
