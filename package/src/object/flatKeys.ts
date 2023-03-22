@@ -1,6 +1,10 @@
 import type { PlainObject } from '@type/PlainObject.js';
+import type { Call, Objects } from 'hotscript';
 
 import { isPlainObject } from '@validate/isPlainObject.js';
+
+type StringIfNever<Type> = [Type] extends [never] ? string : Type;
+type Paths<TObj> = StringIfNever<Call<Objects.AllPaths, TObj>>;
 
 /**
  * Flattens an object into a single level object.
@@ -15,7 +19,7 @@ import { isPlainObject } from '@validate/isPlainObject.js';
  * @returns A new object with flattened keys.
  */
 
-export function flatKeys<TObj extends PlainObject>(obj: TObj): Record<string, unknown> {
+export function flatKeys<TObj extends PlainObject>(obj: TObj): Record<Paths<TObj>, unknown> {
     const flatObject: Record<string, unknown> = {};
   
     for (const [key, value] of Object.entries(obj)) {
