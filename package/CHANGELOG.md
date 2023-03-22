@@ -1,5 +1,19 @@
 # moderndash
 
+## 3.1.0
+
+### Minor Changes
+
+- Updated to Typescript 5.0 ([`9a3bbe4`](https://github.com/Maggi64/moderndash/commit/9a3bbe4865b9ee131c77c9056d8dd46a9880b196))
+
+- `camelCase` | Improve performance with for loop ([`c6b32cd`](https://github.com/Maggi64/moderndash/commit/c6b32cddae336c7bd9ea11bb438a266887215892))
+
+### Patch Changes
+
+- Update package description ([`ee2c1bb`](https://github.com/Maggi64/moderndash/commit/ee2c1bb36aef481f3f42c960c498232155dc4837))
+
+- Add package.json export ([`4a5313f`](https://github.com/Maggi64/moderndash/commit/4a5313fd19d77a1b0f8d3221442fd0cd3e4d5655))
+
 ## 3.0.0
 
 ### Major Changes
