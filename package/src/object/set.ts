@@ -7,6 +7,11 @@ const validPathRegex = /^(?:[^.[\]]+(?:\[\d+])*(?:\.|\[\d+]))+(?:[^.[\]]+(?:\[\d
 const pathSplitRegex = /\.|(?=\[)/g;
 const matchBracketsRegex = /[[\]]/g;
 
+// eslint-disable-next-line @typescript-eslint/ban-types
+type AutoCompletePaths<TObj> = Call<Objects.AllPaths, TObj> | string & {};
+type AllPaths<TObj> = Call<Objects.AllPaths, TObj>;
+type UpdateObj<TObj extends PlainObject, TPath extends string, TVal> = Call<Objects.Update<TPath, TVal>, TObj>;
+
 /**
  * Sets the value at path of object. If a portion of path doesn’t exist, it’s created.
  * 
@@ -36,9 +41,9 @@ const matchBracketsRegex = /[[\]]/g;
  * @returns The modified object.
  */
 
-export function set<TObj extends PlainObject, TPath extends Call<Objects.AllPaths, TObj>, TVal>(obj: TObj, path: TPath, value: TVal): Call<Objects.Update<TPath, TVal>, TObj>;
-export function set<TObj extends PlainObject>(obj: TObj, path: string, value: unknown): TObj;
-export function set<TObj extends PlainObject>(obj: TObj, path: string, value: unknown): TObj {
+export function set<TObj extends PlainObject, TPath extends AllPaths<TObj>, TVal>(obj: TObj, path: TPath, value: TVal): UpdateObj<TObj, TPath, TVal>;
+export function set<TObj extends PlainObject>(obj: TObj, path: AutoCompletePaths<TObj>, value: unknown): TObj;
+export function set<TObj extends PlainObject>(obj: TObj, path: AutoCompletePaths<TObj>, value: unknown): TObj {
     if (!validPathRegex.test(path))
         throw new Error('Invalid path, look at the examples for the correct format.');
 
