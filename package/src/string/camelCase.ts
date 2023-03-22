@@ -20,13 +20,12 @@ export function camelCase(str: string): string {
     str = deburr(str);
     const words = splitWords(str);
 
-    // Capitalize the first letter of each word
-    const camelCase = words.map((word: string, index: number) => {
-        if (index === 0) {
-            return word.toLowerCase();
-        }
-        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    });
+    let camelCase = '';
+    for (const [index, word] of words.entries()) {
+        camelCase += index === 0 
+            ? word.toLowerCase() 
+            : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
 
-    return camelCase.join('');
+    return camelCase;
 }
