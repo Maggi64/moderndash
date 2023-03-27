@@ -1,11 +1,13 @@
-import { describe, test, expect } from 'vitest';
+import { describe, test, expect, expectTypeOf } from 'vitest';
 
 import { set } from '@object/set.js';
 
 describe('set', () => {
     test('set a value', () => {
         const obj = { a: { b: 2 } };
-        set(obj, 'a.c', 1);
+        const updatedObj = set(obj, 'a.c', 1);
+
+        expectTypeOf(updatedObj).toEqualTypeOf<{ a: { b: number; c: number } }>();
         expect(obj).toEqual({ a: { b: 2, c: 1 } });
     });
 
@@ -23,7 +25,8 @@ describe('set', () => {
 
     test('recognise number key', () => {
         const obj = { a: 1 };
-        set(obj, 'a.e0[0]', 1);
+        const updatedObj = set(obj, 'a[0]', 4);
+        expectTypeOf(updatedObj).toEqualTypeOf<{ a: number[] }>();
         expect(obj).toEqual({ a: { e0: [1] } });
     });
 
