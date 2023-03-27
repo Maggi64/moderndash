@@ -1,5 +1,11 @@
 # moderndash
 
+## 3.2.0
+
+### Minor Changes
+
+- Add `trim`, `trimStart` & `trimEnd` ([`17c786b`](https://github.com/Maggi64/moderndash/commit/17c786bab83bae01400af31644b150c02c310b04))
+
 ## 3.1.0
 
 ### Minor Changes
