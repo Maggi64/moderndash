@@ -8,4 +8,7 @@ export * from './pascalCase';
 export * from './snakeCase';
 export * from './splitWords';
 export * from './titleCase';
+export * from './trim';
+export * from './trimEnd';
+export * from './trimStart';
 export * from './unescapeHtml';
