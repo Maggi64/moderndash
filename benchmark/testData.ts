@@ -2,15 +2,17 @@ import { randomInt, randomString } from 'moderndash';
 
 type RandomObject = Record<string, object | number | string | boolean>;
 
+const fastRandomInt = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 export function randomObject(fieldCount: number, allowNested = true): RandomObject {
     const generatedObj = {} as RandomObject;
 
     for (let i = 0; i < fieldCount; i++) {
         let generatedObjField: object | number | string | boolean = '';
 
-        switch (randomInt(0, allowNested ? 5 : 4)) {
+        switch (fastRandomInt(0, allowNested ? 5 : 4)) {
             case 0:
-                generatedObjField = randomInt(0, 1000);
+                generatedObjField = fastRandomInt(0, 1000);
                 break;
 
             case 1:
@@ -22,10 +24,10 @@ export function randomObject(fieldCount: number, allowNested = true): RandomObje
                 break;
 
             case 3:
-                generatedObjField = randomString(randomInt(0, 4) + 4);
+                generatedObjField = randomString(fastRandomInt(0, 3) + 4);
                 break;
 
-            case 5:
+            case 4:
                 generatedObjField = randomObject(fieldCount, allowNested);
                 break;
         }
