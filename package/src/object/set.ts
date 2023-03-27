@@ -8,8 +8,7 @@ const pathSplitRegex = /\.|(?=\[)/g;
 const matchBracketsRegex = /[[\]]/g;
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-type AutoCompletePaths<TObj> = Call<Objects.AllPaths, TObj> | string & {};
-type AllPaths<TObj> = Call<Objects.AllPaths, TObj>;
+type Paths<TObj> = Call<Objects.AllPaths, TObj> | string & {};
 type UpdateObj<TObj extends PlainObject, TPath extends string, TVal> = Call<Objects.Update<TPath, TVal>, TObj>;
 
 /**
@@ -41,13 +40,11 @@ type UpdateObj<TObj extends PlainObject, TPath extends string, TVal> = Call<Obje
  * @returns The modified object.
  */
 
-export function set<TObj extends PlainObject, TPath extends AllPaths<TObj>, TVal>(obj: TObj, path: TPath, value: TVal): UpdateObj<TObj, TPath, TVal>;
-export function set<TObj extends PlainObject>(obj: TObj, path: AutoCompletePaths<TObj>, value: unknown): TObj;
-export function set<TObj extends PlainObject>(obj: TObj, path: AutoCompletePaths<TObj>, value: unknown): TObj {
+export function set<TObj extends PlainObject, TPath extends Paths<TObj>, TVal>(obj: TObj, path: TPath, value: TVal): UpdateObj<TObj, TPath, TVal> {
     if (!validPathRegex.test(path))
         throw new Error('Invalid path, look at the examples for the correct format.');
 
-    const pathParts = path.split(pathSplitRegex);
+    const pathParts = (path as string).split(pathSplitRegex);
     let currentObj: PlainObject = obj;
     for (let index = 0; index < pathParts.length; index++) {
         const key = pathParts[index].replace(matchBracketsRegex, '');
@@ -68,5 +65,5 @@ export function set<TObj extends PlainObject>(obj: TObj, path: AutoCompletePaths
         currentObj = currentObj[key] as PlainObject;
     }
 
-    return obj;
+    return obj as UpdateObj<TObj, TPath, TVal>;
 }
