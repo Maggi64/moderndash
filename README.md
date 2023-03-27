@@ -85,4 +85,6 @@ To [type-fest](https://github.com/sindresorhus/type-fest) for providing some val
 
 ## 🧰 Contribute
 
-Check the [contributing](https://github.com/Maggi64/moderndash/blob/main/CONTRIBUTING.md) section!
+- Star the repo if you like it
+
+- Check the [contributing](https://github.com/Maggi64/moderndash/blob/main/CONTRIBUTING.md) section!
