@@ -16,9 +16,6 @@
         "build:docs": "npm run build --workspace=package && npm run build:docs-data && npm run build --workspace=website",
         "benchmark": "npm run build --workspace=package && npm run bench --workspace=benchmark"
     },
-    "browserslist": [
-        ">2% and not dead"
-    ],
     "devDependencies": {
         "@svitejs/changesets-changelog-github-compact": "1.1.0",
         "@changesets/cli": "2.26.1",
