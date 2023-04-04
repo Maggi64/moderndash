@@ -90,6 +90,11 @@ describe("isEqual", () => {
         expect(isEqual(error1, error2)).toBe(false);
     });
 
+    test('array buffers', () => {
+        expect(isEqual(new ArrayBuffer(2), new ArrayBuffer(2))).toBe(true);
+        expect(isEqual(new ArrayBuffer(2), new ArrayBuffer(3))).toBe(false);
+    });
+
     test('typed arrays', () => {
         expect(isEqual(new Uint8Array([1, 2, 3]), new Uint8Array([1, 2, 3]))).toBe(true);
         expect(isEqual(new Uint8Array([1, 2, 3]), new Uint8Array([1, 2, 4]))).toBe(false);

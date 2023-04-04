@@ -29,19 +29,28 @@ export function isEqual(a: unknown, b: unknown): boolean {
     if (typeof a !== typeof b) return false;
 
     if (Array.isArray(a) && Array.isArray(b)) {
-        return isSameArray(a, b);
+        if (a.length !== b.length) return false;
+        return a.every((element, index) => isEqual(element, b[index]));
     }
 
-    if (a instanceof Date && b instanceof Date) {
+    if (a instanceof Date && b instanceof Date)
         return a.getTime() === b.getTime();
-    }
 
-    if (a instanceof RegExp && b instanceof RegExp) {
+    if (a instanceof RegExp && b instanceof RegExp)
         return a.toString() === b.toString();
-    }
 
-    if (isPlainObject(a) && isPlainObject(b)) {
+    if (isPlainObject(a) && isPlainObject(b))
         return isSameObject(a, b);
+
+    if (a instanceof ArrayBuffer && b instanceof ArrayBuffer)
+        return dataViewsAreEqual(new DataView(a), new DataView(b));
+
+    if (a instanceof DataView && b instanceof DataView)
+        return dataViewsAreEqual(a, b);
+
+    if(isTypedArray(a) && isTypedArray(b)) {
+        if (a.byteLength !== b.byteLength) return false;
+        return a.every((element, index) => isEqual(element, b[index]));
     }
 
     return false;
@@ -62,13 +71,17 @@ function isSameObject(a: PlainObject, b: PlainObject) {
     return true;
 }
 
-function isSameArray(a: unknown[], b: unknown[]) {
-    if (a.length !== b.length) return false;
-
-    // check if the values of each element in the arrays are equal
-    for (const [i, element] of a.entries()) {
-        if (!isEqual(element, b[i])) return false;
+// compare DataViews
+function dataViewsAreEqual(a: DataView, b: DataView) {
+    if (a.byteLength !== b.byteLength) return false;
+    for (let i=0; i < a.byteLength; i++) {
+      if (a.getUint8(i) !== b.getUint8(i)) return false;
     }
-
     return true;
+  }
+
+
+type TypedArray = Int8Array | Uint8Array | Uint8ClampedArray | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array;
+function isTypedArray (value: unknown): value is TypedArray {
+    return ArrayBuffer.isView(value) && !(value instanceof DataView);
 }
