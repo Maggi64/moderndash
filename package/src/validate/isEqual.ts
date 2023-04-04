@@ -6,10 +6,12 @@ import { isPlainObject } from "./isPlainObject.js";
 /**
  * Performs a deep comparison between two values to determine if they are
  * equivalent.
+ * 
+ * Supports: primitives, (typed) arrays, array buffers, objects, dates, regexes
  *
  * @example
- * var object = { 'a': 1 };
- * var other = { 'a': 1 };
+ * var object = { a: { b: 2 } };
+ * var other = { a: { b: 2 } };
  *
  * isEqual(object, other);
  * // => true
