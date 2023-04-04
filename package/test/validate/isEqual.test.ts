@@ -99,4 +99,9 @@ describe("isEqual", () => {
         expect(isEqual(new Uint8Array([1, 2, 3]), new Uint8Array([1, 2, 3]))).toBe(true);
         expect(isEqual(new Uint8Array([1, 2, 3]), new Uint8Array([1, 2, 4]))).toBe(false);
     });
+
+    test('data views', () => {
+        expect(isEqual(new DataView(new ArrayBuffer(2)), new DataView(new ArrayBuffer(2)))).toBe(true);
+        expect(isEqual(new DataView(new ArrayBuffer(2)), new DataView(new ArrayBuffer(3)))).toBe(false);
+    });
 });
