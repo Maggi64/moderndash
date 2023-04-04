@@ -18,6 +18,10 @@ describe('splitWords()', () => {
         expect(splitWords('hello_world-123')).toEqual(['hello', 'world', '123']);
     });
 
+    test('uppercase words are split correctly', () => {
+        expect(splitWords('HelloCRUELWorld')).toEqual(['Hello','CRUEL', 'World']);
+    });
+
     test('return an empty array for an empty string', () => {
         expect(splitWords('')).toEqual([]);
     });
