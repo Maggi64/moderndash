@@ -6,7 +6,7 @@ import { debounce } from "@function/debounce.js";
  * 
  * Look at {@link debounce} for the non-decorator version.
  * 
- * *Requires TypeScript >=5.0 or `experimentalDecorators` flag enabled.*
+ * *Requires the [experimentalDecorators](https://www.typescriptlang.org/tsconfig#experimentalDecorators) flag to be set.*
  * 
  * @example
  * ```typescript
