@@ -1,5 +1,19 @@
 # moderndash
 
+## 3.3.0
+
+### Minor Changes
+
+- `isEmpty` | Support typed arrays ([#87](https://github.com/Maggi64/moderndash/pull/87))
+
+- `isEqual` | Support typed arrays, buffers & DataViews ([#87](https://github.com/Maggi64/moderndash/pull/87))
+
+### Patch Changes
+
+- `Decorator Functions` | Add note that experimentalDecorators flag is required ([`8737a1a`](https://github.com/Maggi64/moderndash/commit/8737a1a54258eb91c248f9f2fb8c9f59381999b0))
+
+- `splitWords` | Add fallback for safari <16.4 compatibility ([#86](https://github.com/Maggi64/moderndash/pull/86))
+
 ## 3.2.0
 
 ### Minor Changes
