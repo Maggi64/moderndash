@@ -1,5 +1,5 @@
 /* eslint-disable no-await-in-loop */
-import { sleep } from '@promise/sleep.js';
+import { sleep } from "@promise/sleep.js";
 
 /**
  * Retry a function until it succeeds or the maximum number of retries is reached.
@@ -62,5 +62,5 @@ export async function retry<TRes>(
         }
     /* c8 ignore next 2 */
     }
-    throw new Error('Retry terminated without success, this should never happen');
+    throw new Error("Retry terminated without success, this should never happen");
 }

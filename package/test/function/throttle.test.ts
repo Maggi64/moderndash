@@ -1,9 +1,9 @@
-import { beforeAll, beforeEach, describe, expect, test, vi } from 'vitest';
+import { beforeAll, beforeEach, describe, expect, test, vi } from "vitest";
 
-import { decThrottle } from '@decorator/decThrottle.js';
-import { throttle } from '@function/throttle';
+import { decThrottle } from "@decorator/decThrottle.js";
+import { throttle } from "@function/throttle";
 
-describe('throttle', () => {
+describe("throttle", () => {
     const callback = vi.fn();
 
     beforeAll(() => {
@@ -15,7 +15,7 @@ describe('throttle', () => {
     });
 
 
-    test('only calls the function once', () => {
+    test("only calls the function once", () => {
 
         
         const throttled = throttle(callback, 100);
@@ -34,7 +34,7 @@ describe('throttle', () => {
         expect(callback).toHaveBeenCalledTimes(2);
     });
 
-    test('decorator', () => {
+    test("decorator", () => {
         class TestClass {
             @decThrottle(100)
             testMethod() {

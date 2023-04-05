@@ -16,10 +16,10 @@
 export function randomInt(min: number, max: number): number {
     // Taken from https://stackoverflow.com/a/41452318
     if (!Number.isInteger(min) || !Number.isInteger(max))
-        throw new TypeError('min and max must be integers');
+        throw new TypeError("min and max must be integers");
 
     if (min >= max) 
-        throw new Error('max must be greater than min');
+        throw new Error("max must be greater than min");
 
     const range = max - min + 1;
     const randomBytes = Math.ceil(Math.log2(range) / 8);

@@ -19,6 +19,6 @@ type BuildArrayMinLength<
     TElem,
     TMinLength extends number,
     Current extends TElem[]
-> = Current['length'] extends TMinLength
+> = Current["length"] extends TMinLength
     ? [...Current, ...TElem[]]
     : BuildArrayMinLength<TElem, TMinLength, [...Current, TElem]>;

@@ -1,12 +1,12 @@
 <script lang="ts">
-    import '../app.css';
+    import "../app.css";
 
-    import type { LayoutData } from './$types.js';
+    import type { LayoutData } from "./$types.js";
 
-    import icon from '$assets/moderndashIcon.svg';
-    import Header from '$components/Header.svelte';
-    import Sidebar from '$components/sidebar/Sidebar.svelte';
-    import SidebarBtn from '$components/sidebar/SideBarBtn.svelte';
+    import icon from "$assets/moderndashIcon.svg";
+    import Header from "$components/Header.svelte";
+    import Sidebar from "$components/sidebar/Sidebar.svelte";
+    import SidebarBtn from "$components/sidebar/SideBarBtn.svelte";
 
     export let data: LayoutData;
 </script>

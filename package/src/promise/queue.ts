@@ -89,7 +89,7 @@ export class Queue {
     /** Removes all the tasks from the queue */
     clear() {
         for (const queueElement of this.queue) {
-            queueElement.reject(new Error('Queue cleared'));
+            queueElement.reject(new Error("Queue cleared"));
         }
         this.queue = [];
     }

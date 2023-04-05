@@ -1,19 +1,19 @@
 <script lang="ts">
-    import { faGithub } from '@fortawesome/free-brands-svg-icons';
-    import Fa from 'svelte-fa';
+    import { faGithub } from "@fortawesome/free-brands-svg-icons";
+    import Fa from "svelte-fa";
 
-    import icon from '$assets/moderndashIcon.svg';
-    import logo from '$assets/moderndashLogo.svg';
-    import { searchTerm } from '$utils/searchStore.js';
+    import icon from "$assets/moderndashIcon.svg";
+    import logo from "$assets/moderndashLogo.svg";
+    import { searchTerm } from "$utils/searchStore.js";
 
 
     let searchInputElement: HTMLInputElement;
 
     const handleKeyShortCuts = (event: KeyboardEvent) => {
-        if (event.key === 'Escape') {
-            searchTerm.set('');
+        if (event.key === "Escape") {
+            searchTerm.set("");
         }
-        if (event.ctrlKey && event.key === 'k') {
+        if (event.ctrlKey && event.key === "k") {
             event.preventDefault();
             searchInputElement.focus();
         }

@@ -1,7 +1,7 @@
-import type { PlainObject } from '@type/PlainObject.js';
-import type { Call, Objects } from 'hotscript';
+import type { PlainObject } from "@type/PlainObject.js";
+import type { Call, Objects } from "hotscript";
 
-import { isPlainObject } from '@validate/isPlainObject.js';
+import { isPlainObject } from "@validate/isPlainObject.js";
 
 type StringIfNever<Type> = [Type] extends [never] ? string : Type;
 type Paths<TObj> = StringIfNever<Call<Objects.AllPaths, TObj>>;

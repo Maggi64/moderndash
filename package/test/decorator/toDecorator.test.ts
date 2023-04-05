@@ -1,9 +1,9 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test } from "vitest";
 
-import { toDecorator } from '@decorator/toDecorator.js';
+import { toDecorator } from "@decorator/toDecorator.js";
 
-describe('toDecorator', () => {
-    test('decorator', () => {
+describe("toDecorator", () => {
+    test("decorator", () => {
         function addToReturn(func: (...args: unknown[]) => number, number: number) {
             return function (this: unknown) {
                 const orginalReturn = func.apply(this);
@@ -14,7 +14,7 @@ describe('toDecorator', () => {
         const adder = toDecorator(addToReturn);
 
         class TestClass {
-            private count = '5';
+            private count = "5";
 
             @adder(6)
             testMethod() {

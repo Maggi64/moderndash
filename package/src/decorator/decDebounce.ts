@@ -1,5 +1,5 @@
-import { toDecorator } from '@decorator/toDecorator.js';
-import { debounce } from '@function/debounce.js';
+import { toDecorator } from "@decorator/toDecorator.js";
+import { debounce } from "@function/debounce.js";
 
 /**
  * Debouces the decorated function. Only calling it after a specified amount of time has passed without any new calls.

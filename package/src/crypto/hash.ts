@@ -1,6 +1,6 @@
-import type { Jsonifiable } from '@type/Jsonifiable.js';
+import type { Jsonifiable } from "@type/Jsonifiable.js";
 
-type SupportedAlgorithms = 'SHA-256' | 'SHA-384' | 'SHA-512';
+type SupportedAlgorithms = "SHA-256" | "SHA-384" | "SHA-512";
 
 let textEncoder: TextEncoder | undefined;
 
@@ -27,15 +27,15 @@ let textEncoder: TextEncoder | undefined;
  * @throws {DOMException} If the specified algorithm is not supported by the Web Crypto API.
  */
 
-export async function hash(data: Jsonifiable, algorithm: SupportedAlgorithms = 'SHA-256'): Promise<string> {
+export async function hash(data: Jsonifiable, algorithm: SupportedAlgorithms = "SHA-256"): Promise<string> {
     textEncoder ??= new TextEncoder();
 
-    const dataBuffer = typeof data === 'string'
+    const dataBuffer = typeof data === "string"
         ? textEncoder.encode(data) 
         : textEncoder.encode(JSON.stringify(data));
     
     const hashBuffer = await crypto.subtle.digest(algorithm, dataBuffer);
     const hashArray = [...new Uint8Array(hashBuffer)];
-    const hexValues = hashArray.map(b => b.toString(16).padStart(2, '0'));
-    return hexValues.join('');
+    const hexValues = hashArray.map(b => b.toString(16).padStart(2, "0"));
+    return hexValues.join("");
 }

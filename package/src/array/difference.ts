@@ -1,7 +1,7 @@
-import type { CompareFunction } from '@helpers/ArrayTypeUtils.js';
-import type { ArrayMinLength } from '@type/ArrayMinLength.js';
+import type { CompareFunction } from "@helpers/ArrayTypeUtils.js";
+import type { ArrayMinLength } from "@type/ArrayMinLength.js";
 
-import { fastArrayFlat } from '@helpers/fastArrayFlat.js';
+import { fastArrayFlat } from "@helpers/fastArrayFlat.js";
 
 /**
  * Create a new array with values from the first array that are not present in the other arrays.
@@ -32,7 +32,7 @@ import { fastArrayFlat } from '@helpers/fastArrayFlat.js';
 export function difference<TElem>(...arraysOrCompareFn: ArrayMinLength<TElem[], 2>): TElem[];
 export function difference<TArrays extends ArrayMinLength<unknown[], 2>>(...arraysOrCompareFn: [...TArrays, CompareFunction<TArrays>]): TArrays[0];
 export function difference<TArrays extends ArrayMinLength<unknown[], 2>, TElem>(...arraysOrCompareFn: ArrayMinLength<TElem[], 2> | [...TArrays, CompareFunction<TArrays>]): TArrays[0] {
-    const compareFnProvided = typeof arraysOrCompareFn.at(-1) === 'function';
+    const compareFnProvided = typeof arraysOrCompareFn.at(-1) === "function";
     const compareFunction = compareFnProvided && arraysOrCompareFn.pop() as CompareFunction<TArrays>;
 
     const arrays = arraysOrCompareFn as TArrays;

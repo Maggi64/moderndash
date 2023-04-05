@@ -1,5 +1,5 @@
 
-import type { Tuples, Call } from 'hotscript';
+import type { Tuples, Call } from "hotscript";
 
 /**
  * Calculates the sum of an array of numbers.

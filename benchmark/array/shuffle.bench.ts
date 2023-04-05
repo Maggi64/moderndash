@@ -1,27 +1,27 @@
 
 
-import { shuffle as lodashVersion } from 'lodash-es';
-import { shuffle } from 'moderndash';
-import { shuffle as radashVersion } from 'radash';
-import { bench, describe } from 'vitest';
+import { shuffle as lodashVersion } from "lodash-es";
+import { shuffle } from "moderndash";
+import { shuffle as radashVersion } from "radash";
+import { bench, describe } from "vitest";
 
-import { randomNumberArray, randomStringArray } from '../testData.js';
+import { randomNumberArray, randomStringArray } from "../testData.js";
 
-describe('shuffle', () => {
+describe("shuffle", () => {
     const strings = randomStringArray(200);
     const numbers = randomNumberArray(200);
 
-    bench('moderndash', () => {
+    bench("moderndash", () => {
         shuffle(strings);
         shuffle(numbers);
     });
 
-    bench('lodash', () => {
+    bench("lodash", () => {
         lodashVersion(strings);
         lodashVersion(numbers);
     });
 
-    bench('radash', () => {
+    bench("radash", () => {
         radashVersion(strings);
         radashVersion(numbers);
     });

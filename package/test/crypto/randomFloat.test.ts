@@ -1,13 +1,13 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test } from "vitest";
 
-import { randomFloat } from '@crypto/randomFloat.js';
+import { randomFloat } from "@crypto/randomFloat.js";
 
-describe('randomFloat', () => {
-    test('throw an error if min is greater than max', () => {
+describe("randomFloat", () => {
+    test("throw an error if min is greater than max", () => {
         expect(() => randomFloat(10, 1)).toThrowError();
     });
 
-    test('return a number between min and max, including min and max', () => {
+    test("return a number between min and max, including min and max", () => {
         const min = 1;
         const max = 10;
 
@@ -18,7 +18,7 @@ describe('randomFloat', () => {
         } 
     });
 
-    test('return a float', () => {
+    test("return a float", () => {
         const min = 1.1;
         const max = 10.1;
 
@@ -30,7 +30,7 @@ describe('randomFloat', () => {
         } 
     });
 
-    test('can return the upper and lower bounds', () => {
+    test("can return the upper and lower bounds", () => {
         const min = 0;
         const max = Number.MIN_VALUE;
         
@@ -44,7 +44,7 @@ describe('randomFloat', () => {
         expect(results).toContain(max);
     });
 
-    test('average of 100000 random numbers should be close to the middle', () => {
+    test("average of 100000 random numbers should be close to the middle", () => {
         const min = 0;
         const max = 1;
         const iterations = 100000;

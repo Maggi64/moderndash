@@ -15,5 +15,5 @@ const accentControlRegex = /[\u0300-\u036F]/g;
  */
 
 export function deburr(str: string): string {
-    return str.normalize('NFD').replace(accentControlRegex, '');
+    return str.normalize("NFD").replace(accentControlRegex, "");
 }

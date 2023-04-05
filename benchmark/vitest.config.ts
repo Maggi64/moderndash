@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
 
 
 export default defineConfig({
     test: {
         deps: {
-            inline: ['lodash-es']
+            inline: ["lodash-es"]
         }
     }   
 });

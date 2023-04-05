@@ -12,5 +12,5 @@ const escapleCharsRegex = /[$()*+.?[\\\]^{|}]/g;
  */
 
 export function escapeRegExp(str: string): string {
-    return str.replace(escapleCharsRegex, '\\$&');
+    return str.replace(escapleCharsRegex, "\\$&");
 }

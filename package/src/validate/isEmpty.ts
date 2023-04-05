@@ -28,7 +28,7 @@ export function isEmpty(value: string | object | null | undefined): boolean {
         return true;
     }
 
-    if (typeof value === 'string' || Array.isArray(value)) {
+    if (typeof value === "string" || Array.isArray(value)) {
         return value.length === 0;
     }
 
@@ -36,7 +36,7 @@ export function isEmpty(value: string | object | null | undefined): boolean {
         return value.size === 0;
     }
 
-    if (typeof value === 'object') {
+    if (typeof value === "object") {
         return Object.keys(value).length === 0;
     }
 

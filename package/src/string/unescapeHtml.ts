@@ -1,10 +1,10 @@
 const htmlEntitiesRegex = /&(?:amp|lt|gt|quot|#39);/g;
 const entityMap = new Map([
-    ['&amp;', '&'],
-    ['&lt;', '<'],
-    ['&gt;', '>'],
-    ['&quot;', '"'],
-    ['&#39;', '\'']
+    ["&amp;", "&"],
+    ["&lt;", "<"],
+    ["&gt;", ">"],
+    ["&quot;", '"'],
+    ["&#39;", "'"]
 ]);
 
 /**

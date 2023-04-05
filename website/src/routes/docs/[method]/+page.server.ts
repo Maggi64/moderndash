@@ -1,9 +1,9 @@
-import type { PageServerLoad } from './$types.js';
+import type { PageServerLoad } from "./$types.js";
 
-import { unique } from 'moderndash';
+import { unique } from "moderndash";
 
-import { docData } from '$utils/docData.js';
-import { markdownParser } from '$utils/markdown.js';
+import { docData } from "$utils/docData.js";
+import { markdownParser } from "$utils/markdown.js";
 
 export const load: PageServerLoad = (({ params }) => {
     const methodName = params.method;
@@ -17,10 +17,10 @@ export const load: PageServerLoad = (({ params }) => {
     
     if (!signature) return { status: 404 };
 
-    const codeMarkdown = signature.comment.blockTags.find(tag => tag.name === 'example')?.text;
+    const codeMarkdown = signature.comment.blockTags.find(tag => tag.name === "example")?.text;
     const code = getEmbedCode(signature.name, codeMarkdown);
 
-    const description = signature.comment.description ?? 'No description';
+    const description = signature.comment.description ?? "No description";
     const parsedMarkdown = markdownParser(description).replace(/{@link ([^}]+)}/g, '<a href="/docs/$1">$1</a>');
 
     return {
@@ -28,16 +28,16 @@ export const load: PageServerLoad = (({ params }) => {
         description,
         code,
         parsedMarkdown,
-        path: fileSource && (fileSource.path + '/' + fileSource.file)
+        path: fileSource && (fileSource.path + "/" + fileSource.file)
     };
 });
 
 function getEmbedCode(functionName: string, codetext: string | undefined) {
-    if (!codetext) return '';
-    let code = codetext.replace(/```(ts|typescript)\n/, '').replace('```', '');
+    if (!codetext) return "";
+    let code = codetext.replace(/```(ts|typescript)\n/, "").replace("```", "");
     
     // Deals with Top Level Await Bug in Stackblitz
-    if (code.includes('await')) {
+    if (code.includes("await")) {
         code = wrapInAsyncFunc(code);
     }
 
@@ -46,24 +46,24 @@ function getEmbedCode(functionName: string, codetext: string | undefined) {
 
 
 function generateImportString(functionName: string, code: string) {
-    const codeWithOutComments = code.replace(/\/\*[\S\s]*?\*\/|(?<=[^:])\/\/.*|^\/\/.*/g, '');
+    const codeWithOutComments = code.replace(/\/\*[\S\s]*?\*\/|(?<=[^:])\/\/.*|^\/\/.*/g, "");
     const foundFunctionNames = codeWithOutComments.match(
-        new RegExp(`(?<!\\.)\\b(${docData.functions.map(func => func.name).join('|')})\\b`, 'g')
+        new RegExp(`(?<!\\.)\\b(${docData.functions.map(func => func.name).join("|")})\\b`, "g")
     );
 
     const functionsToImport = unique([functionName, ...(foundFunctionNames ?? [])]);
-    return `import { ${functionsToImport.join(', ')} } from 'moderndash';\n\n`;
+    return `import { ${functionsToImport.join(", ")} } from 'moderndash';\n\n`;
 }
 
 function wrapInAsyncFunc(code: string) {
-    let lines = code.split('\n');
+    let lines = code.split("\n");
     lines = lines.map((line, index) => {
         if (index < lines.length - 1) {
-            return '  ' + line;
+            return "  " + line;
         }
         return line;
     });
-    code = lines.join('\n');
+    code = lines.join("\n");
     code = `(async () => {\n${code}})()`;
     return code;
 }

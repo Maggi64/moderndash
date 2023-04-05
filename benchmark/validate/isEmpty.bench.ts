@@ -1,25 +1,25 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { isEmpty as lodashVersion } from 'lodash-es';
-import { isEmpty } from 'moderndash';
-import { isEmpty as radashVersion } from 'radash';
-import { bench, describe } from 'vitest';
+import { isEmpty as lodashVersion } from "lodash-es";
+import { isEmpty } from "moderndash";
+import { isEmpty as radashVersion } from "radash";
+import { bench, describe } from "vitest";
 
-import { randomObject } from '../testData.js';
+import { randomObject } from "../testData.js";
 
 
-describe('isEmpty', () => {
-    const object = { 'a': 1, 'b': 2, 'c': 3, 'd': [1, 2, 3] };
+describe("isEmpty", () => {
+    const object = { "a": 1, "b": 2, "c": 3, "d": [1, 2, 3] };
     const emptyObj = {};
     const set = new Set([1, 2, 3, 4]);
     const emtpySet = new Set();
     
-    const map = new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4]]);
+    const map = new Map([["a", 1], ["b", 2], ["c", 3], ["d", 4]]);
     const emptyMap = new Map();
 
     const bigObject = randomObject(6, true);
 
 
-    bench('moderndash', () => {
+    bench("moderndash", () => {
         isEmpty(object);
         isEmpty(emptyObj);
         isEmpty(set);
@@ -29,7 +29,7 @@ describe('isEmpty', () => {
         isEmpty(bigObject);
     });
 
-    bench('lodash', () => {
+    bench("lodash", () => {
         lodashVersion(object);
         lodashVersion(emptyObj);
         lodashVersion(set);
@@ -39,7 +39,7 @@ describe('isEmpty', () => {
         lodashVersion(bigObject);
     });
 
-    bench('radash', () => {
+    bench("radash", () => {
         radashVersion(object);
         radashVersion(emptyObj);
         radashVersion(set);

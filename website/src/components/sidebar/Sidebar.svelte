@@ -1,12 +1,12 @@
 <script lang="ts">
-    import type { LayoutData } from '../../routes/$types.js';
+    import type { LayoutData } from "../../routes/$types.js";
 
-    import Catergory from './Catergory.svelte';
+    import Catergory from "./Catergory.svelte";
 
-    import { goto } from '$app/navigation';
-    import { searchTerm } from '$utils/searchStore.js';
+    import { goto } from "$app/navigation";
+    import { searchTerm } from "$utils/searchStore.js";
 
-    export let sidebarEntries: LayoutData['sidebarEntries'];
+    export let sidebarEntries: LayoutData["sidebarEntries"];
 
     $: filteredEntries = sidebarEntries.map(({ categoryName, entries }) => {
         const matchingEntries = categoryName.includes($searchTerm) 

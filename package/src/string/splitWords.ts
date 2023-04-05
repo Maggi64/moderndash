@@ -1,12 +1,12 @@
 // Split non-alphanumeric characters with spaces and deal with camel/PascalCase
 const splitWordsRegex = new RegExp(
-    '[^\\dA-Za-z]' +  // match any character that is not a letter or a digit
-    '|' +                    // or
-    '(?<=[a-z])' +           // lookbehind for a lowercase letter
-    '(?=[A-Z])' +            // lookahead for an uppercase letter
-    '|' +                    // or
-    '(?<=[A-Z])' +           // lookbehind for an uppercase letter
-    '(?=[A-Z][a-z])'         // lookahead for an uppercase letter followed by a lowercase letter
+    "[^\\dA-Za-z]" +  // match any character that is not a letter or a digit
+    "|" +                    // or
+    "(?<=[a-z])" +           // lookbehind for a lowercase letter
+    "(?=[A-Z])" +            // lookahead for an uppercase letter
+    "|" +                    // or
+    "(?<=[A-Z])" +           // lookbehind for an uppercase letter
+    "(?=[A-Z][a-z])"         // lookahead for an uppercase letter followed by a lowercase letter
 );
 
 /**
