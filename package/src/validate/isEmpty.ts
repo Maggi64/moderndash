@@ -1,6 +1,8 @@
+
 /**
- * Checks if `value` is an empty object, collection, map, or set.
- *
+ * Checks if `value` is empty.
+ * 
+ * Supports: strings, arrays, objects, maps, sets and typed arrays.
  * @example
  * isEmpty(null)
  * // => true
@@ -20,25 +22,24 @@
  * isEmpty({ 'a': 1 })
  * // => false
  * @param value The value to check.
- * @returns Returns `true` if given vlaue is empty, else `false`.
+ * @returns Returns `true` if `value` is empty, else `false`.
  */
 
 export function isEmpty(value: string | object | null | undefined): boolean {
-    if (value === null || value === undefined) {
+    if (value === null || value === undefined)
         return true;
-    }
 
-    if (typeof value === "string" || Array.isArray(value)) {
+    if (typeof value === "string" || Array.isArray(value))
         return value.length === 0;
-    }
 
-    if (value instanceof Map || value instanceof Set) {
+    if (value instanceof Map || value instanceof Set)
         return value.size === 0;
-    }
 
-    if (typeof value === "object") {
+    if (ArrayBuffer.isView(value))
+        return value.byteLength === 0;
+
+    if (typeof value === "object")
         return Object.keys(value).length === 0;
-    }
 
     return false;
 }
