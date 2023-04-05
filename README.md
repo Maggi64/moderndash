@@ -58,9 +58,9 @@ npm install moderndash
 **NodeJS**: >=16.15 | **Typescript**: >=4.8
 
 > `NodeJS 16-18`: Enable the [experimental-global-webcrypto](https://nodejs.dev/en/api/v16/cli#--experimental-global-webcrypto) flag to use crypto functions.  
-> `TypeScript 4.8-4.9`: Enable the [experimentalDecorators](https://www.typescriptlang.org/tsconfig#experimentalDecorators) flag to use decorator functions.
+*Works out of the box with NodeJS 19+*
 
-Works out of the box with `NodeJS 19+` & `Typescript 5+`
+> `TypeScript`: Enable the [experimentalDecorators](https://www.typescriptlang.org/tsconfig#experimentalDecorators) flag to use decorator functions.
 
 ## 🚀 Performance
 
@@ -85,4 +85,6 @@ To [type-fest](https://github.com/sindresorhus/type-fest) for providing some val
 
 ## 🧰 Contribute
 
-Check the [contribute](https://github.com/Maggi64/moderndash/blob/main/CONTRIBUTE.md) section!
+- Star the repo if you like it
+
+- Check the [contributing](https://github.com/Maggi64/moderndash/blob/main/CONTRIBUTING.md) section!
