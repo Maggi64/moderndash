@@ -1,9 +1,9 @@
-import { test, describe, expect, vi, beforeEach } from 'vitest';
+import { test, describe, expect, vi, beforeEach } from "vitest";
 
-import { decMemoize } from '@decorator/decMemoize.js';
-import { memoize } from '@function/memoize';
+import { decMemoize } from "@decorator/decMemoize.js";
+import { memoize } from "@function/memoize";
 
-describe('memoize', () => {
+describe("memoize", () => {
     const testFn = vi.fn((a: number, b: number) => a + b);
 
     beforeEach(() => {
@@ -11,7 +11,7 @@ describe('memoize', () => {
     });
 
 
-    test('memoize a function', () => {
+    test("memoize a function", () => {
         const memoizedFunc = memoize(testFn);
 
         expect(memoizedFunc(1, 2)).to.equal(3);
@@ -19,7 +19,7 @@ describe('memoize', () => {
         expect(testFn).toHaveBeenCalledOnce();
     });
 
-    test('return different results for different arguments', () => {
+    test("return different results for different arguments", () => {
         const memoizedFunc = memoize(testFn);
 
         expect(memoizedFunc(1, 2)).to.equal(3);
@@ -27,12 +27,12 @@ describe('memoize', () => {
         expect(testFn).toHaveBeenCalledTimes(2);
     });
 
-    test('expose a cache property', () => {
+    test("expose a cache property", () => {
         const memoizedFunc = memoize(testFn);
         expect(memoizedFunc.cache).to.be.an.instanceof(Map);
     });
 
-    test('use a custom resolver', () => {
+    test("use a custom resolver", () => {
         const memoizedFunc = memoize(testFn, { resolver: (a: number, b: number) => (a + b).toString() });
 
         expect(memoizedFunc(1, 2)).to.equal(3);
@@ -40,7 +40,7 @@ describe('memoize', () => {
         expect(testFn).toHaveBeenCalledOnce();
     });
 
-    test('use a custom ttl', () => {
+    test("use a custom ttl", () => {
         vi.useFakeTimers();
         const memoizedFunc = memoize(testFn, { ttl: 1000 });
 
@@ -57,7 +57,7 @@ describe('memoize', () => {
         expect(testFn).toHaveBeenCalledTimes(2);
     });
 
-    test('decorator', () => {
+    test("decorator", () => {
         class TestClass {
             @decMemoize({ ttl: 1000 })
             testMethod(a: number, b: number) {

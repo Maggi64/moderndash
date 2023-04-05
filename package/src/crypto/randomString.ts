@@ -1,6 +1,6 @@
-import { randomInt } from './randomInt.js';
+import { randomInt } from "./randomInt.js";
 
-const DEFAULT_CHARSET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+const DEFAULT_CHARSET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 /**
  * Generates a random string of the specified length.
@@ -20,9 +20,9 @@ const DEFAULT_CHARSET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012
  */
 
 export function randomString(length: number, charSet = DEFAULT_CHARSET): string {
-    if (charSet.length <= 0) return '';
+    if (charSet.length <= 0) return "";
 
-    let result = '';
+    let result = "";
     for (let index = 0; index < length; index++) {
         const randomIndex = randomInt(0, charSet.length - 1);
         result += charSet[randomIndex];

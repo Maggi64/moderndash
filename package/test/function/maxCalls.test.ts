@@ -1,10 +1,10 @@
-import { describe, expect, test, vi } from 'vitest';
+import { describe, expect, test, vi } from "vitest";
 
-import { decMaxCalls } from '@decorator/decMaxCalls.js';
-import { maxCalls } from '@function/maxCalls';
+import { decMaxCalls } from "@decorator/decMaxCalls.js";
+import { maxCalls } from "@function/maxCalls";
 
-describe('maxCalls', () => {
-    test('only calls 3 times', () => {
+describe("maxCalls", () => {
+    test("only calls 3 times", () => {
         const testFn = vi.fn();
         const beforeFn = maxCalls(testFn, 3);
 
@@ -18,7 +18,7 @@ describe('maxCalls', () => {
         expect(testFn).toHaveBeenCalledTimes(3);
     });
 
-    test('decorator', () => {
+    test("decorator", () => {
         class TestClass {
             private count = 0;
             @decMaxCalls(2)

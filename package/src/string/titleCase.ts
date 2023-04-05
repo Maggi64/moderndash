@@ -1,6 +1,6 @@
-import { splitWords } from '@string/splitWords';
+import { splitWords } from "@string/splitWords";
 
-import { deburr } from './deburr.js';
+import { deburr } from "./deburr.js";
 
 /**
  * Converts a string to Title Case.
@@ -21,9 +21,9 @@ import { deburr } from './deburr.js';
 export function titleCase(str: string): string {
     str = deburr(str);
     const words = splitWords(str);
-    let titleCase = '';
+    let titleCase = "";
     for (const word of words) {
-        titleCase += word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() + ' ';
+        titleCase += word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() + " ";
     }
     return titleCase.trimEnd();
 }

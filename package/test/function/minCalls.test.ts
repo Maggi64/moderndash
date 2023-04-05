@@ -1,10 +1,10 @@
-import { describe, test, vi, expect } from 'vitest';
+import { describe, test, vi, expect } from "vitest";
 
-import { decMinCalls } from '@decorator/decMinCalls.js';
-import { minCalls } from '@function/minCalls';
+import { decMinCalls } from "@decorator/decMinCalls.js";
+import { minCalls } from "@function/minCalls";
 
-describe('after', () => {
-    test('after function works correctly', () => {
+describe("after", () => {
+    test("after function works correctly", () => {
         const testFn = vi.fn();
         const afterFn = minCalls(testFn, 2);
 
@@ -18,7 +18,7 @@ describe('after', () => {
         expect(testFn).toHaveBeenCalledTimes(2);
     });
 
-    test('decorator', () => {
+    test("decorator", () => {
         class TestClass {
             @decMinCalls(2)
             testMethod() {

@@ -1,9 +1,9 @@
 <script lang="ts">
-    import type { VM } from '@stackblitz/sdk';
+    import type { VM } from "@stackblitz/sdk";
 
-    import stackblitz from '@stackblitz/sdk';
-    import { sleep } from 'moderndash';
-    import { onDestroy, onMount } from 'svelte';
+    import stackblitz from "@stackblitz/sdk";
+    import { sleep } from "moderndash";
+    import { onDestroy, onMount } from "svelte";
 
     export let code: string;
 
@@ -14,29 +14,29 @@
 
     onDestroy(() => {
         if (stackblitzProject && embedElement)
-            embedElement.innerHTML = '';
+            embedElement.innerHTML = "";
     });
 
     async function createEmbed() {
         if (!embedElement || stackblitzProject) return;
         // targetElement gets replaced with the embed
-        const targetElement = document.createElement('div');
+        const targetElement = document.createElement("div");
         embedElement.append(targetElement);
 
         stackblitzProject = await stackblitz.embedProject(
             targetElement,
             {
-                title: 'Node Starter',
-                description: 'A basic Node.js project',
-                template: 'typescript',
+                title: "Node Starter",
+                description: "A basic Node.js project",
+                template: "typescript",
                 dependencies: {
-                    'moderndash': 'latest'
+                    "moderndash": "latest"
                 },
                 files: {
-                    'index.html': '',
-                    'index.ts': code,
-                    '.vscode/settings.json': JSON.stringify(vscodeSettings),
-                    'tsconfig.json': JSON.stringify(tsConfig)
+                    "index.html": "",
+                    "index.ts": code,
+                    ".vscode/settings.json": JSON.stringify(vscodeSettings),
+                    "tsconfig.json": JSON.stringify(tsConfig)
                 },
                 settings: {
                     compile: {
@@ -45,11 +45,11 @@
                 }
             },
             {
-                view: 'default',
+                view: "default",
                 hideNavigation: true,
                 hideExplorer: true,
                 showSidebar: false,
-                openFile: 'index.ts',
+                openFile: "index.ts",
                 devToolsHeight: 100,
                 height: 500
             }
@@ -58,29 +58,29 @@
         // Hack to get the jsconfig to load correctly
         await sleep(2000);
         await stackblitzProject.applyFsDiff({
-            create: { 'tsconfig.json': JSON.stringify(tsConfig) },
+            create: { "tsconfig.json": JSON.stringify(tsConfig) },
             destroy: []
         });
     }
 
     const vscodeSettings = {
-        'editor.fontSize': 13,
-        'editor.lineNumbers': 'off',
-        'editor.parameterHints.enabled': true,
-        'editor.inlayHints.enabled': 'on',
-        'typescript.inlayHints.parameterNames.enabled': 'all',
-        'editor.parameterHints': { 'enabled': true, 'cycle': true },
-        'editor.folding': false,
-        'editor.lineDecorationsWidth': 20
+        "editor.fontSize": 13,
+        "editor.lineNumbers": "off",
+        "editor.parameterHints.enabled": true,
+        "editor.inlayHints.enabled": "on",
+        "typescript.inlayHints.parameterNames.enabled": "all",
+        "editor.parameterHints": { "enabled": true, "cycle": true },
+        "editor.folding": false,
+        "editor.lineDecorationsWidth": 20
     };
 
     const tsConfig = {
-        'compilerOptions': {
-            'module': 'ESNext',
-            'lib': ['ESNext', 'DOM'],
-            'target': 'ESNext'
+        "compilerOptions": {
+            "module": "ESNext",
+            "lib": ["ESNext", "DOM"],
+            "target": "ESNext"
         },
-        'exclude': ['node_modules']
+        "exclude": ["node_modules"]
     };
 
     // eslint-disable-next-line unicorn/prefer-top-level-await
@@ -90,11 +90,11 @@
         if (!stackblitzProject) return;
 
         await stackblitzProject.applyFsDiff({
-            create: { 'index.ts': code },
+            create: { "index.ts": code },
             destroy: []
         });
 
-        await stackblitzProject.editor.openFile('index.ts');
+        await stackblitzProject.editor.openFile("index.ts");
     }
 </script>
 

@@ -1,7 +1,7 @@
 /* eslint-disable complexity */
-import type { PlainObject } from '@type/PlainObject.js';
+import type { PlainObject } from "@type/PlainObject.js";
 
-import { isPlainObject } from './isPlainObject.js';
+import { isPlainObject } from "./isPlainObject.js";
 
 /**
  * Performs a deep comparison between two values to determine if they are

@@ -1,6 +1,6 @@
-import type { PlainObject } from '@type/PlainObject.js';
+import type { PlainObject } from "@type/PlainObject.js";
 
-import { isPlainObject } from '@validate/isPlainObject.js';
+import { isPlainObject } from "@validate/isPlainObject.js";
 
 /**
  * Flattens an object into a single level object.

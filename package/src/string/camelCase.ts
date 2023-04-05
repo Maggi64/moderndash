@@ -1,6 +1,6 @@
-import { splitWords } from '@string/splitWords';
+import { splitWords } from "@string/splitWords";
 
-import { deburr } from './deburr.js';
+import { deburr } from "./deburr.js";
 
 /**
  * Converts `string` to camelCase.
@@ -20,7 +20,7 @@ export function camelCase(str: string): string {
     str = deburr(str);
     const words = splitWords(str);
 
-    let camelCase = '';
+    let camelCase = "";
     for (const [index, word] of words.entries()) {
         camelCase += index === 0 
             ? word.toLowerCase() 

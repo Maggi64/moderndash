@@ -18,7 +18,7 @@ const shiftRight52Bits = 2 ** -52;
 
 export function randomFloat(min: number, max: number): number {
     if (min >= max) {
-        throw new Error('max must be greater than min');
+        throw new Error("max must be greater than min");
     }
     const range = max - min;
     const randomBuffer = new Uint32Array(2);

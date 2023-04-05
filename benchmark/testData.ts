@@ -1,4 +1,4 @@
-import { randomInt, randomString } from 'moderndash';
+import { randomInt, randomString } from "moderndash";
 
 type RandomObject = Record<string, object | number | string | boolean>;
 
@@ -8,7 +8,7 @@ export function randomObject(fieldCount: number, allowNested = true): RandomObje
     const generatedObj = {} as RandomObject;
 
     for (let i = 0; i < fieldCount; i++) {
-        let generatedObjField: object | number | string | boolean = '';
+        let generatedObjField: object | number | string | boolean = "";
 
         switch (fastRandomInt(0, allowNested ? 5 : 4)) {
             case 0:

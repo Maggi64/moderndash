@@ -18,6 +18,7 @@ export function group<TElem, TKey extends PropertyKey>(array: readonly TElem[], 
     const result = {} as Record<TKey, TElem[]>;
     for (const elem of array) {
         const key = getGroupKey(elem);
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         (result[key] ??= []).push(elem);
     }
     return result;

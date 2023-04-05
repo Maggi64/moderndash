@@ -1,6 +1,6 @@
-import type { PlainObject } from '@type/PlainObject.js';
+import type { PlainObject } from "@type/PlainObject.js";
 
-import { isPlainObject } from '@validate/isPlainObject.js';
+import { isPlainObject } from "@validate/isPlainObject.js";
 
 const validPathRegex = /^(?:[^.[\]]+(?:\[\d+])*(?:\.|\[\d+]))+(?:[^.[\]]+(?:\[\d+])*)+$/;
 const pathSplitRegex = /\.|(?=\[)/g;
@@ -35,24 +35,24 @@ const matchBracketsRegex = /[[\]]/g;
 
 export function set(obj: PlainObject, path: string, value: unknown): PlainObject {
     if (!validPathRegex.test(path))
-        throw new Error('Invalid path, look at the examples for the correct format.');
+        throw new Error("Invalid path, look at the examples for the correct format.");
 
     const pathParts = path.split(pathSplitRegex);
     let currentObj: PlainObject = obj;
     for (let index = 0; index < pathParts.length; index++) {
-        const key = pathParts[index].replace(matchBracketsRegex, '');
+        const key = pathParts[index].replace(matchBracketsRegex, "");
 
         if (index === pathParts.length - 1) {
             currentObj[key] = value;
             break;
         }
 
-        const nextElemIn = pathParts[index + 1].startsWith('[') ? 'array' : 'object';
+        const nextElemIn = pathParts[index + 1].startsWith("[") ? "array" : "object";
         if (currentObj[key] === undefined) {
-            currentObj[key] = nextElemIn === 'array' ? [] : {};
-        } else if (nextElemIn === 'array' && !Array.isArray(currentObj[key])) {
+            currentObj[key] = nextElemIn === "array" ? [] : {};
+        } else if (nextElemIn === "array" && !Array.isArray(currentObj[key])) {
             currentObj[key] = [];
-        } else if (nextElemIn === 'object' && !isPlainObject(currentObj[key])) {
+        } else if (nextElemIn === "object" && !isPlainObject(currentObj[key])) {
             currentObj[key] = {};
         }
         currentObj = currentObj[key] as PlainObject;

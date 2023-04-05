@@ -1,4 +1,4 @@
-import { sum } from '@number/sum.js';
+import { sum } from "@number/sum.js";
 
 /**
  * Calculates the average of an array of numbers

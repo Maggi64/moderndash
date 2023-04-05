@@ -1,4 +1,4 @@
-import type { GenericFunction } from '@type/GenericFunction.js';
+import type { GenericFunction } from "@type/GenericFunction.js";
 
 /**
  * Creates a function that invokes the given function once it's called more than `n` times.  

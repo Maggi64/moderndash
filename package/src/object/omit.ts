@@ -1,6 +1,6 @@
-import type { PlainObject } from '@type/PlainObject.js';
+import type { PlainObject } from "@type/PlainObject.js";
 
-import { pick } from './pick.js';
+import { pick } from "./pick.js";
 
 /**
  * Omit specified keys from an object

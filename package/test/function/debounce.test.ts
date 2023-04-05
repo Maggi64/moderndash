@@ -1,9 +1,9 @@
-import { afterEach, beforeAll, describe, expect, test, vi } from 'vitest';
+import { afterEach, beforeAll, describe, expect, test, vi } from "vitest";
 
-import { decDebounce } from '@decorator/decDebounce.js';
-import { debounce } from '@function/debounce';
+import { decDebounce } from "@decorator/decDebounce.js";
+import { debounce } from "@function/debounce";
 
-describe('debounce', () => {
+describe("debounce", () => {
     const testFn = vi.fn((x: number) => x * 2);
 
     beforeAll(() => {
@@ -14,7 +14,7 @@ describe('debounce', () => {
         testFn.mockClear();
     });
 
-    test('only calls the function once', () => {
+    test("only calls the function once", () => {
         const debounced = debounce(testFn, 100);
 
         debounced(1);
@@ -30,7 +30,7 @@ describe('debounce', () => {
         expect(testFn).toHaveBeenCalledOnce();
     });
 
-    test('calls the function again after the wait period', () => {
+    test("calls the function again after the wait period", () => {
         const debounced = debounce(testFn, 100);
 
         debounced(1);
@@ -46,7 +46,7 @@ describe('debounce', () => {
         expect(testFn).toHaveBeenCalledTimes(1);
     });
 
-    test('decorator', () => {
+    test("decorator", () => {
         class TestClass {
             @decDebounce(100)
             testMethod(x: number) {
@@ -61,7 +61,7 @@ describe('debounce', () => {
         expect(testFn).toHaveBeenCalledOnce();
     });
 
-    test('cancel', () => {
+    test("cancel", () => {
         const debounced = debounce(testFn, 100);
 
         debounced(1);
@@ -70,7 +70,7 @@ describe('debounce', () => {
         expect(testFn).not.toHaveBeenCalled();
     });
 
-    test('flush', () => {
+    test("flush", () => {
         const debounced = debounce(testFn, 100);
 
         debounced(1);

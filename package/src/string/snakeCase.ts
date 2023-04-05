@@ -1,6 +1,6 @@
-import { splitWords } from '@string/splitWords';
+import { splitWords } from "@string/splitWords";
 
-import { deburr } from './deburr.js';
+import { deburr } from "./deburr.js";
 
 /**
  * Converts a string to snake_case.
@@ -22,10 +22,10 @@ import { deburr } from './deburr.js';
 export function snakeCase(str: string): string {
     str = deburr(str);
     const words = splitWords(str);
-    let snakeCase = '';
+    let snakeCase = "";
     for (const word of words) {
         if (snakeCase.length > 0) {
-            snakeCase += '_';
+            snakeCase += "_";
         }
         snakeCase += word.toLowerCase();
     }

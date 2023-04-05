@@ -1,4 +1,4 @@
-import type { PlainObject } from '@type/PlainObject.js';
+import type { PlainObject } from "@type/PlainObject.js";
 
 /**
  * Creates an object composed of the picked `object` properties.

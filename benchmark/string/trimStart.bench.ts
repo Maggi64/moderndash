@@ -1,21 +1,21 @@
-import { trimStart as lodashVersion } from 'lodash-es';
-import { trimStart } from 'moderndash';
-import { bench, describe } from 'vitest';
+import { trimStart as lodashVersion } from "lodash-es";
+import { trimStart } from "moderndash";
+import { bench, describe } from "vitest";
 
-import { randomStringArray } from '../testData.js';
+import { randomStringArray } from "../testData.js";
 
-describe('trimStart', () => {
-    const stringArray = randomStringArray(500, 'abc');
+describe("trimStart", () => {
+    const stringArray = randomStringArray(500, "abc");
 
-    bench('moderndash', () => {
+    bench("moderndash", () => {
         for (const str of stringArray) {
-            trimStart(str, 'ab');
+            trimStart(str, "ab");
         }
     });
 
-    bench('lodash', () => {
+    bench("lodash", () => {
         for (const str of stringArray) {
-            lodashVersion(str, 'ab');
+            lodashVersion(str, "ab");
         }
     });
 });

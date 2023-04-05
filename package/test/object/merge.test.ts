@@ -1,10 +1,10 @@
-import { describe, test, expect } from 'vitest';
+import { describe, test, expect } from "vitest";
 
-import { merge } from '@object/merge.js';
+import { merge } from "@object/merge.js";
 
 
-describe('merge', () => {
-    test('merge two or more objects', () => {
+describe("merge", () => {
+    test("merge two or more objects", () => {
         const obj1 = { a: 1 };
         const obj2 = { b: 2 };
         const obj3 = { c: 3 };
@@ -17,19 +17,19 @@ describe('merge', () => {
         expect(merge(nestedObj1, nestedObj2)).toEqual({ a: { b: 1, c: 2 } });
     }); 
 
-    test('overwrites non objects', () => {
+    test("overwrites non objects", () => {
         const obj1 = { a: 1 };
         const obj2 = { a: { b: 1 } };
 
         expect(merge(obj1, obj2)).toEqual({ a: { b: 1 } });
 
         const mixedTypes1 = { a: 1 }; 
-        const mixedTypes2 = { a:'Yes' }; 
+        const mixedTypes2 = { a:"Yes" }; 
 
-        expect(merge(mixedTypes1, mixedTypes2)).toEqual({ a:'Yes' }); 
+        expect(merge(mixedTypes1, mixedTypes2)).toEqual({ a:"Yes" }); 
     });
 
-    test('do not merge arrays', () => {
+    test("do not merge arrays", () => {
         const array1 = { a:[1, 2] };
         const array2 = { a:[3, 4] };
 

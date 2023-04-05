@@ -1,6 +1,6 @@
-import { splitWords } from '@string/splitWords';
+import { splitWords } from "@string/splitWords";
 
-import { deburr } from './deburr.js';
+import { deburr } from "./deburr.js";
 
 
 /**
@@ -21,7 +21,7 @@ import { deburr } from './deburr.js';
 export function pascalCase(str: string): string {
     str = deburr(str);
     const words = splitWords(str);
-    let pascalCase = '';
+    let pascalCase = "";
     for (const word of words) {
         pascalCase += word.charAt(0).toUpperCase() + word.slice(1);
     }

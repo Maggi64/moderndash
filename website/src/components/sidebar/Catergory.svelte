@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-    import { capitalize } from 'moderndash';
-    import Fa from 'svelte-fa';
+    import { faChevronDown, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+    import { capitalize } from "moderndash";
+    import Fa from "svelte-fa";
 
     export let categoryName: string;
     export let entries: string[];

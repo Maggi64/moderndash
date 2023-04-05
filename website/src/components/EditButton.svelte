@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { faPen } from '@fortawesome/free-solid-svg-icons';
-    import Fa from 'svelte-fa';
+    import { faPen } from "@fortawesome/free-solid-svg-icons";
+    import Fa from "svelte-fa";
 
     export let href: string;
 </script>
