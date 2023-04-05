@@ -1,8 +1,8 @@
 
 /**
- * Checks if `value` is empty.
+ * Checks if a value is empty.
  * 
- * Supports: strings, arrays, objects, maps, sets and typed arrays.
+ * Supports: strings, arrays, objects, maps, sets, typed arrays.
  * @example
  * isEmpty(null)
  * // => true
