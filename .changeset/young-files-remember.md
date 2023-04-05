@@ -2,4 +2,4 @@
 "moderndash": minor
 ---
 
-`isEqual` | support typed arrays, buffers & DataViews
+`isEqual` | Support typed arrays, buffers & DataViews
