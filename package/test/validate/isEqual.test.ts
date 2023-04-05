@@ -89,5 +89,49 @@ describe("isEqual", () => {
         expect(isEqual(error1, error1)).toBe(true);
         expect(isEqual(error1, error2)).toBe(false);
     });
+
+    test("array buffers", () => {
+        const buffer1 = new ArrayBuffer(2);
+        const buffer1View = new Uint8Array(buffer1);
+        buffer1View.set([42, 43]);
     
+        const buffer2 = new ArrayBuffer(2);
+        const buffer2View = new Uint8Array(buffer2);
+        buffer2View.set([42, 43]);
+    
+        const buffer3 = new ArrayBuffer(2);
+        const buffer3View = new Uint8Array(buffer3);
+        buffer3View.set([42, 44]);
+    
+        const buffer4 = new ArrayBuffer(3);
+    
+        expect(isEqual(buffer1, buffer2)).toBe(true);
+        expect(isEqual(buffer1, buffer3)).toBe(false);
+        expect(isEqual(buffer1, buffer4)).toBe(false);
+    });
+
+    test("typed arrays", () => {
+        expect(isEqual(new Uint8Array([1, 2, 3]), new Uint8Array([1, 2, 3]))).toBe(true);
+        expect(isEqual(new Uint8Array([1, 2, 3]), new Uint8Array([1, 2]))).toBe(false);
+        expect(isEqual(new Uint8Array([1, 2, 3]), new Uint8Array([1, 2, 4]))).toBe(false);
+    });
+
+    test("data views", () => {
+        const buffer1 = new ArrayBuffer(2);
+        const buffer2 = new ArrayBuffer(2);
+        const buffer3 = new ArrayBuffer(3);
+
+        const view1 = new DataView(buffer1);
+        const view2 = new DataView(buffer2);
+        const view3 = new DataView(buffer3);
+
+        view1.setUint8(0, 42);
+        view1.setUint8(1, 43);
+
+        view2.setUint8(0, 42);
+        view2.setUint8(1, 43);
+
+        expect(isEqual(view1, view2)).toBe(true);
+        expect(isEqual(view1, view3)).toBe(false);
+    });
 });

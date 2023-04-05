@@ -12,6 +12,7 @@ describe("isEmpty", () => {
     test("isEmpty with string", () => {
         expect(isEmpty("")).toBe(true);
         expect(isEmpty("some string")).toBe(false);
+        expect(isEmpty(String())).toBe(true);
     });
 
     test("isEmpty false on unsupported types", () => {
@@ -39,4 +40,10 @@ describe("isEmpty", () => {
         expect(isEmpty({ a: 1, b: 2 })).toBe(false);
     });
 
+    test("typed arrays", () => {
+        expect(isEmpty(new Uint8Array())).toBe(true);
+        expect(isEmpty(new Uint8Array([1, 2, 3]))).toBe(false);
+        expect(isEmpty(new BigInt64Array())).toBe(true);
+        expect(isEmpty(new BigInt64Array([1n, 2n, 3n]))).toBe(false);
+    });
 });

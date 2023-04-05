@@ -3,13 +3,17 @@ import type { PlainObject } from "@type/PlainObject.js";
 
 import { isPlainObject } from "./isPlainObject.js";
 
+type TypedArray = Int8Array | Uint8Array | Uint8ClampedArray | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array;
+
 /**
  * Performs a deep comparison between two values to determine if they are
  * equivalent.
- *
+ * 
+ * Supports: primitives, arrays, objects, dates, regexes, maps, sets, buffers, typed arrays
+ * 
  * @example
- * var object = { 'a': 1 };
- * var other = { 'a': 1 };
+ * var object = { a: { b: 2 } };
+ * var other = { a: { b: 2 } };
  *
  * isEqual(object, other);
  * // => true
@@ -26,20 +30,27 @@ export function isEqual(a: unknown, b: unknown): boolean {
     
     if (typeof a !== typeof b) return false;
 
-    if (Array.isArray(a) && Array.isArray(b)) {
+    if (Array.isArray(a) && Array.isArray(b))
         return isSameArray(a, b);
-    }
 
-    if (a instanceof Date && b instanceof Date) {
+    if (a instanceof Date && b instanceof Date)
         return a.getTime() === b.getTime();
-    }
 
-    if (a instanceof RegExp && b instanceof RegExp) {
+    if (a instanceof RegExp && b instanceof RegExp)
         return a.toString() === b.toString();
-    }
 
-    if (isPlainObject(a) && isPlainObject(b)) {
+    if (isPlainObject(a) && isPlainObject(b))
         return isSameObject(a, b);
+
+    if (a instanceof ArrayBuffer && b instanceof ArrayBuffer)
+        return dataViewsAreEqual(new DataView(a), new DataView(b));
+
+    if (a instanceof DataView && b instanceof DataView)
+        return dataViewsAreEqual(a, b);
+
+    if (isTypedArray(a) && isTypedArray(b)) {
+        if (a.byteLength !== b.byteLength) return false;
+        return isSameArray(a, b);
     }
 
     return false;
@@ -60,13 +71,19 @@ function isSameObject(a: PlainObject, b: PlainObject) {
     return true;
 }
 
-function isSameArray(a: unknown[], b: unknown[]) {
+function isSameArray(a: unknown[] | TypedArray, b: unknown[] | TypedArray) {
     if (a.length !== b.length) return false;
+    return a.every((element, index) => isEqual(element, b[index]));
+}
 
-    // check if the values of each element in the arrays are equal
-    for (const [i, element] of a.entries()) {
-        if (!isEqual(element, b[i])) return false;
+function dataViewsAreEqual(a: DataView, b: DataView) {
+    if (a.byteLength !== b.byteLength) return false;
+    for (let offset = 0; offset < a.byteLength; offset++) {
+        if (a.getUint8(offset) !== b.getUint8(offset)) return false;
     }
-
     return true;
+}
+
+function isTypedArray(value: unknown): value is TypedArray {
+    return ArrayBuffer.isView(value) && !(value instanceof DataView);
 }
