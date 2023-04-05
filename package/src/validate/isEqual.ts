@@ -48,7 +48,7 @@ export function isEqual(a: unknown, b: unknown): boolean {
     if (a instanceof DataView && b instanceof DataView)
         return dataViewsAreEqual(a, b);
 
-    if(isTypedArray(a) && isTypedArray(b)) {
+    if (isTypedArray(a) && isTypedArray(b)) {
         if (a.byteLength !== b.byteLength) return false;
         return isSameArray(a, b);
     }
@@ -78,13 +78,12 @@ function isSameArray(a: unknown[] | TypedArray, b: unknown[] | TypedArray) {
 
 function dataViewsAreEqual(a: DataView, b: DataView) {
     if (a.byteLength !== b.byteLength) return false;
-    for (let i=0; i < a.byteLength; i++) {
-      if (a.getUint8(i) !== b.getUint8(i)) return false;
+    for (let offset = 0; offset < a.byteLength; offset++) {
+        if (a.getUint8(offset) !== b.getUint8(offset)) return false;
     }
     return true;
-  }
+}
 
-
-function isTypedArray (value: unknown): value is TypedArray {
+function isTypedArray(value: unknown): value is TypedArray {
     return ArrayBuffer.isView(value) && !(value instanceof DataView);
 }
