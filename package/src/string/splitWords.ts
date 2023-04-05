@@ -12,12 +12,13 @@
  * // => ['hello', 'world', '123']
  * 
  * @param str The string to split into words.
+ * @param forceFallback Force the use of the positive lookahead fallback. Only used for testing.
  * @returns An array of words.
  */
 
-export function splitWords(str: string): string[] {
-    return lookbehindWordBoundary 
-        ? str.split(lookbehindWordBoundary).filter(Boolean) 
+export function splitWords(str: string, forceFallback = false): string[] {
+    return lookbehindWordBoundary && !forceFallback
+        ? str.split(lookbehindWordBoundary).filter(Boolean)
         : splitWordsFallback(str);
 }
 
@@ -39,6 +40,7 @@ function tryLookbehindRegex() {
             "(?<=[A-Z])" +           // lookbehind for an uppercase letter
             "(?=[A-Z][a-z])"         // lookahead for an uppercase letter followed by a lowercase letter
         );
+    /* c8 ignore next 3 */
     } catch {
         return undefined;
     }

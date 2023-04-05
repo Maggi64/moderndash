@@ -6,27 +6,30 @@ import { splitWords } from "@string/splitWords.js";
 
 // Unit Test
 describe("splitWords()", () => {
-    test("split camelCase into two words", () => {
-        expect(splitWords("camelCase")).toEqual(["camel", "Case"]);
-    });
+    for (const forceFallback of [true, false]) {
 
-    test("split PascalCase into two words", () => {
-        expect(splitWords("PascalCase")).toEqual(["Pascal", "Case"]);
-    });
+        test("split camelCase into two words", () => {
+            expect(splitWords("camelCase", forceFallback)).toEqual(["camel", "Case"]);
+        });
 
-    test("split a string with non-alphanumeric characters into multiple words", () => {
-        expect(splitWords("hello_world-123")).toEqual(["hello", "world", "123"]);
-    });
+        test("split PascalCase into two words", () => {
+            expect(splitWords("PascalCase", forceFallback)).toEqual(["Pascal", "Case"]);
+        });
 
-    test("uppercase words are split correctly", () => {
-        expect(splitWords("HelloCRUELWorld")).toEqual(["Hello", "CRUEL", "World"]);
-    });
+        test("split a string with non-alphanumeric characters into multiple words", () => {
+            expect(splitWords("hello_world-123", forceFallback)).toEqual(["hello", "world", "123"]);
+        });
 
-    test("return an empty array for an empty string", () => {
-        expect(splitWords("")).toEqual([]);
-    });
+        test("uppercase words are split correctly", () => {
+            expect(splitWords("HelloCRUELWorld", forceFallback)).toEqual(["Hello", "CRUEL", "World"]);
+        });
 
-    test("return an array with one element for a single word string", () => {
-        expect(splitWords("hello")).toEqual(["hello"]);
-    });			
+        test("return an empty array for an empty string", () => {
+            expect(splitWords("", forceFallback)).toEqual([]);
+        });
+
+        test("return an array with one element for a single word string", () => {
+            expect(splitWords("hello", forceFallback)).toEqual(["hello"]);
+        });
+    }
 });
