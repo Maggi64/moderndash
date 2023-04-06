@@ -1,5 +1,11 @@
 # moderndash
 
+## 3.3.1
+
+### Patch Changes
+
+- `splitWords` | Replace Safari fallback with simpler regex ([`cfb9371`](https://github.com/Maggi64/moderndash/commit/cfb93710130ffebd1a1a329bdf16d2f706d4d564))
+
 ## 3.3.0
 
 ### Minor Changes
