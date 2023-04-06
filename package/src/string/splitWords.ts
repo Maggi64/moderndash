@@ -1,4 +1,4 @@
-const wordBoundary = /(\d*[a-z]+)|([A-Z][a-z]+)|(\d*[A-Z]+(?=[^a-z]|$))|(\d+)/g;
+const wordsRegex = /(\d*[a-z]+)|([A-Z][a-z]+)|(\d*[A-Z]+(?=[^a-z]|$))|(\d+)/g;
 
 /**
  * Split a string into words. Can deal with camelCase, PascalCase & snake_case.
@@ -19,5 +19,5 @@ const wordBoundary = /(\d*[a-z]+)|([A-Z][a-z]+)|(\d*[A-Z]+(?=[^a-z]|$))|(\d+)/g;
  */
 
 export function splitWords(str: string): string[] {
-    return str.match(wordBoundary) ?? [];
+    return str.match(wordsRegex) ?? [];
 }
