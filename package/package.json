@@ -9,7 +9,7 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build:index": "ctix create --startAt src --overwrite --noBackup",
+    "build:index": "ctix create --startAt src --overwrite --noBackup --quote \"\"\"",
     "build": "tsup",
     "prepublishOnly": "npm run test && npm run build && cp '../README.md' './README.md' && cp '../LICENSE' './LICENSE'",
     "postpublish": "rm './README.md' && rm './LICENSE'",
