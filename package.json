@@ -18,8 +18,9 @@
     },
     "devDependencies": {
         "@svitejs/changesets-changelog-github-compact": "1.1.0",
+        "@tsconfig/strictest": "2.0.0",
         "@changesets/cli": "2.26.1",
-        "eslint-config-dewald": "1.0.8",
+        "eslint-config-dewald": "1.0.9",
         "eslint": "8.37.0",
         "typedoc": "0.23.28",
         "typescript": "5.0.3",

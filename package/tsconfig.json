@@ -1,4 +1,6 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
     "experimentalDecorators": true,
     "target": "ESNext",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
@@ -6,8 +8,6 @@
     "module": "ESNext",                                  /* Specify what module code is generated. */
     "moduleResolution": "bundler",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
-    "strict": true,                                      /* Enable all strict type-checking options. */
-    "skipLibCheck": true,
     "paths": {
       "@array/*": ["src/array/*"],
       "@function/*": ["src/function/*"],
@@ -19,8 +19,11 @@
       "@promise/*": ["src/promise/*"],
       "@validate/*": ["src/validate/*"],
       "@type/*": ["src/type/*"],
-      "@decorator/*": ["src/decorator/*"],
-    }
+      "@decorator/*": ["src/decorator/*"]
+    },
+    "noImplicitReturns": false,
+    "noUncheckedIndexedAccess": false
   },
-  "include": ["./**/*.ts", "./**/*.js"]
+  "include": ["./**/*.ts", "./**/*.js"],
+  "exclude": ["./coverage/**/*", "./node_modules/**/*", "./dist/**/*"]
 }
