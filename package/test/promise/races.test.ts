@@ -20,7 +20,7 @@ describe("describe", () => {
     });
 
     test("rejected promise", async () => {
-        const rejectedPromise = new Promise((resolve, reject) => {
+        const rejectedPromise = new Promise((_resolve, reject) => {
             setTimeout(() => reject("rejected"), 20); 
         });
         await expect(races(2, delayedPromise(20), rejectedPromise, delayedPromise(60))).rejects.toBe("rejected");
