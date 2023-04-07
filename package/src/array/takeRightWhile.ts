@@ -18,6 +18,15 @@
  */
 
 export function takeRightWhile<TElem>(array: readonly TElem[], predicate: (elem: TElem) => boolean): TElem[] {
-    const breakIndex = array.findLastIndex((elem) => !predicate(elem));
-    return (breakIndex === -1) ? [...array] : array.slice(breakIndex + 1);
+    const result: TElem[] = [];
+
+    for (let i = array.length - 1; i >= 0; i--) {
+        if (predicate(array[i])) {
+            result.unshift(array[i]);
+        } else {
+            break;
+        }
+    }
+
+    return result;
 }
