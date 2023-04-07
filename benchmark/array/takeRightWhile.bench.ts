@@ -5,17 +5,22 @@ import { bench, describe } from "vitest";
 import { randomNumberArray, randomStringArray } from "../testData.js";
 
 describe("takeRightWhile", () => {
-    const numArray = randomNumberArray(500, 0, 100);
-    const stringArray = randomStringArray(500, "ab");
+    const numArrays = Array.from({ length: 1000 }, () => randomNumberArray(50, 0, 100));
+    const stringArrays = Array.from({ length: 1000 }, () => randomStringArray(50, "abcdefg"));
 
     bench("moderndash", () => {
-        takeRightWhile(numArray, (num) => num < 20);
-        takeRightWhile(stringArray, (str) => str.includes("a"));
+        for (const array of numArrays)
+            takeRightWhile(array, (num) => num < 20);
+
+        for (const array of stringArrays)
+            takeRightWhile(array, (str) => str.includes("a"));
     });
 
     bench("lodash", () => {
-        lodashVersion(numArray, (num) => num < 20);
-        lodashVersion(stringArray, (str) => str.includes("a"));
-    });
+        for (const array of numArrays) 
+            lodashVersion(array, (num) => num < 20);
 
+        for (const array of stringArrays)
+            lodashVersion(array, (str) => str.includes("a"));
+    });
 });
