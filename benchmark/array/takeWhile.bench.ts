@@ -6,8 +6,8 @@ import { bench, describe } from "vitest";
 import { randomNumberArray, randomStringArray } from "../testData.js";
 
 describe("takeWhile", () => {
-    const numArray = randomNumberArray(100);
-    const stringArray = randomStringArray(100);
+    const numArray = randomNumberArray(500, 0, 100);
+    const stringArray = randomStringArray(500, "ab");
 
     bench("moderndash", () => {
         takeWhile(numArray, (num) => num < 20);
