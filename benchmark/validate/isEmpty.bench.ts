@@ -10,7 +10,7 @@ describe("isEmpty", () => {
     const object = { "a": 1, "b": 2, "c": 3, "d": [1, 2, 3] };
     const emptyObj = {};
     const set = new Set([1, 2, 3, 4]);
-    const emtpySet = new Set();
+    const emptySet = new Set();
     
     const map = new Map([["a", 1], ["b", 2], ["c", 3], ["d", 4]]);
     const emptyMap = new Map();
@@ -22,7 +22,7 @@ describe("isEmpty", () => {
         isEmpty(object);
         isEmpty(emptyObj);
         isEmpty(set);
-        isEmpty(emtpySet);
+        isEmpty(emptySet);
         isEmpty(map);
         isEmpty(emptyMap);
         isEmpty(bigObject);
@@ -32,7 +32,7 @@ describe("isEmpty", () => {
         lodashVersion(object);
         lodashVersion(emptyObj);
         lodashVersion(set);
-        lodashVersion(emtpySet);
+        lodashVersion(emptySet);
         lodashVersion(map);
         lodashVersion(emptyMap);
         lodashVersion(bigObject);
@@ -42,7 +42,7 @@ describe("isEmpty", () => {
         radashVersion(object);
         radashVersion(emptyObj);
         radashVersion(set);
-        radashVersion(emtpySet);
+        radashVersion(emptySet);
         radashVersion(map);
         radashVersion(emptyMap);
         radashVersion(bigObject);
