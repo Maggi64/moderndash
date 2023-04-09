@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { LayoutData } from "../../routes/$types.js";
 
-    import Catergory from "./Catergory.svelte";
+    import Category from "./Category.svelte";
 
     import { goto } from "$app/navigation";
     import { searchTerm } from "$utils/searchStore.js";
@@ -37,7 +37,7 @@
             </div>
 
             {#each filteredEntries as { categoryName, entries }}
-                <Catergory {categoryName} {entries}/>
+                <Category {categoryName} {entries}/>
             {/each}
         </div>
     </nav>
