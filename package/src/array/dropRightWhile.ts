@@ -1,6 +1,6 @@
 /**
  * Creates a slice of `array` excluding elements dropped from the end.  
- * Elements are dropped until `predicate` returns falsey.
+ * Elements are dropped until `predicate` returns falsy.
  *
  * @example
  * const users = [
