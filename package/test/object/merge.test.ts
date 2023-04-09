@@ -2,7 +2,6 @@ import { describe, test, expect } from "vitest";
 
 import { merge } from "@object/merge.js";
 
-
 describe("merge", () => {
     test("merge two or more objects", () => {
         const obj1 = { a: 1 };

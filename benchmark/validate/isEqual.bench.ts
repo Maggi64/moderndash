@@ -5,7 +5,6 @@ import { isEqual as equalRadash } from "radash";
 import { equals as equalRemeda } from "remeda";
 import { bench, describe } from "vitest";
 
-
 describe("isEqual", () => {
     const object = { "a": 1, "b": 2, "c": 3, "d": [1, 2, 3] };
     const other = { "a": 1, "b": 2, "c": 3, "d": [1, 2, 4] };

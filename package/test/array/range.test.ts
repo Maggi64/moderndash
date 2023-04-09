@@ -2,7 +2,6 @@ import { expect, test, describe } from "vitest";
 
 import { range } from "@array/range.js";
 
-
 describe("range", () => {
     test("generate a sequence of numbers between start and end, inclusive, with increments of step", () => {
         const result = [...range(1, 5)];

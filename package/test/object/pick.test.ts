@@ -2,7 +2,6 @@ import { describe, test, expect } from "vitest";
 
 import { pick } from "@object/pick.js";
 
-
 describe("pick", () => {
     test("pick the specified keys from an object", () => {
         const object = { a: 1, b: 2, c: 3 };

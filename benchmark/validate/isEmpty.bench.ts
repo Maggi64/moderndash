@@ -6,7 +6,6 @@ import { bench, describe } from "vitest";
 
 import { randomObject } from "../testData.js";
 
-
 describe("isEmpty", () => {
     const object = { "a": 1, "b": 2, "c": 3, "d": [1, 2, 3] };
     const emptyObj = {};

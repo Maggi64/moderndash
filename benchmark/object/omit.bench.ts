@@ -6,7 +6,6 @@ import { bench, describe } from "vitest";
 
 import { randomObjectArray } from "../testData.js";
 
-
 describe("omit", () => {
     
     const objects = randomObjectArray(50);
