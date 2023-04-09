@@ -19,7 +19,7 @@ describe("intersection", () => {
         expect(result).toEqual([{ id: 3 }, { id: 4 }, { id: 5 }]);
     });
 
-    test("returns the correct intersections with comporator", () => {
+    test("returns the correct intersections with comparator", () => {
         const arr1 = [1, 2, 3, 4, 5];
         const arr2 = [3, 4, 5, 6, 7];
 
