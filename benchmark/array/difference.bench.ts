@@ -34,7 +34,6 @@ describe("difference", () => {
     });
 });
 
-
 describe("difference 4 arrays", () => {
     const array1 = randomNumberArray(50, 0, 50);
     const array2 = randomNumberArray(50, 0, 50);

@@ -2,7 +2,6 @@ import { describe, test, expect } from "vitest";
 
 import { flatKeys } from "@object/flatKeys.js";
 
-
 describe("flatKeys", () => {
     test("correct flattened keys", () => {
         const obj = { a: 1, b: { c: 2, d: { e: 3 } } };

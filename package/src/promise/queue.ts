@@ -47,9 +47,9 @@ export class Queue {
     }
 
     /**
-     * Add aync functions or an array of async functions to the queue.
+     * Add async functions or an array of async functions to the queue.
      * 
-     * @param asyncFn The aync function(s) to add to the queue.
+     * @param asyncFn The async function(s) to add to the queue.
      * @returns A promise that resolves when the added function(s) finishes.
      */
     add<TProm, TAsyncFn extends () => Promise<TProm>>(asyncFn: TAsyncFn): Promise<TProm>;

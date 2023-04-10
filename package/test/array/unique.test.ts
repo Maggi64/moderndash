@@ -16,7 +16,7 @@ describe("unique", () => {
         expect(unique(input, isEqual)).toEqual(expectedOutput);
     });
 
-    test("hande compareFN", () => {
+    test("handle compareFN", () => {
         expect(unique([2, 1, 2])).toEqual([2, 1]);
 
         const users = [

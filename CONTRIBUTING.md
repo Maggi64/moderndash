@@ -3,7 +3,7 @@
 ## Package
 The documentation and examples are stored directly in the code as TSDoc and will be extracted in the website build process.
 
-Run the follwing commands to run the test suite.
+Run the following commands to run the test suite.
 - `cd package` => go into the package folder
 - `npm run test-dev` => to run the test suite in watch mode
 - `npm run test` => to run the tests once with code coverage

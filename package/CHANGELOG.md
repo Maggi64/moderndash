@@ -160,7 +160,7 @@
 
 ### Patch Changes
 
-- fix: randomString return empty string if charSet is emtpy ([`4327829`](https://github.com/Maggi64/moderndash/commit/43278294a8786a9b7f88fb6c68931c82952b2c29))
+- fix: randomString return empty string if charSet is empty ([`4327829`](https://github.com/Maggi64/moderndash/commit/43278294a8786a9b7f88fb6c68931c82952b2c29))
 
 - Clarify ArrayMinLength docs ([`3870da0`](https://github.com/Maggi64/moderndash/commit/3870da0b01a078036896306a7cc280b4b1416571))
 

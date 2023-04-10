@@ -2,7 +2,6 @@ import { describe, expect, test } from "vitest";
 
 import { randomInt } from "@crypto/randomInt.js";
 
-
 describe("randomInt", () => {
     test("return a number between min and max, including min and max", () => {
         const min = 1;

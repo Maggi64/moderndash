@@ -13,7 +13,7 @@
  * @template TMinLength The minimum length of the array.
  */
 
-export type ArrayMinLength<TElem, TMinLenght extends number> = BuildArrayMinLength<TElem, TMinLenght, []>;
+export type ArrayMinLength<TElem, TMinLength extends number> = BuildArrayMinLength<TElem, TMinLength, []>;
 
 type BuildArrayMinLength<
     TElem,

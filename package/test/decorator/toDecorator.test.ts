@@ -6,8 +6,8 @@ describe("toDecorator", () => {
     test("decorator", () => {
         function addToReturn(func: (...args: unknown[]) => number, number: number) {
             return function (this: unknown) {
-                const orginalReturn = func.apply(this);
-                return orginalReturn + number;
+                const originalReturn = func.apply(this);
+                return originalReturn + number;
             };
         }
 

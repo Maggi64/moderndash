@@ -5,9 +5,7 @@ import { timeout } from "@promise/timeout.js";
 
 describe("timeout", () => {
     test("timeout", async () => {
-    
         const result = await timeout(sleep(20), 50);
-    
         expect(result).toBeUndefined();
     });
     

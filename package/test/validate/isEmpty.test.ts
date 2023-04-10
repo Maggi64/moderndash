@@ -2,7 +2,6 @@ import { describe, expect, test } from "vitest";
 
 import { isEmpty } from "@validate/isEmpty.js";
 
-
 describe("isEmpty", () => {
     test("isEmpty with null and undefined", () => {
         expect(isEmpty(null)).toBe(true);
