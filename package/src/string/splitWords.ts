@@ -1,4 +1,4 @@
-const wordsRegex = /(\d*[a-z]+)|([A-Z][a-z]+)|(\d*[A-Z]+(?=[^a-z]|$))|(\d+)/g;
+const wordsRegex = /(?:\d*[a-z]+)|(?:[A-Z][a-z]+)|(?:\d*[A-Z]+(?=[^a-z]|$))|\d+/g;
 
 /**
  * Split a string into words. Can deal with camelCase, PascalCase & snake_case.
