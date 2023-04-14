@@ -31,7 +31,7 @@ describe("Queue", () => {
         expect(result).toBe("resolved1");
     });
 
-    test("add an array of asyncs to the queue", async () => {
+    test("add an array of async to the queue", async () => {
         const results = queue.add([createAsync(callbackMock), createAsync(callbackMock2)]);
         
         await sleep(10);
