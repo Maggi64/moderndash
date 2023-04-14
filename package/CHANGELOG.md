@@ -1,5 +1,13 @@
 # moderndash
 
+## 3.3.2
+
+### Patch Changes
+
+- Fix spelling mistakes ([#92](https://github.com/Maggi64/moderndash/pull/92))
+
+- `splitWords` | Improve regex performance | Add benchmarks ([`87dd34e`](https://github.com/Maggi64/moderndash/commit/87dd34ee27986c1097c9327d46891cc55f1c7489))
+
 ## 3.3.1
 
 ### Patch Changes
