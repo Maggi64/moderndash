@@ -2,6 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
+    "types": ["vitest/globals"],
     "experimentalDecorators": true,
     "target": "ESNext",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     "lib": ["ESNext", "DOM"],                            /* Specify a set of bundled library declaration files that describe the target runtime environment. */

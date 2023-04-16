@@ -8,6 +8,9 @@ import { defineConfig } from "vitest/config";
 const getPath = (path: string) => fileURLToPath(new URL(path, import.meta.url));
 
 export default defineConfig({
+    test: {
+        globals: true
+    },
     resolve: {
         alias: {
             "@array": getPath("src/array"),
