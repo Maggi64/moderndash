@@ -19,8 +19,8 @@
 		"@fortawesome/free-solid-svg-icons": "6.4.0",
 		"svelte-fa": "3.0.3",
 		"svelte-sitemap": "2.6.0",
-		"@sveltejs/adapter-static": "2.0.1",
-		"@sveltejs/kit": "1.15.1",
+		"@sveltejs/adapter-static": "2.0.2",
+		"@sveltejs/kit": "1.15.5",
 		"@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
 		"svelte": "3.58.0",
 		"svelte-check": "3.2.0",
@@ -29,7 +29,7 @@
 		"marked": "4.3.0",
 		"svelte-meta-tags": "2.7.0",
 		"moderndash": "../package",
-		"@stackblitz/sdk": "1.8.2"
+		"@stackblitz/sdk": "1.9.0"
 	},
 	"type": "module"
 }
