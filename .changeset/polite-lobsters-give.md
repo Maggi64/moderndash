@@ -2,4 +2,4 @@
 "moderndash": minor
 ---
 
-`FlatKeys` | Correct return types
+`flatKeys` | Correct return types
