@@ -1,10 +1,15 @@
 import type { PlainObject } from "@type/PlainObject.js";
+import type { Call, Objects } from "hotscript";
 
 import { isPlainObject } from "@validate/isPlainObject.js";
 
-const validPathRegex = /^(?:[^.[\]]+(?:\[\d+])*(?:\.|\[\d+]))+(?:[^.[\]]+(?:\[\d+])*)+$/;
+const validPathRegex = /^[^.[\]]+(?:\.[^.[\]]+)*(?:\[\d+])*(?:\.[^.[\]]+(?:\[\d+])*)*$/;
 const pathSplitRegex = /\.|(?=\[)/g;
 const matchBracketsRegex = /[[\]]/g;
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+type Paths<TObj> = Call<Objects.AllPaths, TObj> | string & {};
+type UpdateObj<TObj extends PlainObject, TPath extends string, TVal> = Call<Objects.Update<TPath, TVal>, TObj>;
 
 /**
  * Sets the value at path of object. If a portion of path doesn’t exist, it’s created.
@@ -30,14 +35,16 @@ const matchBracketsRegex = /[[\]]/g;
  * @param path The path of the property to set.
  * @param value The value to set.
  * @template TObj The type of the object.
+ * @template TPath The type of the object path.
+ * @template TVal The type of the value to set.
  * @returns The modified object.
  */
 
-export function set(obj: PlainObject, path: string, value: unknown): PlainObject {
+export function set<TObj extends PlainObject, TPath extends Paths<TObj>, TVal>(obj: TObj, path: TPath, value: TVal): UpdateObj<TObj, TPath, TVal> {
     if (!validPathRegex.test(path))
         throw new Error("Invalid path, look at the examples for the correct format.");
 
-    const pathParts = path.split(pathSplitRegex);
+    const pathParts = (path as string).split(pathSplitRegex);
     let currentObj: PlainObject = obj;
     for (let index = 0; index < pathParts.length; index++) {
         const key = pathParts[index].replace(matchBracketsRegex, "");
@@ -58,5 +65,5 @@ export function set(obj: PlainObject, path: string, value: unknown): PlainObject
         currentObj = currentObj[key] as PlainObject;
     }
 
-    return obj;
+    return obj as UpdateObj<TObj, TPath, TVal>;
 }
