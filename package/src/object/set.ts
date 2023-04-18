@@ -3,7 +3,7 @@ import type { Call, Objects } from "hotscript";
 
 import { isPlainObject } from "@validate/isPlainObject.js";
 
-const validPathRegex = /^(?:[^.[\]]+(?:\[\d+])*(?:\.|\[\d+]))+(?:[^.[\]]+(?:\[\d+])*)+$/;
+const validPathRegex = /^[^.[\]]+(?:\.[^.[\]]+)*(?:\[\d+])*(?:\.[^.[\]]+(?:\[\d+])*)*$/;
 const pathSplitRegex = /\.|(?=\[)/g;
 const matchBracketsRegex = /[[\]]/g;
 

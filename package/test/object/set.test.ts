@@ -6,6 +6,10 @@ test("set a value", () => {
 
     expectTypeOf(updatedObj).toEqualTypeOf<{ a: { b: number; c: number } }>();
     expect(obj).toEqual({ a: { b: 2, c: 1 } });
+
+    const updatedObj2 = set(obj, "a.c.d", 1);
+    expectTypeOf(updatedObj2).toEqualTypeOf<{ a: { b: number; c: { d: number } } }>();
+    expect(obj).toEqual({ a: { b: 2, c: { d: 1 } } });
 });
 
 test("set a value with array path", () => {
@@ -24,7 +28,7 @@ test("recognize number key", () => {
     const obj = { a: 1 };
     const updatedObj = set(obj, "a[0]", 4);
     expectTypeOf(updatedObj).toEqualTypeOf<{ a: number[] }>();
-    expect(obj).toEqual({ a: { e0: [1] } });
+    expect(obj).toEqual({ a: [4] });
 });
 
 test("throw error on incorrect path format", () => {
