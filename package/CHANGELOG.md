@@ -1,5 +1,17 @@
 # moderndash
 
+## 3.4.0
+
+### Minor Changes
+
+- `set` | Path autocomplete & correct return types ([#75](https://github.com/Maggi64/moderndash/pull/75))
+
+- `flatKeys` | Correct return types ([#75](https://github.com/Maggi64/moderndash/pull/75))
+
+### Patch Changes
+
+- `set` | Fix path validation ([#75](https://github.com/Maggi64/moderndash/pull/75))
+
 ## 3.3.2
 
 ### Patch Changes
