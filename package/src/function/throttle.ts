@@ -15,7 +15,6 @@ import type { GenericFunction } from "@type/GenericFunction.js";
  * @returns Returns the new throttled function.
  */
 
-
 export function throttle<TFunc extends GenericFunction<TFunc>>(func: TFunc, wait: number): TFunc {
     let inThrottle = false;
     return function (this: unknown, ...args: Parameters<TFunc>) {

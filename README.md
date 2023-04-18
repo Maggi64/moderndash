@@ -1,8 +1,10 @@
 ![ModernDash Logo](https://raw.githubusercontent.com/Maggi64/moderndash/main/website/src/assets/moderndashLogo.svg)
 
 <p align=center>
-  A Typescript-First utility library inspired by Lodash.
-  Optimized for modern browsers & developer experience.
+  <b>
+    A Typescript-First utility library inspired by Lodash.
+    Optimized for modern browsers & developer experience.
+  </b>
 </p>
 
 <div align=center class="space-y">

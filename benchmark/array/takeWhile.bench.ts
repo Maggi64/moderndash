@@ -6,22 +6,30 @@ import { bench, describe } from "vitest";
 import { randomNumberArray, randomStringArray } from "../testData.js";
 
 describe("takeWhile", () => {
-    const numArray = randomNumberArray(100);
-    const stringArray = randomStringArray(100);
+    const numArrays = Array.from({ length: 1000 }, () => randomNumberArray(50, 0, 100));
+    const stringArrays = Array.from({ length: 1000 }, () => randomStringArray(50, "abcdefg"));
 
     bench("moderndash", () => {
-        takeWhile(numArray, (num) => num < 20);
-        takeWhile(stringArray, (str) => str.includes("a"));
+        for (const array of numArrays)
+            takeWhile(array, (num) => num < 20);
+
+        for (const array of stringArrays)
+            takeWhile(array, (str) => str.includes("a"));
     });
 
     bench("lodash", () => {
-        lodashVersion(numArray, (num) => num < 20);
-        lodashVersion(stringArray, (str) => str.includes("a"));
+        for (const array of numArrays) 
+            lodashVersion(array, (num) => num < 20);
+
+        for (const array of stringArrays)
+            lodashVersion(array, (str) => str.includes("a"));
     });
 
     bench("remeda", () => {
-        remedaVersion(numArray, (num) => num < 20);
-        remedaVersion(stringArray, (str) => str.includes("a"));
-    });
+        for (const array of numArrays) 
+            remedaVersion(array, (num) => num < 20);
 
+        for (const array of stringArrays)
+            remedaVersion(array, (str) => str.includes("a"));
+    });
 });

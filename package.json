@@ -18,14 +18,15 @@
     },
     "devDependencies": {
         "@svitejs/changesets-changelog-github-compact": "1.1.0",
+        "@tsconfig/strictest": "2.0.0",
         "@changesets/cli": "2.26.1",
-        "eslint-config-dewald": "1.0.8",
-        "eslint": "8.37.0",
-        "typedoc": "0.23.28",
-        "typescript": "5.0.3",
-        "vitest": "0.29.8",
-        "@vitest/coverage-c8": "0.29.8",
-        "@vitest/ui": "0.29.8",
+        "eslint-config-dewald": "latest",
+        "eslint": "8.38.0",
+        "typedoc": "0.24.3",
+        "typescript": "5.0.4",
+        "vitest": "0.30.1",
+        "@vitest/coverage-c8": "0.30.1",
+        "@vitest/ui": "0.30.1",
         "vite": "4.2.1",
         "hotscript": "1.0.11"
     }

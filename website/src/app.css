@@ -56,7 +56,7 @@ blockquote {
 }
 
 hr {
-    @apply my-4 lg:my-8 border-gray-200;
+    @apply my-4 lg:my-6 border-gray-200;
 }
 
 #readme {
@@ -67,7 +67,7 @@ hr {
         @apply mt-1
     }
     .center {
-        @apply flex justify-center;
+        @apply flex justify-center space-x-1;
     }
     .space-y {
         @apply my-4;

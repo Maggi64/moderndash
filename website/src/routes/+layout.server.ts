@@ -5,9 +5,9 @@ import { group } from "moderndash";
 import { docData } from "$utils/docData.js";
  
 export const load: LayoutServerLoad = (() => {
-    const libaryElements = [...docData.functions, ...docData.classes, ...docData.typeAliases];
+    const libraryElements = [...docData.functions, ...docData.classes, ...docData.typeAliases];
 
-    const funcGroups = group(libaryElements, elem => elem.source?.path ?? "Other");
+    const funcGroups = group(libraryElements, elem => elem.source?.path ?? "Other");
 
 
     // Sorts the groups so that the top categories are at the top

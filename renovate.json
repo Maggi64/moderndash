@@ -12,25 +12,25 @@
   "separateMajorMinor": false,
   "packageRules": [
     {
-      "matchPaths": ["package.json"],
+      "matchFiles": ["package.json"],
       "matchPackagePatterns": ["*"],
       "groupName": "ModernDash Repo Dependencies",
       "groupSlug": "moderndash-repo"
     },
     {
-      "matchPaths": ["website/package.json"],
+      "matchFiles": ["website/package.json"],
       "matchPackagePatterns": ["*"],
       "groupName": "ModernDash Website Dependencies",
       "groupSlug": "moderndash-website"
     },
     {
-      "matchPaths": ["package/package.json"],
+      "matchFiles": ["package/package.json"],
       "matchPackagePatterns": ["*"],
       "groupName": "ModernDash Package Dependencies",
       "groupSlug": "moderndash-package"
     },
     {
-      "matchPaths": ["benchmark/package.json"],
+      "matchFiles": ["benchmark/package.json"],
       "matchPackagePatterns": ["*"],
       "groupName": "ModernDash Benchmark Dependencies",
       "groupSlug": "moderndash-benchmark"

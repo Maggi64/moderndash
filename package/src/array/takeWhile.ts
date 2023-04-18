@@ -1,6 +1,6 @@
 /**
  * Creates a slice of `array` with elements taken from the beginning.  
- * Elements are taken until `predicate` returns falsey.
+ * Elements are taken until `predicate` returns falsy.
  *
  * @example
  * const users = [

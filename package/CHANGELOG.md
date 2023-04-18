@@ -1,5 +1,19 @@
 # moderndash
 
+## 3.3.2
+
+### Patch Changes
+
+- Fix spelling mistakes ([#92](https://github.com/Maggi64/moderndash/pull/92))
+
+- `splitWords` | Improve regex performance | Add benchmarks ([`87dd34e`](https://github.com/Maggi64/moderndash/commit/87dd34ee27986c1097c9327d46891cc55f1c7489))
+
+## 3.3.1
+
+### Patch Changes
+
+- `splitWords` | Replace Safari fallback with simpler regex ([`cfb9371`](https://github.com/Maggi64/moderndash/commit/cfb93710130ffebd1a1a329bdf16d2f706d4d564))
+
 ## 3.3.0
 
 ### Minor Changes
@@ -154,7 +168,7 @@
 
 ### Patch Changes
 
-- fix: randomString return empty string if charSet is emtpy ([`4327829`](https://github.com/Maggi64/moderndash/commit/43278294a8786a9b7f88fb6c68931c82952b2c29))
+- fix: randomString return empty string if charSet is empty ([`4327829`](https://github.com/Maggi64/moderndash/commit/43278294a8786a9b7f88fb6c68931c82952b2c29))
 
 - Clarify ArrayMinLength docs ([`3870da0`](https://github.com/Maggi64/moderndash/commit/3870da0b01a078036896306a7cc280b4b1416571))
 

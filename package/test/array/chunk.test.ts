@@ -1,27 +1,23 @@
-import { describe, expect, it } from "vitest";
-
 import { chunk } from "@array/chunk";
 
-describe("Chunk", () => {
-    const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-    it("chunk an array", () => {
-        expect(chunk(array, 2)).toEqual([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]);
-    });
+test("chunk an array", () => {
+    expect(chunk(array, 2)).toEqual([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]);
+});
 
-    it("return the last chunk as remaining elements", () => {
-        expect(chunk(array, 3)).toEqual([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]);
-    });
+test("return the last chunk as remaining elements", () => {
+    expect(chunk(array, 3)).toEqual([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]);
+});
 
-    it("coerce `size` to an integer", () => {
-        expect(chunk(array, array.length / 4)).toEqual([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]);
-    });
+test("coerce `size` to an integer", () => {
+    expect(chunk(array, array.length / 4)).toEqual([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]]);
+});
 
-    it("empty array on negative size", () => {
-        expect(chunk(array, -1)).toEqual([]);
-    });
+test("empty array on negative size", () => {
+    expect(chunk(array, -1)).toEqual([]);
+});
 
-    it("empty array", () => {
-        expect(chunk([], 2)).toEqual([]);
-    });
+test("empty array", () => {
+    expect(chunk([], 2)).toEqual([]);
 });

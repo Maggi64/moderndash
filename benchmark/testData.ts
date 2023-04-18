@@ -1,4 +1,4 @@
-import { randomInt, randomString } from "moderndash";
+import { randomString } from "moderndash";
 
 type RandomObject = Record<string, object | number | string | boolean>;
 
@@ -52,7 +52,7 @@ export function randomStringArray(n: number, charSet?: string) {
     const arr = [] as string[];
 
     for (let i = 0; i < n; i++) {
-        arr.push(randomString(randomInt(0, 4) + 4, charSet));
+        arr.push(randomString(fastRandomInt(0, 4) + 4, charSet));
     }
 
     return arr;
@@ -62,7 +62,7 @@ export function randomNumberArray(n: number, min = 0, max = 1000) {
     const arr = [] as number[];
 
     for (let i = 0; i < n; i++) {
-        arr.push(randomInt(min, max));
+        arr.push(fastRandomInt(min, max));
     }
 
     return arr;
