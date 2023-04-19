@@ -2,6 +2,7 @@ import { move } from "@array/move.js";
 
 test("move an element within an array", () => {
     expect(move([1, 2, 3, 4, 5], 0, 2)).toStrictEqual([2, 3, 1, 4, 5]);
+    expect(move([1, 2, 3, 4, 5], 2, 0)).toStrictEqual([3, 1, 2, 4, 5]);
 });
 
 test("return the original array if 'fromIndex' is equal to 'toIndex'", () => {

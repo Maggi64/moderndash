@@ -25,8 +25,16 @@ export function move<TArr>(array: TArr[], fromIndex: number, toIndex: number): T
     if (fromIndex === toIndex)
         return array;
 
-    const [element] = array.splice(fromIndex, 1);
-    array.splice(toIndex, 0, element);
-  
+    const item = array[fromIndex];
+
+    if (fromIndex < toIndex)
+        for (let index = fromIndex; index < toIndex; index++)
+            array[index] = array[index + 1];
+    else
+        for (let index = fromIndex; index > toIndex; index--)
+            array[index] = array[index - 1];
+
+    array[toIndex] = item;
+
     return array;
 }
