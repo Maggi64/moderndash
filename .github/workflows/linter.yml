@@ -17,22 +17,21 @@ jobs:
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
 
-      - name : Use Node.js 19.x
+      - name : Use Node.js 20.x
         uses : actions/setup-node@v3
         with :
-          node-version : 19.x
+          node-version : 20.x
           cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      # - name: Auto-fix ESLint errors
-      #   run: npm run lint:fix || true
-
-      # - name: Commit auto-fixed ESLint errors
-      #   uses: stefanzweifel/git-auto-commit-action@v4
-      #   with:
-      #       commit_message: 🔧 Auto-fix ESLint errors
+      - name: Auto-fix ESLint errors
+        run: npm run lint:fix || true
+      - name: Commit auto-fixed ESLint errors
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+            commit_message: 🔧 Auto-fix ESLint errors
 
       # only run if all files already auto fixed
       - name : Run eslint on changed files
