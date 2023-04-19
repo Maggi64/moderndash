@@ -11,27 +11,36 @@ describe("chunk", () => {
     const numArray = randomNumberArray(100);
     const objArray = randomObjectArray(20);
 
-    bench("moderndash", () => {
-        chunk(strArray, 5);
-        chunk(numArray, 5);
-        chunk(objArray, 5);
-    });
-
     bench("lodash", () => {
-        chunkLodash(strArray, 5);
-        chunkLodash(numArray, 5);
-        chunkLodash(objArray, 5);
+        for (let i = 0; i < 10; i++) {
+            chunkLodash(strArray, 5);
+            chunkLodash(numArray, 5);
+            chunkLodash(objArray, 5);
+        }
     });
 
     bench("radash", () => {
-        chunkRadash(strArray, 5);
-        chunkRadash(numArray, 5);
-        chunkRadash(objArray, 5);
+        for (let i = 0; i < 10; i++) {
+            chunkRadash(strArray, 5);
+            chunkRadash(numArray, 5);
+            chunkRadash(objArray, 5);
+        }
     }); 
 
     bench("remeda", () => {
-        chunkRemeda(strArray, 5);
-        chunkRemeda(numArray, 5);
-        chunkRemeda(objArray, 5);
+        for (let i = 0; i < 10; i++) {
+            chunkRemeda(strArray, 5);
+            chunkRemeda(numArray, 5);
+            chunkRemeda(objArray, 5);
+        }
     });
+
+    bench("moderndash", () => {
+        for (let i = 0; i < 10; i++) {
+            chunk(strArray, 5);
+            chunk(numArray, 5);
+            chunk(objArray, 5);
+        }
+    });
+
 });
