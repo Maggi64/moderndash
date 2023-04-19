@@ -15,9 +15,9 @@
 
 export function chunk<TElem>(array: readonly TElem[], chunkSize: number): TElem[][] {
     const intSize = Math.trunc(chunkSize);
-    if (array.length === 0 || intSize < 1) {
+
+    if (array.length === 0 || intSize < 1)
         return [];
-    }
       
     let index = 0;
     let resultIndex = 0;
