@@ -5,6 +5,7 @@ export * from "./dropRightWhile";
 export * from "./dropWhile";
 export * from "./group";
 export * from "./intersection";
+export * from "./move";
 export * from "./range";
 export * from "./shuffle";
 export * from "./sort";
