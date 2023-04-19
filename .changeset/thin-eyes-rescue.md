@@ -2,4 +2,4 @@
 "moderndash": minor
 ---
 
-Add `replaceLast`
+Add `replaceLast` function

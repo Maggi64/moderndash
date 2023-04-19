@@ -24,7 +24,7 @@ export function move<TArr>(array: TArr[], fromIndex: number, toIndex: number): T
 
     if (fromIndex === toIndex)
         return array;
-        
+
     const [element] = array.splice(fromIndex, 1);
     array.splice(toIndex, 0, element);
   
