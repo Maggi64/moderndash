@@ -5,6 +5,7 @@ export * from "./escapeHtml";
 export * from "./escapeRegExp";
 export * from "./kebabCase";
 export * from "./pascalCase";
+export * from "./replaceLast";
 export * from "./snakeCase";
 export * from "./splitWords";
 export * from "./titleCase";
