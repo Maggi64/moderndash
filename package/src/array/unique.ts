@@ -1,8 +1,7 @@
 /**
- * Creates a duplicate-free version of an array, in which only the first occurrence of each element is kept.  
- * The order of result values is determined by the order they occur in the array.
+ * Creates unique array retaining first occurrence of elements.
  *
- * A compare function is optional to specify how the array is compared (default is `===`).
+ * A compare function is optional (default is `===`).
  * 
  * @example
  * unique([2, 1, 2])
@@ -22,10 +21,10 @@
  * unique(users, (a, b) => a.name === b.name)
  * // => [{ id: 1, name: 'john' }]
  *
- * @param array The array to inspect.
- * @param iteratee The iteratee invoked per element.
- * @template TElem The type of the array elements.
- * @returns Returns the new duplicate free array.
+ * @param array Array to inspect
+ * @param iteratee Iteratee invoked per element
+ * @template TElem Type of the array elements
+ * @returns A new unique array
  */
 
 export function unique<TElem>(array: readonly TElem[], compareFn?: (a: TElem, b: TElem) => boolean): TElem[] {
