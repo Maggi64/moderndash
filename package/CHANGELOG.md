@@ -1,5 +1,17 @@
 # moderndash
 
+## 3.5.0
+
+### Minor Changes
+
+- Add `replaceLast` function ([`b39f485`](https://github.com/Maggi64/moderndash/commit/b39f4856f0609ce6d9169618df60ba1d20e9a95e))
+
+- Add `move` function ([`329a26a`](https://github.com/Maggi64/moderndash/commit/329a26aba83e224bec38ebf0ca3622442ca6363d))
+
+### Patch Changes
+
+- Simplify docs for multiple functions ([`dd57830`](https://github.com/Maggi64/moderndash/commit/dd5783085d3e452f28c55ecd48d41333f493b2bf))
+
 ## 3.4.0
 
 ### Minor Changes
