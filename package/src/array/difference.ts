@@ -23,10 +23,10 @@ import { fastArrayFlat } from "@helpers/fastArrayFlat.js";
  *
  * difference(arr1, arr2, (a, b) => a.id === b.id)
  * // => [{ id: 1, name: 'Yeet' }]
- * @param arraysOrCompareFn Two or more arrays with an optional compare function at the end.
- * @template TElem The type of the array elements.
- * @template TArrays The type of the arrays provided.
- * @returns Returns the new array of filtered values.
+ * @param arraysOrCompareFn Two or more arrays with an optional compare function at the end
+ * @template TElem The type of the array elements
+ * @template TArrays The type of the arrays provided
+ * @returns Returns the new array of filtered values
  */
 
 export function difference<TElem>(...arraysOrCompareFn: ArrayMinLength<TElem[], 2>): TElem[];

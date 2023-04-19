@@ -1,6 +1,5 @@
 /**
- * Generates an iterable sequence of numbers starting from `start`, up to and including `end`,
- * with a given `step` between each number.
+ * Generates iterable sequence including numbers from start to end, with step increments.
  *
  * @example
  * for (const num of range(1, 5)) {
@@ -12,11 +11,11 @@
  * const arr = [...range(0, 10, 2)];
  * // => [0, 2, 4, 6, 8, 10]
  * 
- * @param start The starting number of the sequence.
- * @param end The end number of the sequence.
- * @param step The step between each number in the sequence. Defaults to 1.
- *
- * @returns An iterable sequence of numbers between `start` and `end`, inclusive, with increments of `step`.
+ * @param start Start number of sequence
+ * @param end End number of sequence
+ * @param step Step between numbers, default: 1
+ * @throws If range is negative or step is 0
+ * @returns Generator of numbers within the range
  */
 export function* range(start: number, end: number, step = 1): Generator<number> {
     if (start > end)

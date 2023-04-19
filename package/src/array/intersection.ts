@@ -10,6 +10,7 @@ import { unique } from "./unique.js";
  * The order of the values is based on the first array. 
  * 
  * Optionally, use a compare function for element comparison (default is `===`).
+ * 
  * @example
  * intersection([2, 1], [2, 3], [6, 2])
  * // => [2]
@@ -26,10 +27,11 @@ import { unique } from "./unique.js";
  *
  * intersection(arr1, arr2, (a, b) => a.id === b.id)
  * // => [{ id: 3, name: 'John' }]
- * @param arraysOrCompareFn Two or more arrays with an optional compare function at the end.
- * @template TElem The type of the array elements.
- * @template TArrays The type of the arrays provided.
- * @returns Returns the new array of intersecting values.
+ * 
+ * @param arraysOrCompareFn Two or more arrays with an optional compare function at the end
+ * @template TElem Type of the array elements
+ * @template TArrays Type of the arrays provided
+ * @returns New array of intersecting values
  */
 
 export function intersection<TElem>(...arraysOrCompareFn: ArrayMinLength<TElem[], 2>): TElem[];

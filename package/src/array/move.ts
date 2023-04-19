@@ -7,11 +7,11 @@
  * // => [2, 3, 1, 4, 5]
  * ```
  * 
- * @param array The input array.
- * @param fromIndex Index of the element to move.
- * @param toIndex Target index for the element.
- * @throws If index is out of bounds.
- * @returns The modified array with the moved element.
+ * @param array The input array
+ * @param fromIndex Index of the element to move
+ * @param toIndex Target index for the element
+ * @throws If index is out of bounds
+ * @returns The modified array with the moved element
  * @template TArr Type of the array elements
  */
 

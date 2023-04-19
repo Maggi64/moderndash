@@ -11,10 +11,10 @@
  *
  * dropWhile(users, user => user.active)
  * // => objects for ['pebbles']
- * @param predicate The function invoked per iteration.
- * @param array The array to query.
- * @template TElem The type of the array elements.
- * @returns Returns the slice of `array`.
+ * @param predicate The function invoked per iteration
+ * @param array The array to query
+ * @template TElem The type of the array elements
+ * @returns Returns the slice of `array`
  */
 
 export function dropWhile<TElem>(array: readonly TElem[], predicate: (value: TElem) => boolean): TElem[] {

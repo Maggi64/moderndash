@@ -1,6 +1,6 @@
 
 /**
- * Creates a new sorted array in ascending or descending order based on one or multiple sorting criteria.
+ * Creates new array sorted in ascending/descending order with single or multiple criteria.
  * 
  * @example
  * sort([1, 2, 3, 4], { order: 'desc' })
@@ -14,16 +14,17 @@
  *   { order: 'desc', by: item => item.b }
  * )
  * // => [{ a: 1, b: 2 }, { a: 1, b: 1 }, { a: 2, b: 1 }]
- * @param array The array to sort.
- * @param orders The sorting criteria, one or multiple objects with properties order (either 'asc' or 'desc') and by (iteratee function to sort based on a specific property).
- * @param orders.order - The order to sort in, either 'asc' or 'desc'.
- * @param orders.by - The iteratee function to sort based on a specific property.
- * @template TElem The type of the array elements.
- * @returns Returns a new sorted array.
+ * 
+ * @param array Array to sort
+ * @param criteria Criteria to sort by
+ * @param criteria.order Order to sort in, either 'asc' or 'desc'
+ * @param criteria.by Iteratee function to sort based on a specific property
+ * @template TElem Type of the array elements
+ * @returns New sorted array
 */
-export function sort<TElem>(array: readonly TElem[], ...orders: { order?: "asc" | "desc", by?: (item: TElem) => number | bigint | Date | string }[]): TElem[] {
+export function sort<TElem>(array: readonly TElem[], ...criteria: { order?: "asc" | "desc", by?: (item: TElem) => number | bigint | Date | string }[]): TElem[] {
     return [...array].sort((a, b) => {
-        for (const { order, by } of orders) {
+        for (const { order, by } of criteria) {
             const aValue = by ? by(a) : a;
             const bValue = by ? by(b) : b;
             if (aValue < bValue) {

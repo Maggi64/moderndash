@@ -8,10 +8,10 @@
  * group([6.1, 4.2, 6.3], value => value > 5 ? '>5' : '<=5')
  * // => { '<=5': [4.2], '>5': [6.1, 6.3] }
  * 
- * @param collection The array or object to iterate over.
- * @param getGroupKey A function that returns the group id for each item.
- * @template TElem The type of the array elements.
- * @returns An object with grouped items.
+ * @param collection The array or object to iterate over
+ * @param getGroupKey A function that returns the group id for each item
+ * @template TElem The type of the array elements
+ * @returns An object with grouped items
  */
 
 export function group<TElem, TKey extends PropertyKey>(array: readonly TElem[], getGroupKey: (elem: TElem) => TKey): Record<TKey, TElem[]> {

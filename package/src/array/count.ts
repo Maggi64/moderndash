@@ -14,10 +14,10 @@
  * count(users, value => value.age);
  * // => { 36: 2, 40: 1 }
  *
- * @param criteria The criteria to count by.
- * @param array The array or record to iterate over.
- * @template TElem The type of the array elements.
- * @returns Returns the composed aggregate object.
+ * @param criteria The criteria to count by
+ * @param array The array or record to iterate over
+ * @template TElem The type of the array elements
+ * @returns Returns the composed aggregate object
  */
 
 export function count<TElem, TKey extends PropertyKey>(array: readonly TElem[], criteria: (value: TElem) => TKey): Record<TKey, number> {
