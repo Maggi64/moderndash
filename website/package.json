@@ -20,7 +20,7 @@
 		"svelte-fa": "3.0.3",
 		"svelte-sitemap": "2.6.0",
 		"@sveltejs/adapter-static": "2.0.2",
-		"@sveltejs/kit": "1.15.5",
+		"@sveltejs/kit": "1.15.7",
 		"@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
 		"svelte": "3.58.0",
 		"svelte-check": "3.2.0",
