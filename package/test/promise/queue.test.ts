@@ -4,7 +4,6 @@ import { Queue } from "@promise/queue.js";
 import { sleep } from "@promise/sleep.js";
 
 import { trackPromise } from "./promiseUtils.js";
-import { d } from "vitest/dist/types-e3c9754d.js";
 
 let queue: Queue;
 
