@@ -1,8 +1,5 @@
 /**
- * A class for managing a queue of async functions that runs a set number concurrently.  
- * If for example you have 10 async functions and you want to run 3 at a time, you can use this class.
- * 
- * If the queue is paused, the queue will not run any more async functions until it is resumed.
+ * A class managing an async function queue with limited concurrency (e.g., 10 functions with 3 running at a time).
  * 
  * **Methods:**
  * - `add` - Adds a async function or array of functions to the queue. Returns a promise that resolves when the added function(s) finish.
