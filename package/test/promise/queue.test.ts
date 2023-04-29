@@ -3,6 +3,9 @@ import type { Mock } from "vitest";
 import { Queue } from "@promise/queue.js";
 import { sleep } from "@promise/sleep.js";
 
+import { trackPromise } from "./promiseUtils.js";
+import { d } from "vitest/dist/types-e3c9754d.js";
+
 let queue: Queue;
 
 const createAsync = (mockFn: Mock<[], string>) => async () => {
@@ -88,4 +91,22 @@ test("handle rejected promises", async () => {
     const callbackMock4 = vi.fn(() => Promise.reject("rejected"));
     await expect(queue.add(callbackMock4)).rejects.toBe("rejected");
     expect(callbackMock4).toHaveBeenCalledOnce();
+});
+
+test("done promise", async () => {
+    await expect(queue.done()).resolves.toBe(true);
+    void queue.add(createAsync(callbackMock));
+    const donePromise = trackPromise(queue.done());
+    expect(donePromise.state).toBe("pending");
+    await queue.done();
+    expect(donePromise.state).toBe("resolved");
+    expect(callbackMock).toHaveBeenCalledOnce();
+
+    // Reset if new tasks are added
+    void queue.add(createAsync(callbackMock2));
+    const donePromise2 = trackPromise(queue.done());
+    expect(donePromise2.state).toBe("pending");
+    await queue.done();
+    expect(donePromise2.state).toBe("resolved");
+    expect(callbackMock2).toHaveBeenCalledOnce();
 });
