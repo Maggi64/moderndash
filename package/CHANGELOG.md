@@ -1,5 +1,11 @@
 # moderndash
 
+## 3.6.0
+
+### Minor Changes
+
+- `Queue` | add done() function that resolves when the queue is empty ([#107](https://github.com/Maggi64/moderndash/pull/107))
+
 ## 3.5.0
 
 ### Minor Changes
