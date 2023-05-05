@@ -2,13 +2,13 @@
  * A class managing an async function queue with limited concurrency (e.g., 10 functions with 3 running at a time).
  * 
  * **Methods:**
- * - `add` - Adds a async function or array of functions to the queue. Returns a promise that resolves when the added function(s) finish.
+ * - `add` - Adds an async function or array of functions to the queue. Returns a promise that resolves or rejects when the added function(s) finish.
  * - `clear` - Clears the queue.
  * - `pause` - Pauses the queue.
  * - `resume` - Resumes the queue. 
  * - `getQueue` - Returns the current queue.
  * - `isPaused` - Returns whether the queue is paused.
- * - `done` - Returns a promise resolving when all added tasks are finished.
+ * - `done` - Returns a promise resolving when all added tasks are finished. Individual rejections don't affect the done() promise.
  * 
  * @example
  * // Create a queue that can run 3 tasks concurrently
