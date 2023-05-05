@@ -1,5 +1,11 @@
 # moderndash
 
+## 3.6.1
+
+### Patch Changes
+
+- `Queue` | Clarify rejection behavior ([`a07f9f4`](https://github.com/Maggi64/moderndash/commit/a07f9f4d8d3577c77beb6f2ec30f9405ed2ca874))
+
 ## 3.6.0
 
 ### Minor Changes
