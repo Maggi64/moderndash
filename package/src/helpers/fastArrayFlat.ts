@@ -1,4 +1,4 @@
-// native array.flat is much slower than this - node 19
+// native Array.flat is much slower than this - node 19
 export function fastArrayFlat<TElem>(arrays: (readonly TElem[])[]): readonly TElem[] {
     let result = arrays.shift() ?? [];
 

@@ -5,43 +5,49 @@ import { bench, describe } from "vitest";
 
 import { randomNumberArray, randomStringArray } from "../testData.js";
 
-describe("intersection", () => {
-    const array1 = randomNumberArray(50, 0, 50);
-    const array2 = randomNumberArray(50, 0, 50);
+const arraySize = 100;
 
-    const array3 = randomStringArray(50);
-    const array4 = randomStringArray(50);
+describe("intersection", () => {
+    const numberArrays = Array.from({ length: arraySize }, () => randomNumberArray(arraySize, 0, 50));
+    const stringArrays = Array.from({ length: arraySize }, () => randomStringArray(arraySize));
 
     bench("moderndash", () => {
-        intersection(array1, array2);
-        intersection(array3, array4);
+        for (let i = 0; i < arraySize; i++) {
+            intersection(numberArrays[i], numberArrays[i + 1]);
+            intersection(stringArrays[i], stringArrays[i + 1]);
+        }
     });
 
     bench("lodash", () => {
-        lodashVersion(array1, array2);
-        lodashVersion(array3, array4);
+        for (let i = 0; i < arraySize; i++) {
+            lodashVersion(numberArrays[i], numberArrays[i + 1]);
+            lodashVersion(stringArrays[i], stringArrays[i + 1]);
+        }
     });
 
     bench("remeda", () => {
-        remedaVersion(array1, array2);
-        remedaVersion(array3, array4);
+        for (let i = 0; i < arraySize; i++) {
+            remedaVersion(numberArrays[i], numberArrays[i + 1]);
+            remedaVersion(stringArrays[i], stringArrays[i + 1]);
+        }
     });
 });
 
 describe("intersectionWith", () => {
-    const array1 = randomNumberArray(50, 0, 50);
-    const array2 = randomNumberArray(50, 0, 50);
-
-    const array3 = randomStringArray(50);
-    const array4 = randomStringArray(50);
+    const numberArrays = Array.from({ length: arraySize }, () => randomNumberArray(arraySize, 0, 50));
+    const stringArrays = Array.from({ length: arraySize }, () => randomStringArray(arraySize));
 
     bench("moderndash", () => {
-        intersection(array1, array2, (a, b) => a - b === 0);
-        intersection(array3, array4, (a, b) => a.replace("a", "") === b.replace("a", "b"));
+        for (let i = 0; i < arraySize; i++) {
+            intersection(numberArrays[i], numberArrays[i + 1], (a, b) => a - b === 0);
+            intersection(stringArrays[i], stringArrays[i + 1], (a, b) => a.replace("a", "") === b.replace("a", "b"));
+        }
     });
 
     bench("lodash", () => {
-        lodashVersionWith(array1, array2, (a, b) => a - b === 0);
-        lodashVersionWith(array3, array4, (a, b) => a.replace("a", "") === b.replace("a", "b"));
+        for (let i = 0; i < arraySize; i++) {
+            lodashVersionWith(numberArrays[i], numberArrays[i + 1], (a, b) => a - b === 0);
+            lodashVersionWith(stringArrays[i], stringArrays[i + 1], (a, b) => a.replace("a", "") === b.replace("a", "b"));
+        }
     });
 });
