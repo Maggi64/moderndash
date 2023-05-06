@@ -3,6 +3,7 @@ import type { PlainObject } from "@type/PlainObject.js";
 /**
  * Checks if the value is a plain object.
  * 
+ * Refers to the {@link PlainObject} type.
  * @example
  * isPlainObject({}) // => true
  * isPlainObject({ a: 1 }) // => true
