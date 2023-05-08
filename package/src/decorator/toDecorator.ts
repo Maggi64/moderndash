@@ -3,7 +3,7 @@ import type { GenericFunction } from "@type/GenericFunction.js";
 type Tail<T extends unknown[]> = T extends [infer _Head, ...infer Tail] ? Tail : never;
 
 /**
- * Transforms a function that takes a function as first argument into a decorator function.
+ * Transforms a function into a decorator function.
  * 
  * @example
  * ```typescript
