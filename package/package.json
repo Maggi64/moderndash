@@ -51,10 +51,12 @@
     "dist"
   ],
   "homepage": "https://moderndash.io",
+  "dependencies": {
+    "hotscript": "1.0.12"
+  },
   "devDependencies": {
     "tsup": "6.7.0",
     "ctix": "1.8.2",
-    "cross-env": "7.0.3",
-    "hotscript": "1.0.12"
+    "cross-env": "7.0.3"
   }
 }
