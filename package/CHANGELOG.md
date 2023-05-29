@@ -1,5 +1,15 @@
 # moderndash
 
+## 3.6.2
+
+### Patch Changes
+
+- `toDecorator` | Simplify docs ([`c055fca`](https://github.com/Maggi64/moderndash/commit/c055fcac8e3ae1a1efe2fe4a34dd3405a2fe8dce))
+
+- Fix hotscript type import ([`191c985`](https://github.com/Maggi64/moderndash/commit/191c985ae7c6ea31c265a67e49a133df12600115))
+
+- `isPlainObject` | Link the type in the documentation ([`02802a5`](https://github.com/Maggi64/moderndash/commit/02802a5ae893fd77023b404837951158c2c534e2))
+
 ## 3.6.1
 
 ### Patch Changes
