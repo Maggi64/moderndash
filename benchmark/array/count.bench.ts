@@ -5,7 +5,7 @@ import { count, randomInt, randomString } from "moderndash";
 import { counting as radashVersion } from "radash";
 import { bench, describe } from "vitest";
 
-const arraySize = 500;
+const arraySize = 10000;
 const getRandomArray = () => Array.from({ length: arraySize }, () => ({ a: randomString(3), b: randomInt(1, 3) }));
 
 describe("count", () => {
