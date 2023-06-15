@@ -45,7 +45,7 @@
     1.10x faster than lodash
 
   modernDash - array/move.bench.ts > Move
-    2.62x faster than Rambda
+    2.62x faster than Rambda (Note: unfair comparison, Rambda copies the array instead of mutating it)
 
   moderndash - array/shuffle.bench.ts > shuffle
     1.71x faster than lodash
