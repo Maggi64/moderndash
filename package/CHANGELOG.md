@@ -1,5 +1,20 @@
 # moderndash
 
+## 3.7.0
+
+### Minor Changes
+
+- `range` ([`d5fbc96`](https://github.com/Maggi64/moderndash/commit/d5fbc96dde999da0af1a1d121f99b318f3d7645d))
+
+  - 2x performance improvement by removing the js generator
+
+    > API simplified: `[...range(0,5)]` => `range(0,5)`
+    > This isn't a breaking change, but you should still update your code for better performance.
+
+  - Support reverse ranges
+    > Without steps: `range(5,0)` => `[5,4,3,2,1]`
+    > With steps: `range(5,0,2)` => `[5,3,1]`
+
 ## 3.6.2
 
 ### Patch Changes
