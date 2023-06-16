@@ -14,7 +14,7 @@
  * @param predicate The function invoked per iteration.
  * @param array The array to query.
  * @template TElem The type of the array elements.
- * @returns Returns the slice of `array`.
+ * @returns A new array of taken elements.
  */
 
 export function takeWhile<TElem>(array: readonly TElem[], predicate: (elem: TElem) => boolean): TElem[] {
