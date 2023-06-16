@@ -1,6 +1,6 @@
-import { isPlainObject as isPlainObjectLodash } from "lodash-es";
+import { isPlainObject as lodashVersion } from "lodash-es";
 import { isPlainObject } from "moderndash";
-import { isObject as isPlainObjectRadash } from "radash";
+import { isObject as radashVersion } from "radash";
 import { bench, describe } from "vitest";
 
 describe("isPlainObject", () => {
@@ -17,16 +17,16 @@ describe("isPlainObject", () => {
     });
 
     bench("lodash", () => {
-        isPlainObjectLodash(object);
-        isPlainObjectLodash(notObject);
-        isPlainObjectLodash(arrayObject);
-        isPlainObjectLodash(nullObject);
+        lodashVersion(object);
+        lodashVersion(notObject);
+        lodashVersion(arrayObject);
+        lodashVersion(nullObject);
     });
 
     bench("radash", () => {
-        isPlainObjectRadash(object);
-        isPlainObjectRadash(notObject);
-        isPlainObjectRadash(arrayObject);
-        isPlainObjectRadash(nullObject);
+        radashVersion(object);
+        radashVersion(notObject);
+        radashVersion(arrayObject);
+        radashVersion(nullObject);
     });
 });
