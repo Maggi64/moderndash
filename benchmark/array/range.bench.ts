@@ -1,31 +1,45 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { range as lodashVersion } from "lodash-es";
 import { range } from "moderndash";
 import { range as radashVersion } from "radash";
 import { bench, describe } from "vitest";
 
+
 describe("range", () => {
     const start = 0;
-    const end = 10000000;
+    const end = 1000000;
     const step = 2;
 
     bench("ModernDash", () => {
-        for (const num of range(start, end, step)) { 
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const a = num;
+        for (let i = 0; i < 10; i++) {
+            // Generate full array
+            range(start + i, end + i, step + i);
+
+            // iterate over range and break early
+            for (const num of range(start - i, end - i, step + i)) {
+                if (num > end / 3)
+                    break;
+            }
         }
     });
-
-    bench("Radash", () => {
-        for (const num of radashVersion(start, end, i => i, step)) { 
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const a = num;
-        }
-    });
-
+    
     bench("Lodash", () => {
-        for (const num of lodashVersion(start, end, step)) { 
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const a = num;
+        for (let i = 0; i < 10; i++) {
+            lodashVersion(start + i, end + i, step + i);
+            for (const num of lodashVersion(start - i, end - i, step + i)) {
+                if (num > end / 3)
+                    break;
+            }
+        }
+    });
+   
+    bench("Radash", () => {
+        for (let i = 0; i < 10; i++) {
+            [...radashVersion(start + i, end + i, v => v, step + i)];
+            for (const num of range(start - i, end - i, step + i)) {
+                if (num > end / 3)
+                    break;
+            }
         }
     });
 });

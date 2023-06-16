@@ -1,22 +1,18 @@
 import { range } from "@array/range.js";
 
-test("generate a sequence of numbers between start and end, inclusive, with increments of step", () => {
-    const result = [...range(1, 5)];
-
-    expect(result).toEqual([1, 2, 3, 4, 5]);
+test("range of numbers", () => {
+    expect(range(1, 5)).toEqual([1, 2, 3, 4, 5]);
+    expect(range(5, 1)).toEqual([5, 4, 3, 2, 1]);
 });
 
-test("generate an array of even numbers between 0 and 10", () => {
-    const result = [...range(0, 10, 2)];
-
-    expect(result).toEqual([0, 2, 4, 6, 8, 10]);
-});
-
-test("throw an error if the start is greater than the end", () => {
-    expect(() => [...range(5, 1)]).toThrowError();
+test("range with steps", () => {
+    expect(range(0, 10, 2)).toEqual([0, 2, 4, 6, 8, 10]);
+    expect(range(10, 0, 2)).toEqual([10, 8, 6, 4, 2, 0]);
+    
+    expect(range(5, 0, 2)).toEqual([5, 3, 1]);
 });
 
 test("throw an error if the step is 0 or negative", () => {
-    expect(() => [...range(1, 5, 0)]).toThrowError();
-    expect(() => [...range(1, 5, -1)]).toThrowError(); 
+    expect(() => range(1, 5, 0)).toThrowError();
+    expect(() => range(1, 5, -1)).toThrowError(); 
 }); 
