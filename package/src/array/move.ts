@@ -11,8 +11,8 @@
  * @param fromIndex Index of the element to move
  * @param toIndex Target index for the element
  * @throws If index is out of bounds
- * @returns The modified array with the moved element
  * @template TArr Type of the array elements
+ * @returns The modified array with the moved element
  */
 
 export function move<TArr>(array: TArr[], fromIndex: number, toIndex: number): TArr[] {

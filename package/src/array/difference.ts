@@ -26,7 +26,7 @@ import { fastArrayFlat } from "@helpers/fastArrayFlat.js";
  * @param arraysOrCompareFn Two or more arrays with an optional compare function at the end
  * @template TElem The type of the array elements
  * @template TArrays The type of the arrays provided
- * @returns Returns the new array of filtered values
+ * @returns Returns a new array of filtered values
  */
 
 export function difference<TElem>(...arraysOrCompareFn: ArrayMinLength<TElem[], 2>): TElem[];
