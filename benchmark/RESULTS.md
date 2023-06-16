@@ -37,6 +37,10 @@
     1.63x faster than radash
     4.02x faster than remeda
 
+  moderndash - benchmark/array/range.bench.ts > range
+    1.09x faster than lodash
+    5.90x faster than radash
+
   moderndash - array/intersection.bench.ts > intersection
     3.36x faster than lodash
     18.73x faster than remeda
