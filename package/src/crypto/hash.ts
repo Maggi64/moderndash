@@ -5,7 +5,7 @@ type SupportedAlgorithms = "SHA-256" | "SHA-384" | "SHA-512";
 let textEncoder: TextEncoder | undefined;
 
 /**
- * Generates a hash from the given data using the specified algorithm.
+ * Generates a hash of the given data using the specified algorithm.
  *
  * It uses the Web Crypto API to generate the hash.
  * 
