@@ -28,22 +28,14 @@
  */
 
 export function unique<TElem>(array: readonly TElem[], compareFn?: (a: TElem, b: TElem) => boolean): TElem[] {
-    // Arrays optimized with native Set
     if (!compareFn)
         return [...new Set(array)];
 
+    // Custom compare function can't be optimized with Set
     const uniqueArray: TElem[] = [];
+
     for (const value of array) {
-        let isUnique = true;
-  
-        for (const uniqueValue of uniqueArray) {
-            if (compareFn(value, uniqueValue)) {
-                isUnique = false;
-                break;
-            }
-        }
-  
-        if (isUnique)
+        if (!uniqueArray.some(uniqueValue => compareFn(value, uniqueValue)))
             uniqueArray.push(value);
     }
   
