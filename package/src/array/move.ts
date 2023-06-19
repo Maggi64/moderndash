@@ -14,7 +14,6 @@
  * @template TArr Type of the array elements
  * @returns The modified array with the moved element
  */
-
 export function move<TArr>(array: TArr[], fromIndex: number, toIndex: number): TArr[] {
     if (fromIndex < 0 || fromIndex >= array.length)
         throw new Error(`Invalid 'fromIndex': ${fromIndex}. Must be between 0 and ${array.length - 1}.`);

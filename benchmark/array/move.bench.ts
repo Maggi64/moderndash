@@ -1,16 +1,20 @@
-import { move } from "moderndash";
+import { move, randomInt } from "moderndash";
 import { move as rambdaVersion } from "rambda";
 import { bench, describe } from "vitest";
 
 
 describe ("Move", () => {
-    const arr = Array.from({ length: 1000 }, (_, i) => i + 1);
-    
+    const arr = Array.from({ length: 10000 }, (_, i) => i + 1);
+
     bench("ModernDash", () => {
-        move(arr, 0, 600);
+        for (let i = 0; i < arr.length / 3; i++) {
+            move(arr, i, randomInt(0, arr.length - 1));
+        }
     });
 
     bench("Rambda", () => {
-        rambdaVersion(0, 600, arr);
+        for (let i = 0; i < arr.length / 3; i++) {
+            rambdaVersion(i, randomInt(0, arr.length - 1), arr);
+        }
     });
 });
