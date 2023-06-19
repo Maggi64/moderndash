@@ -30,3 +30,8 @@ test("sort the array in descending order", () => {
     const result = sort([1, 1, 1, 2, 3], { order: "desc" });
     expect(result).toEqual([3, 2, 1, 1, 1]);
 });
+
+test("sort strings in ascending order", () => {
+    const result = sort(["a", "c", "b"], { order: "asc" });
+    expect(result).toEqual(["a", "b", "c"]);
+});
