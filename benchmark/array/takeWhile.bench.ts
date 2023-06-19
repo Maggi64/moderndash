@@ -8,7 +8,7 @@ import { randomNumberArray, randomStringArray } from "../testData.js";
 describe("takeWhile", () => {
     const numArrays = Array.from({ length: 1000 }, () => randomNumberArray(50, 0, 100));
     const stringArrays = Array.from({ length: 1000 }, () => randomStringArray(50, "abcdefg"));
-
+   
     bench("moderndash", () => {
         for (const array of numArrays)
             takeWhile(array, (num) => num < 20);
