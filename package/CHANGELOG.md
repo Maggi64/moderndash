@@ -1,5 +1,13 @@
 # moderndash
 
+## 3.7.1
+
+### Patch Changes
+
+- `unique` | simplified implementation | improved benchmarks ([`ca40ac5`](https://github.com/Maggi64/moderndash/commit/ca40ac59f971c9dfa30e14b5213ae5ce7fba7a3a))
+
+- `sort` | simplify code & improve performance by 10% ([`6c60f3a`](https://github.com/Maggi64/moderndash/commit/6c60f3a0d579967669304da9276242d536bc8667))
+
 ## 3.7.0
 
 ### Minor Changes
