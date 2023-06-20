@@ -1,11 +1,31 @@
 import { randomInt } from "@crypto/randomInt.js";
 
+import { cryptoMockHighestValue, cryptoMockLowestValue } from "./cryptoMock.js";
+
+beforeEach(() => {
+    vi.unstubAllGlobals();
+});
+
 test("return a number between min and max, including min and max", () => {
     const min = 1;
     const max = 10;
 
     expect(randomInt(min, max)).toBeGreaterThanOrEqual(min);
     expect(randomInt(min, max)).toBeLessThanOrEqual(max);
+});
+
+test("can return the upper bound", () => {
+    vi.stubGlobal("crypto", cryptoMockHighestValue);
+
+    const result = randomInt(0, 255);
+    expect(result).toBe(255);
+});
+
+test("can return the lower bound", () => {
+    vi.stubGlobal("crypto", cryptoMockLowestValue);
+
+    const result = randomInt(0, 255);
+    expect(result).toBe(0);
 });
 
 test("should return every number in between", () => {

@@ -1,5 +1,11 @@
 import { randomFloat } from "@crypto/randomFloat.js";
 
+import { cryptoMockHighestValue, cryptoMockLowestValue } from "./cryptoMock.js";
+
+beforeEach(() => {
+    vi.unstubAllGlobals();
+});
+
 test("throw an error if min is greater than max", () => {
     expect(() => randomFloat(10, 1)).toThrowError();
 });
@@ -27,18 +33,17 @@ test("return a float", () => {
     } 
 });
 
-test("can return the upper and lower bounds", () => {
-    const min = 0;
-    const max = Number.MIN_VALUE;
-        
-    const results = [];
+test("can return the upper bound", () => {
+    vi.stubGlobal("crypto", cryptoMockHighestValue);
 
-    for (let i = 0; i < 20; i++) {
-        results.push(randomFloat(min, max));
-    } 
-        
-    expect(results).toContain(min);
-    expect(results).toContain(max);
+    expect(randomFloat(0, 1024)).toBe(1024);
+});
+
+
+test("can return the lower bound", () => {
+    vi.stubGlobal("crypto", cryptoMockLowestValue);
+
+    expect(randomFloat(0, 1)).toBe(0);
 });
 
 test("average of 200000 random numbers should be close to the middle", () => {
