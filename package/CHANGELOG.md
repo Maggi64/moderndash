@@ -1,5 +1,11 @@
 # moderndash
 
+## 3.7.2
+
+### Patch Changes
+
+- `randomFloat` | fix result imprecision ([`6894d24`](https://github.com/Maggi64/moderndash/commit/6894d24bde5a8e27ca01a2bad28c37ab91bae3d5))
+
 ## 3.7.1
 
 ### Patch Changes
