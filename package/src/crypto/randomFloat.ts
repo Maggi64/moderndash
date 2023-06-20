@@ -20,7 +20,7 @@ export function randomFloat(min: number, max: number): number {
     const randomBuffer = new Uint32Array(2);
     crypto.getRandomValues(randomBuffer);
 
-    // merge to a 52bit integer
+    // keep all 32 bits of the the first, top 20 of the second for 52 random bits
     const randomBigInt = (BigInt(randomBuffer[0]) << 20n) | (BigInt(randomBuffer[1]) >> 12n);
 
     // fraction between 0 and 1 with full 52 precision
