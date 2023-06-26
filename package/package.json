@@ -55,7 +55,7 @@
     "hotscript": "1.0.12"
   },
   "devDependencies": {
-    "tsup": "7.0.0",
+    "tsup": "7.1.0",
     "ctix": "1.8.2",
     "cross-env": "7.0.3"
   }
