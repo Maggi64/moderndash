@@ -6,7 +6,6 @@ import { minCalls } from "@function/minCalls.js";
  * 
  * Look at {@link minCalls} for the non-decorator version.
  * 
- * *Requires the [experimentalDecorators](https://www.typescriptlang.org/tsconfig#experimentalDecorators) flag to be set.*
  * @example
  * ```typescript
  * class TestClass {
