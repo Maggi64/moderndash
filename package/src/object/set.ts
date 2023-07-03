@@ -46,6 +46,7 @@ export function set<TObj extends PlainObject, TPath extends Paths<TObj>, TVal>(o
 
     const pathParts = (path as string).split(pathSplitRegex);
     let currentObj: PlainObject = obj;
+
     for (let index = 0; index < pathParts.length; index++) {
         const key = pathParts[index].replace(matchBracketsRegex, "");
 
@@ -54,14 +55,17 @@ export function set<TObj extends PlainObject, TPath extends Paths<TObj>, TVal>(o
             break;
         }
 
-        const nextElemIn = pathParts[index + 1].startsWith("[") ? "array" : "object";
-        if (currentObj[key] === undefined) {
-            currentObj[key] = nextElemIn === "array" ? [] : {};
-        } else if (nextElemIn === "array" && !Array.isArray(currentObj[key])) {
+        const nextElementInArray = pathParts[index + 1].startsWith("[");
+        const nextElementInObject = !nextElementInArray;
+
+        if (nextElementInArray && !Array.isArray(currentObj[key])) {
             currentObj[key] = [];
-        } else if (nextElemIn === "object" && !isPlainObject(currentObj[key])) {
+        }
+
+        if (nextElementInObject && !isPlainObject(currentObj[key])) {
             currentObj[key] = {};
         }
+        
         currentObj = currentObj[key] as PlainObject;
     }
 
