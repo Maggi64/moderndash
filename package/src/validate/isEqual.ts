@@ -12,8 +12,8 @@ type TypedArray = Int8Array | Uint8Array | Uint8ClampedArray | Int16Array | Uint
  * Supports: primitives, arrays, objects, dates, regexes, maps, sets, buffers, typed arrays
  * 
  * @example
- * var object = { a: { b: 2 } };
- * var other = { a: { b: 2 } };
+ * const object = { a: { b: 2 } };
+ * Const other = { a: { b: 2 } };
  *
  * isEqual(object, other);
  * // => true
