@@ -8,7 +8,7 @@ import { randomObjectArray } from "../testData.js";
 
 describe("omit", () => {
     
-    const objects = randomObjectArray(50);
+    const objects = randomObjectArray(30);
     const objWithAField = objects.map((obj) => ({ ...obj, a: "a", b: "b", c: "c", d: "d", e: "e" }));
     
     bench("moderndash", () => {
