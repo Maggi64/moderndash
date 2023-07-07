@@ -20,11 +20,10 @@ export function randomFloat(min: number, max: number): number {
     const randomBuffer = new Uint32Array(2);
     crypto.getRandomValues(randomBuffer);
 
-    // keep all 32 bits of the the first, top 20 of the second for 52 random bits
-    const randomBigInt = (BigInt(randomBuffer[0]) << 20n) | (BigInt(randomBuffer[1]) >> 12n);
+    // keep all 32 bits of the the first, top 21 of the second for 53 random bits
+    const randomBigInt = (BigInt(randomBuffer[0]) << 21n) | (BigInt(randomBuffer[1]) >> 11n);
     
-    // fraction between 0 and 1 with full 52 precision
-    const maxRandomNumber = 4503599627370495; // (2 ** 52) - 1;
-    const fraction = Number(randomBigInt) / maxRandomNumber;
+    // fraction between 0 and 1 with full 53bit precision
+    const fraction = Number(randomBigInt) / Number.MAX_SAFE_INTEGER; // (2 ** 53)
     return min + (fraction * (max - min));
 }
