@@ -17,6 +17,7 @@ export function randomFloat(min: number, max: number): number {
     if (min >= max) 
         throw new Error("max must be greater than min");
 
+    // TODO: Switch to UInt64Array when safari support is better (https://caniuse.com/mdn-javascript_builtins_bigint64array)
     const randomBuffer = new Uint32Array(2);
     crypto.getRandomValues(randomBuffer);
 
