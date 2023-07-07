@@ -97,6 +97,12 @@
   moderndash - string/deburr.bench.ts > deburr
     1.38x faster than lodash
 
+  moderndash - string/escapeHtml.bench.ts > escapeHtml
+    1.90x faster than lodash
+
+  moderndash - string/unescape.bench.ts > escapeHtml
+    1.96x faster than lodash
+
   moderndash - string/kebabCase.bench.ts > kebabCase
     1.63x faster than lodash
     2.29x faster than radash
