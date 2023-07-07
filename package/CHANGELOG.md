@@ -1,5 +1,15 @@
 # moderndash
 
+## 3.7.3
+
+### Patch Changes
+
+- `set` | Simplify implementation ([`eb597b8`](https://github.com/Maggi64/moderndash/commit/eb597b882937b43f98b39c1cf58210dcd257a8a7))
+
+- `randomFloat` | Added benchmarks and improved performance slightly ([`74c342e`](https://github.com/Maggi64/moderndash/commit/74c342e41f208d1f32f3c1b74e9e05358e13ea4e))
+
+- `omit` | Improve performance by using Set for keys ([`1bf6b20`](https://github.com/Maggi64/moderndash/commit/1bf6b200a8548815452138572a33fa511e034453))
+
 ## 3.7.2
 
 ### Patch Changes
