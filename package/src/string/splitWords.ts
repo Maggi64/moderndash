@@ -14,7 +14,6 @@ const wordsRegex = /(?:\d*[a-z]+)|(?:[A-Z][a-z]+)|(?:\d*[A-Z]+(?=[^a-z]|$))|\d+/
  * // => ['hello', 'world', '123']
  * 
  * @param str The string to split into words.
- * @param forceFallback Force the use of the positive lookahead fallback. Only used for testing.
  * @returns An array of words.
  */
 
