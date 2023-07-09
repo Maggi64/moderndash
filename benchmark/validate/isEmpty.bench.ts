@@ -2,6 +2,7 @@
 import { isEmpty as lodashVersion } from "lodash-es";
 import { isEmpty } from "moderndash";
 import { isEmpty as radashVersion } from "radash";
+import { isEmpty as rambdaVersion } from "rambda";
 import { bench, describe } from "vitest";
 
 import { randomObject } from "../testData.js";
@@ -46,5 +47,15 @@ describe("isEmpty", () => {
         radashVersion(map);
         radashVersion(emptyMap);
         radashVersion(bigObject);
+    });
+
+    bench("rambda", () => {
+        rambdaVersion(object);
+        rambdaVersion(emptyObj);
+        rambdaVersion(set);
+        rambdaVersion(emptySet);
+        rambdaVersion(map);
+        rambdaVersion(emptyMap);
+        rambdaVersion(bigObject);
     });
 });

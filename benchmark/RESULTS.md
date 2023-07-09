@@ -122,8 +122,9 @@
     13.03x faster than lodash
 
   moderndash - validate/isEmpty.bench.ts > isEmpty
-    9.56x faster than radash
-    250.66x faster than lodash
+    6.44x faster than radash
+    11.60x faster than rambda
+    192.96x faster than lodash
 
   moderndash - validate/isEqual.bench.ts > isEqual
     3.31x faster than radash
