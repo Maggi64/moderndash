@@ -30,6 +30,10 @@ moderndash - array/group.bench.ts > group
 1.63x faster than radash
 4.02x faster than remeda
 
+moderndash - array/range.bench.ts > range
+1.09x faster than lodash
+5.90x faster than radash
+
 moderndash - array/intersection.bench.ts > intersection
 3.36x faster than lodash
 18.73x faster than remeda
@@ -38,7 +42,7 @@ moderndash - array/intersection.bench.ts > intersectionWith
 1.10x faster than lodash
 
 modernDash - array/move.bench.ts > Move
-2.62x faster than Rambda
+2.62x faster than rambda
 
 moderndash - array/shuffle.bench.ts > shuffle
 1.71x faster than lodash
@@ -56,64 +60,84 @@ moderndash - array/unique.bench.ts > unique
 3.50x faster than radash
 5.37x faster than lodash
 
+lodash - crypto/randomFloat.bench.ts > randomFloat
+5.40x faster than moderndash
+
 lodash - crypto/randomInt.bench.ts > randomInt
-15.04x faster than moderndash
+55.47x faster than moderndash
 
 moderndash - number/median.bench.ts > median
 1.05x faster than rambda
 
 moderndash - object/flatKeys.bench.ts > set
-2.40x faster than radash
-
-moderndash - object/omit.bench.ts > omit
-1.47x faster than remeda
-1.71x faster than radash
-3.56x faster than lodash
-
-moderndash - object/pick.bench.ts > pick
-1.08x faster than radash
-5.06x faster than remeda
-9.64x faster than lodash
+2.95x faster than radash
 
 moderndash - object/set.bench.ts > set
-1.10x faster than lodash
-1.15x faster than radash
+1.02x faster than lodash
+1.05x faster than radash
+
+moderndash - object/omit.bench.ts > omit
+1.35x faster than radash
+2.39x faster than remeda
+3.89x faster than lodash
+
+moderndash - object/pick.bench.ts > pick
+1.10x faster than radash
+6.71x faster than remeda
+14.27x faster than lodash
 
 moderndash - string/camelCase.bench.ts > camelCase
-2.05x faster than radash
-2.07x faster than lodash
+1.95x faster than radash
+2.11x faster than lodash
 
 moderndash - string/deburr.bench.ts > deburr
-1.38x faster than lodash
+1.06x faster than lodash
+
+moderndash - string/escapeHtml.bench.ts > escapeHtml
+1.03x faster than lodash
 
 moderndash - string/kebabCase.bench.ts > kebabCase
-1.63x faster than lodash
-2.29x faster than radash
+1.59x faster than lodash
+2.15x faster than radash
+
+radash - string/pascalCase.bench.ts > pascalCase
+3.33x faster than moderndash
+
+moderndash - string/snakeCase.bench.ts > snakeCase
+2.74x faster than radash
 
 moderndash - string/splitWords.bench.ts > splitWords
-1.72x faster than lodash
+1.49x faster than lodash
 
 moderndash - string/titleCase.bench.ts > titleCase
-1.34x faster than radash
-2.06x faster than lodash
+1.10x faster than radash
+1.65x faster than lodash
 
 moderndash - string/trim.bench.ts > trim
-10.31x faster than radash
-15.50x faster than lodash
+9.14x faster than lodash
+11.07x faster than radash
 
 moderndash - string/trimStart.bench.ts > trimStart
-13.03x faster than lodash
+11.16x faster than lodash
+
+moderndash - string/unescape.bench.ts > escapeHtml
+1.12x faster than lodash
 
 moderndash - validate/isEmpty.bench.ts > isEmpty
-9.56x faster than radash
-250.66x faster than lodash
+6.45x faster than radash
+8.20x faster than rambda
+196.47x faster than lodash
 
 moderndash - validate/isEqual.bench.ts > isEqual
-3.31x faster than radash
-7.69x faster than remeda
-62.16x faster than lodash`;
+3.08x faster than radash
+6.99x faster than remeda
+58.49x faster than lodash
 
-const benchResults = data.toLowerCase().split("\n\n");
+radash - validate/isPlainObject.bench.ts > isPlainObject
+1.81x faster than moderndash
+15.34x faster than lodash`;
+
+const benchResults = data.split("\n\n");
 
 const libNames = ["moderndash", "lodash", "radash", "rambda", "remeda"];
 

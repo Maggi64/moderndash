@@ -3,16 +3,16 @@ import { move as rambdaVersion } from "rambda";
 import { bench, describe } from "vitest";
 
 
-describe ("Move", () => {
+describe ("move", () => {
     const arr = Array.from({ length: 10000 }, (_, i) => i + 1);
 
-    bench("ModernDash", () => {
+    bench("moderndash", () => {
         for (let i = 0; i < arr.length / 3; i++) {
             move(arr, i, randomInt(0, arr.length - 1));
         }
     });
 
-    bench("Rambda", () => {
+    bench("rambda", () => {
         for (let i = 0; i < arr.length / 3; i++) {
             rambdaVersion(i, randomInt(0, arr.length - 1), arr);
         }
