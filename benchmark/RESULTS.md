@@ -3,6 +3,10 @@
 
  Benchmarks are included in the repo so you can verify the results yourself.
 
+*Notes:* 
+- `randomInt` & `randomFloat` use `crypto.generateRandomValues()` which is secure but much slower
+- `move` in rambda copies the array instead of modifying it in place
+
 | File                 | moderndash | lodash | radash | rambda | remeda |
 | -------------------- | ---------- | ------ | ------ | ------ | ------ |
 | array/chunk          | 1.00x      | 1.00x  | 1.40x  | -      | 7.57x  |
@@ -38,7 +42,3 @@
 | string/unescape      | 1.00x      | 1.12x  | -      | -      | -      |
 | validate/isEmpty     | 1.00x      | 196.47x| 6.45x  | 8.20x  | -      |
 | validate/isEqual     | 1.00x      | 58.49x | 3.08x  | -      | 6.99x  |
-
-*Notes:* 
-- `randomInt` & `randomFloat` use `crypto.generateRandomValues()` which is secure but much slower
-- `move` in rambda copies the array instead of modifying it in place
