@@ -3,9 +3,11 @@
 
  Benchmarks are included in the repo so you can verify the results yourself.
 
-*Notes:* 
+## Notes 
 - `randomInt` & `randomFloat` use `crypto.generateRandomValues()` which is secure but much slower
 - `move` in rambda copies the array instead of modifying it in place
+
+## Results
 
 | File                 | moderndash | lodash | radash | rambda | remeda |
 | -------------------- | ---------- | ------ | ------ | ------ | ------ |
