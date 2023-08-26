@@ -74,3 +74,14 @@ test("flush", () => {
     debounced.flush();
     expect(testFn).toHaveBeenCalledOnce();
 });
+
+test("pending", () => {
+    const debounced = debounce(testFn, 100);
+    expect(debounced.pending()).toBe(false);
+    
+    debounced(1);
+    expect(debounced.pending()).toBe(true);
+    
+    vi.advanceTimersByTime(100);
+    expect(debounced.pending()).toBe(false);
+});
