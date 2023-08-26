@@ -1,5 +1,11 @@
 # moderndash
 
+## 3.8.0
+
+### Minor Changes
+
+- debounce | Add pending() functionality ([`4856d62`](https://github.com/Maggi64/moderndash/commit/4856d626d0595b5b8ee74704fe63bf9812bf7b26))
+
 ## 3.7.3
 
 ### Patch Changes
