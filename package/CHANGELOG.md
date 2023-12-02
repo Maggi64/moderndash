@@ -1,5 +1,15 @@
 # moderndash
 
+## 3.9.0
+
+### Minor Changes
+
+- `throttle` | Throttled function always returns the result of the last `func` invocation ([`dc589e412b6bf93baea062f20c6f288dcf5bd913`](https://github.com/Maggi64/moderndash/commit/dc589e412b6bf93baea062f20c6f288dcf5bd913))
+
+- Update DevDependencies ([`5cb9e9142dee96af2f08b6f1cecb113b8bbe18a6`](https://github.com/Maggi64/moderndash/commit/5cb9e9142dee96af2f08b6f1cecb113b8bbe18a6))
+
+- Tests | Add NodeJS 21 to version matrix ([`d7b485efcb1a18aa25b958f617b0f0ec948e1532`](https://github.com/Maggi64/moderndash/commit/d7b485efcb1a18aa25b958f617b0f0ec948e1532))
+
 ## 3.8.0
 
 ### Minor Changes

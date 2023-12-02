@@ -1,5 +1,0 @@
----
-"moderndash": minor
----
-
-Update DevDependencies
