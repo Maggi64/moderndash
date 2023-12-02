@@ -1,7 +1,8 @@
 import type { GenericFunction } from "@type/GenericFunction.js";
 
 /**
- * Generates a function that invokes the given function at most once per every `wait` milliseconds.
+ * Generates a function that invokes the given function `func` at most once per every `wait` milliseconds.  
+ * The throttled function always returns the result of the last `func` invocation.
  * 
  * This function can be used as a decorator with {@link decThrottle}.
  * @example
@@ -17,12 +18,15 @@ import type { GenericFunction } from "@type/GenericFunction.js";
 
 export function throttle<TFunc extends GenericFunction<TFunc>>(func: TFunc, wait: number): TFunc {
     let inThrottle = false;
+    let lastResult: ReturnType<TFunc>;
     return function (this: unknown, ...args: Parameters<TFunc>) {
         if (!inThrottle) {
-            func.apply(this, args);
+            lastResult = func.apply(this, args);
             inThrottle = true;
             setTimeout(() => (inThrottle = false), wait);
         }
+
+        return lastResult;
     } as TFunc;
 }
   

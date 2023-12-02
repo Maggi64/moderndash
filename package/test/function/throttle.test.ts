@@ -1,41 +1,49 @@
 import { decThrottle } from "@decorator/decThrottle.js";
 import { throttle } from "@function/throttle";
 
-const callback = vi.fn();
+const addOneMock = vi.fn((input: number) => input + 1);
 
 beforeAll(() => {
     vi.useFakeTimers();
 });
 
 beforeEach(() => {
-    callback.mockClear();
+    addOneMock.mockClear();
 });
 
+test("only calls the function on in time frame", () => {
+    const throttled = throttle(addOneMock, 50);
 
-test("only calls the function once", () => {
+    throttled(1);
+    throttled(2);
+    throttled(3);
+    expect(addOneMock).toHaveBeenCalledTimes(1);
 
-        
-    const throttled = throttle(callback, 100);
-
-    throttled();
-    throttled();
-    throttled();
-
-    expect(callback).toHaveBeenCalledTimes(1);
-
-    vi.advanceTimersByTime(99);
-    expect(callback).toHaveBeenCalledTimes(1);
+    vi.advanceTimersByTime(49);
+    expect(addOneMock).toHaveBeenCalledTimes(1);
 
     vi.advanceTimersByTime(1);
-    throttled();
-    expect(callback).toHaveBeenCalledTimes(2);
+    throttled(4);
+    expect(addOneMock).toHaveBeenCalledTimes(2);
+});
+
+test("return value is last invocation", () => {
+    const throttled = throttle(addOneMock, 50);
+
+    let returnValue: ReturnType<typeof throttled>;
+    returnValue = throttled(1);
+    expect(returnValue).toBe(throttled(3));
+
+    vi.advanceTimersByTime(50);
+    returnValue = throttled(4);
+    expect(returnValue).toBe(throttled(5));
 });
 
 test("decorator", () => {
     class TestClass {
         @decThrottle(100)
         testMethod() {
-            callback();
+            return addOneMock(1);
         }
     }
 
@@ -45,12 +53,12 @@ test("decorator", () => {
     instance.testMethod();
     instance.testMethod();
 
-    expect(callback).toHaveBeenCalledTimes(1);
+    expect(addOneMock).toHaveBeenCalledTimes(1);
 
     vi.advanceTimersByTime(99);
-    expect(callback).toHaveBeenCalledTimes(1);
+    expect(addOneMock).toHaveBeenCalledTimes(1);
 
     vi.advanceTimersByTime(1);
     instance.testMethod();
-    expect(callback).toHaveBeenCalledTimes(2);
+    expect(addOneMock).toHaveBeenCalledTimes(2);
 });
