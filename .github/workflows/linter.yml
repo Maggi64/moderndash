@@ -29,7 +29,7 @@ jobs:
       - name: Auto-fix ESLint errors
         run: npm run lint:fix || true
       - name: Commit auto-fixed ESLint errors
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
             commit_message: 🔧 Auto-fix ESLint errors
 
