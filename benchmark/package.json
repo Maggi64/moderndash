@@ -5,15 +5,15 @@
 	"scripts": {
 		"bench": "vitest bench"
 	},
-	"dependencies": {
-	},
 	"devDependencies": {
-        "@types/lodash-es": "latest",
-		"moderndash": "../package",
+		"@types/deep-freeze": "0.1.5",
+		"@types/lodash-es": "latest",
+		"deep-freeze": "latest",
 		"lodash-es": "latest",
+		"moderndash": "../package",
 		"radash": "latest",
-		"remeda": "latest",
-		"rambda": "latest"
+		"rambda": "latest",
+		"remeda": "latest"
 	},
 	"type": "module"
 }
