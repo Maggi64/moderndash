@@ -1,5 +1,11 @@
 # moderndash
 
+## 3.9.1
+
+### Patch Changes
+
+- Fix `capitalize` implementation, lowercasing all remaining letters ([#151](https://github.com/Maggi64/moderndash/pull/151))
+
 ## 3.9.0
 
 ### Minor Changes
