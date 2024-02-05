@@ -1,5 +1,13 @@
 # moderndash
 
+## 3.9.2
+
+### Patch Changes
+
+- Case Functions | Add early return for empty strings + More tests ([`b9e93c17920926d0fb4dad908906b20c86a9e921`](https://github.com/Maggi64/moderndash/commit/b9e93c17920926d0fb4dad908906b20c86a9e921))
+
+- `camelCase` | Improve performance by ~5% with a standard for loop ([`71ae6b9c9b5eefbe844661c8828d3344db0027b9`](https://github.com/Maggi64/moderndash/commit/71ae6b9c9b5eefbe844661c8828d3344db0027b9))
+
 ## 3.9.1
 
 ### Patch Changes
