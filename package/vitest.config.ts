@@ -9,7 +9,10 @@ const getPath = (path: string) => fileURLToPath(new URL(path, import.meta.url));
 
 export default defineConfig({
     test: {
-        globals: true
+        globals: true,
+        coverage: {
+            exclude: ["**/index.ts", "src/type", "test/**", "src/helpers/ArrayTypeUtils.ts"]
+        }
     },
     resolve: {
         alias: {
