@@ -1,5 +1,6 @@
 import { splitWords } from "@string/splitWords";
 
+import { capitalize } from "./capitalize.js";
 import { deburr } from "./deburr.js";
 
 /**
@@ -19,12 +20,14 @@ import { deburr } from "./deburr.js";
 export function camelCase(str: string): string {
     str = deburr(str);
     const words = splitWords(str);
+    if (words.length === 0) return "";
 
-    let camelCase = "";
-    for (const [index, word] of words.entries()) {
-        camelCase += index === 0 
-            ? word.toLowerCase() 
-            : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    let camelCase = words[0].toLowerCase();
+
+    // Start the loop from the second word
+    for (let index = 1; index < words.length; index++) {
+        const word = words[index];
+        camelCase += capitalize(word);
     }
 
     return camelCase;
