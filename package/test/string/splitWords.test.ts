@@ -24,3 +24,7 @@ test("return an empty array for an empty string", () => {
 test("return an array with one element for a single word string", () => {
     expect(splitWords("hello")).toEqual(["hello"]);
 });
+
+test("empty string", () => {
+    expect(splitWords("")).toEqual([]);
+});

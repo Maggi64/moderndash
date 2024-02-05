@@ -18,10 +18,12 @@ import { deburr } from "./deburr.js";
  */
 
 export function camelCase(str: string): string {
+    if (str === "") return "";
+
     str = deburr(str);
     const words = splitWords(str);
-    if (words.length === 0) return "";
 
+    if (words.length === 0) return "";
     let camelCase = words[0].toLowerCase();
 
     // Start the loop from the second word

@@ -7,4 +7,6 @@ test("convert a string to start case", () => {
     expect(titleCase("hello-world")).toBe("Hello World");
     expect(titleCase("hello_world")).toBe("Hello World");
     expect(titleCase("hello  world")).toBe("Hello World");
+    expect(titleCase("")).toBe("");
+    expect(titleCase("`")).toBe("");
 });

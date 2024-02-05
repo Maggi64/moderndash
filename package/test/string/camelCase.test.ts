@@ -6,4 +6,6 @@ test("convert a string to camel case", () => {
     expect(camelCase("FooBar")).toBe("fooBar");
     expect(camelCase("--foo-bar--")).toBe("fooBar");
     expect(camelCase("__FOO_BAR__")).toBe("fooBar");
+    expect(camelCase("")).toBe("");
+    expect(camelCase("`")).toBe("");
 });

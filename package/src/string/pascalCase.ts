@@ -1,5 +1,6 @@
 import { splitWords } from "@string/splitWords";
 
+import { capitalize } from "./capitalize.js";
 import { deburr } from "./deburr.js";
 
 
@@ -19,11 +20,13 @@ import { deburr } from "./deburr.js";
  */
 
 export function pascalCase(str: string): string {
+    if (str === "") return "";
+    
     str = deburr(str);
     const words = splitWords(str);
     let pascalCase = "";
     for (const word of words) {
-        pascalCase += word.charAt(0).toUpperCase() + word.slice(1);
+        pascalCase += capitalize(word);
     }
     return pascalCase;
 }

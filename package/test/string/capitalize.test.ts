@@ -15,3 +15,7 @@ test("deal with 1 letter", () => {
 test("deal with all uppercase letter, capitalize the first letter and lowercase the remaining", () => {
     expect(capitalize("FRED")).toBe("Fred");
 });
+
+test("empty string", () => {
+    expect(capitalize("")).toBe("");
+});
