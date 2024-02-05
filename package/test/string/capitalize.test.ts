@@ -11,3 +11,7 @@ test("returns an empty string for an empty input", () => {
 test("deal with 1 letter", () => {
     expect(capitalize("a")).toBe("A");
 });
+
+test("deal with all uppercase letter, capitalize the first letter and lowercase the remaining", () => {
+    expect(capitalize("FRED")).toBe("Fred");
+});
