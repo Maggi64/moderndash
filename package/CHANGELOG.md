@@ -1,5 +1,11 @@
 # moderndash
 
+## 3.10.0
+
+### Minor Changes
+
+- Add `truncate` function ([#156](https://github.com/Maggi64/moderndash/pull/156))
+
 ## 3.9.2
 
 ### Patch Changes
