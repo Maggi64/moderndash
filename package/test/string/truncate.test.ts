@@ -19,13 +19,13 @@ it("should truncate string the given length", () => {
 });
 
 it("should support a `omission` option", () => {
-    expect(truncate(string, { omission: " [...]" })).toBe(
+    expect(truncate(string, { ellipsis: " [...]" })).toBe(
         "hi-diddly-ho there, neig [...]"
     );
 });
 
 it("should support empty `omission` option", () => {
-    expect(truncate(string, { omission: "" })).toBe(
+    expect(truncate(string, { ellipsis: "" })).toBe(
         "hi-diddly-ho there, neighborin"
     );
 });
@@ -41,9 +41,9 @@ it("should support a `separator` option", () => {
 });
 
 it("should treat negative `length` as `0`", () => {
-    [0, -2].forEach((length) => {
+    for (const length of [0, -2]) {
         expect(truncate(string, { length })).toBe("...");
-    });
+    }
 });
 
 it("should work as an iteratee for methods like `_.map`", () => {
