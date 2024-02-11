@@ -27,6 +27,6 @@
         "vitest": "1.2.2",
         "@vitest/coverage-v8": "1.2.2",
         "@vitest/ui": "1.2.2",
-        "vite": "4.5.2"
+        "vite": "5.1.1"
     }
 }
