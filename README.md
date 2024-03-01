@@ -25,7 +25,7 @@
     <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/moderndash@latest?color=Green">
   </a>
   <a href="https://www.npmjs.com/package/moderndash">
-    <img alt="npm" src="https://img.shields.io/npm/dw/moderndash">
+    <img alt="npm" src="https://img.shields.io/npm/dm/moderndash">
   </a>
   <a href="https://www.npmjs.com/package/moderndash">
     <img alt="npm" src="https://img.shields.io/npm/v/moderndash?color=blue&label=version">
