@@ -1,5 +1,13 @@
 # moderndash
 
+## 3.11.0
+
+### Minor Changes
+
+- Object Functions | Relax input types to allow interfaces ([`bc9aeec716edd3a717b001f2e475bd7664e45cbd`](https://github.com/Maggi64/moderndash/commit/bc9aeec716edd3a717b001f2e475bd7664e45cbd))
+
+- `groupBy`| Deprecated | Use `Object.groupBy` as a native replacement ([`39cec87b7270e7d8faf2a32a1809de5de82eafe6`](https://github.com/Maggi64/moderndash/commit/39cec87b7270e7d8faf2a32a1809de5de82eafe6))
+
 ## 3.10.0
 
 ### Minor Changes
