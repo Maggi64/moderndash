@@ -1,8 +1,7 @@
-import type { PlainObject } from "@type/PlainObject.js";
+import type { GenericObject } from "@type/GenericObject";
 
 import { difference } from "@array/difference.js";
-
-import { pick } from "./pick.js";
+import { pick } from "@object/pick.js";
 
 /**
  * Omit specified keys from an object
@@ -18,7 +17,7 @@ import { pick } from "./pick.js";
  * @returns - An object without the specified keys
  */
 
-export function omit<TObj extends PlainObject, Key extends keyof TObj>(object: TObj, keysToOmit: Key[]): Omit<TObj, Key> {
+export function omit<TObj extends GenericObject, Key extends keyof TObj>(object: TObj, keysToOmit: Key[]): Omit<TObj, Key> {
     const allKeys = Object.keys(object);
     const filteredKeys = difference(allKeys, keysToOmit as string[]) as Exclude<keyof TObj, Key>[];
 

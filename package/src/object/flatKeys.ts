@@ -1,4 +1,4 @@
-import type { PlainObject } from "@type/PlainObject.js";
+import type { GenericObject } from "@type/GenericObject";
 import type { Call, Objects } from "hotscript";
 
 import { isPlainObject } from "@validate/isPlainObject.js";
@@ -19,7 +19,7 @@ type Paths<TObj> = StringIfNever<Call<Objects.AllPaths, TObj>>;
  * @returns A new object with flattened keys.
  */
 
-export function flatKeys<TObj extends PlainObject>(obj: TObj): Record<Paths<TObj>, unknown> {
+export function flatKeys<TObj extends GenericObject>(obj: TObj): Record<Paths<TObj>, unknown> {
     const flatObject: Record<string, unknown> = {};
   
     for (const [key, value] of Object.entries(obj)) {

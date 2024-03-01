@@ -1,3 +1,4 @@
+import type { GenericObject } from "@type/GenericObject";
 import type { PlainObject } from "@type/PlainObject.js";
 import type { Call, Objects } from "hotscript";
 
@@ -40,7 +41,7 @@ type UpdateObj<TObj extends PlainObject, TPath extends string, TVal> = Call<Obje
  * @returns The modified object.
  */
 
-export function set<TObj extends PlainObject, TPath extends Paths<TObj>, TVal>(obj: TObj, path: TPath, value: TVal): UpdateObj<TObj, TPath, TVal> {
+export function set<TObj extends GenericObject, TPath extends Paths<TObj>, TVal>(obj: TObj, path: TPath, value: TVal): UpdateObj<TObj, TPath, TVal> {
     if (!validPathRegex.test(path))
         throw new Error("Invalid path, look at the examples for the correct format.");
 
