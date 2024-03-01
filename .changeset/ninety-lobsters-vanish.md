@@ -2,4 +2,4 @@
 "moderndash": minor
 ---
 
-˙groupBy`| Deprecate | Use`Object.groupBy` as a native replacement
+`groupBy`| Deprecated | Use `Object.groupBy` as a native replacement
