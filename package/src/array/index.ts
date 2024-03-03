@@ -12,3 +12,4 @@ export * from "./sort";
 export * from "./takeRightWhile";
 export * from "./takeWhile";
 export * from "./unique";
+export * from "./concat";
