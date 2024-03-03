@@ -12,7 +12,7 @@
  * @returns Returns the new concatenated array.
  */
 
-export function concat(array: any[], ...restArray: any[] | any[][]): [] {
+export function concat<T>(array: T[], ...restArray: any[] | any[][]): [] {
   let result: any[] = array;
   if (array.length == 0 && restArray.length == 0) return [];
 
@@ -20,7 +20,7 @@ export function concat(array: any[], ...restArray: any[] | any[][]): [] {
     if (Array.isArray(arrItem)) {
       result = [...result, ...arrItem]
     } else {
-      result = [...result, ...[arrItem]] as []
+      result = [...result, ...[arrItem]]
     }
   }
   return result as [];
