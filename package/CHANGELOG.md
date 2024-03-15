@@ -1,5 +1,11 @@
 # moderndash
 
+## 3.11.1
+
+### Patch Changes
+
+- `isUrl` | Deprecated | Use `URL.canParse` instead ([`5c10c02919acc08c667f4238845cca7e6560362f`](https://github.com/Maggi64/moderndash/commit/5c10c02919acc08c667f4238845cca7e6560362f))
+
 ## 3.11.0
 
 ### Minor Changes
