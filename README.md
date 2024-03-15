@@ -25,7 +25,7 @@
     <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/moderndash@latest?color=Green">
   </a>
   <a href="https://www.npmjs.com/package/moderndash">
-    <img alt="npm" src="https://img.shields.io/npm/dw/moderndash">
+    <img alt="npm" src="https://img.shields.io/npm/dm/moderndash">
   </a>
   <a href="https://www.npmjs.com/package/moderndash">
     <img alt="npm" src="https://img.shields.io/npm/v/moderndash?color=blue&label=version">
@@ -71,6 +71,7 @@ ModernDash aims to outperform Lodash and deliver lightning-fast utility function
 ## 🗃 FAQ
 
 ### Why is X lodash function not included?
+ModernDash does not include any lodash functions that can be easily replaced by native javascript. It only includes the functions that you really need, and keeps the library as slim as possible.
 Please refer to [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) or [youmightnotneed.com/lodash](https://youmightnotneed.com/lodash) for native replacements.  
 If you still believe a function is missing, please open an issue.
 

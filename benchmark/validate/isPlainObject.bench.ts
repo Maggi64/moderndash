@@ -3,30 +3,26 @@ import { isPlainObject } from "moderndash";
 import { isObject as radashVersion } from "radash";
 import { bench, describe } from "vitest";
 
+import { randomNumberArray, randomObjectArray, randomStringArray } from "../testData.js";
+
 describe("isPlainObject", () => {
-    const object = { "a": 1, "b": 2, "c": 3, "d": [1, 2, 3] };
-    const notObject = "notObject";
-    const arrayObject = [1, 2, 3];
-    const nullObject = null;
+    const elements = [...randomObjectArray(20), ...randomNumberArray(10), ...randomStringArray(12), ...randomObjectArray(5)];
 
     bench("moderndash", () => {
-        isPlainObject(object);
-        isPlainObject(notObject);
-        isPlainObject(arrayObject);
-        isPlainObject(nullObject);
-    });
-
-    bench("lodash", () => {
-        lodashVersion(object);
-        lodashVersion(notObject);
-        lodashVersion(arrayObject);
-        lodashVersion(nullObject);
+        for (const object of elements) {
+            isPlainObject(object);
+        }
     });
 
     bench("radash", () => {
-        radashVersion(object);
-        radashVersion(notObject);
-        radashVersion(arrayObject);
-        radashVersion(nullObject);
+        for (const object of elements) {
+            radashVersion(object);
+        }
     });
+
+    bench("lodash", () => {
+        for (const object of elements) {
+            lodashVersion(object);
+        }
+    });    
 });

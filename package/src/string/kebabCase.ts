@@ -18,6 +18,8 @@ import { deburr } from "./deburr.js";
  */
 
 export function kebabCase(str: string): string {
+    if (str === "") return "";
+    
     str = deburr(str);
     const words = splitWords(str);
     let kebabCase = "";

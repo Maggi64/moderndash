@@ -1,4 +1,5 @@
 import type { ArrayMinLength } from "@type/ArrayMinLength.js";
+import type { GenericObject } from "@type/GenericObject";
 import type { PlainObject } from "@type/PlainObject.js";
 
 import { isPlainObject } from "@validate/isPlainObject.js";
@@ -24,12 +25,12 @@ import { isPlainObject } from "@validate/isPlainObject.js";
  * @returns A new merged object
  */
 
-export function merge<TTarget extends PlainObject, TSources extends ArrayMinLength<PlainObject, 1>>(target: TTarget, ...sources: TSources): MergeDeepObjects<[TTarget, ...TSources]> {
+export function merge<TTarget extends GenericObject, TSources extends ArrayMinLength<GenericObject, 1>>(target: TTarget, ...sources: TSources): MergeDeepObjects<[TTarget, ...TSources]> {
     const targetCopy = { ...target };
     for (const source of sources) {
         for (const [key, value] of Object.entries(source)) {
             (targetCopy as PlainObject)[key] = isPlainObject(value) && isPlainObject(targetCopy[key]) 
-                ? merge(targetCopy[key] as PlainObject, value) 
+                ? merge(targetCopy[key], value) 
                 : value;
         }
     }

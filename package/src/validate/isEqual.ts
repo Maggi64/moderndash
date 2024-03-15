@@ -13,7 +13,7 @@ type TypedArray = Int8Array | Uint8Array | Uint8ClampedArray | Int16Array | Uint
  * 
  * @example
  * const object = { a: { b: 2 } };
- * Const other = { a: { b: 2 } };
+ * const other = { a: { b: 2 } };
  *
  * isEqual(object, other);
  * // => true

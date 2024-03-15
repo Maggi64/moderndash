@@ -12,13 +12,13 @@ jobs:
     name: ESLint
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
 
       - name : Use Node.js 20.x
-        uses : actions/setup-node@v3
+        uses : actions/setup-node@v4
         with :
           node-version : 20.x
           cache: npm
@@ -29,7 +29,7 @@ jobs:
       - name: Auto-fix ESLint errors
         run: npm run lint:fix || true
       - name: Commit auto-fixed ESLint errors
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
             commit_message: 🔧 Auto-fix ESLint errors
 

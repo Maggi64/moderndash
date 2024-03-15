@@ -1,13 +1,21 @@
 export const cryptoMockLowestValue = {
-    getRandomValues: (buffer: Uint32Array | Uint8Array) => {
-        const lowestValue = buffer instanceof Uint32Array ? 0x00000000 : 0x00;
-        buffer.fill(lowestValue);
+    getRandomValues: (buffer: Uint32Array | Uint8Array | BigUint64Array) => {
+        if (buffer instanceof BigUint64Array) {
+            buffer.fill(0n);
+        } else {
+            buffer.fill(0);
+        }
     }
 };
 
 export const cryptoMockHighestValue = {
-    getRandomValues: (buffer: Uint32Array | Uint8Array) => {
-        const highestValue = buffer instanceof Uint32Array ? 0xFFFFFFFF : 0xFF;
-        buffer.fill(highestValue);
+    getRandomValues: (buffer: Uint32Array | Uint8Array | BigUint64Array) => {
+        if (buffer instanceof BigUint64Array) {
+            buffer.fill(0xFFFFFFFFFFFFFFFFn);
+        } else if (buffer instanceof Uint32Array) {
+            buffer.fill(0xFFFFFFFF);
+        } else if (buffer instanceof Uint8Array) {
+            buffer.fill(0xFF);
+        }
     }
 };

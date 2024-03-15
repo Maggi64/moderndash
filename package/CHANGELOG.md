@@ -1,5 +1,59 @@
 # moderndash
 
+## 3.11.0
+
+### Minor Changes
+
+- Object Functions | Relax input types to allow interfaces ([`bc9aeec716edd3a717b001f2e475bd7664e45cbd`](https://github.com/Maggi64/moderndash/commit/bc9aeec716edd3a717b001f2e475bd7664e45cbd))
+
+- `groupBy`| Deprecated | Use `Object.groupBy` as a native replacement ([`39cec87b7270e7d8faf2a32a1809de5de82eafe6`](https://github.com/Maggi64/moderndash/commit/39cec87b7270e7d8faf2a32a1809de5de82eafe6))
+
+## 3.10.0
+
+### Minor Changes
+
+- Add `truncate` function ([#156](https://github.com/Maggi64/moderndash/pull/156))
+
+## 3.9.2
+
+### Patch Changes
+
+- Case Functions | Add early return for empty strings + More tests ([`b9e93c17920926d0fb4dad908906b20c86a9e921`](https://github.com/Maggi64/moderndash/commit/b9e93c17920926d0fb4dad908906b20c86a9e921))
+
+- `camelCase` | Improve performance by ~5% with a standard for loop ([`71ae6b9c9b5eefbe844661c8828d3344db0027b9`](https://github.com/Maggi64/moderndash/commit/71ae6b9c9b5eefbe844661c8828d3344db0027b9))
+
+## 3.9.1
+
+### Patch Changes
+
+- Fix `capitalize` implementation, lowercasing all remaining letters ([#151](https://github.com/Maggi64/moderndash/pull/151))
+
+## 3.9.0
+
+### Minor Changes
+
+- `throttle` | Throttled function always returns the result of the last `func` invocation ([`dc589e412b6bf93baea062f20c6f288dcf5bd913`](https://github.com/Maggi64/moderndash/commit/dc589e412b6bf93baea062f20c6f288dcf5bd913))
+
+- Update DevDependencies ([`5cb9e9142dee96af2f08b6f1cecb113b8bbe18a6`](https://github.com/Maggi64/moderndash/commit/5cb9e9142dee96af2f08b6f1cecb113b8bbe18a6))
+
+- Tests | Add NodeJS 21 to version matrix ([`d7b485efcb1a18aa25b958f617b0f0ec948e1532`](https://github.com/Maggi64/moderndash/commit/d7b485efcb1a18aa25b958f617b0f0ec948e1532))
+
+## 3.8.0
+
+### Minor Changes
+
+- debounce | Add pending() functionality ([`4856d62`](https://github.com/Maggi64/moderndash/commit/4856d626d0595b5b8ee74704fe63bf9812bf7b26))
+
+## 3.7.3
+
+### Patch Changes
+
+- `set` | Simplify implementation ([`eb597b8`](https://github.com/Maggi64/moderndash/commit/eb597b882937b43f98b39c1cf58210dcd257a8a7))
+
+- `randomFloat` | Added benchmarks and improved performance slightly ([`74c342e`](https://github.com/Maggi64/moderndash/commit/74c342e41f208d1f32f3c1b74e9e05358e13ea4e))
+
+- `omit` | Improve performance by using Set for keys ([`1bf6b20`](https://github.com/Maggi64/moderndash/commit/1bf6b200a8548815452138572a33fa511e034453))
+
 ## 3.7.2
 
 ### Patch Changes

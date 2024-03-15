@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Check image filetypes
     steps:
-      - uses: batista/lint-filenames@v1
+      - uses: batista/lint-filenames@v2
         name: Only allow webp & newer image formats
         with:
           path: './'

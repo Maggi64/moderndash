@@ -1,4 +1,4 @@
-import type { PlainObject } from "@type/PlainObject.js";
+import type { GenericObject } from "@type/GenericObject";
 
 /**
  * Creates an object composed of the picked `object` properties.
@@ -14,7 +14,7 @@ import type { PlainObject } from "@type/PlainObject.js";
  * @returns Returns the new object.
  */
 
-export function pick<TObj extends PlainObject, Key extends keyof TObj>(object: TObj, keysToPick: Key[]): Pick<TObj, Key> {
+export function pick<TObj extends GenericObject, Key extends keyof TObj>(object: TObj, keysToPick: Key[]): Pick<TObj, Key> {
     const result = {} as Pick<TObj, Key>;
     for (const key of keysToPick) {
         result[key] = object[key];

@@ -1,6 +1,6 @@
 /* eslint-disable unicorn/no-for-loop */
 import { difference as lodashVersion, differenceWith as lodashVersionWith } from "lodash-es";
-import { difference, difference2 } from "moderndash";
+import { difference } from "moderndash";
 import { diff as radashVersion } from "radash";
 import { difference as remedaVersion, differenceWith as remedaVersionWith } from "remeda";
 import { bench, describe } from "vitest";

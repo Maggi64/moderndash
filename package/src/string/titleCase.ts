@@ -1,5 +1,6 @@
 import { splitWords } from "@string/splitWords";
 
+import { capitalize } from "./capitalize.js";
 import { deburr } from "./deburr.js";
 
 /**
@@ -19,11 +20,13 @@ import { deburr } from "./deburr.js";
  */
 
 export function titleCase(str: string): string {
+    if (str === "") return "";
+
     str = deburr(str);
     const words = splitWords(str);
     let titleCase = "";
     for (const word of words) {
-        titleCase += word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() + " ";
+        titleCase += capitalize(word) + " ";
     }
     return titleCase.trimEnd();
 }
