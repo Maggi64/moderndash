@@ -21,7 +21,7 @@
         "@tsconfig/strictest": "2.0.5",
         "@changesets/cli": "2.27.1",
         "eslint-config-dewald": "1.0.17",
-        "eslint": "9.2.0",
+        "eslint": "8.57.0",
         "typedoc": "0.25.13",
         "typescript": "5.4.5",
         "vitest": "1.6.0",
