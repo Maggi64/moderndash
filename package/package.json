@@ -9,7 +9,7 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build:index": "ctix create --startAt src --overwrite --noBackup --quote \"\"\"",
+    "build:index": "barrelsby --directory ./src --delete --exclude src\/helpers --location all",
     "build": "tsup",
     "prepublishOnly": "npm run test && npm run build && cp '../README.md' './README.md' && cp '../LICENSE' './LICENSE'",
     "postpublish": "rm './README.md' && rm './LICENSE'",
@@ -55,8 +55,8 @@
     "hotscript": "1.0.13"
   },
   "devDependencies": {
+    "barrelsby": "2.8.1",
     "tsup": "8.0.2",
-    "ctix": "2.4.0",
     "cross-env": "7.0.3"
   }
 }
