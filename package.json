@@ -28,5 +28,8 @@
         "@vitest/coverage-v8": "1.6.0",
         "@vitest/ui": "1.6.0",
         "vite": "5.2.11"
+    },
+    "overrides": {
+        "esbuild": "0.21.1"
     }
 }
