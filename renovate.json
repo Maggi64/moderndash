@@ -36,5 +36,5 @@
       "groupSlug": "moderndash-benchmark"
     }
   ],
-  "ignoreDeps": ["node", "npm", "ctix"]
+  "ignoreDeps": ["node", "npm", "ctix", "eslint"]
 }
