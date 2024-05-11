@@ -12,5 +12,5 @@
     "LICENSE": true,
     ".npmrc": true
   },
-  "vitest.commandLine": "npx vitest --root package"
+  "vitest.rootConfig": "package/vitest.config.ts",
 }
