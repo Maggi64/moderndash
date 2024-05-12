@@ -1,5 +1,13 @@
 # moderndash
 
+## 3.12.0
+
+### Minor Changes
+
+- `difference` | Deprecate function in favor of the native `Set.prototype.intersection()` function. ([`d42a973793dbb4b50b806c1b0da939cbd1db4f48`](https://github.com/Maggi64/moderndash/commit/d42a973793dbb4b50b806c1b0da939cbd1db4f48))
+
+- `intersection` | Deprecate function in favour of the native `Set.prototype.intersection()` function. ([`6d6127c8e2559fa60c520716d56afd88246937d3`](https://github.com/Maggi64/moderndash/commit/6d6127c8e2559fa60c520716d56afd88246937d3))
+
 ## 3.11.1
 
 ### Patch Changes

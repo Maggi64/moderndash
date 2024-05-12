@@ -1,6 +1,6 @@
 {
   "name": "moderndash",
-  "version": "3.11.1",
+  "version": "3.12.0",
   "type": "module",
   "description": "A Typescript-First utility library inspired by Lodash. Optimized for modern browsers.",
   "engines": {
@@ -9,7 +9,7 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build:index": "barrelsby --directory ./src --delete --exclude src\/helpers --location all",
+    "build:index": "barrelsby --directory ./src --delete --exclude src/helpers --location all",
     "build": "tsup",
     "prepublishOnly": "npm run test && npm run build && cp '../README.md' './README.md' && cp '../LICENSE' './LICENSE'",
     "postpublish": "rm './README.md' && rm './LICENSE'",
