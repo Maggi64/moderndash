@@ -6,6 +6,8 @@ import { fastArrayFlat } from "@helpers/fastArrayFlat.js";
 import { unique } from "./unique.js";
 
 /**
+ * @deprecated **Deprecated: Use the native [Set.prototype.intersection()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/intersection) function instead.**
+ * 
  * Create an array with unique values that are present in all arrays.  
  * The order of the values is based on the first array. 
  * 

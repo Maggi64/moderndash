@@ -4,9 +4,11 @@ import type { ArrayMinLength } from "@type/ArrayMinLength.js";
 import { fastArrayFlat } from "@helpers/fastArrayFlat.js";
 
 /**
- * Create a new array with values from the first array that are not present in the other arrays.
+ * @deprecated **Deprecated: Use the native [Set.prototype.difference()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/difference) function instead.**
  * 
+ * Create a new array with values from the first array that are not present in the other arrays.
  * Optionally, use a compare function to determine the comparison of elements (default is `===`).
+ * 
  * 
  * @example
  * difference([2, 1], [2, 3], [6])
