@@ -5,7 +5,7 @@ import { unique } from "moderndash";
 import { docData } from "$utils/docData.js";
 import { markdownParser } from "$utils/markdown.js";
 
-export const load: PageServerLoad = (({ params }) => {
+export const load: PageServerLoad = (async ({ params }) => {
     const methodName = params.method;
     
     const methodDoc = docData.functions.find(func => func.name.toLowerCase() === methodName.toLowerCase());
@@ -14,6 +14,7 @@ export const load: PageServerLoad = (({ params }) => {
 
     const signature = methodDoc?.signatures[0] ?? typeDoc ?? classDoc;
     const fileSource = methodDoc?.source ?? typeDoc?.source ?? classDoc?.source;
+    const deprecated = signature?.comment.blockTags.find(tag => tag.name === "deprecated")?.text;
     
     if (!signature) return { status: 404 };
 
@@ -21,20 +22,22 @@ export const load: PageServerLoad = (({ params }) => {
     const code = getEmbedCode(signature.name, codeMarkdown);
 
     const description = signature.comment.description ?? "No description";
-    const parsedMarkdown = markdownParser(description).replace(/{@link ([^}]+)}/g, '<a href="/docs/$1">$1</a>');
+    let [parsedDescription, parsedDeprecated] = await Promise.all([markdownParser(description), markdownParser(deprecated ?? "")]);
+    parsedDescription = parsedDescription.replaceAll(/{@link ([^}]+)}/g, '<a href="/docs/$1">$1</a>');
 
     return {
         name: methodDoc?.name ?? typeDoc?.name ?? classDoc?.name,
         description,
+        parsedDeprecated,
         code,
-        parsedMarkdown,
+        parsedDescription,
         path: fileSource && (fileSource.path + "/" + fileSource.file)
     };
 });
 
-function getEmbedCode(functionName: string, codetext: string | undefined) {
-    if (!codetext) return "";
-    let code = codetext.replace(/```(ts|typescript)\n/, "").replace("```", "");
+function getEmbedCode(functionName: string, codeText: string | undefined) {
+    if (!codeText) return "";
+    let code = codeText.replace(/```(ts|typescript)\n/, "").replace("```", "");
     
     // Deals with Top Level Await Bug in Stackblitz
     if (code.includes("await")) {
@@ -46,7 +49,7 @@ function getEmbedCode(functionName: string, codetext: string | undefined) {
 
 
 function generateImportString(functionName: string, code: string) {
-    const codeWithOutComments = code.replace(/\/\*[\S\s]*?\*\/|(?<=[^:])\/\/.*|^\/\/.*/g, "");
+    const codeWithOutComments = code.replaceAll(/\/\*[\S\s]*?\*\/|(?<=[^:])\/\/.*|^\/\/.*/g, "");
     const foundFunctionNames = codeWithOutComments.match(
         new RegExp(`(?<!\\.)\\b(${docData.functions.map(func => func.name).join("|")})\\b`, "g")
     );

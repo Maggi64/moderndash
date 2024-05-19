@@ -1,6 +1,8 @@
 /**
  * Checks if given string is a valid URL
- * @deprecated Use the native "URL.canParse" method instead.
+ * 
+ * @deprecated 
+ * **Deprecated: Use the native "URL.canParse" method instead.**
  * 
  * @example
  * isUrl('https://google.com')
