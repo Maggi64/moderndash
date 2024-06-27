@@ -1,6 +1,6 @@
 {
   "name": "moderndash",
-  "version": "3.12.0",
+  "version": "4.0.0",
   "type": "module",
   "description": "A Typescript-First utility library inspired by Lodash. Optimized for modern browsers.",
   "engines": {

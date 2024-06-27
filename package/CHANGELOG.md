@@ -1,5 +1,15 @@
 # moderndash
 
+## 4.0.0
+
+### Major Changes
+
+- Breaking | Bump required node version to >=18.x ([#171](https://github.com/Maggi64/moderndash/pull/171))
+
+### Minor Changes
+
+- Introduce type-fest dependency to improve various function types ([#171](https://github.com/Maggi64/moderndash/pull/171))
+
 ## 3.12.0
 
 ### Minor Changes
