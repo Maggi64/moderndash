@@ -34,8 +34,6 @@ type Tail<T extends unknown[]> = T extends [infer _Head, ...infer Tail] ? Tail :
 export function toDecorator<TFunc extends GenericFunction<TFunc>>(func: TFunc) {
     return function (...args: Tail<Parameters<TFunc>>) {
         return function (originalMethod: unknown, _context: ClassMethodDecoratorContext) {
-            console.log("originalMethod", originalMethod);
-            console.log("_context", _context);
             const funcArgs = [originalMethod, ...args] as Parameters<TFunc>;
             return func(...funcArgs);
         };
