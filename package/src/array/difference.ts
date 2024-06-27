@@ -5,8 +5,10 @@ import { fastArrayFlat } from "@helpers/fastArrayFlat.js";
 
 /**
  * Create a new array with values from the first array that are not present in the other arrays.
- * 
  * Optionally, use a compare function to determine the comparison of elements (default is `===`).
+ * 
+ * @deprecated 
+ * **Deprecated: Use the native [Set.prototype.difference()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/difference) function instead.**
  * 
  * @example
  * difference([2, 1], [2, 3], [6])
@@ -23,12 +25,12 @@ import { fastArrayFlat } from "@helpers/fastArrayFlat.js";
  *
  * difference(arr1, arr2, (a, b) => a.id === b.id)
  * // => [{ id: 1, name: 'Yeet' }]
+ * 
  * @param arraysOrCompareFn Two or more arrays with an optional compare function at the end
  * @template TElem The type of the array elements
  * @template TArrays The type of the arrays provided
  * @returns Returns a new array of filtered values
  */
-
 export function difference<TElem>(...arraysOrCompareFn: ArrayMinLength<TElem[], 2>): TElem[];
 export function difference<TArrays extends ArrayMinLength<unknown[], 2>>(...arraysOrCompareFn: [...TArrays, CompareFunction<TArrays>]): TArrays[0];
 export function difference<TArrays extends ArrayMinLength<unknown[], 2>, TElem>(...arraysOrCompareFn: ArrayMinLength<TElem[], 2> | [...TArrays, CompareFunction<TArrays>]): TArrays[0] {

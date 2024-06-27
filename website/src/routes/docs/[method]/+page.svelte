@@ -10,16 +10,22 @@
     $: name = data.name;
     $: description = data.description;
     $: code = data.code;
-    $: parsedMarkdown = data.parsedMarkdown;
+    $: parsedDescription = data.parsedDescription;
     $: path = data.path;
+    $: parsedDeprecated = data.parsedDeprecated;
 </script>
 
 <Meta title={name} {description}/>
 
 {#if name}
     <h2>{name}</h2>
-    {@html parsedMarkdown}
 
+    {#if parsedDeprecated}
+        {@html parsedDeprecated}
+    {/if}
+
+    {@html parsedDescription}
+  
     {#if code}
         <h3>Example</h3>
         <Playground {code}/>

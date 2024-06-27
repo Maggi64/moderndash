@@ -1,6 +1,8 @@
 /**
  * Creates an object with grouped items in the array.
- * @deprecated Use the javascript "Object.groupBy()" version instead.
+ * 
+ * @deprecated
+ * **Deprecated: Use the native "Object.groupBy()" function instead.**
  * 
  * @example
  * group([6.1, 4.2, 6.3], Math.floor)
