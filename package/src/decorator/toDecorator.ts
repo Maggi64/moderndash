@@ -30,12 +30,12 @@ type Tail<T extends unknown[]> = T extends [infer _Head, ...infer Tail] ? Tail :
  * @param func The function to transform.
  * @returns A decorator function that can be used to decorate a method.
  */
-
+// waiting for https://github.com/evanw/esbuild/issues/104
 export function toDecorator<TFunc extends GenericFunction<TFunc>>(func: TFunc) {
     return function (...args: Tail<Parameters<TFunc>>) {
-        return function (_target: unknown, _key: string, descriptor: PropertyDescriptor) {
-            const creatorArgs = [descriptor.value, ...args] as Parameters<TFunc>;
-            descriptor.value = func(...creatorArgs);
+        return function (originalMethod: unknown, _context: ClassMethodDecoratorContext) {
+            const funcArgs = [originalMethod, ...args] as Parameters<TFunc>;
+            return func(...funcArgs);
         };
     };
 }
