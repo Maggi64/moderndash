@@ -4,7 +4,7 @@
   "type": "module",
   "description": "A Typescript-First utility library inspired by Lodash. Optimized for modern browsers.",
   "engines": {
-    "node": ">=16.15",
+    "node": ">=18",
     "npm": ">=8"
   },
   "sideEffects": false,
