@@ -11,5 +11,9 @@ export default defineConfig({
         coverage: {
             exclude: ["**/index.ts", "src/type", "test/**", "src/helpers/ArrayTypeUtils.ts"]
         }
+    },
+    // Workaround: Remove when vitest supports decorators
+    esbuild: {
+        target: "es2022"
     }
 });
