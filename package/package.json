@@ -52,7 +52,8 @@
   ],
   "homepage": "https://moderndash.io",
   "dependencies": {
-    "hotscript": "1.0.13"
+    "hotscript": "1.0.13",
+    "type-fest": "4.20.1"
   },
   "devDependencies": {
     "barrelsby": "2.8.1",
