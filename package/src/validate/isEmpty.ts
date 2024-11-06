@@ -39,7 +39,16 @@ export function isEmpty(value: string | object | null | undefined): boolean {
         return value.byteLength === 0;
 
     if (typeof value === "object")
-        return Object.keys(value).length === 0;
+        return isObjectEmpty(value);
 
     return false;
+}
+
+function isObjectEmpty(value: object) {
+    for (const key in object) {
+        if (Object.hasOwn(object, key)) {
+            return false;
+        }
+    }
+    return true;
 }
