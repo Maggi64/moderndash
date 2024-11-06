@@ -45,8 +45,8 @@ export function isEmpty(value: string | object | null | undefined): boolean {
 }
 
 function isObjectEmpty(value: object) {
-    for (const key in object) {
-        if (Object.hasOwn(object, key)) {
+    for (const key in value) {
+        if (Object.hasOwn(value, key)) {
             return false;
         }
     }
