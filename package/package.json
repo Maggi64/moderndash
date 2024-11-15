@@ -53,11 +53,11 @@
   "homepage": "https://moderndash.io",
   "dependencies": {
     "hotscript": "1.0.13",
-    "type-fest": "4.20.1"
+    "type-fest": "4.27.0"
   },
   "devDependencies": {
     "barrelsby": "2.8.1",
-    "tsup": "8.1.0",
+    "tsup": "8.3.5",
     "cross-env": "7.0.3"
   }
 }
