@@ -4,8 +4,8 @@
   "type": "module",
   "description": "A Typescript-First utility library inspired by Lodash. Optimized for modern browsers.",
   "engines": {
-    "node": ">=18",
-    "npm": ">=8"
+    "node": ">=20",
+    "npm": ">=10"
   },
   "sideEffects": false,
   "scripts": {
@@ -14,7 +14,7 @@
     "prepublishOnly": "npm run test && npm run build && cp '../README.md' './README.md' && cp '../LICENSE' './LICENSE'",
     "postpublish": "rm './README.md' && rm './LICENSE'",
     "test-dev": "vitest --ui",
-    "test": "cross-env NODE_OPTIONS='--experimental-global-webcrypto' vitest run --coverage"
+    "test": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
@@ -57,7 +57,6 @@
   },
   "devDependencies": {
     "barrelsby": "2.8.1",
-    "tsup": "8.3.5",
-    "cross-env": "7.0.3"
+    "tsup": "8.3.5"
   }
 }

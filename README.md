@@ -56,10 +56,7 @@ npm install moderndash
 ```
 ## 📋 Requirements
 
-**NodeJS**: >=18.x | **Typescript**: >=5.0
-
-> `NodeJS 16-18`: Enable the [experimental-global-webcrypto](https://nodejs.dev/en/api/v16/cli#--experimental-global-webcrypto) flag to use crypto functions.  
-*Works out of the box with NodeJS 19+*
+**NodeJS**: >=20.x | **Typescript**: >=5.0
 
 ## 🚀 Performance
 
@@ -73,11 +70,6 @@ ModernDash aims to outperform Lodash and deliver lightning-fast utility function
 ModernDash does not include any lodash functions that can be easily replaced by native javascript. It only includes the functions that you really need, and keeps the library as slim as possible.
 Please refer to [You-Dont-Need-Lodash](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore) or [youmightnotneed.com/lodash](https://youmightnotneed.com/lodash) for native replacements.  
 If you still believe a function is missing, please open an issue.
-
-### Why no pipe utility functions?
-The upcoming [pipe operator](https://github.com/tc39/proposal-pipeline-operator) in JavaScript will provide function composition, so the framework focuses on providing other useful utility functions that are not yet available.
-
-The pipe operator can already be included via [babel](https://babeljs.io/docs/en/babel-plugin-proposal-pipeline-operator).
 
 ## 💌 Love & Thanks
 
