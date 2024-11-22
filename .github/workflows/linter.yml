@@ -35,6 +35,7 @@ jobs:
 
       # only run if all files already auto fixed
       - name : Run eslint on changed files
-        uses : Maggi64/eslint-plus-action@master
-        with :
+        uses: a-b-r-o-w-n/eslint-action@v2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
           extensions: .js,.ts,.svelte

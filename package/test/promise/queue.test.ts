@@ -1,5 +1,3 @@
-import type { Mock } from "vitest";
-
 import { Queue } from "@promise/queue.js";
 import { sleep } from "@promise/sleep.js";
 
@@ -7,7 +5,7 @@ import { trackPromise } from "./promiseUtils.js";
 
 let queue: Queue;
 
-const createAsync = (mockFn: Mock<[], string>) => async () => {
+const createAsync = (mockFn: typeof callbackMock) => async () => {
     await sleep(20);
     return mockFn();
 };
