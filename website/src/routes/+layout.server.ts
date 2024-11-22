@@ -1,14 +1,11 @@
 import type { LayoutServerLoad } from "./$types";
 
-import { group } from "moderndash";
-
 import { docData } from "$utils/docData.js";
  
 export const load: LayoutServerLoad = (() => {
     const libraryElements = [...docData.functions, ...docData.classes, ...docData.typeAliases];
 
-    const funcGroups = group(libraryElements, elem => elem.source?.path ?? "Other");
-
+    const funcGroups = Object.groupBy(libraryElements, elem => elem.source?.path.replace("package/src/", "") ?? "Other");
 
     // Sorts the groups so that the top categories are at the top
     const topCategories = ["array", "object", "string", "number", "promise", "validate", "function", "crypto", "decorator"];
@@ -23,7 +20,7 @@ export const load: LayoutServerLoad = (() => {
         return titleA.localeCompare(titleB);
     });
 
-    const sidebarEntries = sortedGroups.map(([categoryName, entries]) => ({ categoryName, entries: entries.map(entry => entry.name) }));
+    const sidebarEntries = sortedGroups.map(([categoryName, entries]) => ({ categoryName, entries: entries?.map(entry => entry.name) ?? [] } ));
 
     return {
         sidebarEntries
