@@ -17,17 +17,17 @@
         "benchmark": "npm run build --workspace=package && npm run bench --workspace=benchmark"
     },
     "devDependencies": {
-        "@svitejs/changesets-changelog-github-compact": "1.1.0",
+        "@svitejs/changesets-changelog-github-compact": "1.2.0",
         "@tsconfig/strictest": "2.0.5",
-        "@changesets/cli": "2.27.6",
+        "@changesets/cli": "2.27.10",
         "eslint-config-dewald": "1.0.17",
         "eslint": "8.57.0",
-        "typedoc": "0.26.2",
-        "typescript": "5.5.2",
-        "vitest": "1.6.0",
-        "@vitest/coverage-v8": "1.6.0",
-        "@vitest/ui": "1.6.0",
-        "vite": "5.3.2",
-        "vite-tsconfig-paths": "4.3.2"
+        "typedoc": "0.26.11",
+        "typescript": "5.6.3",
+        "vitest": "2.1.5",
+        "@vitest/coverage-v8": "2.1.5",
+        "@vitest/ui": "2.1.5",
+        "vite": "5.4.11",
+        "vite-tsconfig-paths": "5.1.3"
     }
 }
