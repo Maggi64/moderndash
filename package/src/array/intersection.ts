@@ -11,8 +11,7 @@ import { unique } from "./unique.js";
  * 
  * Optionally, use a compare function for element comparison (default is `===`).
  * 
- * @deprecated 
- * **Deprecated: Use the native [Set.prototype.intersection()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/intersection) function instead.**
+ * **Consider using the native [Set.prototype.intersection()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/intersection) function instead.**
  * 
  * @example
  * intersection([2, 1], [2, 3], [6, 2])
