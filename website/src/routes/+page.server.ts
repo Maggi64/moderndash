@@ -1,8 +1,9 @@
 import type { PageServerLoad } from "./$types";
 
+import { markdownParser } from "$utils/markdown.js";
+
 import readme from "../../../README.md?raw";
 
-import { markdownParser } from "$utils/markdown.js";
 
 // remove first markdown image from readme
 const trimmedReadme = readme.replace(/!\[.*]\(.*\)/, "");

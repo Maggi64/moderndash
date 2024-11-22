@@ -1,10 +1,11 @@
 <script lang="ts">
     import type { LayoutData } from "../../routes/$types.js";
 
+    import { searchTerm } from "$utils/searchStore.js";
+
     import Category from "./Category.svelte";
 
     import { goto } from "$app/navigation";
-    import { searchTerm } from "$utils/searchStore.js";
 
     export let sidebarEntries: LayoutData["sidebarEntries"];
 

@@ -2,7 +2,7 @@ import { uniq as uniqLodash, uniqWith as uniqWithLodash } from "lodash-es";
 import { unique } from "moderndash";
 import { unique as uniqueRadash } from "radash";
 import { uniq as uniqRambda, uniqWith as uniqWithRambda } from "rambda";
-import { uniq as uniqRemeda, uniqWith as uniqWithRemeda } from "remeda";
+import { unique as uniqRemeda, uniqueWith as uniqWithRemeda } from "remeda";
 import { bench, describe } from "vitest";
 
 import { randomNumberArray, randomStringArray } from "../testData.js";
