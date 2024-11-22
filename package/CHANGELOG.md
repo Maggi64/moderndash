@@ -1,5 +1,21 @@
 # moderndash
 
+## 4.0.0
+
+### Major Changes
+
+- Breaking | Bump required node version to >=20.x ([#171](https://github.com/Maggi64/moderndash/pull/171))
+
+### Minor Changes
+
+- Introduce type-fest dependency to improve various function types ([#171](https://github.com/Maggi64/moderndash/pull/171))
+
+- `flatKeys` | Move from hotscript to type-fest utility types ([`5944656`](https://github.com/Maggi64/moderndash/commit/5944656dd72685e0c84807206a8ebfd23c8bd06f))
+
+- `sum` | Remove overcomplicated hotscript types ([`57ec52e`](https://github.com/Maggi64/moderndash/commit/57ec52e5d36b81105653fe9e02ecbd95dbafdfb3))
+
+- `difference` & `intersection` | Replace deprecation with comments pointing to native replacements ([`3a7fdb5`](https://github.com/Maggi64/moderndash/commit/3a7fdb545a7630b7134427b1adc2015c41a2f98c))
+
 ## 3.12.0
 
 ### Minor Changes
