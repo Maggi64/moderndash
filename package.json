@@ -22,17 +22,17 @@
     ],
     "devDependencies": {
         "@antfu/eslint-config": "latest",
-        "@changesets/cli": "2.30.0",
-        "@rollup/plugin-swc": "0.4.0",
+        "@changesets/cli": "3.0.2",
+        "@rollup/plugin-swc": "0.4.1",
         "@svitejs/changesets-changelog-github-compact": "1.2.0",
-        "@swc/core": "1.15.18",
+        "@swc/core": "1.16.2",
         "@tsconfig/strictest": "2.0.8",
-        "@vitest/coverage-v8": "4.1.0",
-        "@vitest/ui": "4.1.0",
+        "@vitest/coverage-v8": "5.0.0",
+        "@vitest/ui": "5.0.0",
         "eslint": "10.0.3",
-        "typedoc": "0.28.17",
-        "typescript": "5.9.3",
-        "vite": "8.0.0",
-        "vitest": "4.1.0"
+        "typedoc": "0.28.20",
+        "typescript": "7.0.2",
+        "vite": "8.3.0",
+        "vitest": "5.0.0"
     }
 }
