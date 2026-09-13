@@ -12,23 +12,23 @@
 		"typedoc-json-parser": "10.2.0"
 	},
 	"devDependencies": {
-		"@fortawesome/fontawesome-common-types": "7.2.0",
-		"@fortawesome/free-brands-svg-icons": "7.2.0",
-		"@fortawesome/free-regular-svg-icons": "7.2.0",
-		"@fortawesome/free-solid-svg-icons": "7.2.0",
+		"@fortawesome/fontawesome-common-types": "7.3.1",
+		"@fortawesome/free-brands-svg-icons": "7.3.1",
+		"@fortawesome/free-regular-svg-icons": "7.3.1",
+		"@fortawesome/free-solid-svg-icons": "7.3.1",
 		"svelte-fa": "4.0.4",
-		"svelte-sitemap": "3.0.1",
+		"svelte-sitemap": "4.0.4",
 		"@sveltejs/adapter-static": "3.0.10",
-		"@sveltejs/kit": "2.55.0",
+		"@sveltejs/kit": "2.70.3",
 		"@tailwindcss/vite": "latest",
-		"svelte": "5.53.12",
-		"@sveltejs/vite-plugin-svelte": "7.0.0",
-		"svelte-check": "4.4.5",
-		"tailwindcss": "4.2.1",
-		"marked": "17.0.4",
-		"svelte-meta-tags": "4.5.0",
+		"svelte": "5.57.0",
+		"@sveltejs/vite-plugin-svelte": "7.3.0",
+		"svelte-check": "4.7.6",
+		"tailwindcss": "4.3.3",
+		"marked": "18.0.13",
+		"svelte-meta-tags": "5.0.2",
 		"moderndash": "../package",
-		"@stackblitz/sdk": "1.11.0"
+		"@stackblitz/sdk": "1.11.1"
 	},
 	"type": "module"
 }
